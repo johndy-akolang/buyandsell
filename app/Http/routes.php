@@ -11,6 +11,19 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('login', 'LoginController@login');
+Route::get('register', 'RegisterController@register');
+
+Route::get('account/user', 'AccountController@user');
+
+
+Route::get('item/view', 'ItemController@view');
+Route::get('item/sellitem', 'ItemController@sellitem');
+
+
+
+Route::get('/', 'HomeController@index');
+
+/*Route::get('/', function () {
     return view('welcome');
-});
+});*/
