@@ -110,6 +110,23 @@ $(document).ready(function() {
         $("#reply-area").slideDown("slow");
     });
 
+    /* user dropdownmenu top header */
+    $(function() {
+        $('.cssmenu > ul').toggleClass('no-js js');
+        $('.cssmenu .js ul').hide();
+        $('.cssmenu .js').click(function(e) {
+            $('.cssmenu .js ul').slideToggle(200);
+            $('.clicker').toggleClass('active');
+            e.stopPropagation();
+        });
+        $(document).click(function() {
+            if($('.cssmenu .js ul').is(':visible')) {
+                $('.cssmenu .js ul', this).slideUp();
+                $('.clicker').removeClass('active');
+            }
+        });
+    });
+
 });
 
 

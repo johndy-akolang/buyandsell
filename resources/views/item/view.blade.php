@@ -48,7 +48,7 @@
                     <h3 class="m_3">Lorem ipsum dolor sit amet</h3>
 
                     {{-- item price --}}
-                    <p class="m_5">Php 888 <span class="reducedfrom">Php 999</span></p>
+                    <p class="m_5">Php 888</p>
 
                     {{-- form buy item --}}
                     {{--<div class="btn_form">

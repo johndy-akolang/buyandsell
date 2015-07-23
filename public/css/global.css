@@ -88,6 +88,7 @@ body{
 }
 .cssmenu ul li a {
     color: #555;
+    cursor: pointer;
     display: block;
     margin: 5px 10px;
 }
@@ -542,7 +543,8 @@ p.title a:hover{
     margin-top:14px;
 }
 span.actual{
-    color: #4fc34f;
+    /*color: #4fc34f;*/
+    color: #3075c0;
     font-size: 1em;
 }
 span.reducedfrom {
@@ -2236,7 +2238,8 @@ ul.delivery-list li a:hover{
     color: #fff;
 }
 .view-count {
-    color: #4fc34f;
+    /*color: #4fc34f;*/
+    color: #3075c0;
     float: right;
     font-size: 16px;
     margin-top: 2px;
@@ -3123,8 +3126,34 @@ form::after {
     line-height: 27px;
     margin-left: 5px;
 }
-
-
+.cssmenu ul li ul.user-cont-menu {
+    background: #f8f8f8 none repeat scroll 0 0;
+    border: 1px solid #ddd;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    position: absolute;
+    right: 10%;
+    width: 210px;
+    z-index: 6;
+}
+.cssmenu .user-cont-menu li {
+    cursor: pointer;
+    list-style: outside none none;
+    position: relative;
+    width: 100%;
+}
+.cssmenu ul li a.user-menu:hover {
+    background: #eee;
+}
+.cssmenu ul li a.user-menu {
+    background: #fff none repeat scroll 0 0;
+    color: #333;
+    display: block;
+    margin: 0;
+    padding: 10px;
+    text-decoration: none;
+    transition: background-color 0.2s ease-in-out 0s;
+}
 
 
 

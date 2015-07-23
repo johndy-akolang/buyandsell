@@ -4,8 +4,8 @@
 
         {{-- list menu  top header --}}
         <div class="cssmenu">
-            <ul>
-                <li>
+            <ul class="no-js">
+                {{--<li>
                     <a href="/login">
                         <i class="fa fa-sign-in"></i>
                         Sign in
@@ -14,8 +14,26 @@
                 |
                 <li>
                     <a href="/register">
-                        <i class="fa fa-sign-out"></i>
+                        <i class="fa fa-file-o"></i>
                         Sign up
+                    </a>
+                </li>--}}
+                <li>
+                    <a class="clicker" >
+                        <i class="fa fa-user"></i>
+                        mark donnie
+                    </a>
+                    <ul class="user-cont-menu">
+                        <li><a href="#" class="user-menu"><i class="fa fa-inbox"></i>Inbox</a></li>
+                        <li><a href="#" class="user-menu"><i class="fa fa-suitcase"></i>Manage Ads</a></li>
+                        <li><a href="#" class="user-menu"><i class="fa fa-gear"></i>Account</a></li>
+                    </ul>
+                </li>
+                |
+                <li>
+                    <a href="/login">
+                        <i class="fa fa-sign-out"></i>
+                        Logout
                     </a>
                 </li>
             </ul>
