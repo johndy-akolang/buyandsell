@@ -53,7 +53,122 @@ $(document).ready(function() {
             $('.wrapper-dropdown').removeClass('active');
         });
     });
+
+    /* message select action */
+    $(function() {
+        var dd = new DropDown( $('#aa') );
+
+        $(document).click(function() {
+            $('.wrapper-dropdown-action').removeClass('active');
+        });
+    });
+
     //alert('a');
 
+
+    /* edit profile */
+    $(".editlink").on("click", function(e) {
+        e.preventDefault();
+        var dataset = $(this).prev(".datainfo");
+        var savebtn = $(this).next(".savebtn");
+        var theid   = dataset.attr("id");
+        var newid   = theid+"-form";
+        var currval = dataset.text();
+
+        dataset.empty();
+
+        $('<input type="text" name="'+newid+'" id="'+newid+'"> value="'+currval+'"  class="hlite">').appendTo(dataset);
+
+        $(this).css("display", "none");
+        savebtn.css("display", "block");
+    });
+    $(".savebtn").on("click", function(e) {
+        e.preventDefault();
+        var elink   = $(this).prev(".editlink");
+        var dataset = elink.prev(".datainfo");
+        var newid   = dataset.attr("id");
+
+        var cinput  = "#"+newid+"-form";
+        var einput  = $(cinput);
+        var newval  = einput.attr("value");
+
+        $(this).css("display", "none");
+        einput.remove();
+        dataset.html(newval);
+
+        elink.css("display", "block");
+
+    });
+
+    /* view message inbox */
+    $('#view-message').click(function() {
+        $(window.location).attr('href', '/message/viewmessage');
+    });
+
+    /* click reply */
+    $("#email-opened-reply").on('click', function() {
+        $("#reply-area").slideDown("slow");
+    });
+
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

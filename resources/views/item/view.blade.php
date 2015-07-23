@@ -51,19 +51,19 @@
                     <p class="m_5">Php 888 <span class="reducedfrom">Php 999</span></p>
 
                     {{-- form buy item --}}
-                    <div class="btn_form">
+                    {{--<div class="btn_form">
 
                         {!! Form::open() !!}
 
-                            {!! Form::submit('Buy', '',
-                                array('class' => 'input-blue')) !!}
+                            {!! Form::submit('Buy',
+                                array('class' => 'btn input-blue')) !!}
 
                         {!! Form::close() !!}
 
-                    </div>
+                    </div>--}}
 
                     {{-- count of viewing --}}
-                    <span class="views-item"><i class="fa fa-eye"></i>97</span>
+                    <span class="views-item"><i class="fa fa-eye"></i>97 views</span>
 
                 </div>
                 <div class="clear"></div>
@@ -74,21 +74,78 @@
                     <p class="m_text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum.</p>
                 </div>
 
-                {{-- more information item --}}
+                {{-- comment box --}}
                 <div class="toogle">
-                    <h3 class="m_3">More Information</h3>
-                    <p class="m_text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum.</p>
+
+                    <div class="" style="">
+
+                        {{-- display comment here --}}
+                        <div class="comments">
+                            <div class="panel panel-default comment">
+                                <div class="panel-heading comment-header">
+
+                                    {{-- button to see list comment --}}
+
+                                    <h4 class="comment-user">
+                                        <a class="comment-username" title="">@caitp</a>
+                                        <small class="comment-date">14 minutes ago</small>
+                                    </h4>
+
+                                </div>
+                                <div class="comment-body panel-body" >
+                                    UI-Comments is designed to simplify the process of creating comment systems similar to Reddit, Imgur or Discuss in AngularJS.
+                                </div>
+                            </div>
+                        </div>
+
+                        {{-- not show when not login - for users or register only --}}
+                        {{-- If users comment here or private message stored to the inbox message --}}
+                        <div class="commenter-container panel-body">
+
+                            {{-- form for write comment parent --}}
+                            {!! Form::open() !!}
+
+                                <div class="form-group">
+
+                                    {!! Form::text('comment', '',
+                                        array('required',
+                                            'class' => 'form-control',
+                                            'placeholder' => 'Name')) !!}
+
+                                </div>
+
+                                <div class="form-group comment">
+
+                                    {!! Form::textarea('notes', null, ['class' => 'field form-control']) !!}
+
+                                    <button class="btn mt-15 input-blue" type="submit">Submit</button>
+
+                                </div>
+
+                            {!! Form::close() !!}
+
+                        </div>
+
+                    </div>
+
                 </div>
 
             </div>
 
-            {{-- right side for contact information , featured ads and sponsored links --}}
-            {{-- owner of item contact info --}}
+            {{-- right side for seller information , featured ads and sponsored links --}}
+            {{-- owner of item seller info --}}
             <div class="rsingle span_1_of_single">
-                <h5 class="m_1">Contact Info</h5>
+                <h5 class="m_1">Seller Information</h5>
 
+                {{-- seller name --}}
+                <strong><a href="/account/user">mark infantado</a></strong>
 
-
+                <div class="details-seller floatLeft">
+                    <label class="mb-num mt-10"><span class="deta-left c-999 txt-ind-10"><i class="fa fa-mobile"></i>Mobile:</span><span class="deta-right txt-ind-10">987456...</span></label>
+                    <label class="mb-num mt-10"><span class="deta-left c-999 txt-ind-10"><i class="fa fa-calendar-o"></i>Date Posted:</span><span class="deta-right txt-ind-10">July 20, 2015</span></label>
+                    <label class="mb-num mt-10"><span class="deta-left c-999 txt-ind-10"><i class="fa fa-info-circle"></i>Condition:</span><span class="deta-right txt-ind-10">2nd Hand(Used)</span></label>
+                    <label class="mb-num mt-10"><span class="deta-left c-999 txt-ind-10"><i class="fa fa-location-arrow"></i>Location:</span><span class="deta-right txt-ind-10">Parañaque City</span></label>
+                </div>
               <div class="clear"></div>
             </div>
 

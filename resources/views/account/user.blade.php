@@ -43,11 +43,11 @@
                     {{-- shorcut sell your item --}}
                     <div class="shrtct">
                         <span class="store each">
-                            <a title="Sell your item" href="/sellitem" class="mr-5">
+                            <a title="Sell your item" href="/item/sellitem" class="mr-5">
                                 <i class="fa fa-suitcase"></i>
                             </a>
                             <span>
-                                <a title="Sell your item" href="/sellitem">Sell your item</a>
+                                <a title="Sell your item" href="/item/sellitem">Sell your item</a>
                             </span>
                         </span>
                     </div>
@@ -67,8 +67,10 @@
                         </div>
 
                         <div class="profile-account-user floatLeft">
-                            <label>Mark Infantado</label>
+                            <span id="name" class="datainfo">Mark Infantado</span>
                         </div>
+                        <a href="#" class="editlink floatRight edit-a"><i class="fa fa-edit"></i>Edit info</a>
+                        {{--<a class="savebtn">Save</a>--}}
                     </div>
 
                     {{-- profile email --}}
@@ -78,8 +80,10 @@
                         </div>
 
                         <div class="profile-account-user floatLeft">
-                            <label>markinfantado@yahoo.com</label>
+                            <span id="email" class="datainfo">markinfantado@yahoo.com</span>
                         </div>
+                        <a href="#" class="editlink floatRight edit-a"><i class="fa fa-edit"></i>Edit info</a>
+                        {{--<a class="savebtn">Save</a>--}}
                     </div>
 
                     {{-- profile address --}}
@@ -89,8 +93,10 @@
                         </div>
 
                         <div class="profile-account-user floatLeft">
-                            <label>8888 Marian road 2, San Martin de Porres, Paranaque City</label>
+                            <span id="address" class="datainfo">8888 Marian road 2, San Martin de Porres, Paranaque City</span>
                         </div>
+                        <a href="#" class="editlink floatRight edit-a"><i class="fa fa-edit"></i>Edit info</a>
+                        {{--<a class="savebtn">Save</a>--}}
                     </div>
 
                     {{-- profile mobile number --}}
@@ -100,8 +106,10 @@
                         </div>
 
                         <div class="profile-account-user floatLeft">
-                            <label>0987456321</label>
+                            <span id="mobile" class="datainfo">0987456321</span>
                         </div>
+                        <a href="#" class="editlink floatRight edit-a"><i class="fa fa-edit"></i>Edit info</a>
+                        {{--<a class="savebtn">Save</a>--}}
                     </div>
 
                     {{-- profile company name --}}
@@ -111,8 +119,10 @@
                         </div>
 
                         <div class="profile-account-user floatLeft">
-                            <label>Miguelito's International Corp.</label>
+                            <span id="company" class="datainfo">Miguelito's International Corp.</span>
                         </div>
+                        <a href="#" class="editlink floatRight edit-a"><i class="fa fa-edit"></i>Edit info</a>
+                        {{--<a class="savebtn">Save</a>--}}
                     </div>
 
                     {{-- profile date registered --}}
@@ -122,8 +132,10 @@
                         </div>
 
                         <div class="profile-account-user floatLeft">
-                            <label>July 15, 2015</label>
+                            <span id="registered" class="datainfo">July 15, 2015</span>
                         </div>
+                        <a href="#" class="editlink floatRight edit-a"><i class="fa fa-edit"></i>Edit info</a>
+                        {{--<a class="savebtn">Save</a>--}}
                     </div>
 
                 </div>

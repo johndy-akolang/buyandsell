@@ -36,7 +36,8 @@
 
                             {!! Form::text('Title', '',
                                 array('required',
-                                    'id' => 'title', 'name' => 'title')) !!}
+                                    'id' => 'title', 'name' => 'title',
+                                    'class' => 'form-control')) !!}
 
                             <p class="desc c-aaa">
                                 <small>
@@ -44,6 +45,31 @@
                                     characters left
                                 </small>
                             </p>
+
+                        </div>
+
+                    </fieldset>
+
+                    {{-- select condition --}}
+                    <fieldset class="clearfix">
+
+                        {{-- title form label --}}
+                        <div class="sellitem-title-cont floatLeft">
+                            <div class="sellitem-label floatLeft talignright">
+                                <label>Condition
+                                    <span class="cff0">*</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        {{-- title form input --}}
+                        <div class="title-cont-input floatLeft">
+
+                            <select id="select-condition" class="form-control">
+                                <option> - Select - </option>
+                                <option>Brand new</option>
+                                <option>2nd Hand(Used)</option>
+                            </select>
 
                         </div>
 
@@ -115,7 +141,7 @@
                         {{-- title form label --}}
                         <div class="sellitem-title-cont floatLeft">
                             <div class="sellitem-label floatLeft talignright">
-                                <label>What are you selling?
+                                <label>Description
                                     <span class="cff0">*</span>
                                 </label>
                             </div>
@@ -126,7 +152,8 @@
 
                             {!! Form::textarea('Description', '',
                                 array('required',
-                                    'id' => 'description-item')) !!}
+                                    'id' => 'description-item',
+                                    'class' => 'form-control')) !!}
 
                             <p class="desc c-aaa">
                                 <small>
@@ -139,7 +166,7 @@
                     </fieldset>
 
                     {{-- item fomr upload photos --}}
-                    <fieldset class="clearfix mt-15 border-b mb-15 pad-b-10">
+                    <fieldset class="clearfix border-b mb-15 pad-b-10">
 
                         {{-- title form label --}}
                         <div class="sellitem-title-cont floatLeft">
@@ -152,7 +179,6 @@
 
 
                         </div>
-
 
                     </fieldset>
 
@@ -171,7 +197,7 @@
                         {{-- title form input --}}
                         <div class="title-cont-input floatLeft">
 
-                            <select id="select-province">
+                            <select id="select-province" class="form-control">
                                 <option>Metro Manila</option>
                                 <option>Abra</option>
                                 <option>Agusan de Norte</option>
@@ -196,7 +222,7 @@
                         {{-- title form input --}}
                         <div class="title-cont-input floatLeft">
 
-                            <select id="select-city">
+                            <select id="select-city" class="form-control">
                                 <option>Caloocan</option>
                                 <option>Las piñas</option>
                                 <option>Makati</option>
@@ -207,7 +233,7 @@
                     </fieldset>
 
                     {{-- mobile number --}}
-                    <fieldset class="clearfix border-b mt-15 mb-15 pad-b-10">
+                    <fieldset class="clearfix border-b mb-15 pad-b-10">
 
                         {{-- title form label --}}
                         <div class="sellitem-title-cont floatLeft">
@@ -223,7 +249,8 @@
 
                             {!! Form::text('number', '',
                                 array('required',
-                                    'id' => 'mobile-number', 'name' => 'mobile-number')) !!}
+                                    'id' => 'mobile-number', 'name' => 'mobile-number',
+                                    'class' => 'form-control mb-15')) !!}
 
                         </div>
 
@@ -235,7 +262,7 @@
                         <div class="btn_form floatLeft">
 
                             {{-- submit button for ads --}}
-                            <input class="button input-blue floatRight" type="submit" value="Submit Ads" name="submitads">
+                            <input class="btn button input-blue floatRight c-fff" type="submit" value="Submit Ads" name="submitads">
 
                         </div>
 

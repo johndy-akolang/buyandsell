@@ -26,7 +26,7 @@
     <div class="login">
 
         {{-- sample logo only --}}
-        <div class="logo-cont mb-20">
+        <div class="logo-cont">
             <a href="/"><img src="{{ asset('/images/logo-buyitsellit.png') }}"></a>
         </div>
 
@@ -51,7 +51,7 @@
 
                                     {!! Form::email('Email', '',
                                         array('required',
-                                                'id' => 'modlgn_username', 'class' => 'width100',
+                                                'id' => 'modlgn_username', 'class' => 'form-control width100 mt-mb-15',
                                                 'placeholder' => 'Email')) !!}
 
                                 </p>
@@ -61,7 +61,7 @@
 
                                     {!! Form::password('password',
                                         array('required',
-                                                'id' => 'modlgn_password', 'class' => 'width100',
+                                                'id' => 'modlgn_password', 'class' => 'form-control width100 mt-mb-15',
                                                 'placeholder' => 'Password')) !!}
 
                                 </p>
@@ -71,7 +71,7 @@
                                     <p id="login-form-remember">
                                         <label for="modlgn_remember"><a href="#">Forget Your Password ? </a></label>
                                     </p>
-                                    <input type="submit" name="Submit" class="button" value="Login"><div class="clear"></div>
+                                    <input type="submit" name="Submit" class="btn button" value="Login"><div class="clear"></div>
                                 </div>
 
                             </fieldset>
@@ -92,7 +92,7 @@
                     </div>
 
                     {{-- sign up button --}}
-                    <input class="button input-blue" type="submit" value="Sign up" name="signup">
+                    <input class="button btn input-blue width100px" type="submit" value="Sign up" name="signup">
                 </div>
             </div>
             <div class="clear"></div>

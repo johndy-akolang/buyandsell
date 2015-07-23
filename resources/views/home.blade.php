@@ -13,6 +13,7 @@
             {{-- item display list left --}}
             <div class="cont span_2_of_3">
                 <div class="top-box">
+
                     <div class="col_1_of_3 span_1_of_3">
                         <a href="/item/view">
                             <div class="inner_content clearfix">
@@ -32,6 +33,7 @@
                             </div>
                         </a>
                     </div>
+
                     <div class="col_1_of_3 span_1_of_3">
                         <a href="#">
                             <div class="inner_content clearfix">
@@ -51,6 +53,7 @@
                             </div>
                         </a>
                     </div>
+
                     <div class="col_1_of_3 span_1_of_3">
                         <a href="#">
                             <div class="inner_content clearfix">
@@ -283,11 +286,11 @@
                         {!! Form::open() !!}
 
                             {!! Form::text('emailnewsletter', '',
-                                array('class' => 'textbox',)) !!}
+                                array('class' => 'textbox form-control',)) !!}
 
                             {{-- submit newsletter button --}}
                             {!! Form::submit('Subscribe',
-                                        array('id' => 'newsletter-subscribe')) !!}
+                                        array('id' => 'newsletter-subscribe', 'class' => 'btn')) !!}
 
                         {!! Form::close() !!}
 

@@ -53,22 +53,29 @@
 
                     {{-- form name --}}
                     <div>
-                        {!! Form::text('Name', '',
+                        {!! Form::text('First Name', '',
                             array('required',
-                                    'id' => 'name', 'name' => 'name',
-                                    'onfocus' => 'this.value = \'\'; ',
-                                    'onblur' => 'if (this.value == \'\') {this.value = \' Name \'}',
-                                    'placeholder' => 'Name')) !!}
+                                    'id' => 'fname', 'name' => 'fname',
+                                    'class' => 'form-control c-999 mt-mb-15',
+                                    'placeholder' => 'First Name')) !!}
+                    </div>
+
+                    {{-- form name --}}
+                    <div>
+                        {!! Form::text('Last Name', '',
+                            array('required',
+                                    'id' => 'lname', 'name' => 'lname',
+                                    'class' => 'form-control c-999 mt-mb-15',
+                                    'placeholder' => 'Last Name')) !!}
                     </div>
 
                     {{-- form company name --}}
                     <div>
-                        {!! Form::text('Company Name', '',
+                        {!! Form::text('Mobile', '',
                             array('required',
-                                    'id' => 'companyname', 'name' => 'companyname',
-                                    'onfocus' => 'this.value = \'\'; ',
-                                    'onblur' => 'if (this.value == \'\') {this.value = \' Company Name \'}',
-                                    'placeholder' => 'Company name')) !!}
+                                    'id' => 'mobile', 'name' => 'mobile',
+                                    'class' => 'form-control c-999 mt-mb-15',
+                                    'placeholder' => 'Mobile Number')) !!}
                     </div>
 
                     {{-- form email --}}
@@ -76,8 +83,7 @@
                         {!! Form::email('email', '',
                             array('required',
                                 'id' => 'email', 'name' => 'email',
-                                'onfocus' => 'this.value = \'\'; ',
-                                'onblur' => 'if (this.value == \'\' {this.value = \' Email \'}',
+                                'class' => 'form-control mt-mb-15',
                                 'placeholder' => 'Email')) !!}
                     </div>
 
@@ -86,8 +92,7 @@
                         {!! Form::password('password',
                             array('required',
                                 'id' => 'password', 'name' => 'password',
-                                'onfocus' => 'this.value = \'\'; ',
-                                'onblur' => 'if (this.value == \'\' {this.value = \' password \'}',
+                                'class' => 'form-control mt-mb-15',
                                 'placeholder' => 'Password')) !!}
                     </div>
 
@@ -96,8 +101,7 @@
                         {!! Form::password('cpassword',
                             array('required',
                                 'id' => 'cpassword', 'name' => 'cpassword',
-                                'onfocus' => 'this.value = \'\'; ',
-                                'onblur' => 'if (this.value == \'\' {this.value = \' confirm password \'}',
+                                'class' => 'form-control mt-mb-15',
                                 'placeholder' => 'Confirm Password')) !!}
                     </div>
 
@@ -105,7 +109,7 @@
                     <div class="clear floatLeft mt-10">
 
                         {!! Form::button('Create Account',
-                            array('class' => 'grey')) !!}
+                            array('class' => 'grey btn')) !!}
 
                         <p class="terms">By clicking 'Create Account' you agree to the <a href="#">Terms &amp; Conditions</a></p>
 
@@ -122,7 +126,7 @@
                         </div>
 
                         {!! Form::submit('Sign in',
-                            array('class' => 'button input-blue', 'name' => 'signin')) !!}
+                            array('class' => 'btn button input-blue width100px', 'name' => 'signin')) !!}
 
                     </div>
                 </div>

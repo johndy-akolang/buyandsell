@@ -84,7 +84,7 @@
 
                     {{-- input search --}}
                     {!! Form::text('s', '',
-                        array('class' => 'textbox', 'value' => 'Search',
+                        array('class' => 'textbox form-control', 'value' => 'Search',
                               'onblur' => 'if (this.value == \'\') {this.value = \' Search \';}',
                               'onfocus' => 'this.value = \'\' ')) !!}
 
@@ -105,7 +105,7 @@
 
             {{-- button for post your ads here --}}
             {!! Form::submit('Sell your ads here',
-                    array('class' => 'button input-blue width251', 'name' => 'postyourads')) !!}
+                    array('class' => 'button input-blue width251', 'name' => 'postyourads', 'class' => 'btn input-blue')) !!}
 
 
         </div>

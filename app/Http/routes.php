@@ -16,9 +16,12 @@ Route::get('register', 'RegisterController@register');
 
 Route::get('account/user', 'AccountController@user');
 
-
 Route::get('item/view', 'ItemController@view');
 Route::get('item/sellitem', 'ItemController@sellitem');
+
+Route::get('message/inbox', 'MessageController@inbox');
+Route::get('message/viewmessage', 'MessageController@viewmessage');
+Route::get('message/sent', 'MessageController@sent');
 
 
 
