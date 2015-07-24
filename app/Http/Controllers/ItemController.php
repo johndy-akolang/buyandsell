@@ -29,8 +29,15 @@ class ItemController extends Controller
         return view('item.sellitem');
     }
 
+    public function manageitem()
+    {
+        return view('item.manageitem');
+    }
 
-
+    public function updateitem()
+    {
+        return view('item.updateitem');
+    }
 
     /**
      * Show the form for creating a new resource.

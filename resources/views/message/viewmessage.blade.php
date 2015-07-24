@@ -28,10 +28,10 @@
                         {{--<a href="#" id="compose-btn" class="btn btn-danger btn-block">Compose</a>--}}
 
                         <ul id="folders-list" class="nav nav-pills nav-stacked nav-email-folders mt-15">
-                            <li class="">
+                            <li class="active">
                                 <a href="/message/inbox">Inbox</a>
                             </li>
-                            <li class="active">
+                            <li class="">
                                 <a href="/message/sent">Sent</a>
                             </li>
                         </ul>

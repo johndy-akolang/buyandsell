@@ -18,6 +18,8 @@ Route::get('account/user', 'AccountController@user');
 
 Route::get('item/view', 'ItemController@view');
 Route::get('item/sellitem', 'ItemController@sellitem');
+Route::get('item/manageitem', 'ItemController@manageitem');
+Route::get('item/updateitem', 'ItemController@updateitem');
 
 Route::get('message/inbox', 'MessageController@inbox');
 Route::get('message/viewmessage', 'MessageController@viewmessage');

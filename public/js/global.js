@@ -127,6 +127,12 @@ $(document).ready(function() {
         });
     });
 
+    /* modal view for update item */
+
+
+
+
+
 });
 
 

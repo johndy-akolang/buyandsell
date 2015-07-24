@@ -153,7 +153,45 @@
             <div class="rsingle span_1_of_single mt-rsingle-25 ">
                 <h5 class="m_1">Featured Ads</h5>
 
+                <ul class="list-unstyled floatLeft">
+                    <li class="col-xs-12 col-sm-6 col-md-12 col-lg-12">
+                        <a href="#">
+                            <img class="img-reponsive img-thumbnail" alt="black Ferrari" src="http://whiz.dbcinfotech.net/uploads/thumbs/ferrari.jpg">
+                        </a>
+                        <h4>
+                            <a hef="#">Black Ferrari</a>
+                        </h4>
+                        <div class="price">
+                            <strong>Price : 80,000.00</strong>
+                        </div>
+                        <div class="clearfix"></div>
+                    </li>
+                    <li class="col-xs-12 col-sm-6 col-md-12 col-lg-12">
+                        <a href="#">
+                            <img class="img-reponsive img-thumbnail" alt="Home Theatre" src="http://whiz.dbcinfotech.net/uploads/thumbs/led_tv.jpg">
+                        </a>
+                        <h4>
+                            <a hef="#">Home Theatre</a>
+                        </h4>
+                        <div class="price">
+                            <strong>Price : 3,000.00</strong>
+                        </div>
+                        <div class="clearfix"></div>
+                    </li>
+                    <li class="col-xs-12 col-sm-6 col-md-12 col-lg-12">
+                        <a href="#">
+                            <img class="img-responsive img-thumbnail" alt="Puppy" src="http://whiz.dbcinfotech.net/uploads/thumbs/dog.jpg">
+                        </a>
+                        <h4>
+                            <a hef="#">Puppy</a>
+                        </h4>
+                        <div class="price">
+                            <strong>Price : 200.00</strong>
+                        </div>
+                        <div class="clearfix"></div>
+                    </li>
 
+                </ul>
 
               <div class="clear"></div>
             </div>
@@ -162,19 +200,13 @@
             <div class="rsingle span_1_of_single mt-rsingle-25 ">
                 <h5 class="m_1">Sponsored Links</h5>
 
-
-
               <div class="clear"></div>
             </div>
 
-
              <div class="clear"></div>
-
 
         </div>
     </div>
-
-
 </div>
 
 

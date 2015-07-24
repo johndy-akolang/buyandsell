@@ -96,7 +96,7 @@
                                     <li>
                                         <a href="#">
                                             <i class="fa fa-car"></i>
-                                            Cars
+                                            Vehicles
                                         </a>
                                     </li>
                                     <li>
