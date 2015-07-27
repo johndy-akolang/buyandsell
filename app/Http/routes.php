@@ -11,7 +11,11 @@
 |
 */
 
+Route::get('about', 'AboutController@index');
+
 Route::get('login', 'LoginController@login');
+Route::get('loginsuccess', 'LoginController@loginsuccess');
+
 Route::get('register', 'RegisterController@register');
 
 Route::get('account/user', 'AccountController@user');
@@ -25,6 +29,8 @@ Route::get('message/inbox', 'MessageController@inbox');
 Route::get('message/viewmessage', 'MessageController@viewmessage');
 Route::get('message/sent', 'MessageController@sent');
 
+Route::get('legal/terms', 'LegalController@terms');
+Route::get('legal/privacy', 'LegalController@privacy');
 
 
 Route::get('/', 'HomeController@index');

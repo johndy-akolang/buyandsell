@@ -64,9 +64,9 @@
                         <div class="col_1_of_f_2 span_1_of_f_2">
                             <h3 class="clr555">Contact us</h3>
                             <div class="company_address">
-                                <p class="clr555">500 Lorem Ipsum Dolor Sit,</p>
-                                <p class="clr555">22-56-2-9 Sit Amet, Lorem,</p>
-                                <p class="clr555">USA</p>
+                                <p class="clr555">8888 Marian road 2,</p>
+                                <p class="clr555">San Martin de Porres,</p>
+                                <p class="clr555">Parañaque City</p>
                                 <p class="clr555">Phone:(00) 222 666 444</p>
                                 <p class="clr555">Fax: (000) 000 00 00 0</p>
                                 <p class="clr555">Email: <span>mail[at]leoshop.com</span></p>

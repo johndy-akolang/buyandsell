@@ -7,21 +7,26 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class LoginController extends Controller
+class LegalController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return Response
      */
-    public function login()
+    public function index()
     {
-        return view('login');
+        //
     }
 
-    public function loginsuccess()
+    public function terms()
     {
-        return view('loginsuccess');
+        return view('legal.terms');
+    }
+
+    public function privacy()
+    {
+        return view('legal.privacy');
     }
 
     /**

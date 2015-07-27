@@ -7,87 +7,91 @@
                 <h4 class="modal-title" id="myModalLabel">Update your item</h4>
             </div>
 
-            <div class="modal-body">
+            {!! Form::open() !!}
 
-                <label>What are you selling?</label>
+                <div class="modal-body">
 
-                {!! Form::text('updateitem', '',
-                    array('required',
-                        'class' => 'form-control')) !!}
+                    <label>What are you selling?</label>
 
-            </div>
+                    {!! Form::text('updateitem', '',
+                        array('required',
+                            'class' => 'form-control')) !!}
 
-            <div class="modal-body">
+                </div>
 
-                <label>Condition</label>
+                <div class="modal-body">
 
-                <select class="form-control">
-                    <option>Brand new</option>
-                    <option>2nd hand(Used)</option>
-                </select>
+                    <label>Condition</label>
 
-            </div>
+                    <select class="form-control">
+                        <option>Brand new</option>
+                        <option>2nd hand(Used)</option>
+                    </select>
 
-            <div class="modal-body">
+                </div>
 
-                <label>Category</label>
+                <div class="modal-body">
 
-                <select class="form-control">
-                    <option>Vehicles</option>
-                    <option>Motorcycle</option>
-                    <option>Fashion</option>
-                    <option>Electronics</option>
-                    <option>Sports</option>
-                    <option>Toys</option>
-                    <option>Events</option>
-                    <option>Pets</option>
-                </select>
+                    <label>Category</label>
 
-            </div>
+                    <select class="form-control">
+                        <option>Vehicles</option>
+                        <option>Motorcycle</option>
+                        <option>Fashion</option>
+                        <option>Electronics</option>
+                        <option>Sports</option>
+                        <option>Toys</option>
+                        <option>Events</option>
+                        <option>Pets</option>
+                    </select>
 
-            <div class="modal-body">
+                </div>
 
-                <label>Description</label>
+                <div class="modal-body">
 
-                {!! Form::textarea('updatedescription', '',
-                    array('required',
-                        'class' => 'form-control')) !!}
+                    <label>Description</label>
 
-            </div>
+                    {!! Form::textarea('updatedescription', '',
+                        array('required',
+                            'class' => 'form-control')) !!}
 
-            <div class="modal-body">
+                </div>
 
-                <label>Province</label>
+                <div class="modal-body">
 
-                <select class="form-control">
-                    <option>Metro Manila</option>
-                    <option>Abra</option>
-                    <option>Agusan de Norte</option>
-                </select>
+                    <label>Province</label>
 
-            </div>
+                    <select class="form-control">
+                        <option>Metro Manila</option>
+                        <option>Abra</option>
+                        <option>Agusan de Norte</option>
+                    </select>
 
-            <div class="modal-body">
+                </div>
 
-                <label>City</label>
+                <div class="modal-body">
 
-                <select class="form-control">
-                    <option>Caloocan</option>
-                    <option>Las piñas</option>
-                    <option>Makati</option>
-                </select>
+                    <label>City</label>
 
-            </div>
+                    <select class="form-control">
+                        <option>Caloocan</option>
+                        <option>Las piñas</option>
+                        <option>Makati</option>
+                    </select>
 
-            <div class="modal-body">
+                </div>
 
-                <label>Mobile number</label>
+                <div class="modal-body">
 
-                {!! Form::text('updatenumber', '',
-                    array('required',
-                        'class' => 'form-control')) !!}
+                    <label>Mobile number</label>
 
-            </div>
+                    {!! Form::text('updatenumber', '',
+                        array('required',
+                            'class' => 'form-control')) !!}
+
+                </div>
+
+            {!! Form::close() !!}
 
             <div class="modal-footer">
                 <button type="button" class="btn btn-default grey" data-dismiss="modal">Cancel</button>
