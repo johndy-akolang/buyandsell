@@ -44,7 +44,7 @@
                     <div class="shrtct">
                         <span class="store each">
                             <a title="Sell your item" href="/item/sellitem" class="mr-5">
-                                <i class="fa fa-suitcase"></i>
+                                <i class="fa fa-buysellads"></i>
                             </a>
                             <span>
                                 <a title="Sell your item" href="/item/sellitem">Sell your item</a>
@@ -120,6 +120,32 @@
 
                         <div class="profile-account-user floatLeft">
                             <span id="company" class="datainfo">Miguelito's International Corp.</span>
+                        </div>
+                        <a href="#" class="editlink floatRight edit-a"><i class="fa fa-edit"></i>Edit info</a>
+                        {{--<a class="savebtn">Save</a>--}}
+                    </div>
+
+                    {{-- profile company address --}}
+                    <div class="profile-account-cont floatLeft">
+                        <div class="profile-account-label floatLeft">
+                            <label>Company Address:</label>
+                        </div>
+
+                        <div class="profile-account-user floatLeft">
+                            <span id="company" class="datainfo"></span>
+                        </div>
+                        <a href="#" class="editlink floatRight edit-a"><i class="fa fa-edit"></i>Edit info</a>
+                        {{--<a class="savebtn">Save</a>--}}
+                    </div>
+
+                    {{-- profile company number --}}
+                    <div class="profile-account-cont floatLeft">
+                        <div class="profile-account-label floatLeft">
+                            <label>Company Tel no.:</label>
+                        </div>
+
+                        <div class="profile-account-user floatLeft">
+                            <span id="company" class="datainfo"></span>
                         </div>
                         <a href="#" class="editlink floatRight edit-a"><i class="fa fa-edit"></i>Edit info</a>
                         {{--<a class="savebtn">Save</a>--}}

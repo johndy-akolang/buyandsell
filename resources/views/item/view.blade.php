@@ -65,6 +65,26 @@
                     {{-- count of viewing --}}
                     <span class="views-item"><i class="fa fa-eye"></i>97 views</span>
 
+                    {{-- social media share --}}
+                    <div class="brand-bg">
+
+                        {{-- facebook share --}}
+                        <a class="facebook" href="#">
+                            <i class="fa fa-facebook circle-3"></i>
+                        </a>
+
+                        {{-- twitter share --}}
+                        <a class="twitter" href="#">
+                            <i class="fa fa-twitter circle-3"></i>
+                        </a>
+
+                        {{-- google+ share --}}
+                        <a class="google-plus" href="#">
+                            <i class="fa fa-google-plus circle-3"></i>
+                        </a>
+
+                    </div>
+
                 </div>
                 <div class="clear"></div>
 

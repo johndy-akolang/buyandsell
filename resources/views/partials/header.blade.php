@@ -57,8 +57,20 @@
                 <ul class="dropdown-select-category">
                     <li>
                         <a href="#">
-                            <i class="fa fa-car"></i>
-                            Cars
+                            <i class="fa fa-buysellads"></i>
+                            Buy and Sell
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-home"></i>
+                            Real Estate
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-truck"></i>
+                            Vehicles
                         </a>
                     </li>
                     <li>
@@ -75,7 +87,7 @@
                     </li>
                     <li>
                         <a href="#">
-                            <i class="fa fa-flash"></i>
+                            <i class="fa fa-lightbulb-o"></i>
                             Electronics
                         </a>
                     </li>
@@ -89,6 +101,12 @@
                         <a href="#">
                             <i class="fa fa-bug"></i>
                             Toys
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-github"></i>
+                            Pets
                         </a>
                     </li>
                 </ul>

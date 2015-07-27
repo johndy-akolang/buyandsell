@@ -80,6 +80,13 @@
 
                     </div>
 
+                    {{-- login as facebook --}}
+                    <div class="social-login floatLeft">
+                        <img class="cursor" src="{{ asset('/images/facebook-login-kolph.png') }}" alt="Login as Facebook" width="170" />
+                        <img class="cursor" src="{{ asset('/images/google-plus-login-kolph.png') }}" alt="Login as Google Plus" width="170" />
+                    </div>
+
+
                 </div>
             </div>
 

@@ -407,7 +407,7 @@ ul.last li a:hover {
 .rsidebar{
     display: block;
     float:left;
-    margin: 9px/*2.7%*/ 0 1% 2.6%;
+    margin: 26px/*9px2.7%*/ 0 1% 2.6%;
 }
 .span_2_of_3 {
     width:77.1%;
@@ -753,11 +753,14 @@ ul.f-list span.f-text {
     background:#fff;
     width: 108.5%;
 }
-.facebook{
+.facebook {
     color:#fff;
     font-size:0.8125em;
-    border-bottom: 1px solid #4CB1CA;
+    /*border-bottom: 1px solid #4CB1CA;*/
     padding-bottom: 6px;
+}
+.facebook:hover, .twitter:hover {
+    text-decoration: none;
 }
 ul.f-gallery{
     border-bottom: 1px solid #4CB1CA;
@@ -1029,6 +1032,14 @@ input.inputbox, input.required, div.k2AccountPage input[type="text"] {
 #login-form label a{
     color:#3075c0;
 }
+.login-title .social-login {
+    margin-top: 30px;
+    width: 100%;
+}
+
+
+
+
 /*
 #login-form label a{
 	text-decoration:underline;
@@ -2293,6 +2304,36 @@ ul.delivery-list li a:hover{
 .views-item i {
     margin-right: 13px;
 }
+.brand-bg {
+    margin-top: 30px;
+}
+.brand-bg a.facebook i {
+    background: #3280e7 none repeat scroll 0 0;
+}
+.brand-bg a.twitter i {
+    background: #32c8de none repeat scroll 0 0;
+}
+.brand-bg a.google-plus i {
+    background: #f96f4a none repeat scroll 0 0;
+}
+.brand-bg a i {
+    color: #fff;
+    display: inline-block;
+    font-size: 14px;
+    margin-right: 5px;
+    text-align: center;
+    text-decoration: none;
+    transition: background 2s ease 0s;
+}
+.circle-3 {
+    border-radius: 100%;
+    display: inline-block;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    width: 35px;
+}
+
 .floatLeft {
     float: left;
 }
@@ -3265,6 +3306,12 @@ form::after {
 }
 .bg-blue {
     background-color: #609cec !important;
+}
+.bg-yellow {
+    background-color: #e1d408 !important;
+}
+.bg-orange {
+    background-color: #ff7800 !important;
 }
 .b-tooltip {
     position: relative;

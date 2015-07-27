@@ -51,7 +51,11 @@
                                         <div class="col-xs-12 col-sm-12 col-md-12 info-dta pad-top-bottom-10">
                                             <a class="c-307 mb-10 cursor" data-toggle="modal" data-target="#myModal">Update</a>
                                             <a class="c-307 mb-10 ml-10" href="#">Mark sold</a>
+                                            <a class="c-307 mb-10 ml-10" href="#">Re-post</a>
                                         </div>
+                                    </div>
+                                    <div class="row">
+                                        <button class="btn input-blue c-fff" type="submit">Boost Ads</button>
                                     </div>
                                     <div class="clearfix"></div>
                                 </div>
@@ -94,7 +98,11 @@
                                         <div class="col-xs-12 col-sm-12 col-md-12 info-dta pad-top-bottom-10">
                                             <a class="c-307 mb-10 cursor" data-toggle="modal" data-target="#myModal">Update</a>
                                             <a class="c-307 mb-10 ml-10" href="#">Mark sold</a>
+                                            <a class="c-307 mb-10 ml-10" href="#">Re-post</a>
                                         </div>
+                                    </div>
+                                    <div class="row">
+                                        <button class="btn input-blue c-fff" type="submit">Boost Ads</button>
                                     </div>
                                     <div class="clearfix"></div>
                                 </div>
@@ -137,7 +145,11 @@
                                         <div class="col-xs-12 col-sm-12 col-md-12 info-dta pad-top-bottom-10">
                                             <a class="c-307 mb-10 cursor" data-toggle="modal" data-target="#myModal">Update</a>
                                             <a class="c-307 mb-10 ml-10" href="#">Mark sold</a>
+                                            <a class="c-307 mb-10 ml-10" href="#">Re-post</a>
                                         </div>
+                                    </div>
+                                    <div class="row">
+                                        <button class="btn input-blue c-fff" type="submit">Boost Ads</button>
                                     </div>
                                     <div class="clearfix"></div>
                                 </div>
@@ -180,7 +192,11 @@
                                         <div class="col-xs-12 col-sm-12 col-md-12 info-dta pad-top-bottom-10">
                                             <a class="c-307 mb-10 cursor" data-toggle="modal" data-target="#myModal">Update</a>
                                             <a class="c-307 mb-10 ml-10" href="#">Mark sold</a>
+                                            <a class="c-307 mb-10 ml-10" href="#">Re-post</a>
                                         </div>
+                                    </div>
+                                    <div class="row">
+                                        <button class="btn input-blue c-fff" type="submit">Boost Ads</button>
                                     </div>
                                     <div class="clearfix"></div>
                                 </div>
