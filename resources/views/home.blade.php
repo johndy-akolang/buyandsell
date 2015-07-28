@@ -27,7 +27,7 @@
 
                             {{-- mange seller ads contente --}}
                             <div class="img-box-4-content">
-                                <a class="b-tooltip" href="#">
+                                <a class="" href="#">
                                     <i class="category-fa-icon fa fa-truck bg-red"></i>
                                 </a>
                                 <small>Vehicles</small>
@@ -64,7 +64,7 @@
 
                             {{-- mange seller ads contente --}}
                             <div class="img-box-4-content">
-                                <a class="b-tooltip" href="#">
+                                <a class="" href="#">
                                     <i class="category-fa-icon fa fa-lightbulb-o bg-green"></i>
                                 </a>
                                 <small>Electronics</small>
@@ -101,7 +101,7 @@
 
                             {{-- mange seller ads contente --}}
                             <div class="img-box-4-content">
-                                <a class="b-tooltip" href="#">
+                                <a class="" href="#">
                                     <i class="category-fa-icon fa fa-github bg-blue"></i>
                                 </a>
                                 <small>Pets</small>
@@ -138,7 +138,7 @@
 
                             {{-- mange seller ads contente --}}
                             <div class="img-box-4-content">
-                                <a class="b-tooltip" href="#">
+                                <a class="" href="#">
                                     <i class="category-fa-icon fa fa-lightbulb-o bg-green"></i>
                                 </a>
                                 <small>Electronic</small>
@@ -175,7 +175,7 @@
 
                             {{-- mange seller ads contente --}}
                             <div class="img-box-4-content">
-                                <a class="b-tooltip" href="#">
+                                <a class="" href="#">
                                     <i class="category-fa-icon fa fa-home bg-yellow"></i>
                                 </a>
                                 <small>Real Estate</small>
@@ -212,7 +212,7 @@
 
                             {{-- mange seller ads contente --}}
                             <div class="img-box-4-content">
-                                <a class="b-tooltip" href="#">
+                                <a class="" href="#">
                                     <i class="category-fa-icon fa fa-buysellads bg-orange"></i>
                                 </a>
                                 <small>Buy and Sell</small>
@@ -230,6 +230,191 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-xs-12 col-sm-12 col-md-12 info-dta">Posted on : November 1, 2015</div>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6 mb-15">
+                        <div class="img-box-4-item">
+
+                            {{-- image display --}}
+                            <div class="image-style-one">
+                                <a href="#">
+                                    <img class="img-reponsive" src="{{ asset('/images/kolph-motorcycle.png') }}" alt="">
+                                </a>
+                            </div>
+
+                            {{-- mange seller ads contente --}}
+                            <div class="img-box-4-content">
+                                <a class="" href="#">
+                                    <i class="category-fa-icon fa fa-motorcycle bg-dred"></i>
+                                </a>
+                                <small>Motorcycle</small>
+                                <h4 class="item-title" style="height: 29px;">
+                                    <a href="#">Scooter customized</a>
+                                </h4>
+                                <div class="bor bg-red"></div>
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-12 col-md-12 info-dta info-price">120,000.00</div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-12 col-md-12 info-dta">
+                                        <a class="c-307 mb-10" href="#">Caloocan City</a>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-12 col-md-12 info-dta">Posted on : December 15, 2015</div>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6 mb-15">
+                        <div class="img-box-4-item">
+
+                            {{-- image display --}}
+                            <div class="image-style-one">
+                                <a href="#">
+                                    <img class="img-reponsive" src="{{ asset('/images/kolph-fashion.png') }}" alt="">
+                                </a>
+                            </div>
+
+                            {{-- mange seller ads contente --}}
+                            <div class="img-box-4-content">
+                                <a class="" href="#">
+                                    <i class="category-fa-icon fa fa-diamond bg-pink"></i>
+                                </a>
+                                <small>Fashion</small>
+                                <h4 class="item-title" style="height: 29px;">
+                                    <a href="#">Fashion Dress</a>
+                                </h4>
+                                <div class="bor bg-red"></div>
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-12 col-md-12 info-dta info-price">8,000.00.00</div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-12 col-md-12 info-dta">
+                                        <a class="c-307 mb-10" href="#">Manila</a>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-12 col-md-12 info-dta">Posted on : December 30, 2015</div>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6 mb-15">
+                        <div class="img-box-4-item">
+
+                            {{-- image display --}}
+                            <div class="image-style-one">
+                                <a href="#">
+                                    <img class="img-reponsive" src="{{ asset('/images/kolph-sports.png') }}" alt="">
+                                </a>
+                            </div>
+
+                            {{-- mange seller ads contente --}}
+                            <div class="img-box-4-content">
+                                <a class="" href="#">
+                                    <i class="category-fa-icon fa fa-futbol-o bg-mint"></i>
+                                </a>
+                                <small>Sports</small>
+                                <h4 class="item-title" style="height: 29px;">
+                                    <a href="#">Under armour shoes</a>
+                                </h4>
+                                <div class="bor bg-red"></div>
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-12 col-md-12 info-dta info-price">8,000.00.00</div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-12 col-md-12 info-dta">
+                                        <a class="c-307 mb-10" href="#">Manila</a>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-12 col-md-12 info-dta">Posted on : December 30, 2015</div>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6 mb-15">
+                        <div class="img-box-4-item">
+
+                            {{-- image display --}}
+                            <div class="image-style-one">
+                                <a href="#">
+                                    <img class="img-reponsive" src="{{ asset('/images/kolph-toys.png') }}" alt="">
+                                </a>
+                            </div>
+
+                            {{-- mange seller ads contente --}}
+                            <div class="img-box-4-content">
+                                <a class="" href="#">
+                                    <i class="category-fa-icon fa fa-bug bg-violet"></i>
+                                </a>
+                                <small>Toys</small>
+                                <h4 class="item-title" style="height: 29px;">
+                                    <a href="#">Assorted toys</a>
+                                </h4>
+                                <div class="bor bg-red"></div>
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-12 col-md-12 info-dta info-price">1,000.00.00</div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-12 col-md-12 info-dta">
+                                        <a class="c-307 mb-10" href="#">Bulacan City</a>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-12 col-md-12 info-dta">Posted on : December 30, 2015</div>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6 mb-15">
+                        <div class="img-box-4-item">
+
+                            {{-- image display --}}
+                            <div class="image-style-one">
+                                <a href="#">
+                                    <img class="img-reponsive" src="{{ asset('/images/kolph-pets.png') }}" alt="">
+                                </a>
+                            </div>
+
+                            {{-- mange seller ads contente --}}
+                            <div class="img-box-4-content">
+                                <a class="" href="#">
+                                    <i class="category-fa-icon fa fa-github bg-blue"></i>
+                                </a>
+                                <small>Pets</small>
+                                <h4 class="item-title" style="height: 29px;">
+                                    <a href="#">Cute puppy</a>
+                                </h4>
+                                <div class="bor bg-red"></div>
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-12 col-md-12 info-dta info-price">11,000.00.00</div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-12 col-md-12 info-dta">
+                                        <a class="c-307 mb-10" href="#">Baguio City</a>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-12 col-md-12 info-dta">Posted on : December 30, 2015</div>
                                 </div>
                                 <div class="clearfix"></div>
                             </div>
@@ -300,201 +485,6 @@
                     </div> --}}
 
                     <div class="clear"></div>
-                </div>
-
-                <div class="top-box">
-
-                    <div class="col_1_of_3 span_1_of_3">
-                        <a href="#">
-                            <div class="inner_content clearfix">
-                                <div class="product_image">
-                                    <img alt="" src="{{ asset('/images/pic.jpg') }}">
-                                </div>
-                                <div class="price">
-                                    <div class="cart-left">
-                                        <p class="title">Lorem Ipsum simply</p>
-                                        <div class="price1">
-                                            <span class="actual">Php 12.00</span>
-                                        </div>
-                                    </div>
-                                    <span class="view-count"><i class="fa fa-eye"></i>97</span>
-                                    <div class="clear"></div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="col_1_of_3 span_1_of_3">
-                        <a href="#">
-                            <div class="inner_content clearfix">
-                                <div class="product_image">
-                                    <img alt="" src="{{ asset('/images/pic1.jpg') }}">
-                                </div>
-                                <div class="price">
-                                    <div class="cart-left">
-                                        <p class="title">Lorem Ipsum simply</p>
-                                        <div class="price1">
-                                            <span class="actual">Php 12.00</span>
-                                        </div>
-                                    </div>
-                                    <span class="view-count"><i class="fa fa-eye"></i>97</span>
-                                    <div class="clear"></div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="col_1_of_3 span_1_of_3">
-                        <a href="#">
-                            <div class="inner_content clearfix">
-                                <div class="product_image">
-                                    <img alt="" src="{{ asset('/images/pic2.jpg') }}">
-                                </div>
-                                <div class="price">
-                                    <div class="cart-left">
-                                        <p class="title">Lorem Ipsum simply</p>
-                                        <div class="price1">
-                                            <span class="actual">Php 12.00</span>
-                                        </div>
-                                    </div>
-                                    <span class="view-count"><i class="fa fa-eye"></i>97</span>
-                                    <div class="clear"></div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="clear"></div>
-                </div>
-
-                <div class="top-box1">
-
-                    <div class="col_1_of_3 span_1_of_3">
-                        <a href="#">
-                            <div class="inner_content clearfix">
-                                <div class="product_image">
-                                    <img alt="" src="{{ asset('/images/pic.jpg') }}">
-                                </div>
-                                <div class="price">
-                                    <div class="cart-left">
-                                        <p class="title">Lorem Ipsum simply</p>
-                                        <div class="price1">
-                                            <span class="actual">Php 12.00</span>
-                                        </div>
-                                    </div>
-                                    <span class="view-count"><i class="fa fa-eye"></i>97</span>
-                                    <div class="clear"></div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="col_1_of_3 span_1_of_3">
-                        <a href="#">
-                            <div class="inner_content clearfix">
-                                <div class="product_image">
-                                    <img alt="" src="{{ asset('/images/pic1.jpg') }}">
-                                </div>
-                                <div class="price">
-                                    <div class="cart-left">
-                                        <p class="title">Lorem Ipsum simply</p>
-                                        <div class="price1">
-                                            <span class="actual">Php 12.00</span>
-                                        </div>
-                                    </div>
-                                    <span class="view-count"><i class="fa fa-eye"></i>97</span>
-                                    <div class="clear"></div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="col_1_of_3 span_1_of_3">
-                        <a href="#">
-                            <div class="inner_content clearfix">
-                                <div class="product_image">
-                                    <img alt="" src="{{ asset('/images/pic2.jpg') }}">
-                                </div>
-                                <div class="price">
-                                    <div class="cart-left">
-                                        <p class="title">Lorem Ipsum simply</p>
-                                        <div class="price1">
-                                            <span class="actual">Php 12.00</span>
-                                        </div>
-                                    </div>
-                                    <span class="view-count"><i class="fa fa-eye"></i>97</span>
-                                    <div class="clear"></div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="clear"></div>
-
-                </div>
-
-                <div class="top-box1">
-
-                    <div class="col_1_of_3 span_1_of_3">
-                        <a href="#">
-                            <div class="inner_content clearfix">
-                                <div class="product_image">
-                                    <img alt="" src="{{ asset('/images/pic.jpg') }}">
-                                </div>
-                                <div class="price">
-                                    <div class="cart-left">
-                                        <p class="title">Lorem Ipsum simply</p>
-                                        <div class="price1">
-                                            <span class="actual">Php 12.00</span>
-                                        </div>
-                                    </div>
-                                    <span class="view-count"><i class="fa fa-eye"></i>97</span>
-                                    <div class="clear"></div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="col_1_of_3 span_1_of_3">
-                        <a href="#">
-                            <div class="inner_content clearfix">
-                                <div class="product_image">
-                                    <img alt="" src="{{ asset('/images/pic1.jpg') }}">
-                                </div>
-                                <div class="price">
-                                    <div class="cart-left">
-                                        <p class="title">Lorem Ipsum simply</p>
-                                        <div class="price1">
-                                            <span class="actual">Php 12.00</span>
-                                        </div>
-                                    </div>
-                                    <span class="view-count"><i class="fa fa-eye"></i>97</span>
-                                    <div class="clear"></div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="col_1_of_3 span_1_of_3">
-                        <a href="#">
-                            <div class="inner_content clearfix">
-                                <div class="product_image">
-                                    <img alt="" src="{{ asset('/images/pic2.jpg') }}">
-                                </div>
-                                <div class="price">
-                                    <div class="cart-left">
-                                        <p class="title">Lorem Ipsum simply</p>
-                                        <div class="price1">
-                                            <span class="actual">Php 12.00</span>
-                                        </div>
-                                    </div>
-                                    <span class="view-count"><i class="fa fa-eye"></i>97</span>
-                                    <div class="clear"></div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="clear"></div>
-
                 </div>
 
             </div>

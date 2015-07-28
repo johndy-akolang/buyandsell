@@ -1036,10 +1036,6 @@ input.inputbox, input.required, div.k2AccountPage input[type="text"] {
     margin-top: 30px;
     width: 100%;
 }
-
-
-
-
 /*
 #login-form label a{
 	text-decoration:underline;
@@ -2586,6 +2582,9 @@ form::after {
 .border1ccc {
     border: 1px solid #ccc;
 }
+.border-t {
+    border-top: 1px solid #e5e5e5;
+}
 .border-b {
     border-bottom: 1px solid #ccc;
 }
@@ -2749,7 +2748,7 @@ form::after {
     top: 15px;
 }
 .mbg {
-    display: inline-block;
+    /*display: inline-block;*/
 }
 .mbg-l {
     display: inline-block;
@@ -3255,7 +3254,7 @@ form::after {
 }
 .img-box-4 .img-box-4-item {
     margin: 10px auto;
-    max-width: 260px;
+    /*max-width: 260px;*/
 }
 .image-style-one {
     overflow: hidden;
@@ -3287,19 +3286,22 @@ form::after {
     display: inline-block;
     font-size: 15px;
     height: 40px;
-    /*left: 50%;*/
-    left: 5px;
+    /*left: 50%;
+    left: 5px;*/
     line-height: 40px;
-   /*margin-left: -20px;*/
-    position: absolute;
+   /*margin-left: -20px;
+    position: absolute;*/
     text-align: center;
-    /*top: -25px;*/
-    top: -42px;
+    /*top: -25px;
+    top: -42px;*/
     width: 40px;
     z-index: 2;
 }
 .bg-red {
     background-color: #ed5441 !important;
+}
+.bg-dred {
+    background-color: #c50000 !important;
 }
 .bg-green {
     background-color: /*#51d466*/ #4fc34f !important;
@@ -3307,11 +3309,23 @@ form::after {
 .bg-blue {
     background-color: #609cec !important;
 }
+.bg-mint {
+    background-color: #09c8cf !important;
+}
 .bg-yellow {
     background-color: #e1d408 !important;
 }
 .bg-orange {
     background-color: #ff7800 !important;
+}
+.bg-pink {
+    background-color: #ea00ff !important;
+}
+.bg-violet {
+    background-color: #6e069e !important;
+}
+.bg-brown {
+    background-color: #6f3b09 !important;
 }
 .b-tooltip {
     position: relative;
@@ -3397,9 +3411,17 @@ form::after {
     width: 52%;
 }
 
-
-
-
+/* payment method */
+.credit-card-cont, .paypal-cont {
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    height: 200px;
+    /*width: 100%;*/
+    padding: 10px;
+}
+.paypal-cont {
+    height: 50px;
+}
 
 
 

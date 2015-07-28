@@ -38,6 +38,9 @@
                                 <a class="mbg-id" href="#">markdonnie</a>
                             </span>
                         </div>
+                        <div class="mbg mt-10">
+                            <span>0 Credits</span>
+                        </div>
                     </div>
 
                     {{-- shorcut sell your item --}}

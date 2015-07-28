@@ -26,7 +26,7 @@
                     <ul class="user-cont-menu">
                         <li><a href="#" class="user-menu"><i class="fa fa-inbox"></i>Inbox</a></li>
                         <li><a href="/item/manageitem" class="user-menu"><i class="fa fa-suitcase"></i>Manage Ads</a></li>
-                        <li><a href="#" class="user-menu"><i class="fa fa-gear"></i>Account</a></li>
+                        <li><a href="/account/user" class="user-menu"><i class="fa fa-gear"></i>Account</a></li>
                     </ul>
                 </li>
                 |
