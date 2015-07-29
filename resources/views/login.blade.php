@@ -42,17 +42,25 @@
                     {{-- login form --}}
                     <div id="loginbox" class="loginbox">
 
-                        {!! Form::open(array('id' => 'login-form')) !!}
+                        {!! Form::open(array('url' => 'login', 'id' => 'login-form')) !!}
+
+                            @if(Session::has('error'))
+                            <div class="alert-box success">
+                                <h2>{{ Session::get('error') }}</h2>
+                            </div>
+                            @endif
 
                             <fieldset class="input">
 
                                 {{-- login username --}}
                                 <p id="login-form-username">
 
-                                    {!! Form::email('Email', '',
+                                    {!! Form::text('email', '',
                                         array('required',
                                                 'id' => 'modlgn_username', 'class' => 'form-control width100 mt-mb-15',
                                                 'placeholder' => 'Email')) !!}
+
+                                    <p class="errors">{{ $errors->first('email') }}</p>
 
                                 </p>
 
@@ -63,6 +71,8 @@
                                         array('required',
                                                 'id' => 'modlgn_password', 'class' => 'form-control width100 mt-mb-15',
                                                 'placeholder' => 'Password')) !!}
+
+                                    <p class="errors">{{ $errors->first('password') }}</p>
 
                                 </p>
 

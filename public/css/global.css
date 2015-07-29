@@ -3422,7 +3422,9 @@ form::after {
 .paypal-cont {
     height: 50px;
 }
-
+.errors {
+    color: #ff0000 !important;
+}
 
 
 

@@ -13,7 +13,20 @@
 
 Route::get('about', 'AboutController@index');
 
-Route::get('login', 'LoginController@login');
+// route to show the login form
+Route::get('login', array('uses' => 'LoginController@showLogin'));
+// route to process the form
+Route::post('login', array('uses' => 'LoginController@doLogin'));
+// route to logout
+Route::get('logout', array('uses' => 'LoginController@doLogout'));
+
+/*Route::get('login', function() {
+    return View::make('login');
+});
+Route::post('login', 'LoginController@login');
+Route::get('logout', array('uses' => 'LoginController@logout'));*/
+
+
 Route::get('loginsuccess', 'LoginController@loginsuccess');
 
 Route::get('register', 'RegisterController@register');

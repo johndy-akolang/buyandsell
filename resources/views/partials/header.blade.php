@@ -31,7 +31,7 @@
                 </li>
                 |
                 <li>
-                    <a href="/login">
+                    <a href="{{ URL::to('logout') }}">
                         <i class="fa fa-sign-out"></i>
                         Logout
                     </a>
