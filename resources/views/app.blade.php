@@ -10,6 +10,7 @@
     {{-- title --}}
     <title>@yield('title')</title>
 
+    {{-- css --}}
     @include('partials.css')
 
     {{-- fonts --}}
