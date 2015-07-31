@@ -2,10 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\AuthTraits\RedirectsUsers;
+use App\User;
+use Validator;
+use View;
+
 
 class RegisterController extends Controller
 {
@@ -14,72 +20,74 @@ class RegisterController extends Controller
      *
      * @return Response
      */
+
+    use RedirectsUsers;
+
+    protected $redirectTo = '/';
+
+    public function __construct()
+    {
+        $this->middleware('guest', ['except' => 'getLogout']);
+    }
+
+
     public function register()
     {
-        return view('register');
+        return View::make('register');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return Response
-     */
-    public function create()
+    public function postRegister(Request $request)
     {
-        //
+        $data = $request->all();
+        //User::find($data['first_name']);
+
+        //dd($data);
+
+        return User::create([
+            'firstname' => $data['first_name'],
+            'lastname'  => $data['last_name'],
+            'mobile'    => $data['mobile'],
+            'email'     => $data['email'],
+            'password'  => bcrypt($data['password']),
+            /*'cpassword' => bcrypt($data['cpassword'])*/
+        ]);
+
     }
 
-    /**
-     * Store a newly created resource in storage.
+    /*
+     * Get a validator for an incoming registration request.
      *
-     * @return Response
+     * @param array $data
+     * @return \Illuminate\Contracts\Validation\Validator
      */
-    public function store()
+
+    protected function validator(array $data)
     {
-        //
+        return Validator::make($data, [
+            'firstname' => 'required|max:255',
+            'lastname'  => 'required|max:255',
+            'mobile'    => 'required|max:255',
+            'email'     => 'required|email|max:255|unique:users',
+            'password'  => 'required|confirmed|min:6',
+            /*'cpassword'  => 'required|confirmed|min:6',*/
+        ]);
     }
 
-    /**
-     * Display the specified resource.
+    /*
+     * Create a new user instance after a valid registration.
      *
-     * @param  int  $id
-     * @return Response
+     *
+     * @param array $data
+     * @return User
+     *
      */
-    public function show($id)
+
+    protected function create(Request $request)
     {
-        //
+
+
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function edit($id)
-    {
-        //
-    }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function update($id)
-    {
-        //
-    }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
 }

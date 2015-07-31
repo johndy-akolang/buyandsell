@@ -44,10 +44,17 @@
 
                         {!! Form::open(array('url' => 'login', 'id' => 'login-form')) !!}
 
-                            @if(Session::has('error'))
-                            <div class="alert-box success">
-                                <h2>{{ Session::get('error') }}</h2>
-                            </div>
+                            @if (count($errors) > 0)
+                                <div class="alert alert-danger">
+                                    <strong>whoops!</strong> There were some problems with your input.<br><br/>
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+
+                                        @endforeach
+                                    </ul>
+
+                                </div>
                             @endif
 
                             <fieldset class="input">
@@ -73,6 +80,15 @@
                                                 'placeholder' => 'Password')) !!}
 
                                     <p class="errors">{{ $errors->first('password') }}</p>
+
+                                </p>
+
+                                {{-- login checkbox remember --}}
+                                <p id="login-form-password">
+
+                                    {!! Form::checkbox('checkbox', '',
+                                        array('name' => 'remember')) !!}
+                                    Remember me
 
                                 </p>
 

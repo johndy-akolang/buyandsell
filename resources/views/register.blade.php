@@ -44,38 +44,66 @@
         <div class="wrap">
 
             {{-- resgiter title --}}
-            <h4 class="title">Creat an Account</h4>
+            <h4 class="title">Create an Account</h4>
 
-            {{-- register form --}}
-            {!! Form::open() !!}
+                @if (count($errors) > 0)
+                    <div class="alert alert-danger">
+                        <strong>whoops!</strong> There were some problems with your input.<br><br/>
+                        <ul>
+                            @foreach ($errors->all() as $error)
 
-                <div class="col_1_of_2 span_1_of_2 ml-0">
+                                <li>{{ $error }}</li>
+
+                            @endforeach
+                        </ul>
+
+                    </div>
+                @endif
+
+
+
+
+            <div class="col_1_of_2 span_1_of_2 ml-0">
+
+                {{-- register form --}}
+                {!! Form::open(array('url' => 'register')) !!}
+                {{--<form role="form" method="POST" action="register">
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">--}}
 
                     {{-- form name --}}
                     <div>
-                        {!! Form::text('First Name', '',
+                        {!! Form::text('firstname', '',
                             array('required',
-                                    'id' => 'fname', 'name' => 'fname',
+                                    'id' => 'firstname', 'name' => 'firstname',
                                     'class' => 'form-control c-999 mt-mb-15',
                                     'placeholder' => 'First Name')) !!}
+
+                        {{--<input type="text" class="form-control c-999 mt-mb-15" name="first_name" value="{{ old('first_name') }}">--}}
+
                     </div>
 
                     {{-- form name --}}
                     <div>
-                        {!! Form::text('Last Name', '',
+                        {!! Form::text('lastname', '',
                             array('required',
-                                    'id' => 'lname', 'name' => 'lname',
+                                    'id' => 'lastname', 'name' => 'lastname',
                                     'class' => 'form-control c-999 mt-mb-15',
                                     'placeholder' => 'Last Name')) !!}
+
+                        {{--<input type="text" class="form-control c-999 mt-mb-15" name="last_name" value="{{ old('last_name') }}">--}}
+
                     </div>
 
                     {{-- form company name --}}
                     <div>
-                        {!! Form::text('Mobile', '',
+                        {!! Form::text('mobile', '',
                             array('required',
                                     'id' => 'mobile', 'name' => 'mobile',
                                     'class' => 'form-control c-999 mt-mb-15',
                                     'placeholder' => 'Mobile Number')) !!}
+
+                        {{--<input type="text" class="form-control c-999 mt-mb-15" name="mobile" value="{{ old('mobile') }}">--}}
+
                     </div>
 
                     {{-- form email --}}
@@ -85,6 +113,9 @@
                                 'id' => 'email', 'name' => 'email',
                                 'class' => 'form-control mt-mb-15',
                                 'placeholder' => 'Email')) !!}
+
+                        {{--<input type="email" class="form-control mt-mb-15" name="email" value="{{ old('email') }}">--}}
+
                     </div>
 
                     {{-- form password --}}
@@ -94,44 +125,52 @@
                                 'id' => 'password', 'name' => 'password',
                                 'class' => 'form-control mt-mb-15',
                                 'placeholder' => 'Password')) !!}
+
+                        {{--<input type="password" class="form-control mt-mb-15" name="password">--}}
+
                     </div>
 
                     {{-- form cpassword --}}
                     <div>
-                        {!! Form::password('cpassword',
+                        {!! Form::password('password_confirmation',
                             array('required',
-                                'id' => 'cpassword', 'name' => 'cpassword',
+                                'id' => 'password_confirmation', 'name' => 'password_confirmation',
                                 'class' => 'form-control mt-mb-15',
                                 'placeholder' => 'Confirm Password')) !!}
+
+                        {{--<input type="password" class="form-control mt-mb-15" name="password_confirmation">--}}
+
                     </div>
 
                     {{-- create account button --}}
                     <div class="clear floatLeft mt-10">
 
-                        {!! Form::button('Create Account',
+                        {!! Form::submit('Create Account',
                             array('class' => 'grey btn')) !!}
+
+                        {{--<input type="submit" class="grey btn">--}}
 
                         <p class="terms">By clicking 'Create Account' you agree to the <a href="#">Terms &amp; Conditions</a></p>
 
                     </div>
 
-                </div>
+                {{--</form>--}}
+                {!! Form::close() !!}
 
 
+            </div>
 
-                <div class="col_1_of_2 span_1_of_2">
-                    <div class="sd-rcc" style="width: 350px; margin-top: 59.5px;">
-                        <div class="sd-rts">
-                            Already have an account?
-                        </div>
-
-                        {!! Form::submit('Sign in',
-                            array('class' => 'btn button input-blue width100px', 'name' => 'signin')) !!}
-
+            <div class="col_1_of_2 span_1_of_2">
+                <div class="sd-rcc" style="width: 350px; margin-top: 59.5px;">
+                    <div class="sd-rts">
+                        Already have an account?
                     </div>
-                </div>
 
-            {!! Form::close() !!}
+                    {!! Form::submit('Sign in',
+                        array('class' => 'btn button input-blue width100px', 'name' => 'signin')) !!}
+
+                </div>
+            </div>
 
         </div>
     </div>

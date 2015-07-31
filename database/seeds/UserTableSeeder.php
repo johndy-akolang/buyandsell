@@ -9,13 +9,13 @@ class UserTableSeeder extends Seeder
     {
         DB::table('users')->delete();
 
-        User::create(array(
+        /*User::create(array(
             'first_name'  =>  'Mark',
             'last_name'  =>  'Infantado',
             'mobile'  =>  '0987654321',
             'email'  =>  'infantado.markdonnie@gmail.com',
             'password'  =>  Hash::make('admin123'),
-            'cpassword' => Hash::make('admin123')
-        ));
+            'password_confirmation' => Hash::make('admin123')
+        ));*/
     }
 }

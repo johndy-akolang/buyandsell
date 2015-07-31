@@ -14,22 +14,26 @@
 Route::get('about', 'AboutController@index');
 
 // route to show the login form
-Route::get('login', array('uses' => 'LoginController@showLogin'));
+Route::get('login', 'LoginController@showLogin');
 // route to process the form
-Route::post('login', array('uses' => 'LoginController@doLogin'));
+Route::post('login', 'LoginController@doLogin');
 // route to logout
 Route::get('logout', array('uses' => 'LoginController@doLogout'));
 
-/*Route::get('login', function() {
-    return View::make('login');
-});
-Route::post('login', 'LoginController@login');
-Route::get('logout', array('uses' => 'LoginController@logout'));*/
-
-
+// if login success this template
 Route::get('loginsuccess', 'LoginController@loginsuccess');
 
 Route::get('register', 'RegisterController@register');
+Route::post('register', 'RegisterController@postRegister');
+
+Route::controllers([
+    'auth' => 'Auth\AuthController',
+    'password' => 'Auth\PasswordController',
+]);
+
+
+
+
 
 Route::get('account/user', 'AccountController@user');
 

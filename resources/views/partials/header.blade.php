@@ -21,7 +21,7 @@
                 <li>
                     <a class="clicker" >
                         <i class="fa fa-user"></i>
-                        mark donnie
+                        {{--{{ Auth::user() ->first_name }}--}}
                     </a>
                     <ul class="user-cont-menu">
                         <li><a href="#" class="user-menu"><i class="fa fa-inbox"></i>Inbox</a></li>

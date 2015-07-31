@@ -18,7 +18,7 @@
                     <h1 class="customh1">
                         <div class="sm-co sm-su">
                             <i class="gspr icsu"></i>
-                            <p> Welcome to kol.ph, Mark!</p>
+                            <p> Welcome to kol.ph, {{ Auth::user() ->first_name }}</p>
                         </div>
                     </h1>
 
@@ -30,7 +30,7 @@
 
                     <div class="pdt20">
                         You'll be able to sign in to eBay with
-                        <b>infantado.markdonnie@gmail.com</b>
+                        <b>{{ Auth::user() ->email }}</b>
                     </div>
 
                     <ul class="infc">
