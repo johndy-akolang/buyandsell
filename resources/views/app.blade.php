@@ -11,48 +11,11 @@
     {{-- title --}}
     <title>@yield('title')</title>
 
-    {{-- font awesome --}}
-    <link href="{{ asset('/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
-
-    {{-- extended css --}}
-    <link href="{{ asset('/css/default.css') }}" rel="stylesheet">
-    <link href="{{ asset('/css/nivo-slider.css') }}" rel="stylesheet">
-    <link href="{{ asset('/css/etalage.css') }}" rel="stylesheet">
-
-    {{-- dropzone css --}}
-    <link href="{{ asset('/css/dropzone.css') }}" rel="stylesheet">
-
-    {{-- css style --}}
-    <link href="{{ asset('/css/global.css') }}" rel="stylesheet">
-    <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
+    {{-- css --}}
+    @include('partials.css')
 
     {{-- fonts --}}
     <link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
-
-    {{-- angular --}}
-    {{--<script src="{{ asset('/node_modules/angular/angular.min.js') }}" type="text/javascript"></script>
-    <script src="{{ asset('/node_modules/angular/angular-animate.min.js') }}" type="text/javascript"></script>
-    <script src="{{ asset('/node_modules/angular/angular-route.min.js') }}" type="text/javascript"></script>
-    <script src="{{ asset('/node_modules/angular/ui-comments-0.1.3-SNAPSHOT.js') }}" type="text/javascript"></script>
-    <script src="{{ asset('/node_modules/angular/typehead.js') }}" type="text/javascript"></script>
-    <script src="{{ asset('/node_modules/angular/commenter.js') }}" type="text/javascript"></script>--}}
-
-    {{-- javascript vendor --}}
-    <script src="{{ asset('/js/vendor/jquery.min.js') }}" type="text/javascript"></script>
-    <script src="{{ asset('/js/vendor/bootstrap.min.js') }}" type="text/javascript"></script>
-    <script src="{{ asset('/js/vendor/jquery.nivo.slider.js') }}" type="text/javascript"></script>
-    <script src="{{ asset('/js/vendor/jquery.etalage.min.js') }}" type="text/javascript"></script>
-    <script src="{{ asset('/js/vendor/modernizr.custom.js') }}" type="text/javascript"></script>
-    <script src="{{ asset('/js/vendor/cbpHorizontalMenu.min.js') }}" type="text/javascript"></script>
-    <script src="{{ asset('/js/vendor/jquery.pageparser-0.1.2.min.js') }}" type="text/javascript"></script>
-
-    {{-- dropzone upload image --}}
-    <script src="{{ asset('/js/vendor/dropzone.js') }}" type="text/javascript"></script>
-
-    {{-- javascript --}}
-    <script src="{{ asset('/js/global.js') }}" type="text/javascript"></script>
-
-
 </head>
 <body class="ng-scope" data-ng-controller="DemoCtrl">
 
@@ -96,6 +59,8 @@
     {{-- footer --}}
     @include('partials.footer')
 
+    {{-- js --}}
+    @include('partials.javascript')
 </body>
 </html>
 
