@@ -40,12 +40,10 @@ class RegisterController extends Controller
     {
         $data = $request->all();
         //User::find($data['first_name']);
-
-        //dd($data);
-
+        
         return User::create([
-            'firstname' => $data['first_name'],
-            'lastname'  => $data['last_name'],
+            'first_name' => $data['firstname'],
+            'last_name'  => $data['lastname'],
             'mobile'    => $data['mobile'],
             'email'     => $data['email'],
             'password'  => bcrypt($data['password']),
