@@ -40,7 +40,7 @@ class RegisterController extends Controller
     {
         $data = $request->all();
         //User::find($data['first_name']);
-        
+
         return User::create([
             'first_name' => $data['firstname'],
             'last_name'  => $data['lastname'],
@@ -67,7 +67,7 @@ class RegisterController extends Controller
             'mobile'    => 'required|max:255',
             'email'     => 'required|email|max:255|unique:users',
             'password'  => 'required|confirmed|min:6',
-            /*'cpassword'  => 'required|confirmed|min:6',*/
+            'password_confirmation'  => 'required|confirmed|min:6',
         ]);
     }
 
