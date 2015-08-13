@@ -27,7 +27,7 @@ class RegisterController extends Controller
 
     public function __construct()
     {
-        $this->middleware('guest', ['except' => 'getLogout']);
+        $this->middleware('guest', ['except' => 'logout']);
     }
 
 
@@ -38,18 +38,11 @@ class RegisterController extends Controller
 
     public function postRegister(Request $request)
     {
-        $data = $request->all();
-        //User::find($data['first_name']);
+        $validator = $request->all();
 
-        return User::create([
-            'first_name' => $data['firstname'],
-            'last_name'  => $data['lastname'],
-            'mobile'    => $data['mobile'],
-            'email'     => $data['email'],
-            'password'  => bcrypt($data['password']),
-            /*'cpassword' => bcrypt($data['cpassword'])*/
-        ]);
+        Auth::login($this->create($request->all()));
 
+        return redirect($this->redirectPath());
     }
 
     /*
@@ -80,9 +73,16 @@ class RegisterController extends Controller
      *
      */
 
-    protected function create(Request $request)
+    protected function create(array $data)
     {
 
+        return User::create([
+            'first_name'    =>  $data['firstname'],
+            'last_name'     =>  $data['lastname'],
+            'mobile'        =>  $data['mobile'],
+            'email'         =>  $data['email'],
+            'password'      =>  bcrypt($data['password']),
+        ]);
 
     }
 

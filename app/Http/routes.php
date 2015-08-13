@@ -18,7 +18,7 @@ Route::get('login', 'LoginController@showLogin');
 // route to process the form
 Route::post('login', 'LoginController@doLogin');
 // route to logout
-Route::get('logout', array('uses' => 'LoginController@doLogout'));
+Route::get('logout', 'LoginController@doLogout');
 
 // if login success this template
 Route::get('loginsuccess', 'LoginController@loginsuccess');
@@ -27,7 +27,7 @@ Route::get('register', 'RegisterController@register');
 Route::post('register', 'RegisterController@postRegister');
 
 Route::controllers([
-    'auth' => 'Auth\AuthController',
+    //'auth' => 'Auth\AuthController',
     'password' => 'Auth\PasswordController',
 ]);
 

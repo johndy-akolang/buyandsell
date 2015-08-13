@@ -5,37 +5,41 @@
         {{-- list menu  top header --}}
         <div class="cssmenu">
             <ul class="no-js">
-                {{--<li>
-                    <a href="/login">
-                        <i class="fa fa-sign-in"></i>
-                        Sign in
-                    </a>
-                </li>
-                |
-                <li>
-                    <a href="/register">
-                        <i class="fa fa-file-o"></i>
-                        Sign up
-                    </a>
-                </li>--}}
-                <li>
-                    <a class="clicker" >
-                        <i class="fa fa-user"></i>
-                        {{--{{ Auth::user() ->first_name }}--}}
-                    </a>
-                    <ul class="user-cont-menu">
-                        <li><a href="#" class="user-menu"><i class="fa fa-inbox"></i>Inbox</a></li>
-                        <li><a href="/item/manageitem" class="user-menu"><i class="fa fa-suitcase"></i>Manage Ads</a></li>
-                        <li><a href="/account/user" class="user-menu"><i class="fa fa-gear"></i>Account</a></li>
-                    </ul>
-                </li>
-                |
-                <li>
-                    <a href="{{ URL::to('logout') }}">
-                        <i class="fa fa-sign-out"></i>
-                        Logout
-                    </a>
-                </li>
+                @if (Auth::user())
+                    <li>
+                        <a class="clicker" >
+                            <i class="fa fa-user"></i>
+                            {{ Auth::user() ->first_name }}
+                        </a>
+                        <ul class="user-cont-menu">
+                            <li><a href="#" class="user-menu"><i class="fa fa-inbox"></i>Inbox</a></li>
+                            <li><a href="/item/manageitem" class="user-menu"><i class="fa fa-suitcase"></i>Manage Ads</a></li>
+                            <li><a href="/account/user" class="user-menu"><i class="fa fa-gear"></i>Account</a></li>
+                            <li><a href="#" class="user-menu"><i class="fa fa-money"></i>1000 Credits</a></li>
+                        </ul>
+                    </li>
+                    |
+                    <li>
+                        <a href="{{ action('LoginController@doLogout') }}">
+                            <i class="fa fa-sign-out"></i>
+                            Logout
+                        </a>
+                    </li>
+                @else
+                    <li>
+                        <a href="/login">
+                            <i class="fa fa-sign-in"></i>
+                            Sign in
+                        </a>
+                    </li>
+                    |
+                    <li>
+                        <a href="/register">
+                            <i class="fa fa-file-o"></i>
+                            Sign up
+                        </a>
+                    </li>
+                @endif
             </ul>
         </div>
 

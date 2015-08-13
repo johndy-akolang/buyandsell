@@ -30,7 +30,8 @@ class LoginController extends Controller
 
     public function __construct()
     {
-        $this->middleware('guest', ['except' => 'logout']);
+        /*$this->middleware('guest', ['except' => 'logout']);*/
+        
     }
 
     /**
@@ -80,6 +81,11 @@ class LoginController extends Controller
      * @return string
      */
 
+    public function getCredentials(Request $request)
+    {
+        return $request->only('email', 'password');
+    }
+
     protected function getFailedLoginMessage()
     {
         return 'These credentials do not match our records.';
@@ -96,8 +102,12 @@ class LoginController extends Controller
     {
         Auth::logout(); // logout user
 
+        return Redirect::to('/')->with('message', 'Your are now logged out!');
+        /*Session::flush();
+
         return redirect(property_exists($this, 'redirectAfterLogout') ?
-        $this->redirectAfterLogout : '/');
+        $this->redirectAfterLogout : '/');*/
+
     }
 
     /*
