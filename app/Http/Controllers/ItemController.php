@@ -29,10 +29,14 @@ class ItemController extends Controller
 
     public function sellitem()
     {
+        // display city select dropdown for item
 
         $city = \DB::table('city')->lists('citylist', 'id');
+        $province = \DB::table('province')->lists('provincelist', 'id');
+        $condition = \DB::table('condition')->lists('conditionitem', 'id');
 
-        return view('item.sellitem')->with('city', $city);
+        return view('item.sellitem')->with('city', $city)->with('province', $province)->with('condition', $condition);
+
     }
 
     public function manageitem()

@@ -65,11 +65,10 @@
                         {{-- title form input --}}
                         <div class="title-cont-input floatLeft">
 
-                            <select id="select-condition" class="form-control">
-                                <option> - Select - </option>
-                                <option>Brand new</option>
-                                <option>2nd Hand(Used)</option>
-                            </select>
+                            {!! Form::select('condition',
+                                (['0' => 'Select'] + $condition),
+                                null,
+                                ['class' => 'form-control']) !!}
 
                         </div>
 
@@ -197,11 +196,15 @@
                         {{-- title form input --}}
                         <div class="title-cont-input floatLeft">
 
-                            <select id="select-province" class="form-control">
+                            {{--<select id="select-province" class="form-control">
                                 <option>Metro Manila</option>
                                 <option>Abra</option>
                                 <option>Agusan de Norte</option>
-                            </select>
+                            </select>--}}
+                            {!! Form::select('province',
+                                (['0' => 'Select'] + $province),
+                                null,
+                                ['class' => 'form-control']) !!}
 
                         </div>
 
