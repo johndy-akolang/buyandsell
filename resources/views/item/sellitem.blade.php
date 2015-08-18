@@ -222,11 +222,10 @@
                         {{-- title form input --}}
                         <div class="title-cont-input floatLeft">
 
-                            <select id="select-city" class="form-control">
-                                <option>Caloocan</option>
-                                <option>Las piñas</option>
-                                <option>Makati</option>
-                            </select>
+                            {!! Form::select('city',
+                                (['0' => 'Select'] + $city),
+                                null,
+                                ['class' => 'form-control']) !!}
 
                         </div>
 

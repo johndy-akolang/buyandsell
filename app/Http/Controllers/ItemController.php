@@ -29,9 +29,10 @@ class ItemController extends Controller
 
     public function sellitem()
     {
-        $cities = City::all();
 
-        return view('item.sellitem');
+        $city = \DB::table('city')->lists('citylist', 'id');
+
+        return view('item.sellitem')->with('city', $city);
     }
 
     public function manageitem()
@@ -51,7 +52,7 @@ class ItemController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
