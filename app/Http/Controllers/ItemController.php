@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
+use App\City;
+
 
 class ItemController extends Controller
 {
@@ -26,6 +29,8 @@ class ItemController extends Controller
 
     public function sellitem()
     {
+        $cities = City::all();
+
         return view('item.sellitem');
     }
 
