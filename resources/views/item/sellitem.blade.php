@@ -90,46 +90,10 @@
                         <div class="title-cont-input floatLeft">
 
                             {{-- select category --}}
-                            <div id="ss" class="wrapper-dropdown floatLeft" tabindex="1">Select
-                                <ul class="dropdown-select-category">
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-car"></i>
-                                            Vehicles
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-motorcycle"></i>
-                                            Motorcycle
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-diamond"></i>
-                                            Fashion
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-flash"></i>
-                                            Electronics
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-futbol-o"></i>
-                                            Sports
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-bug"></i>
-                                            Toys
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
+                            {!! Form::select('category',
+                                (['0' => 'Select'] + $category),
+                                null,
+                                ['class' => 'form-control']) !!}
 
                         </div>
                     </fieldset>

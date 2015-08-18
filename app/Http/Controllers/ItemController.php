@@ -34,8 +34,9 @@ class ItemController extends Controller
         $city = \DB::table('city')->lists('citylist', 'id');
         $province = \DB::table('province')->lists('provincelist', 'id');
         $condition = \DB::table('condition')->lists('conditionitem', 'id');
+        $category = \DB::table('category')->lists('categorylist', 'id');
 
-        return view('item.sellitem')->with('city', $city)->with('province', $province)->with('condition', $condition);
+        return view('item.sellitem')->with('city', $city)->with('province', $province)->with('condition', $condition)->with('category', $category);
 
     }
 
