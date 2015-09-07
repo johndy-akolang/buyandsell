@@ -15,8 +15,63 @@
             <div class="cont span_2_of_3">
                 <div class="manage-item-list">
                     <div class="img-box-4 text-center clearfix">
+					
+						<!-- sample view list -->
+                        @forelse ($items as $item)
+						<div class="col-md-4 col-sm-6 mb-15">
+							<div class="img-box-4-item">
 
-                        <div class="col-md-4 col-sm-6 mb-15">
+								{{-- image display --}}
+								<div class="image-style-one">
+									<a href="#">
+										<img class="img-reponsive" src="{{ asset($item->images) }}" alt="">
+									</a>
+								</div>
+
+								{{-- mange seller ads contente --}}
+								<div class="img-box-4-content">
+									<a class="b-tooltip" href="#">
+										<i class="category-fa-icon fa fa-truck bg-red"></i>
+									</a>
+									<small>{{ $item->category }}</small>
+									<h4 class="item-title" style="height: 29px;">
+										<a href="#">{{ $item->title }}</a>
+									</h4>
+									<div class="bor bg-red"></div>
+									<div class="row">
+										<div class="col-xs-12 col-sm-12 col-md-12 info-dta info-price">{{ $item->price }}</div>
+									</div>
+									<div class="row">
+										<div class="col-xs-12 col-sm-12 col-md-12 info-dta">
+											<a class="c-307 mb-10" href="#">{{ $item->city }}</a>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-xs-12 col-sm-12 col-md-12 info-dta">Posted on : {{ $item->created_at }}</div>
+									</div>
+									<div class="row">
+										<div class="col-xs-12 col-sm-12 col-md-12 info-dta pad-top-bottom-10">
+											<a class="c-307 mb-10 cursor" data-toggle="modal" data-target="#myModal">Update</a>
+											<a class="c-307 mb-10 ml-10" href="#">Mark sold</a>
+											<a class="c-307 mb-10 ml-10 cursor" data-toggle="modal" data-target="#repost-tem">Re-post</a>
+										</div>
+									</div>
+									<div class="row">
+										<button class="btn input-blue c-fff" type="submit" data-toggle="modal" data-target="#boostads">Boost Ads</button>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+
+							</div>
+						</div>
+                        @empty
+                            <p>No Ads</p>
+                        @endforelse
+						<!-- end sample -->
+					
+					
+					
+                        <!-- <div class="col-md-4 col-sm-6 mb-15">
                             <div class="img-box-4-item">
 
                                 {{-- image display --}}
@@ -202,7 +257,7 @@
                                 </div>
 
                             </div>
-                        </div>
+                        </div> -->
 
 
                     </div>
@@ -257,13 +312,13 @@
                 <div class="clear"></div>
             </div>
 
-            {{-- modal view update item template --}}
-            @include('item.updateitem')
+            <!-- modal view edit item template -->
+            @include('item.edit');
 
-            {{-- modal view repost item template --}}
+            <!-- modal view repost item template --> 
             @include('item.repostitem')
 
-            {{-- modal view boost ads template --}}
+            <!-- modal view boost ads template -->
             @include('item.boostads')
 
         </div>

@@ -145,7 +145,7 @@
 
             {{-- button for post your ads here --}}
             {!! Form::submit('Sell your ads here',
-                    array('class' => 'button input-blue width251', 'name' => 'postyourads', 'class' => 'btn input-blue')) !!}
+                    array('class' => 'button input-blue width251', 'name' => 'postyourads', 'class' => 'btn input-blue', 'id' => 'sellads')) !!}
 
 
         </div>

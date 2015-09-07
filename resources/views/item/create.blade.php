@@ -10,10 +10,32 @@
     <div class="main">
 
         <div class="wrap">
+			<!-- @if(isset($success))
+				<div class="alet alert-success">{{ $success }}</div>
+			@endif -->
+            @if(Session::has('message'))
+                <div class="alert alert-success">
+                    {{ Session::get('message') }}
+                </div>
+            @endif
+
+            <!-- @if (count($errors) > 0)
+
+                <div class="alert alert-danger">
+                    <strong>Whoops! </strong>
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+
+            @endif -->
+		
             <div class="cont sell-item-cont bor-rad5 border1ccc pad10">
 
                 {{-- form sell item --}}
-                {!! Form::open() !!}
+                {!! Form::open(['url' => 'item', 'method' => 'POST', 'files' => 'true']) !!}
 
                     {{-- sell item title --}}
                     <div class="sellitem-title">
@@ -34,7 +56,7 @@
                         {{-- title form input --}}
                         <div class="title-cont-input floatLeft">
 
-                            {!! Form::text('Title', '',
+                            {!! Form::text('title', '',
                                 array('required',
                                     'id' => 'title', 'name' => 'title',
                                     'class' => 'form-control')) !!}
@@ -45,6 +67,29 @@
                                     characters left
                                 </small>
                             </p>
+
+                        </div>
+
+                    </fieldset>
+
+                    <fieldset class="clearfix mt-15 mb-15">
+
+                        {{-- price form label --}}
+                        <div class="sellitem-title-cont floatLeft">
+                            <div class="sellitem-label floatLeft talignright">
+                                <label>Price
+                                    <span class="cff0">*</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        {{-- price form input --}}
+                        <div class="title-cont-input floatLeft">
+
+                            {!! Form::text('price', '',
+                                array('required',
+                                    'id' => 'price', 'name' => 'price',
+                                    'class' => 'form-control width200px')) !!}
 
                         </div>
 
@@ -113,7 +158,7 @@
                         {{-- text area description --}}
                         <div class="title-cont-input floatLeft">
 
-                            {!! Form::textarea('Description', '',
+                            {!! Form::textarea('description', '',
                                 array('required',
                                     'id' => 'description-item',
                                     'class' => 'form-control')) !!}
@@ -137,11 +182,13 @@
                                 <label>Upload photos</label>
                             </div>
                         </div>
+						
+						{!! Form::file('images', null) !!}
+                        <!-- <div id="dropzone" class="dropzone" action="/images/uploads">
 
-                        <div id="dropzone" class="dropzone" action="/upload-target">
 
-
-                        </div>
+                        </div> -->
+						<!-- {!! Form::file('images', array('class' => 'dropzone')) !!} -->
 
                     </fieldset>
 
@@ -213,9 +260,9 @@
                         {{-- title form input --}}
                         <div class="title-cont-input floatLeft">
 
-                            {!! Form::text('number', '',
+                            {!! Form::text('mobile', null,
                                 array('required',
-                                    'id' => 'mobile-number', 'name' => 'mobile-number',
+                                    'id' => 'mobile', 'name' => 'mobile',
                                     'class' => 'form-control mb-15')) !!}
 
                         </div>
@@ -228,7 +275,9 @@
                         <div class="btn_form floatLeft">
 
                             {{-- submit button for ads --}}
-                            <input class="btn button input-blue floatRight c-fff" type="submit" value="Submit Ads" name="submitads">
+                            <!-- <input class="btn button input-blue floatRight c-fff" type="submit" value="Submit Ads" name="submitads"> -->
+
+                            {!! Form::submit('Submit Ads', array('class' => 'btn button input-blue floatRight c-fff')) !!}
 
                         </div>
 

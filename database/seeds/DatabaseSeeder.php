@@ -20,5 +20,6 @@ class DatabaseSeeder extends Seeder
         $this->call('ConditionTableSeeder');
         $this->call('CityTableSeeder');
         $this->call('ProvinceTableSeeder');
+		//$this->call('ItemTableSeeder');
     }
 }

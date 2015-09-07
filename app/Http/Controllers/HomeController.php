@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
+use App\Item;
+use Validator;
+
 
 class HomeController extends Controller
 {
@@ -16,7 +20,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $items = Item::paginate(10);
+        return view('home')->with('items', $items);
+
     }
 
     /**

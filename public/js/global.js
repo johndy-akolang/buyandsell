@@ -105,6 +105,11 @@ $(document).ready(function() {
         $(window.location).attr('href', '/message/viewmessage');
     });
 
+    /* click sellads button */
+    $('#sellads').click(function() {
+        $(window.location).attr('href', '/item/create');
+    });
+
     /* click reply */
     $("#email-opened-reply").on('click', function() {
         $("#reply-area").slideDown("slow");

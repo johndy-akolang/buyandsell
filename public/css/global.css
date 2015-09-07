@@ -1961,7 +1961,7 @@ ul.seller li{
     display: block;
     float: left;
     /*height: 300px;*/
-    margin:-1% 0 1% 2.6%;
+    /*margin:-1% 0 1% 2.6%;*/
 }
 .btn_form{
     padding:4% 0;
@@ -2355,6 +2355,9 @@ ul.delivery-list li a:hover{
 .ml-0 {
     margin-left: 0 !important;
 }
+.wdth20per {
+    width: 20.2% !important;
+}
 .input-blue {
     background: #3075c0 !important;
 }
@@ -2425,6 +2428,9 @@ form::after {
 }
 .width251 {
     width: 251px;
+}
+.width200px {
+    width: 200px !important;
 }
 #gh-shop {
     margin: 0 7px 0 5px;
