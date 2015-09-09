@@ -26,10 +26,10 @@ Route::get('loginsuccess', 'LoginController@loginsuccess');
 Route::get('register', 'RegisterController@register');
 Route::post('register', 'RegisterController@postRegister');
 
-Route::controllers([
+/*Route::controllers([
     //'auth' => 'Auth\AuthController',
     'password' => 'Auth\PasswordController',
-]);
+]);*/
 
 Route::get('account/user', 'AccountController@user');
 

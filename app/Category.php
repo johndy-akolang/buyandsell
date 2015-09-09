@@ -13,4 +13,10 @@ class Category extends Model
         'categorylist'
     ];
 
+
+    /*public function ite()
+    {
+    	return $this->hasMany('App\Item');
+    }*/
+
 }

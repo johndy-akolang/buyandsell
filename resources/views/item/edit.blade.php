@@ -7,15 +7,14 @@
                 <h4 class="modal-title" id="myModalLabel">Update your item</h4>
             </div>
 
-            {!! Form::open() !!}
+            {!! Form::model($item, ['url' => '/item/'.$item->id, 'method' => 'PUT', 'files' => true]) !!}
 
                 <div class="modal-body">
 
                     <label>What are you selling?</label>
 
-                    {!! Form::text('updateitem', '',
-                        array('required',
-                            'class' => 'form-control')) !!}
+                    {!! Form::text('title', '',
+                        array('class' => 'form-control')) !!}
 
                 </div>
 
@@ -51,9 +50,18 @@
 
                     <label>Description</label>
 
-                    {!! Form::textarea('updatedescription', '',
-                        array('required',
-                            'class' => 'form-control')) !!}
+                    {!! Form::textarea('description', '',
+                        array('class' => 'form-control')) !!}
+
+                </div>
+
+                <div class="modal-body">
+
+                    <label class="mr-15">Photos</label>
+
+                    <img src="{{ asset($item->images) }}" height="150">
+
+                    {!! Form::file('images', null) !!}
 
                 </div>
 
@@ -85,9 +93,8 @@
 
                     <label>Mobile number</label>
 
-                    {!! Form::text('updatenumber', '',
-                        array('required',
-                            'class' => 'form-control')) !!}
+                    {!! Form::text('mobile', '',
+                        array('class' => 'form-control')) !!}
 
                 </div>
 

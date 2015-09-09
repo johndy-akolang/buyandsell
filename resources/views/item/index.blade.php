@@ -11,13 +11,19 @@
 
         <div class="wrap">
 
+            @if(Session::has('message'))
+                <div class="alert alert-success">
+                    {{ Session::get('message') }}
+                </div>
+            @endif
+
             {{-- left side manage list item --}}
             <div class="cont span_2_of_3">
                 <div class="manage-item-list">
                     <div class="img-box-4 text-center clearfix">
 					
 						<!-- sample view list -->
-                        @forelse ($items as $item)
+                        @foreach ($items as $item)
 						<div class="col-md-4 col-sm-6 mb-15">
 							<div class="img-box-4-item">
 
@@ -64,9 +70,7 @@
 
 							</div>
 						</div>
-                        @empty
-                            <p>No Ads</p>
-                        @endforelse
+                        @endforeach
 						<!-- end sample -->
 					
 					
@@ -266,54 +270,56 @@
 
             {{-- right side featured ads --}}
             {{-- featured ads --}}
-            <div class="rsingle span_1_of_single mt-rsingle-25 ">
-                <h5 class="m_1">Featured Ads</h5>
+            <div class="span_1_of_3 floatRight wdth20per">
+                <div class="rsingle mt-rsingle-25 ">
+                    <h5 class="m_1">Featured Ads</h5>
 
-                <ul class="list-unstyled floatLeft">
-                    <li class="col-xs-12 col-sm-6 col-md-12 col-lg-12">
-                        <a href="#">
-                            <img class="img-reponsive img-thumbnail" alt="black Ferrari" src="http://whiz.dbcinfotech.net/uploads/thumbs/ferrari.jpg">
-                        </a>
-                        <h4>
-                            <a hef="#">Black Ferrari</a>
-                        </h4>
-                        <div class="price">
-                            <strong>Price : 80,000.00</strong>
-                        </div>
-                        <div class="clearfix"></div>
-                    </li>
-                    <li class="col-xs-12 col-sm-6 col-md-12 col-lg-12">
-                        <a href="#">
-                            <img class="img-reponsive img-thumbnail" alt="Home Theatre" src="http://whiz.dbcinfotech.net/uploads/thumbs/led_tv.jpg">
-                        </a>
-                        <h4>
-                            <a hef="#">Home Theatre</a>
-                        </h4>
-                        <div class="price">
-                            <strong>Price : 3,000.00</strong>
-                        </div>
-                        <div class="clearfix"></div>
-                    </li>
-                    <li class="col-xs-12 col-sm-6 col-md-12 col-lg-12">
-                        <a href="#">
-                            <img class="img-responsive img-thumbnail" alt="Puppy" src="http://whiz.dbcinfotech.net/uploads/thumbs/dog.jpg">
-                        </a>
-                        <h4>
-                            <a hef="#">Puppy</a>
-                        </h4>
-                        <div class="price">
-                            <strong>Price : 200.00</strong>
-                        </div>
-                        <div class="clearfix"></div>
-                    </li>
+                    <ul class="list-unstyled floatLeft">
+                        <li class="col-xs-12 col-sm-6 col-md-12 col-lg-12">
+                            <a href="#">
+                                <img class="img-reponsive img-thumbnail" alt="black Ferrari" src="http://whiz.dbcinfotech.net/uploads/thumbs/ferrari.jpg">
+                            </a>
+                            <h4>
+                                <a hef="#">Black Ferrari</a>
+                            </h4>
+                            <div class="price">
+                                <strong>Price : 80,000.00</strong>
+                            </div>
+                            <div class="clearfix"></div>
+                        </li>
+                        <li class="col-xs-12 col-sm-6 col-md-12 col-lg-12">
+                            <a href="#">
+                                <img class="img-reponsive img-thumbnail" alt="Home Theatre" src="http://whiz.dbcinfotech.net/uploads/thumbs/led_tv.jpg">
+                            </a>
+                            <h4>
+                                <a hef="#">Home Theatre</a>
+                            </h4>
+                            <div class="price">
+                                <strong>Price : 3,000.00</strong>
+                            </div>
+                            <div class="clearfix"></div>
+                        </li>
+                        <li class="col-xs-12 col-sm-6 col-md-12 col-lg-12">
+                            <a href="#">
+                                <img class="img-responsive img-thumbnail" alt="Puppy" src="http://whiz.dbcinfotech.net/uploads/thumbs/dog.jpg">
+                            </a>
+                            <h4>
+                                <a hef="#">Puppy</a>
+                            </h4>
+                            <div class="price">
+                                <strong>Price : 200.00</strong>
+                            </div>
+                            <div class="clearfix"></div>
+                        </li>
 
-                </ul>
+                    </ul>
 
-                <div class="clear"></div>
-            </div>
+                    <div class="clear"></div>
+                </div>
+            </div>    
 
             <!-- modal view edit item template -->
-            @include('item.edit');
+            @include('item.edit')
 
             <!-- modal view repost item template --> 
             @include('item.repostitem')

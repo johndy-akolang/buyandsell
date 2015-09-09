@@ -207,11 +207,6 @@
                         {{-- title form input --}}
                         <div class="title-cont-input floatLeft">
 
-                            {{--<select id="select-province" class="form-control">
-                                <option>Metro Manila</option>
-                                <option>Abra</option>
-                                <option>Agusan de Norte</option>
-                            </select>--}}
                             {!! Form::select('province',
                                 (['0' => 'Select'] + $province),
                                 null,

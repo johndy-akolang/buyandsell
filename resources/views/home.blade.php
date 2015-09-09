@@ -9,6 +9,12 @@
 <div class="main clearfix">
     <div class="wrap">
 
+        @if(Session::has('message'))
+            <div class="alert alert-success">
+                {{ Session::get('message') }}
+            </div>
+        @endif
+        
         <div class="section group clearfix">
 
             {{-- item display list left --}}
