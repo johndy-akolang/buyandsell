@@ -14,7 +14,10 @@ class CreateItemTable extends Migration
     {
         Schema::create('item', function (Blueprint $table) {
             $table->increments('id');
-           // $table->integer('user_id');
+            $table -> integer('guest_id') -> unsigned() -> default(0);
+            $table->foreign('guest_id')
+                    ->references('id')->on('users')
+                    ->onDelete('cascade');        
 			$table->string('title');
 			$table->string('price');
 			$table->string('condition');
@@ -24,6 +27,8 @@ class CreateItemTable extends Migration
 			$table->string('province');
 			$table->string('city');
 			$table->string('mobile');
+            $table->string('slug')->unique();
+            $table->boolean('active');
             $table->timestamps();
         });
     }

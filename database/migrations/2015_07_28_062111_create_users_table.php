@@ -18,8 +18,9 @@ class CreateUsersTable extends Migration
             $table->string('last_name');
             $table->string('mobile');
             $table->string('email');
-            $table->string('password');
+            $table->string('password', 60);
             $table->string('remember_token', 100)->nullable();
+            $table->enum('role',['guest', 'seller'])->default('guest');
             $table->timestamps();
         });
     }

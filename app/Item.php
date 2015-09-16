@@ -22,16 +22,18 @@ class Item extends Model
 		'mobile'
 		
 	];
-	
-	/*public function user()
-	{
-		return $this->belongsTo('App\User');
-	}
 
-	public function category()
+
+	public function comments()
 	{
-		return $this->belongsTo('App\Category');
-	}*/
+		return $this->hasMany('App\Comments', 'on_post');
+	}
+	
+	// returns  the instance of the user who is author of that post
+	public function user()
+	{
+		return $this->belongsTo('App\User', 'guest_id');
+	}
 
 
 }

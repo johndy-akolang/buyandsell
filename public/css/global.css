@@ -512,6 +512,12 @@ p.title {
 p.title a:hover{
     color:#7DB122;
 }
+.price1 {
+    margin-top: 14px;
+}
+.top-box {
+    margin-bottom: 2%;
+}
 /*.cart-right {
     float: right;
     background: url('/images/cart2.png')2px 0px #3db13d;
@@ -532,9 +538,6 @@ p.title a:hover{
     height: 40px;
     text-align: center;
 }*/
-.price1 {
-    margin-top: 14px;
-}
 /*span.actual{
     *//*color: #4fc34f;*//*
     color: #3075c0;
@@ -578,9 +581,6 @@ span.reducedfrom {
     text-transform:uppercase;
     border-bottom: 2px solid #6B9C15;
 }*/
-.top-box {
-    margin-bottom: 2%;
-}
 /*.top-box1 {
     margin-bottom: 4%;
 }
@@ -601,7 +601,7 @@ span.reducedfrom {
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     padding: 15px;
-    margin-bottom: 25%;
+    margin-bottom: 15%;
 }
 .btn {
     position: relative;
@@ -2236,6 +2236,7 @@ ul.delivery-list li a:hover{
 }
 .mt-rsingle-25 {
     margin-top: 25px;
+    /*margin-left: 35px;*/
 }
 .sd-rcc {
     margin-left: auto;
@@ -2263,16 +2264,6 @@ ul.delivery-list li a:hover{
     padding: 8px 10px;
     width: 100%;
 }
-/*input[type="submit"] {
-    background: #b7b7b7 none repeat scroll 0 0;
-    border: medium none;
-    border-radius: 5px;
-    color: #fff;
-    cursor: pointer;
-    font-size: 1em;
-    outline: medium none;
-    padding: 10px 20px;
-}*/
 .views-item {
     color: #555;
     font-size: 1.8em;
@@ -2309,7 +2300,6 @@ ul.delivery-list li a:hover{
     text-align: center;
     width: 35px;
 }
-
 .floatLeft {
     float: left;
 }
@@ -2330,6 +2320,12 @@ ul.delivery-list li a:hover{
 }
 .mr-5 {
     margin-right: 5px;
+}
+.mr-10 {
+    margin-right: 10px;
+}
+.mr-15 {
+    margin-right: 15px;
 }
 .mb-5 {
     margin-bottom: 5px;
@@ -3240,17 +3236,20 @@ form::after {
     margin: 20px 0;
 }
 .img-box-4 .img-box-4-item {
-    margin: 10px auto;
+    margin: 10px auto 0;
     /*max-width: 260px;*/
 }
 .image-style-one {
+    height: 226px;
     overflow: hidden;
     position: relative;
+    width: 295px;
     z-index: 1;
 }
 .image-style-one img {
     border-radius: 3px;
     transition: all 2s ease 0s;
+    background-position: center;
 }
 .img-responsive, .thumbnail > img {
     display: block;

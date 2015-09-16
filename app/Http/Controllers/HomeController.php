@@ -20,8 +20,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $items = Item::paginate(10);
-        return view('home')->with('items', $items);
+        /*$items = Item::paginate(10);
+        return view('home')->with('items', $items);*/
+
+        //new controller
+        $items = Item::where('active', 1)->orderBy('created_at', 'desc')->paginate(10);
+
+        return view('home')->withItems($items);
 
     }
 

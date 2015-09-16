@@ -11,6 +11,8 @@
 |
 */
 
+Route::get('account/{id}', 'AccountController@user')->where('id', '[0-9]+');
+
 Route::get('about', 'AboutController@index');
 
 // route to show the login form
@@ -33,19 +35,7 @@ Route::post('register', 'RegisterController@postRegister');
 
 Route::get('account/user', 'AccountController@user');
 
-
-
-
-/*Route::get('item/view', 'ItemController@view');
-Route::get('item/sellitem', 'ItemController@sellitem');
-Route::get('item/manageitem', 'ItemController@manageitem');
-Route::get('item/updateitem', 'ItemController@updateitem');
-*/
-/*Route::get('item/create', 'ItemController@create');
-Route::get('item/create', 'ItemController@store');*/
-//Route::get('/', function(){return redirect('/item'); });
-
-Route::resource('item', 'ItemController');
+/*Route::resource('item', 'ItemController');*/
 
 
 
@@ -59,6 +49,11 @@ Route::get('legal/privacy', 'LegalController@privacy');
 
 Route::get('/', 'HomeController@index');
 
-/*Route::get('/', function () {
-    return view('welcome');
-});*/
+Route::group(['middleware' => ['auth']], function() 
+{
+	Route::resource('item', 'ItemController');
+
+	Route::get('account/index', 'AccountController@index');
+
+});
+

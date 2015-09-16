@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-//use App\Http\Requests\ItemRequest;
+use App\Http\Requests\ItemRequest;
 use App\Http\Controllers\Controller;
 //use Illuminate\Support\Facades\DB;
 use App\Item;
@@ -14,6 +14,7 @@ use App\City;
 use App\Category;
 use App\Condition;
 use App\Province;
+use App\User;
 
 
 class ItemController extends Controller
@@ -32,29 +33,43 @@ class ItemController extends Controller
 
     }
 
-    public function create()
+    public function create(Request $request)
     {
+        //if user can post i.e. user is seller or guest
+        if ($request->user()->can_post())
+        {
+            $city = \DB::table('city')->lists('citylist', 'id');
+            $province = \DB::table('province')->lists('provincelist', 'id');
+            $condition = \DB::table('condition')->lists('conditionitem', 'id');
+            $category = \DB::table('category')->lists('categorylist', 'id');
+
+            return view('item.create')->with('city', $city)->with('province', $province)->with('condition', $condition)->with('category', $category);
+
+        } else {
+
+            return redirect('item.create')->withErrors('restricted');
+        }
+
 
         // display city select dropdown for item
-        $city = \DB::table('city')->lists('citylist', 'id');
+        /*$city = \DB::table('city')->lists('citylist', 'id');
         $province = \DB::table('province')->lists('provincelist', 'id');
         $condition = \DB::table('condition')->lists('conditionitem', 'id');
         $category = \DB::table('category')->lists('categorylist', 'id');
 
-        return view('item.create')->with('city', $city)->with('province', $province)->with('condition', $condition)->with('category', $category);
+        return view('item.create')->with('city', $city)->with('province', $province)->with('condition', $condition)->with('category', $category);*/
 		
     }
 
 
-    public function store(Request $request)
+    public function store(ItemRequest $request)
     {
 
         
 
-        $validation = Validator::make($request->all(), [
+        /*$validation = Validator::make($request->all(), [
 
             'title'     =>  'required',
-            //'user_id'   =>  'required',
             'price'     =>  'required',
             'condition' =>  'required',
             'category' =>  'required',
@@ -69,7 +84,7 @@ class ItemController extends Controller
         if ( $validation->fails() ) {
             return redirect()->back()->withInput()
                             ->with('errors', $validation->errors());
-        }
+        }*/
 
         $item = new Item;
 
@@ -87,9 +102,25 @@ class ItemController extends Controller
         $item->province = $request->input('province');
         $item->city = $request->input('city');
         $item->mobile = $request->input('mobile');
+        $item->slug = str_slug($item->title);
+        $item->guest_id = $request->user()->id;
+
+        if ($request->has('save'))
+        {
+
+            $item->active = 0;
+            $message = 'Post Saved Succesfully';
+
+        } else {
+
+            $item->active = 1;
+            $message = 'Your ads published successfully';
+
+        }
+
         $item->save();
 
-        return redirect('item')->with('message', 'You just upload an image');
+        return redirect('item')->withMessage($message);
         
     }
 
@@ -168,5 +199,21 @@ class ItemController extends Controller
         return redirect('item.manage');*/
 
     }
+
+    public function search(Request $request)
+    {
+
+        //Get the query string from our form submission
+        $query = Request::input('search');
+
+        // Returns an array of articles that have the query string located someqhere within
+        // our articles titles. Paginates them so we can break up lots of search results.
+        $items = DB::table('item')->where('title', 'LIKE', '%' . $query . '%')->paginate(10);
+
+        // returns a view and passes the view the list of items and the original query.
+        return view('search.result', compact('items', 'query'));
+
+    }
+
     
 }

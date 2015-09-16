@@ -120,17 +120,15 @@
             {{-- form search --}}
             <div class="search">
 
-                {!! Form::open() !!}
+                {!! Form::open(array('url' => 'item', 'method' => 'POST')) !!}
 
                     {{-- input search --}}
-                    {!! Form::text('s', '',
-                        array('class' => 'textbox form-control', 'value' => 'Search',
-                              'onblur' => 'if (this.value == \'\') {this.value = \' Search \';}',
-                              'onfocus' => 'this.value = \'\' ')) !!}
+                    {!! Form::text('search', null,
+                        array('class' => 'textbox form-control')) !!}
 
                     {{-- search submit --}}
-                    {!! Form::submit('submit',
-                                     array('id' => 'submit', 'name' => 'submit')) !!}
+                    {!! Form::submit('Search',
+                                     array('name' => 'submit')) !!}
 
                     <div id="response"></div>
 

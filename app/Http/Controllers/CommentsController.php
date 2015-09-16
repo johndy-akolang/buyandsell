@@ -6,10 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\User;
-use App\Item;
 
-class AccountController extends Controller
+class CommentsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -20,41 +18,6 @@ class AccountController extends Controller
     {
         //
     }
-
-    public function user()
-    {
-        return view('account.user');
-    }
-
-    /**
-     * Display active item of particular user.
-     *
-     * @param int $id
-     * @return view
-     */
-    public function user_post($id)
-    {
-        //
-        $item = Item::where('author_id', $id)->where('active', 1)->orderBy('created_at', 'desc')->paginate(10);
-        $title = Users::find($id)->first_name;
-        return view('home')->withItem($item)->withTitle($title);
-    }
-
-    /**
-     * Display all of the active item of particular user.
-     *
-     * @param Request $request
-     * @return view
-     */
-    public function user_posts_all(Request $Request)
-    {
-        //
-        $user = $Request->user();
-        $item = Item::where('author_id', $id)->where('active', 1)->orderBy('created_at', 'desc')->paginate(10);
-        $title = $user->first_name;
-        return view('home')->withItem($item)->withTitle($title);
-    }
-
 
     /**
      * Show the form for creating a new resource.
@@ -69,11 +32,19 @@ class AccountController extends Controller
     /**
      * Store a newly created resource in storage.
      *
+     * @param  Request  $request
      * @return Response
      */
-    public function store()
+    public function store(Request $request)
     {
-        //
+        //on_post, from_user, body
+        $input['from_user'] = $request->user()->id;
+        $input['on_post'] = $request->input('on_post');
+        $input['body'] = $request->input('body');
+        $slug = $request->input('slug');
+        Comments::create($input);
+
+        return redirect($slug)->with('message', 'Comment Published');
     }
 
     /**
@@ -101,10 +72,11 @@ class AccountController extends Controller
     /**
      * Update the specified resource in storage.
      *
+     * @param  Request  $request
      * @param  int  $id
      * @return Response
      */
-    public function update($id)
+    public function update(Request $request, $id)
     {
         //
     }

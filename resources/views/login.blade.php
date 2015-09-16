@@ -18,6 +18,7 @@
     <link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
 
     {{-- javascript --}}
+    <script src="{{ asset('/js/vendor/jquery.min.js') }}" type="text/javascript"></script>
     <script src="{{ asset('/js/global.js') }}" type="text/javascript"></script>
 
 </head>
@@ -125,7 +126,9 @@
                     </div>
 
                     {{-- sign up button --}}
-                    <input class="button btn input-blue width100px" type="submit" value="Sign up" name="signup">
+                    <!-- <input id="signup" class="button btn input-blue width100px" type="submit" value="Sign up" name="signup"> -->
+                    {!! Form::submit('Sign Up',
+                            array('class' => 'button input-blue width251', 'name' => 'signup', 'class' => 'button btn input-blue width100px', 'id' => 'signup')) !!}
                 </div>
             </div>
             <div class="clear"></div>
