@@ -36,7 +36,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     // user has many item
     public function item()
     {
-        return $this->hasMany('App\Item');
+        return $this->hasMany('App\Item', 'guest_id');
     }
 
     // user has may comments

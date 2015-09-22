@@ -30,7 +30,7 @@ class Item extends Model
 	}
 	
 	// returns  the instance of the user who is author of that post
-	public function user()
+	public function guest()
 	{
 		return $this->belongsTo('App\User', 'guest_id');
 	}

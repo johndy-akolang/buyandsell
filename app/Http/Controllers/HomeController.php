@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 use App\Item;
 use Validator;
+use App\User;
 
 
 class HomeController extends Controller
@@ -24,6 +25,9 @@ class HomeController extends Controller
         return view('home')->with('items', $items);*/
 
         //new controller
+        /*$items = Item::where('slug',$slug)->first();*/
+        /*$datas = User::all();*/
+
         $items = Item::where('active', 1)->orderBy('created_at', 'desc')->paginate(10);
 
         return view('home')->withItems($items);

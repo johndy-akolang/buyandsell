@@ -1766,10 +1766,10 @@ ul.breadcrumb{
     color: #999 !important;
 }
 ul.breadcrumb a{
-    color:#3075c0;
+    color: #3075c0;
 }
 ul.breadcrumb a:hover{
-    color:#000;
+    color: #000;
 }
 .desc1 {
     display: block;
@@ -1779,20 +1779,22 @@ ul.breadcrumb a:hover{
     width: 51.3333%;
 }
 h3.m_3{
-    color:#555;
-    font-size:1.2em;
-    margin-bottom:10px;
+    color: #555;
+    /*font-size:1.2em;*/
+    font-size:2.2em;
+    margin-bottom: 10px;
+    margin-top: 0;
 }
 p.m_5{
-    font-size:1.8em;
-    color:#555;
+    font-size: 1.8em;
+    color: #555;
 }
 p.m_5 a{
-    color:#777;
-    font-size:15px;
+    color: #777;
+    font-size: 15px;
 }
 p.m_5 a:hover{
-    color:#000;
+    color: #000;
 }
 p.m_text{
     color: #777;
@@ -1801,7 +1803,7 @@ p.m_text{
 }
 /*--thumbs--*/
 .clients{
-    padding-top:6%;
+    padding-top: 6%;
 }
 #jquery-script-menu {
     position: fixed;

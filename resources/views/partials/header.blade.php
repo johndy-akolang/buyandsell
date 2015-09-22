@@ -9,12 +9,12 @@
                     <li>
                         <a class="clicker" >
                             <i class="fa fa-user"></i>
-                            {{ Auth::user() ->first_name }}
+                            {{ Auth::user()->first_name }}
                         </a>
                         <ul class="user-cont-menu">
                             <li><a href="#" class="user-menu"><i class="fa fa-inbox"></i>Inbox</a></li>
-                            <li><a href="/item/manageitem" class="user-menu"><i class="fa fa-suitcase"></i>Manage Ads</a></li>
-                            <li><a href="/account/user" class="user-menu"><i class="fa fa-gear"></i>Account</a></li>
+                            <li><a href="/item/" class="user-menu"><i class="fa fa-suitcase"></i>Manage Ads</a></li>
+                            <li><a href="{{ url('/user/'.Auth::id()) }}" class="user-menu"><i class="fa fa-gear"></i>Account</a></li>
                             <li><a href="#" class="user-menu"><i class="fa fa-money"></i>1000 Credits</a></li>
                         </ul>
                     </li>

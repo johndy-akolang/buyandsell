@@ -1,7 +1,7 @@
 @extends('app')
 
 @section('title')
-    My account
+    My Account
 @stop
 
 @section('content')
@@ -35,12 +35,23 @@
                         <div class="mbg">
                             <span class="mbg-1">
                                 <i class="fa fa-info-circle"></i>
-                                <a class="mbg-id" href="#">markdonnie</a>
+                                <a class="mbg-id" href="#">{{ Auth::user()->first_name }}</a>
                             </span>
                         </div>
                         <div class="mbg mt-10">
                             <span>0 Credits</span>
                         </div>
+
+
+                        <div class="mbg mt-10">
+                            <span>Total Classified ads item</span>
+                            <span>{{ $posts_count }}</span>
+                            @if ($posts_active_count)
+                                <a href="{{ url('/user/'.$user->id.'/posts') }}">Show all</a>
+                            @endif
+                        </div>
+
+
                     </div>
 
                     {{-- shorcut sell your item --}}
@@ -70,7 +81,7 @@
                         </div>
 
                         <div class="profile-account-user floatLeft">
-                            <span id="name" class="datainfo">Mark Infantado</span>
+                            <span id="name" class="datainfo">{{ Auth::user()->first_name }} {{ Auth::user()->last_name }}</span>
                         </div>
                         <a href="#" class="editlink floatRight edit-a"><i class="fa fa-edit"></i>Edit info</a>
                         {{--<a class="savebtn">Save</a>--}}
@@ -83,7 +94,7 @@
                         </div>
 
                         <div class="profile-account-user floatLeft">
-                            <span id="email" class="datainfo">markinfantado@yahoo.com</span>
+                            <span id="email" class="datainfo">{{ Auth::user()->email }}</span>
                         </div>
                         <a href="#" class="editlink floatRight edit-a"><i class="fa fa-edit"></i>Edit info</a>
                         {{--<a class="savebtn">Save</a>--}}
@@ -109,7 +120,7 @@
                         </div>
 
                         <div class="profile-account-user floatLeft">
-                            <span id="mobile" class="datainfo">0987456321</span>
+                            <span id="mobile" class="datainfo">{{ Auth::user()->mobile }}</span>
                         </div>
                         <a href="#" class="editlink floatRight edit-a"><i class="fa fa-edit"></i>Edit info</a>
                         {{--<a class="savebtn">Save</a>--}}
@@ -161,7 +172,7 @@
                         </div>
 
                         <div class="profile-account-user floatLeft">
-                            <span id="registered" class="datainfo">July 15, 2015</span>
+                            <span id="registered" class="datainfo">{{ Auth::user()->created_at }}</span>
                         </div>
                         <a href="#" class="editlink floatRight edit-a"><i class="fa fa-edit"></i>Edit info</a>
                         {{--<a class="savebtn">Save</a>--}}

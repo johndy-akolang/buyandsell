@@ -33,8 +33,6 @@ Route::post('register', 'RegisterController@postRegister');
     'password' => 'Auth\PasswordController',
 ]);*/
 
-Route::get('account/user', 'AccountController@user');
-
 /*Route::resource('item', 'ItemController');*/
 
 
@@ -47,13 +45,29 @@ Route::get('legal/terms', 'LegalController@terms');
 Route::get('legal/privacy', 'LegalController@privacy');
 
 
-Route::get('/', 'HomeController@index');
+Route::get('/', ['as' => 'home', 'uses' => 'HomeController@index']);
+Route::get('item', ['as' => 'home', 'uses' => 'ItemController@index']);
 
 Route::group(['middleware' => ['auth']], function() 
 {
-	Route::resource('item', 'ItemController');
+	/*Route::resource('item', 'ItemController');*/
+	Route::get('item', 'ItemController@index');
 
-	Route::get('account/index', 'AccountController@index');
+	// show form create item user
+	Route::get('item/create', 'ItemController@create');
+
+	// save new item
+	Route::post('item/create', 'ItemController@store');
+
+	Route::get('myallitems', 'AccountController@user_posts_all');
+
+	// add comment
+	Route::post('comment/add', 'CommentsController@store');
 
 });
 
+// item display single post
+Route::get('item/{slug}',['as' => 'items', 'uses' => 'ItemController@show'])->where('slug', '[A-Za-z0-9-_]+');
+
+// user profile
+Route::get('user/{id}', 'AccountController@profile')->where('id', '[0-9]');

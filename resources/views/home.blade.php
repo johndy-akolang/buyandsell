@@ -22,13 +22,13 @@
 
                 <div class="top-box img-box-4 text-center">
 					
-					@forelse ($items as $item)
+					@foreach ($items as $item)
 						<div class="col-md-4 col-sm-6 mb-15">
 							<div class="img-box-4-item">
 
 								{{-- image display --}}
 								<div class="image-style-one">
-									<a href="{{ url('item/'.$item->id.'') }}">
+									<a href="{{ url('item/'.$item->slug) }}">
 										<img class="img-reponsive" src="{{ asset($item->images) }}" alt="">
 									</a>
 								</div>
@@ -44,7 +44,7 @@
 									</h4>
 									<div class="bor bg-red"></div>
 									<div class="row">
-										<div class="col-xs-12 col-sm-12 col-md-12 info-dta info-price">{{ $item->price }}</div>
+										<div class="col-xs-12 col-sm-12 col-md-12 info-dta info-price">Php {{ $item->price }}</div>
 									</div>
 									<div class="row">
 										<div class="col-xs-12 col-sm-12 col-md-12 info-dta">
@@ -59,10 +59,7 @@
 
 							</div>
 						</div>
-                    @empty
-                        <p>No Ads</p>
-					@endforelse
-					
+                    @endforeach
 					
                     <!-- <div class="col-md-4 col-sm-6 mb-15">
                         <div class="img-box-4-item">

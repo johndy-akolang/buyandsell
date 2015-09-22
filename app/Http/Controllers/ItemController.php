@@ -15,6 +15,7 @@ use App\Category;
 use App\Condition;
 use App\Province;
 use App\User;
+use Redirect;
 
 
 class ItemController extends Controller
@@ -28,11 +29,17 @@ class ItemController extends Controller
     public function index()
     {
 
-        $items = Item::paginate(10);
-        return view('item.index')->with('items', $items);
+        $items = Item::where('active', 1)->orderBy('created_at', 'desc')->paginate(10);
+        return view('item.index')->withItems($items);
 
     }
 
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return Response
+     */
     public function create(Request $request)
     {
         //if user can post i.e. user is seller or guest
@@ -49,42 +56,17 @@ class ItemController extends Controller
 
             return redirect('item.create')->withErrors('restricted');
         }
-
-
-        // display city select dropdown for item
-        /*$city = \DB::table('city')->lists('citylist', 'id');
-        $province = \DB::table('province')->lists('provincelist', 'id');
-        $condition = \DB::table('condition')->lists('conditionitem', 'id');
-        $category = \DB::table('category')->lists('categorylist', 'id');
-
-        return view('item.create')->with('city', $city)->with('province', $province)->with('condition', $condition)->with('category', $category);*/
 		
     }
 
 
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @return Response
+     */
     public function store(ItemRequest $request)
     {
-
-        
-
-        /*$validation = Validator::make($request->all(), [
-
-            'title'     =>  'required',
-            'price'     =>  'required',
-            'condition' =>  'required',
-            'category' =>  'required',
-            'description' => 'required',
-            'images'    =>  'required|mimes:jpeg,jpg,png|max:1000',
-            'province'  =>  'required',
-            'city'      =>  'required',
-            'mobile'    =>  'required|numeric',
-
-        ]);
-
-        if ( $validation->fails() ) {
-            return redirect()->back()->withInput()
-                            ->with('errors', $validation->errors());
-        }*/
 
         $item = new Item;
 
@@ -124,20 +106,52 @@ class ItemController extends Controller
         
     }
 
-    public function show($id)
+
+    /*
+    *  Display the specified resource.
+    *
+    * @param int $id
+    * @return Response
+    */
+    public function show($slug)
     {
 
-        $item = Item::find($id);
-        return view('item.show')->with('item', $item);
+        /*$item = Item::find($id);
+        return view('item.show')->with('item', $item);*/
+
+        $items = Item::where('slug', $slug)->first();
+
+        if ($items) 
+        {
+
+            if ($items->active == false)
+                return redirect('/')->withErrors('requested page not found');
+            $comments = $items->comments;
+        
+        } else {
+
+            return redirect('/')->withErrors('requested page not found');
+
+        }
+
+        return view('item.show')->withItems($items)->withComments($comments);
+
+        //var_dump($items->slug());
 
     }
 
 
-    public function edit($id)
+    public function edit($id/*Request $request, $slug*/)
     {
 
         $item = Item::find($id);
         return view('item.edit')->with('item', $item);
+
+        /*$items = Item::where('slug', $slug)->first();
+
+        if ($items && ($request->user()-id == $items->guest_id || $request->user()->is_seller()) )
+            return view('item.edit')->with('items', $items);
+        return redirect('/')->withErrors('You have not sufficient permissions');*/
 
     }
 

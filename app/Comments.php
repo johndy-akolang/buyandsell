@@ -11,7 +11,7 @@ class Comments extends Model
 	protected $guarded = [];
 
 	//user who has commented
-	public function user()
+	public function guest()
 	{
 		return $this->belongsTo('App\User', 'from_user');
 	}
