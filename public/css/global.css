@@ -88,6 +88,9 @@ body{
     float:left;
     width: 76%;
 }
+.header-bottom-left .logo-koll {
+    margin-top: 3px;
+}
 .header-bottom-right {
     float: right;
     width: 20%;
