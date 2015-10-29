@@ -18,27 +18,28 @@
     <link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
 </head>
 <body>
+
+    {{-- header --}}
+    @include('partials.header')
+
     @if (Session::has('message'))
-    <div class="flash alert-info">
+    <div class="flash alert-info positioning">
         <p class="panel-body">
             {{ Session::get('message') }}
         </p>
     </div>
     @endif
     @if ($errors->any())
-    <div class='flash alert-danger'>
+    <div class='flash alert-danger positioning'>
         <ul class="panel-body">
             @foreach ( $errors->all() as $error )
-            <li>
+            <li class="taligncenter">
                 {{ $error }}
             </li>
             @endforeach
         </ul>
     </div>
     @endif
-
-    {{-- header --}}
-    @include('partials.header')
 
     {{-- content --}}
     @yield('content')
