@@ -54,7 +54,7 @@
                         <!-- <h3 class="m_3">Lorem ipsum dolor sit amet</h3> -->
 
                         <!-- item price --> 
-                        <p class="m_5">Php {{ $items->price }}</p>
+                        <p class="m_5">Php {{ number_format($items->price) }}</p>
                         <!-- <p class="m_5">Php 888</p> -->
 
                         <!-- count of viewing -->
@@ -101,7 +101,7 @@
 
                     <div class="toogle">
 
-                        <div class="" style="">
+                        <div class="mb-25">
                             <h2>Leave a comment</h2>
                             @if(Auth::guest())
                                 <p>Sign in to comment</p>
@@ -138,10 +138,11 @@
 
                             @if($comments)
                                 <!-- display comment here -->
-                                @foreach($comments as $comment)
+                                
                                     <div class="comments">
-                                        <div class="panel panel-default comment">
-                                            <div class="panel-heading comment-header">
+                                        <div class="panel panel-default comment border-clr-none">
+                                            @foreach($comments as $comment)
+                                            <div class="panel-heading comment-header border-clr-none">
 
                                                 <!-- button to see list comment -->
 
@@ -150,13 +151,13 @@
                                                     <small class="comment-date">{{ $comment->created_at->format('M d, Y \a\t h:i a') }}</small>
                                                 </h4>
 
-                                            </div>
-                                            <div class="comment-body panel-body" >
                                                 {{ $comment->body }}
+
                                             </div>
+                                            @endforeach
                                         </div>
                                     </div>
-                                @endforeach
+                                
                             @endif
 
                         </div>
@@ -175,64 +176,70 @@
                     <h5 class="m_1">Seller Information</h5>
 
                     <!-- seller name -->
-                    <strong><a href="#">{{ $items->guest->first_name }}</a></strong>
+                    <strong><a href="#">{{ $items->guest->first_name }} {{ $items->guest->last_name }}</a></strong>
 
                     <div class="details-seller floatLeft">
                         <label class="mb-num mt-10"><span class="deta-left c-999 txt-ind-10"><i class="fa fa-mobile"></i>Mobile:</span><span class="deta-right txt-ind-10">{{ $items->guest->mobile }}</span></label>
+                        <label class="mb-num mt-10"><span class="deta-left c-999 txt-ind-10"><i class="fa fa-mobile"></i>Business No.:</span><span class="deta-right txt-ind-10">{{ $items->mobile }}</span></label>
                         <label class="mb-num mt-10"><span class="deta-left c-999 txt-ind-10"><i class="fa fa-calendar-o"></i>Date Posted:</span><span class="deta-right txt-ind-10">{{ $items->guest->created_at->format('M d, Y') }}</span></label>
-                        <label class="mb-num mt-10"><span class="deta-left c-999 txt-ind-10"><i class="fa fa-info-circle"></i>Condition:</span><span class="deta-right txt-ind-10">{{ $items->condition }}</span></label>
+                        <label class="mb-num mt-10"><span class="deta-left c-999 txt-ind-10"><i class="fa fa-info-circle"></i>Condition:</span><span class="deta-right txt-ind-10">{{ $items->conditionitem }}</span></label>
                         <label class="mb-num mt-10"><span class="deta-left c-999 txt-ind-10"><i class="fa fa-location-arrow"></i>CIty:</span><span class="deta-right txt-ind-10">{{ $items->city }}</span></label>
                     </div>
                   <div class="clear"></div>
                 </div>
 
 
-                <!-- featured ads -->
-                <div class="rsingle mt-rsingle-25 ">
-                    <h5 class="m_1">Featured Ads</h5>
+                @foreach (array_chunk($featured->all(), 4) as $featuredSection)
+                    <!-- featured ads -->
+                    <div class="rsingle mt-rsingle-25 ">
+                        <h5 class="m_1">Featured Ads</h5>
 
-                    <ul class="list-unstyled floatLeft">
-                        <li class="col-xs-12 col-sm-6 col-md-12 col-lg-12">
-                            <a href="#">
-                                <img class="img-reponsive img-thumbnail" alt="black Ferrari" src="http://whiz.dbcinfotech.net/uploads/thumbs/ferrari.jpg">
-                            </a>
-                            <h4>
-                                <a hef="#">Black Ferrari</a>
-                            </h4>
-                            <div class="price">
-                                <strong>Price : 80,000.00</strong>
-                            </div>
-                            <div class="clearfix"></div>
-                        </li>
-                        <li class="col-xs-12 col-sm-6 col-md-12 col-lg-12">
-                            <a href="#">
-                                <img class="img-reponsive img-thumbnail" alt="Home Theatre" src="http://whiz.dbcinfotech.net/uploads/thumbs/led_tv.jpg">
-                            </a>
-                            <h4>
-                                <a hef="#">Home Theatre</a>
-                            </h4>
-                            <div class="price">
-                                <strong>Price : 3,000.00</strong>
-                            </div>
-                            <div class="clearfix"></div>
-                        </li>
-                        <li class="col-xs-12 col-sm-6 col-md-12 col-lg-12">
-                            <a href="#">
-                                <img class="img-responsive img-thumbnail" alt="Puppy" src="http://whiz.dbcinfotech.net/uploads/thumbs/dog.jpg">
-                            </a>
-                            <h4>
-                                <a hef="#">Puppy</a>
-                            </h4>
-                            <div class="price">
-                                <strong>Price : 200.00</strong>
-                            </div>
-                            <div class="clearfix"></div>
-                        </li>
+                        <ul class="list-unstyled floatLeft">
+                            @foreach ($featuredSection as $featuredItem)
+                            <li class="col-xs-12 col-sm-6 col-md-12 col-lg-12">
+                                <div class="featured-item">
+                                    <a href="#">
+                                        <img class="img-reponsive img-thumbnail pad-none" alt="" src="{{ asset($featuredItem->images) }}">
+                                    </a>
+                                </div>
+                                <h4>
+                                    <a hef="#">{!! $featuredItem->title !!}</a>
+                                </h4>
+                                <div class="price">
+                                    <strong>Price : {!! number_format($featuredItem->price) !!}</strong>
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                            <!-- <li class="col-xs-12 col-sm-6 col-md-12 col-lg-12">
+                                <a href="#">
+                                    <img class="img-reponsive img-thumbnail" alt="Home Theatre" src="http://whiz.dbcinfotech.net/uploads/thumbs/led_tv.jpg">
+                                </a>
+                                <h4>
+                                    <a hef="#">Home Theatre</a>
+                                </h4>
+                                <div class="price">
+                                    <strong>Price : 3,000.00</strong>
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                            <li class="col-xs-12 col-sm-6 col-md-12 col-lg-12">
+                                <a href="#">
+                                    <img class="img-responsive img-thumbnail" alt="Puppy" src="http://whiz.dbcinfotech.net/uploads/thumbs/dog.jpg">
+                                </a>
+                                <h4>
+                                    <a hef="#">Puppy</a>
+                                </h4>
+                                <div class="price">
+                                    <strong>Price : 200.00</strong>
+                                </div>
+                                <div class="clearfix"></div>
+                            </li> -->
+                            @endforeach
+                        </ul>
 
-                    </ul>
-
-                    <div class="clear"></div>
-                </div>
+                        <div class="clear"></div>
+                    </div>
+                @endforeach
 
                 <!-- sponsored ads links -->
                 <div class="rsingle mt-rsingle-25 ">

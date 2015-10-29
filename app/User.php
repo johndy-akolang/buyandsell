@@ -39,6 +39,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
         return $this->hasMany('App\Item', 'guest_id');
     }
 
+
     // user has may comments
     public function comments()
     {

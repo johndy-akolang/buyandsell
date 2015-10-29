@@ -23,7 +23,6 @@ class Item extends Model
 		
 	];
 
-
 	public function comments()
 	{
 		return $this->hasMany('App\Comments', 'on_post');
@@ -34,6 +33,10 @@ class Item extends Model
 	{
 		return $this->belongsTo('App\User', 'guest_id');
 	}
-
-
+	
+	/*public function condition()
+    {
+        return $this->hasMany('App\Condition', 'conditioitem');
+    }
+*/
 }

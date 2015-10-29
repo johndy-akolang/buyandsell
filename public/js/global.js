@@ -137,8 +137,21 @@ $(document).ready(function() {
         });
     });
 
-    /* modal view for update item */
+    /* limit charaters dislay item */
+    $(function() {
+        var limit = 20;
+        var chars = $("#title-cut").text();
+        if(chars.length > limit) {
+            var visiblePart = $("<span>"+ chars.substr(0, limit-1) +"</span>");
+            var dots = $("<span class='dots'>...</span>");
 
+            $("#title-cut").empty()
+                .append(visiblePart)
+                .append(dots);
+
+        }
+
+    });
 
 
 

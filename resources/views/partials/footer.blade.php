@@ -1,7 +1,5 @@
 <div class="footer">
 
-
-
     {{-- footer middle --}}
     <div class="footer-middle">
         <div class="wrap">

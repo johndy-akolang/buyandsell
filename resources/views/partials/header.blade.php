@@ -27,14 +27,14 @@
                     </li>
                 @else
                     <li>
-                        <a href="/login">
+                        <a href="{{ url('login') }}">
                             <i class="fa fa-sign-in"></i>
                             Sign in
                         </a>
                     </li>
                     |
                     <li>
-                        <a href="/register">
+                        <a href="{{ url('register') }}">
                             <i class="fa fa-file-o"></i>
                             Sign up
                         </a>
@@ -120,15 +120,17 @@
             {{-- form search --}}
             <div class="search">
 
-                {!! Form::open(array('url' => 'item', 'method' => 'POST')) !!}
+                {!! Form::open(['url' => 'partials/header']) !!}
 
                     {{-- input search --}}
-                    {!! Form::text('search', null,
+                    {!! Form::text('title', null,
                         array('class' => 'textbox form-control')) !!}
 
-                    {{-- search submit --}}
+                        
+
+                    <!-- {{-- search submit --}}
                     {!! Form::submit('Search',
-                                     array('name' => 'submit')) !!}
+                                     array('name' => 'submit')) !!} -->
 
                     <div id="response"></div>
 

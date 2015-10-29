@@ -7,14 +7,21 @@
                 <h4 class="modal-title" id="myModalLabel">Update your item</h4>
             </div>
 
-            {!! Form::model($item, ['url' => '/item/'.$item->id, 'method' => 'PUT', 'files' => true]) !!}
+            {!! Form::open(['url' => '/item/'.$item->id, 'method' => 'PUT', 'files' => true]) !!}
 
                 <div class="modal-body">
 
                     <label>What are you selling?</label>
 
-                    {!! Form::text('title', '',
-                        array('class' => 'form-control')) !!}
+                    <input required="required" type="text" name="title" class="form-control" value="@if(!old('title')){{$item->title}}@endif{{ old('title') }}"/>
+
+                </div>
+
+                <div class="modal-body">
+
+                    <label>Price</label>
+
+                    <input required="required" type="text" name="price" class="form-control" value="@if(!old('price')){{number_format($item->price)}}@endif{{ old('price') }}"/>
 
                 </div>
 
@@ -22,9 +29,9 @@
 
                     <label>Condition</label>
 
-                    <select class="form-control">
+                     <select class="form-control">
                         <option>Brand new</option>
-                        <option>2nd hand(Used)</option>
+                        <option>2nd Hand(Used)</option>
                     </select>
 
                 </div>
@@ -50,8 +57,12 @@
 
                     <label>Description</label>
 
-                    {!! Form::textarea('description', '',
-                        array('class' => 'form-control')) !!}
+                    <textarea name='description'class="form-control ht-150">
+                        @if(!old('description'))
+                        {!! $item->description !!}
+                        @endif
+                        {!! old('description') !!}
+                    </textarea>
 
                 </div>
 
@@ -93,8 +104,7 @@
 
                     <label>Mobile number</label>
 
-                    {!! Form::text('mobile', '',
-                        array('class' => 'form-control')) !!}
+                    <input required="required" type="text" name="mobile" class="form-control" value="@if(!old('mobile')){{$item->mobile}}@endif{{ old('mobile') }}"/>
 
                 </div>
 
@@ -102,7 +112,7 @@
 
             <div class="modal-footer">
                 <button type="button" class="btn btn-default grey" data-dismiss="modal">Cancel</button>
-                <button type="button" class="btn btn-primary input-blue">Done</button>
+                <button type="button" class="btn btn-primary input-blue">Save</button>
             </div>
         </div>
     </div>

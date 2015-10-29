@@ -8,12 +8,6 @@
 
 <div class="main clearfix">
     <div class="wrap">
-
-        @if(Session::has('message'))
-            <div class="alert alert-success">
-                {{ Session::get('message') }}
-            </div>
-        @endif
         
         <div class="section group clearfix">
 
@@ -28,7 +22,7 @@
 
 								{{-- image display --}}
 								<div class="image-style-one">
-									<a href="{{ url('item/'.$item->slug) }}">
+									<a href="{{ url('/'.$item->slug) }}">
 										<img class="img-reponsive" src="{{ asset($item->images) }}" alt="">
 									</a>
 								</div>
@@ -40,11 +34,11 @@
 									</a>
 									<small>{{ $item->category }}</small>
 									<h4 class="item-title" style="height: 29px;">
-										<a href="#">{{ $item->title }}</a>
+										<a href="#" id="title-cut">{{ $item->title }}</a>
 									</h4>
 									<div class="bor bg-red"></div>
 									<div class="row">
-										<div class="col-xs-12 col-sm-12 col-md-12 info-dta info-price">Php {{ $item->price }}</div>
+										<div class="col-xs-12 col-sm-12 col-md-12 info-dta info-price">Php {{ number_format($item->price) }}</div>
 									</div>
 									<div class="row">
 										<div class="col-xs-12 col-sm-12 col-md-12 info-dta">
@@ -52,7 +46,7 @@
 										</div>
 									</div>
 									<div class="row">
-										<div class="col-xs-12 col-sm-12 col-md-12 info-dta">Posted on : {{ $item->created_at }}</div>
+										<div class="col-xs-12 col-sm-12 col-md-12 info-dta">Posted on : {{ $item->created_at->format('M d, Y') }}</div>
 									</div>
 									<div class="clearfix"></div>
 								</div>
