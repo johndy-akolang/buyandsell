@@ -23,7 +23,7 @@ class RegisterController extends Controller
 
     use RedirectsUsers;
 
-    protected $redirectTo = '/';
+    protected $redirectTo = '/loginsuccess';
 
     public function __construct()
     {

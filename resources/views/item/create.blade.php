@@ -35,7 +35,7 @@
             <div class="cont sell-item-cont bor-rad5 border1ccc pad10">
 
                 {{-- form sell item --}}
-                {!! Form::open(['url' => 'item', 'method' => 'POST', 'files' => 'true']) !!}
+                {!! Form::open(['url' => 'item', 'method' => 'POST', 'files' => true]) !!}
 
                     {{-- sell item title --}}
                     <div class="sellitem-title">
@@ -182,13 +182,20 @@
                                 <label>Upload photos</label>
                             </div>
                         </div>
-						
+                        
 						{!! Form::file('images', null) !!}
-                        <!-- <div id="dropzone" class="dropzone" action="/images/uploads">
-
-
-                        </div> -->
+    
 						<!-- {!! Form::file('images', array('class' => 'dropzone')) !!} -->
+
+                        <!-- <div class="dz-message">
+
+                        </div>
+
+                        <div class="fallback">
+                            <input name="images" type="file" multiple class="dropzone"/>
+                        </div>
+
+                        <div class="dropzone-previews" id="dropzonePreview"></div> -->
 
                     </fieldset>
 
@@ -246,7 +253,7 @@
                         {{-- title form label --}}
                         <div class="sellitem-title-cont floatLeft">
                             <div class="sellitem-label floatLeft talignright">
-                                <label>Mobile number
+                                <label>Business Mobile number
                                     <span class="cff0">*</span>
                                 </label>
                             </div>
@@ -285,5 +292,6 @@
     </div>
 
 </div>
+
 
 @endsection

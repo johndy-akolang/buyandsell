@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
 use App\Http\Requests\ItemRequest;
 use App\Http\Controllers\Controller;
@@ -17,9 +16,19 @@ use App\Province;
 use App\User;
 use Redirect;
 
+/* add */
+//use App\Repositories\ItemRepository;
+//use Illuminate\Support\Facades\Input;
 
 class ItemController extends Controller
 {
+
+    /*protected $images;
+
+    public function __construct(ItemRepository $itemRepository)
+    {
+        $this->images = $itemRepository;
+    }*/
 
     /**
      * Display a listing of the resource.
@@ -76,6 +85,7 @@ class ItemController extends Controller
         $file->move($destination_path, $filename);
 
         $item->images = $destination_path . $filename;
+        //item = $this->images->upload($item);
         $item->title = $request->input('title');
         $item->price = $request->input('price');
         $item->condition = $request->input('condition');
@@ -119,6 +129,7 @@ class ItemController extends Controller
         /*$item = Item::find($id);
         return view('item.show')->with('item', $item);*/
 
+        $featured = Item::paginate(3);
         $items = Item::where('slug', $slug)->first();
 
         if ($items) 
@@ -133,66 +144,73 @@ class ItemController extends Controller
             return redirect('/')->withErrors('requested page not found');
 
         }
-
-        return view('item.show')->withItems($items)->withComments($comments);
+        //$featured = Item::paginate(8);
+        return view('item.show')->withItems($items)->withComments($comments)->with(compact('featured'));
 
         //var_dump($items->slug());
 
-    }
-
-
-    public function edit($id/*Request $request, $slug*/)
-    {
-
-        $item = Item::find($id);
-        return view('item.edit')->with('item', $item);
-
-        /*$items = Item::where('slug', $slug)->first();
-
-        if ($items && ($request->user()-id == $items->guest_id || $request->user()->is_seller()) )
-            return view('item.edit')->with('items', $items);
-        return redirect('/')->withErrors('You have not sufficient permissions');*/
 
     }
 
-	public function update(Request $request, $id)
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return Response
+     */
+    public function edit(Request $request, $slug)
     {
 
-        //validation
-        $validation = \Validator::make($request->all(), [
+        /*$item = Item::find($id);
+        return view('item.edit')->with('item', $item);*/
 
-            'title'     =>  'required',
-            //'user_id'   =>  'required',
-            'price'     =>  'required',
-            'condition' =>  'required',
-            'category' =>  'required',
-            'description' => 'required',
-            'images'    =>  'sometimes|mimes:jpeg,jpg,png|max:1000',
-            'province'  =>  'required',
-            'city'      =>  'required',
-            'mobile'    =>  'required|numeric',
+        $items = Item::where('slug', $slug)->first();
 
-        ]);
+        if($items && ($request->user()->id == $items->guest_id || $request->user()->is_seller())) {  
 
-        //check if it fails
-        if ($validation->fails()) {
-            return redirect()->back()->withInput()
-                            ->with('errors', $validation->errors() );
+            $city = \DB::table('city')->lists('citylist', 'id');
+            $province = \DB::table('province')->lists('provincelist', 'id');
+            $condition = \DB::table('condition')->lists('conditionitem', 'id');
+            $category = \DB::table('category')->lists('categorylist', 'id');
+            //$condition = ['' => ''] + Condition::lists('conditionitem', 'id')->all();
+            //$condition = array('' => 'Select') + Condition::lists('conditionitem', 'id')->toArray(); 
+
+            //return view('item.edit')->with('items', $items);
+            return view('item.create')->with('city', $city)->with('province', $province)->with('condition', $condition)->with('category', $category);
+        } else {
+            return redirect('item.edit')->withErrors('restricted');
+        }
+    }
+
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  int  $id
+     * @return Response
+     */
+	public function update(Request $request)
+    {
+
+        $item_id = $request->input('item_id');
+        $item = Item::find($item_id);
+
+        if ($item && ($item->guest_id) == $request->user()->id || $request->user()->is_seller()) {
+            $title = $request->input('title');
+            $slug = str_slug($title);
+            $duplicate = Item::where('slug', $slug)->first();
+            if ($duplicate) {
+                if ($duplicate->id != $item_id) {
+                    return redirect('edit/'.$item->slug)->withErrors('Title already exists.')->withInput();
+                } else {
+                    $item->slug = $slug;
+                }
+            }
+
         }
 
-        //process valid data & go to success page
-        $item = Item::find($id);
-
-        if ($request->hasFile('images')) {
-            $file = $request->file('images');
-            $destination_path = 'images/uploads/';
-            $filename = str_random(6).'_'.$file->getClientOriginalName();
-            $file->move($destination_path, $filename);
-
-            $item->images = $destination_path . $filename;
-        }
-
-        $item->title = $request->input('title');
+        $item->title = $title;
         $item->price = $request->input('price');
         $item->condition = $request->input('condition');
         $item->category = $request->input('category');
@@ -200,32 +218,66 @@ class ItemController extends Controller
         $item->province = $request->input('province');
         $item->city = $request->input('city');
         $item->mobile = $request->input('mobile');
-        $item->save();
 
-        return redirect('/item')->with('message','You just updated an image!');
+        if ($request->has('save')) {
+            $item->active = 0;
+            $message = 'Item saved successfully';
+            $landing = 'edit/'.$item->slug;
+        } else {
+            $item->active = 1;
+            $message = 'Post updated successfully';
+            $landing = $item->slug;
+        }
+
+       $item->save();
+       return redirect($landing)->withMessage($message);
+
+    } 
+
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return Response
+     */
+    public function destroy(Request $request, $id)
+    {
+
+        $item = Item::find($id);
+        
+        if ($item && ($item->guest_id == $request->user()->id || $request->user()->is_seller())) {
+            $item->delete();
+            $data['message'] = 'Item deleted Successfully';
+        } else {
+            $data['errors'] = 'Invalid Operation. You have not sufficient permissions';
+        }
+
+        return redirect('/')->with($data);
 
     }
 
-    public function destroy($id)
+    public function featured()
     {
 
-        /*Item::find($id)->delete();
-        return redirect('item.manage');*/
+        
+        return view('item.show', compact('featured'));
 
     }
 
     public function search(Request $request)
     {
 
-        //Get the query string from our form submission
-        $query = Request::input('search');
+        /*$search = $request->input('search');
+        $items = $this->blog_gestion->search($this->nbrPages, $search);
+        $links = $items->setPath('')->appends(compact('search'))->render();
+        $info = trans('partials.header') . '<strong>' . $search . '</strong>';
 
-        // Returns an array of articles that have the query string located someqhere within
-        // our articles titles. Paginates them so we can break up lots of search results.
-        $items = DB::table('item')->where('title', 'LIKE', '%' . $query . '%')->paginate(10);
+        return view('home', compact('items', 'links', 'info'));*/
 
-        // returns a view and passes the view the list of items and the original query.
-        return view('search.result', compact('items', 'query'));
+        $title = $request->input('title');
+        return view('home')->with('item', Item::where('title', 'like', '%' . $title . '%')->paginate(7));
+
 
     }
 
