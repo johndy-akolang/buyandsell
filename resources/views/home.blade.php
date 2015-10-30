@@ -475,9 +475,15 @@
                 <div class="border">
                     <div class="slider-wrapper theme-default">
                         <div id="slider" class="nivoSlider">
-                            <img src="{{ asset('/images/t-img1.jpg') }}" alt="">
-                            <img src="{{ asset('/images/t-img2.jpg') }}" alt="">
-                            <img src="{{ asset('/images/t-img3.jpg') }}" alt="">
+                            <a href="http://www.miguelitos-hotels.com/main/altavista-de-boracay.php">
+                                <img src="{{ asset('/images/koll-room-for-rent-casa-de-miguelitos-altavista.png') }}" alt="Casa de Miguelitos">
+                            </a>
+                            <a href="http://micahelasalonandspa.com/promos.php">
+                                <img src="{{ asset('/images/koll-micah-ela-salon-and-spa.png') }}" alt="Micah Ela Salon and Spa">
+                            </a>
+                            <a href="http://www.micafe.ph/">
+                                <img src="{{ asset('/images/koll-micafe-advertise.png') }}" alt="Micafe">
+                            </a>
                         </div>
                     </div>
                 </div>
