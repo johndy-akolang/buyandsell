@@ -54,7 +54,7 @@
         <div class="header-bottom-left">
 
             {{-- logo website --}}
-            <a class="floatLeft" href="/"><img class="logo-koll" src="{{ asset('/images/logo-koll.png') }}"></a>
+            <a class="floatLeft" href="/"><img class="logo-koll" src="{{ asset('/images/logo-koll-beta.png') }}"></a>
 
             {{-- select category --}}
             <div id="dd" class="wrapper-dropdown-5 floatLeft" tabindex="1">Select by Category
