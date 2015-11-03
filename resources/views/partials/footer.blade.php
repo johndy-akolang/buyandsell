@@ -11,7 +11,7 @@
 
                         {{-- facebook --}}
                         <div class="col_1_of_f_2 span_1_of_f_2">
-                            <h3 class="clr555">Buy and Sell Domain</h3>
+                            <h3 class="clr555">Koll.com.ph</h3>
                         </div>
 
                         {{-- twitter --}}
@@ -92,7 +92,7 @@
     <div class="footer-bottom">
         <div class="wrap">
             <div class="copy">
-                <p class="clr555">© 2014 Buy and Sell Website by <a href="#" target="_blank">AppLife Tech Corp.</a></p>
+                <p class="clr555">© 2015 koll.com.ph Buy and Sell Website </p>
             </div>
             <div class="f-list2">
                 <ul>

@@ -182,9 +182,10 @@
                                 <label>Upload photos</label>
                             </div>
                         </div>
-                        
-						{!! Form::file('images', null) !!}
-    
+
+                        <div class="title-cont-input floatLeft">
+                            {!! Form::file('images', null) !!}
+                        </div>
 						<!-- {!! Form::file('images', array('class' => 'dropzone')) !!} -->
 
                         <!-- <div class="dz-message">

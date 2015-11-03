@@ -13,4 +13,10 @@ class City extends Model
         'citylist'
     ];
 
+
+    public function item()
+    {
+    	return $this->belongsTo('App\Item');
+    }
+
 }
