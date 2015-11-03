@@ -34,9 +34,10 @@ class Item extends Model
 		return $this->belongsTo('App\User', 'guest_id');
 	}
 	
-	/*public function condition()
+
+	// user has city
+    public function city()
     {
-        return $this->hasMany('App\Condition', 'conditioitem');
+        return $this->hasMany('App\City');
     }
-*/
 }

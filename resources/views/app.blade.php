@@ -8,6 +8,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
+    <meta name="title" content="Koll.com.ph - Philippines buy and sell website">
+    <meta name="description" content="Sell your 2nd hand items on KOLL.com.ph, buy and sell website. Post free online classified ads of your used car, mobile phone, furniture, and more.">
+    <meta name="keywords" content="Sell your 2nd hand items on KOLL.com.ph, buy and sell website. Post free online classified ads of your used car, mobile phone, furniture, and more.">
+
     {{-- title --}}
     <title>@yield('title')</title>
 

@@ -29,20 +29,18 @@
                 <div class="cntr">
 
                     <div class="pdt20">
-                        You'll be able to sign in to eBay with
+                        You'll be able to sign in to koll.com.ph with
                         <b>{{ Auth::user() ->email }}</b>
                     </div>
 
                     <ul class="infc">
 
-                        <li>To save you the time of creating a unique user ID, we've selected infan.ph for you. This is what will display when you bid, buy, or sell on kol.ph.</li>
+                        <li>Congratulations! You're now member of koll.com.ph. yu can sell your items with FREE!!</li>
 
                         <li>
-                            Want to choose your own user ID? Just go to
-                            <b>My kol.ph</b>
-                            on your computer, click the
+                            Click the
                             <b>Account</b>
-                            tab, and then go to
+                            tab, and to see your 
                             <b>Personal Information</b>.
                         </li>
 

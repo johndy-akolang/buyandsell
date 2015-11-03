@@ -1,7 +1,7 @@
 @extends('app')
 
 @section('title')
-    View sell item
+    {{ $items->slug }}
 @stop
 
 @section('content')
@@ -58,7 +58,7 @@
                         <!-- <p class="m_5">Php 888</p> -->
 
                         <!-- count of viewing -->
-                        <span class="views-item"><i class="fa fa-eye"></i>97 views</span>
+                        <!-- <span class="views-item"><i class="fa fa-eye"></i>97 views</span> -->
 
                         <!-- social media share -->
                         <div class="brand-bg">
@@ -108,17 +108,6 @@
                             @else
                                 <div class="commenter-container panel-body">
 
-                                    <!-- form for write comment parent -->
-                                    <!-- {!! Form::open(['url' => 'comment/add', 'method' => 'POST']) !!}
-                                        <div class="form-group comment">
-
-                                            {!! Form::textarea('body', null, ['class' => 'field form-control']) !!}
-
-                                            <button class="btn mt-15 input-blue" type="submit">Submit</button>
-                                            <input type="submit" name="post_comment" class="btn mt-15 input-blue" value="Post">
-
-                                        </div>
-                                    {!! Form::close() !!} -->
                                     <form method="post" action="/comment/add">
                                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                         <input type="hidden" name="on_post" value="{{ $items->id }}">
@@ -147,7 +136,7 @@
                                                 <!-- button to see list comment -->
 
                                                 <h4 class="comment-user">
-                                                    <a class="comment-username">{{ $comment->guest->first_name }}</a>
+                                                    <span class="comment-username">{{ $comment->guest->first_name }}</span>
                                                     <small class="comment-date">{{ $comment->created_at->format('M d, Y \a\t h:i a') }}</small>
                                                 </h4>
 
@@ -176,14 +165,14 @@
                     <h5 class="m_1">Seller Information</h5>
 
                     <!-- seller name -->
-                    <strong><a href="#">{{ $items->guest->first_name }} {{ $items->guest->last_name }}</a></strong>
+                    <strong><a href="{{ url('/user/'.$items->guest_id) }}">{{ $items->guest->first_name }} {{ $items->guest->last_name }}</a></strong>
 
                     <div class="details-seller floatLeft">
                         <label class="mb-num mt-10"><span class="deta-left c-999 txt-ind-10"><i class="fa fa-mobile"></i>Mobile:</span><span class="deta-right txt-ind-10">{{ $items->guest->mobile }}</span></label>
                         <label class="mb-num mt-10"><span class="deta-left c-999 txt-ind-10"><i class="fa fa-mobile"></i>Business No.:</span><span class="deta-right txt-ind-10">{{ $items->mobile }}</span></label>
                         <label class="mb-num mt-10"><span class="deta-left c-999 txt-ind-10"><i class="fa fa-calendar-o"></i>Date Posted:</span><span class="deta-right txt-ind-10">{{ $items->guest->created_at->format('M d, Y') }}</span></label>
                         <label class="mb-num mt-10"><span class="deta-left c-999 txt-ind-10"><i class="fa fa-info-circle"></i>Condition:</span><span class="deta-right txt-ind-10">{{ $items->condition }}</span></label>
-                        <label class="mb-num mt-10"><span class="deta-left c-999 txt-ind-10"><i class="fa fa-location-arrow"></i>CIty:</span><span class="deta-right txt-ind-10">{{ $items->city }}</span></label>
+                        <label class="mb-num mt-10"><span class="deta-left c-999 txt-ind-10"><i class="fa fa-location-arrow"></i>City:</span><span class="deta-right txt-ind-10">{{ $items->city }}</span></label>
                     </div>
                   <div class="clear"></div>
                 </div>
@@ -210,30 +199,6 @@
                                 </div>
                                 <div class="clearfix"></div>
                             </li>
-                            <!-- <li class="col-xs-12 col-sm-6 col-md-12 col-lg-12">
-                                <a href="#">
-                                    <img class="img-reponsive img-thumbnail" alt="Home Theatre" src="http://whiz.dbcinfotech.net/uploads/thumbs/led_tv.jpg">
-                                </a>
-                                <h4>
-                                    <a hef="#">Home Theatre</a>
-                                </h4>
-                                <div class="price">
-                                    <strong>Price : 3,000.00</strong>
-                                </div>
-                                <div class="clearfix"></div>
-                            </li>
-                            <li class="col-xs-12 col-sm-6 col-md-12 col-lg-12">
-                                <a href="#">
-                                    <img class="img-responsive img-thumbnail" alt="Puppy" src="http://whiz.dbcinfotech.net/uploads/thumbs/dog.jpg">
-                                </a>
-                                <h4>
-                                    <a hef="#">Puppy</a>
-                                </h4>
-                                <div class="price">
-                                    <strong>Price : 200.00</strong>
-                                </div>
-                                <div class="clearfix"></div>
-                            </li> -->
                             @endforeach
                         </ul>
 

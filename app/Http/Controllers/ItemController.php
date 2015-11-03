@@ -129,6 +129,8 @@ class ItemController extends Controller
         /*$item = Item::find($id);
         return view('item.show')->with('item', $item);*/
 
+        //$cities = Item::with('city')->get();
+
         $featured = Item::paginate(3);
         $items = Item::where('slug', $slug)->first();
 
