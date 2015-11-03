@@ -30,29 +30,29 @@
 
             								{{-- image display --}}
             								<div class="image-style-one">
-            									<a href="{{ url('item/show'.$item->slug.'') }}">
+            									<a href="{{ url('item/'.$item->slug.'') }}">
             										<img class="img-reponsive" src="{{ asset($item->images) }}" alt="">
             									</a>
             								</div>
 
             								{{-- mange seller ads contente --}}
             								<div class="img-box-4-content">
-            									<a class="b-tooltip" href="#">
+            									<!-- <a class="b-tooltip" href="#">
             										<i class="category-fa-icon fa fa-truck bg-red"></i>
             									</a>
-            									<small>{{ $item->category }}</small>
+            									<small>{{ $item->category }}</small> -->
             									<h4 class="item-title" style="height: 29px;">
-            										<a href="#" id="title-cut">{{ $item->title }}</a>
+            										<a href="{{ url('item/'.$item->slug.'') }}" id="title-cut">{{ $item->title }}</a>
             									</h4>
             									<div class="bor bg-red"></div>
             									<div class="row">
             										<div class="col-xs-12 col-sm-12 col-md-12 info-dta info-price">Php {{ number_format($item->price) }}</div>
             									</div>
-            									<div class="row">
+            									<!-- <div class="row">
             										<div class="col-xs-12 col-sm-12 col-md-12 info-dta">
             											<a class="c-307 mb-10" href="#">{{ $item->city }}</a>
             										</div>
-            									</div>
+            									</div> -->
             									<div class="row">
             										<div class="col-xs-12 col-sm-12 col-md-12 info-dta">Posted on : {{ $item->created_at->format('M d, Y') }}</div>
             									</div>
