@@ -15,7 +15,7 @@
                             <li><a href="#" class="user-menu"><i class="fa fa-inbox"></i>Inbox</a></li>
                             <li><a href="/item/" class="user-menu"><i class="fa fa-suitcase"></i>Manage Ads</a></li>
                             <li><a href="{{ url('/user/'.Auth::id()) }}" class="user-menu"><i class="fa fa-gear"></i>Account</a></li>
-                            <li><a href="#" class="user-menu"><i class="fa fa-money"></i>1000 Credits</a></li>
+                            <li><a href="#" class="user-menu"><i class="fa fa-money"></i>0 Credit</a></li>
                         </ul>
                     </li>
                     |
@@ -75,12 +75,6 @@
                         <a href="#">
                             <i class="fa fa-truck"></i>
                             Vehicles
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="fa fa-motorcycle"></i>
-                            Motorcycle
                         </a>
                     </li>
                     <li>

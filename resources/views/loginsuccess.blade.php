@@ -18,7 +18,7 @@
                     <h1 class="customh1">
                         <div class="sm-co sm-su">
                             <i class="gspr icsu"></i>
-                            <p> Welcome to kol.ph, {{ Auth::user() ->first_name }}</p>
+                            <p> Welcome to KOLL.com.ph, {{ Auth::user() ->first_name }}</p>
                         </div>
                     </h1>
 
@@ -29,13 +29,13 @@
                 <div class="cntr">
 
                     <div class="pdt20">
-                        You'll be able to sign in to koll.com.ph with
+                        You'll be able to sign in to KOLL.com.ph with
                         <b>{{ Auth::user() ->email }}</b>
                     </div>
 
                     <ul class="infc">
 
-                        <li>Congratulations! You're now member of koll.com.ph. yu can sell your items with FREE!!</li>
+                        <li>Congratulations! You're now member of KOLL.com.ph. yu can sell your items with FREE!!</li>
 
                         <li>
                             Click the

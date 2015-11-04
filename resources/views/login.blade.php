@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     {{-- title --}}
-    <title>Welcome to buyitsellit Sign in</title>
+    <title>Welcome to KOLL.com.ph Sign in</title>
 
     {{-- css style --}}
     <link href="{{ asset('/css/global.css') }}" rel="stylesheet">
@@ -19,7 +19,7 @@
 
     {{-- javascript --}}
     <script src="{{ asset('/js/vendor/jquery.min.js') }}" type="text/javascript"></script>
-    <script src="{{ asset('/js/global.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('/js/class.js') }}" type="text/javascript"></script>
 
 </head>
 
@@ -28,7 +28,7 @@
 
         {{-- sample logo only --}}
         <div class="logo-cont">
-            <a href="/"><img src="{{ asset('/images/logo-buyitsellit.png') }}"></a>
+            <a href="/"><img src="{{ asset('/images/logo-koll-beta.png') }}"></a>
         </div>
 
         <div class="wrap">
@@ -128,7 +128,8 @@
                     {{-- sign up button --}}
                     <!-- <input id="signup" class="button btn input-blue width100px" type="submit" value="Sign up" name="signup"> -->
                     {!! Form::submit('Sign Up',
-                            array('class' => 'button input-blue width251', 'name' => 'signup', 'class' => 'button btn input-blue width100px', 'id' => 'signup')) !!}
+                            array('name' => 'signup', 'class' => 'button btn input-blue width100px', 'id' => 'signup-blue')) !!}
+                    <!-- <a href="" class="button input-blue width251">Sign Up</a> -->
                 </div>
             </div>
             <div class="clear"></div>

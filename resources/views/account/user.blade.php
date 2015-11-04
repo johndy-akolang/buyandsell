@@ -61,7 +61,7 @@
                                 <i class="fa fa-buysellads"></i>
                             </a>
                             <span>
-                                <a title="Sell your item" href="/item/sellitem">Sell your item</a>
+                                <a title="Sell your item" href="/item/create">Sell your item</a>
                             </span>
                         </span>
                     </div>
@@ -107,7 +107,7 @@
                         </div>
 
                         <div class="profile-account-user floatLeft">
-                            <span id="address" class="datainfo">8888 Marian road 2, San Martin de Porres, Paranaque City</span>
+                            <span id="address" class="datainfo"></span>
                         </div>
                         <a href="#" class="editlink floatRight edit-a"><i class="fa fa-edit"></i>Edit info</a>
                         {{--<a class="savebtn">Save</a>--}}
@@ -133,7 +133,7 @@
                         </div>
 
                         <div class="profile-account-user floatLeft">
-                            <span id="company" class="datainfo">Miguelito's International Corp.</span>
+                            <span id="company" class="datainfo"></span>
                         </div>
                         <a href="#" class="editlink floatRight edit-a"><i class="fa fa-edit"></i>Edit info</a>
                         {{--<a class="savebtn">Save</a>--}}

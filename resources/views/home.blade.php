@@ -1,7 +1,7 @@
 @extends('app')
 
 @section('title')
-    koll.com.ph - Philippines Buy and Sell website
+    KOLL.com.ph - Philippines Buy and Sell website
 @stop
 
 @section('content')
