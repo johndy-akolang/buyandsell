@@ -48,14 +48,17 @@
                         {{-- information --}}
                         <div class="col_1_of_f_2 span_1_of_f_2">
                             <h3 class="clr555">Information</h3>
-                            <ul class="f-list1">
+                            <p>
+                                We find you a fas and efficient way of selling and buying goods, products and services online through classified ads.
+                            </p>
+                            <!-- <ul class="f-list1">
                                 <li><a href="#" class="clr555">Duis autem vel eum iriure </a></li>
                                 <li><a href="#" class="clr555">anteposuerit litterarum formas </a></li>
                                 <li><a href="#" class="clr555">Tduis dolore te feugait nulla</a></li>
                                 <li><a href="#" class="clr555">Duis autem vel eum iriure </a></li>
                                 <li><a href="#" class="clr555">anteposuerit litterarum formas </a></li>
                                 <li><a href="#" class="clr555">Tduis dolore te feugait nulla</a></li>
-                            </ul>
+                            </ul> -->
                         </div>
 
                         {{-- Contac us --}}

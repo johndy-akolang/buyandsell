@@ -110,11 +110,6 @@ $(document).ready(function() {
         $(window.location).attr('href', '/item/create');
     });
 
-    /* click button on login page for signup direct */
-    $('#signup').click(function() {
-        $(window.location).attr('href', '/register');
-    });
-
     /* click reply */
     $("#email-opened-reply").on('click', function() {
         $("#reply-area").slideDown("slow");

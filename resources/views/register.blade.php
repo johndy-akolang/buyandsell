@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     {{-- title --}}
-    <title>Get started with buyitsellit</title>
+    <title>Get started with KOLL.com.ph</title>
 
     {{-- css style --}}
     <link href="{{ asset('/css/global.css') }}" rel="stylesheet">
@@ -18,7 +18,8 @@
     <link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
 
     {{-- javascript --}}
-    <script src="{{ asset('/js/global.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('/js/vendor/jquery.min.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('/js/class.js') }}" type="text/javascript"></script>
 
 </head>
 
@@ -29,10 +30,10 @@
         {{-- sample logo only --}}
         <div class="logo-cont mb-20">
 
-            <a href="/"><img src="{{ asset('/images/logo-buyitsellit.png') }}"></a>
+            <a href="/"><img src="{{ asset('/images/logo-koll-beta.png') }}"></a>
 
             {{-- sub title --}}
-            <span>Get started with buyitsellit</span>
+            <span>Get started with KOLL.com.ph</span>
 
         </div>
 
@@ -167,7 +168,7 @@
                     </div>
 
                     {!! Form::submit('Sign in',
-                        array('class' => 'btn button input-blue width100px', 'name' => 'signin')) !!}
+                        array('class' => 'btn button input-blue width100px', 'name' => 'signin', 'id' => 'signin-blue')) !!}
 
                 </div>
             </div>
