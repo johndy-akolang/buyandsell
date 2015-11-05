@@ -21,7 +21,7 @@
 
                     <label>Price</label>
 
-                    <input required="required" type="text" name="price" class="form-control" value="@if(!old('price')){{number_format($item->price)}}@endif{{ old('price') }}"/>
+                    <input required="required" type="text" name="price" class="form-control" value="@if(!old('price')){{ $item->price }}@endif{{ old('price') }}"/>
 
                 </div>
 

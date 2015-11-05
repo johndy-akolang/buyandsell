@@ -54,7 +54,7 @@
                         <!-- <h3 class="m_3">Lorem ipsum dolor sit amet</h3> -->
 
                         <!-- item price --> 
-                        <p class="m_5">Php {{ number_format($items->price) }}</p>
+                        <p class="m_5">Php {{ $items->price }}</p>
                         <!-- <p class="m_5">Php 888</p> -->
 
                         <!-- count of viewing -->
