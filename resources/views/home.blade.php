@@ -38,10 +38,10 @@
 									</h4>
 									<div class="bor bg-red"></div>
 									<div class="row">
-										<div class="col-xs-12 col-sm-12 col-md-12 info-dta info-price">Php {{ number_format($item->price) }}</div>
+										<div class="col-xs-12 col-sm-12 col-md-12 info-dta info-price">Php {{ ($item->price) }}</div>
 									</div>
 									<div class="row">
-										<div class="col-xs-12 col-sm-12 col-md-12 info-dta">Posted on : </div>
+										<div class="col-xs-12 col-sm-12 col-md-12 info-dta">Posted on : {{ $item->created_at->format('M d, Y') }}</div>
 									</div>
                                     <!-- <div class="row">
                                         <div class="col-xs-12 col-sm-12 col-md-12 info-dta">
