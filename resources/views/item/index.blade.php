@@ -19,7 +19,7 @@
 						<!-- sample view list -->
                         @if (!$items->count())
 
-                            No ads. <a href="#" class="button btn input-blue width100px">Sign Up</a>
+                            No ads yet. <a href="#" class="button btn input-blue width100px">Sign Up</a>
                         @else
 
                             @foreach ($items as $item)
