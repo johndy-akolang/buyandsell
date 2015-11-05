@@ -195,7 +195,7 @@
                                     <a hef="#">{!! $featuredItem->title !!}</a>
                                 </h4>
                                 <div class="price">
-                                    <strong>Price : {!! number_format($featuredItem->price) !!}</strong>
+                                    <strong>Price : {!! $featuredItem->price !!}</strong>
                                 </div>
                                 <div class="clearfix"></div>
                             </li>
