@@ -35,7 +35,7 @@
 									</a> -->
 									<!-- <small>{{ $item->category }}</small> -->
 									<h4 class="item-title" style="height: 29px;">
-										<a href="{{ url('/item/'.$item->slug) }}" id="title-cut">{{ $item->title }}</a>
+										<a href="{{ url('/item/'.$item->slug) }}" class="title-cut">{{ $item->title }}</a>
 									</h4>
 									<div class="bor bg-red"></div>
 									<div class="row">
