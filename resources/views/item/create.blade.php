@@ -13,11 +13,11 @@
 			<!-- @if(isset($success))
 				<div class="alet alert-success">{{ $success }}</div>
 			@endif -->
-            @if(Session::has('message'))
+            <!-- @if(Session::has('message'))
                 <div class="alert alert-success">
                     {{ Session::get('message') }}
                 </div>
-            @endif
+            @endif -->
 
             <!-- @if (count($errors) > 0)
 

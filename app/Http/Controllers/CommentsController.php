@@ -46,7 +46,7 @@ class CommentsController extends Controller
         $slug = $request->input('slug');
         Comments::create($input);
 
-        return redirect($slug)->with('message', 'Comment Published');
+        return redirect::back()->with('message', 'Comment Published');
     }
 
     /**

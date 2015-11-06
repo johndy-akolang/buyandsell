@@ -35,7 +35,7 @@ class ItemRequest extends Request
         return [
             'title'     =>  'required|unique:item',
             'title'     => array('Regex:/^[A-Za-z0-9 ]+$/'),
-            'price'     =>  'required',
+            'price'     =>  'required|numeric',
             'condition' =>  'required',
             'category' =>  'required',
             'description' => 'required',

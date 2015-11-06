@@ -133,21 +133,6 @@ $(document).ready(function() {
     });
 
     /* limit charaters dislay item */
-    /*$(function() {
-        var limit = 15;
-        var chars = $("#title-cut").text();
-        if(chars.length > limit) {
-            var visiblePart = $("<span>"+ chars.substr(0, limit-1) +"</span>");
-            var dots = $("<span class='dots'>...</span>");
-
-            $("#title-cut").empty()
-                .append(visiblePart)
-                .append(dots);
-
-        }
-
-    });*/
-    
     $(".title-cut").each(function() {
         if ($(this).text().length > 10) {
             $(this).text($(this).text().substr(0, 20));

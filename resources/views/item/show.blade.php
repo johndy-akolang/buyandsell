@@ -1,7 +1,7 @@
 @extends('app')
 
 @section('title')
-    {{ $items->slug }}
+    {{ $items->slug }} for sale philippines - KOLL.com.ph
 @stop
 
 @section('content')
@@ -108,7 +108,7 @@
                             @else
                                 <div class="commenter-container panel-body">
 
-                                    <form method="post" action="/comment/add">
+                                    <form method="post" action="/comments/add">
                                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                         <input type="hidden" name="on_post" value="{{ $items->id }}">
                                         <input type="hidden" name="slug" value="{{ $items->slug }}">
@@ -165,7 +165,7 @@
                     <h5 class="m_1">Seller Information</h5>
 
                     <!-- seller name -->
-                    <strong><a href="{{ url('/user/'.$items->guest_id) }}">{{ $items->guest->first_name }} {{ $items->guest->last_name }}</a></strong>
+                    <strong><a href="{{ url('/account/user/'.$items->guest_id) }}">{{ $items->guest->first_name }} {{ $items->guest->last_name }}</a></strong>
 
                     <div class="details-seller floatLeft">
                         <label class="mb-num mt-10"><span class="deta-left c-999 txt-ind-10"><i class="fa fa-mobile"></i>Mobile:</span><span class="deta-right txt-ind-10">{{ $items->guest->mobile }}</span></label>

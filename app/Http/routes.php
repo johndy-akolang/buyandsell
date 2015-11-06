@@ -15,6 +15,39 @@
     'auth' => 'Auth\AuthController',
     'password' => 'Auth\PasswordController',
 ]);*/
+Route::get('/', ['as' => 'home', 'uses' => 'HomeController@index']);
+Route::get('item', ['as' => 'home', 'uses' => 'ItemController@index']);
+
+Route::group(['middleware' => ['auth']], function() 
+{
+	//Route::resource('item', 'ItemController');
+	Route::get('item', 'ItemController@index');
+
+	// show form create item user
+	Route::get('item/create', 'ItemController@create');
+
+	// save new item
+	Route::post('item', 'ItemController@store');
+
+	Route::get('myallitems', 'AccountController@user_posts_all');
+
+	// add comment
+	Route::post('comments/add', 'CommentsController@store');
+	/*Route::resource('comment', 'CommentsController');*/
+
+});
+
+
+
+// item display single post
+Route::get('/item/{slug}',['as' => 'item', 'uses' => 'ItemController@show'])->where('slug', '[A-Za-z0-9-_]+');
+
+// user profile
+Route::get('user/{id}', 'AccountController@profile')->where('id', '[0-9]');
+
+// search item
+Route::post('partials/header', 'ItemController@search');
+
 
 Route::get('account/{id}', 'AccountController@user')->where('id', '[0-9]+');
 
@@ -46,33 +79,3 @@ Route::get('legal/terms', 'LegalController@terms');
 Route::get('legal/privacy', 'LegalController@privacy');
 
 
-Route::get('/', ['as' => 'home', 'uses' => 'HomeController@index']);
-Route::get('item', ['as' => 'home', 'uses' => 'ItemController@index']);
-
-Route::group(['middleware' => ['auth']], function() 
-{
-	Route::resource('item', 'ItemController');
-	/*Route::get('item', 'ItemController@index');*/
-
-	/*// show form create item user
-	Route::get('item/create', 'ItemController@create');
-
-	// save new item
-	Route::post('item/create', 'ItemController@store');*/
-
-	Route::get('myallitems', 'AccountController@user_posts_all');
-
-	// add comment
-	Route::post('comment/add', 'CommentsController@store');
-	/*Route::resource('comment', 'CommentsController');*/
-
-});
-
-// item display single post
-Route::get('/{slug}',['as' => 'item', 'uses' => 'ItemController@show'])->where('slug', '[A-Za-z0-9-_]+');
-
-// user profile
-Route::get('user/{id}', 'AccountController@profile')->where('id', '[0-9]');
-
-// search item
-Route::post('partials/header', 'ItemController@search');
