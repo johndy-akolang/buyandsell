@@ -10,9 +10,10 @@
                         <a class="clicker" >
                             <i class="fa fa-user"></i>
                             {{ Auth::user()->first_name }}
+                            <i class="s-arrow-down ml-10 fa fa-sort-desc"></i>
                         </a>
                         <ul class="user-cont-menu">
-                            <li><a href="#" class="user-menu"><i class="fa fa-inbox"></i>Inbox</a></li>
+                            <!-- <li><a href="#" class="user-menu"><i class="fa fa-inbox"></i>Inbox</a></li> -->
                             <li><a href="/item/" class="user-menu"><i class="fa fa-suitcase"></i>Manage Ads</a></li>
                             <li><a href="{{ url('/user/'.Auth::id()) }}" class="user-menu"><i class="fa fa-gear"></i>Account</a></li>
                             <li><a href="#" class="user-menu"><i class="fa fa-money"></i>0 Credit</a></li>
