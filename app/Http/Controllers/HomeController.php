@@ -28,8 +28,7 @@ class HomeController extends Controller
         /*$items = Item::where('slug',$slug)->first();*/
         /*$datas = User::all();*/
 
-        $items = Item::where('active', 1)->orderBy('created_at', 'desc')->paginate(10);
-
+        $items = Item::where('active', 1)->orderBy('created_at', 'desc')->paginate(12);
         return view('home')->withItems($items);
 
     }
