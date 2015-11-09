@@ -15,7 +15,7 @@ use App\Condition;
 use App\Province;
 use App\User;
 use Redirect;
-
+use Illuminate\Pagination\Paginator;
 /* add */
 //use App\Repositories\ItemRepository;
 //use Illuminate\Support\Facades\Input;
@@ -38,7 +38,7 @@ class ItemController extends Controller
     public function index()
     {
 
-        $items = Item::where('active', 1)->orderBy('created_at', 'desc')->paginate(10);
+        $items = Item::where('active', 1)->orderBy('created_at', 'desc')->paginate(9);
         return view('item.index')->withItems($items);
 
     }
@@ -133,6 +133,7 @@ class ItemController extends Controller
 
         $featured = Item::paginate(3);
         $items = Item::where('slug', $slug)->first();
+        //$cities = City::all();
 
         if ($items) 
         {
