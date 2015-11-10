@@ -10,27 +10,6 @@
     <div class="main">
 
         <div class="wrap">
-			<!-- @if(isset($success))
-				<div class="alet alert-success">{{ $success }}</div>
-			@endif -->
-            <!-- @if(Session::has('message'))
-                <div class="alert alert-success">
-                    {{ Session::get('message') }}
-                </div>
-            @endif -->
-
-            <!-- @if (count($errors) > 0)
-
-                <div class="alert alert-danger">
-                    <strong>Whoops! </strong>
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-
-            @endif -->
 		
             <div class="cont sell-item-cont bor-rad5 border1ccc pad10">
 
@@ -186,17 +165,6 @@
                         <div class="title-cont-input floatLeft">
                             {!! Form::file('images', null) !!}
                         </div>
-						<!-- {!! Form::file('images', array('class' => 'dropzone')) !!} -->
-
-                        <!-- <div class="dz-message">
-
-                        </div>
-
-                        <div class="fallback">
-                            <input name="images" type="file" multiple class="dropzone"/>
-                        </div>
-
-                        <div class="dropzone-previews" id="dropzonePreview"></div> -->
 
                     </fieldset>
 
@@ -278,7 +246,6 @@
                         <div class="btn_form floatLeft">
 
                             {{-- submit button for ads --}}
-                            <!-- <input class="btn button input-blue floatRight c-fff" type="submit" value="Submit Ads" name="submitads"> -->
 
                             {!! Form::submit('Submit Ads', array('class' => 'btn button input-blue floatRight c-fff')) !!}
 

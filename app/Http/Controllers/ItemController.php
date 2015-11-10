@@ -16,6 +16,7 @@ use App\Province;
 use App\User;
 use Redirect;
 use Illuminate\Pagination\Paginator;
+use DB;
 /* add */
 //use App\Repositories\ItemRepository;
 //use Illuminate\Support\Facades\Input;
@@ -54,10 +55,10 @@ class ItemController extends Controller
         //if user can post i.e. user is seller or guest
         if ($request->user()->can_post())
         {
-            $city = \DB::table('city')->lists('citylist', 'id');
-            $province = \DB::table('province')->lists('provincelist', 'id');
-            $condition = \DB::table('condition')->lists('conditionitem', 'id');
-            $category = \DB::table('category')->lists('categorylist', 'id');
+            $city = \DB::table('city')->lists('citylist', 'citylist');
+            $province = \DB::table('province')->lists('provincelist', 'provincelist');
+            $condition = \DB::table('condition')->lists('conditionitem', 'conditionitem');
+            $category = \DB::table('category')->lists('categorylist', 'categorylist');
 
             return view('item.create')->with('city', $city)->with('province', $province)->with('condition', $condition)->with('category', $category);
 
@@ -130,10 +131,14 @@ class ItemController extends Controller
         return view('item.show')->with('item', $item);*/
 
         //$cities = Item::with('city')->get();
-
         $featured = Item::paginate(3);
         $items = Item::where('slug', $slug)->first();
-        //$cities = City::all();
+        //$cities = City::all(['id', 'citylist']);
+        //$cities = DB::table('city')->get();
+        
+
+        //var_dump($cities);
+        
 
         if ($items) 
         {
