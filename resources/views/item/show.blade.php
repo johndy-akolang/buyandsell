@@ -68,7 +68,7 @@
                         <div class="brand-bg">
                             
                             <!-- facebook share -->
-                            <a href="https://www.facebook.com/sharer/sharer.php?u=example.org" class="facebook" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + location.href, 'sharer', 'width=626,height=436');">
+                            <a class="facebook" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + location.href, 'sharer', 'width=626,height=436');">
                                 <i class="fa fa-facebook circle-3"></i>
                                 <span class="c-307">Share on Facebook</span>
                             </a>

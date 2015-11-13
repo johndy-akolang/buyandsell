@@ -57,6 +57,28 @@ body{
 .header-top {
     border-bottom: 1px solid #ddd;
 }
+
+/* dropit */
+.dropit {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.dropit .dropit-trigger { position: relative; }
+.dropit .dropit-submenu {
+    position: absolute;
+    top: 100%;
+    left: 0; /* dropdown left or right */
+    z-index: 1000;
+    display: none;
+    min-width: 150px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.dropit .dropit-open .dropit-submenu { display: block; }
+
+
 .cssmenu {
     float: right;
     color: #555;
@@ -1727,7 +1749,9 @@ ul.delivery-list li a:hover{
     -o-text-shadow: 1px 1px 6px #aaa;
 }
 
-/*--add--*/
+
+
+/*--add mark--*/
 .span_1_of_3:hover .view-count {
     color: #fff;
 }
@@ -3136,8 +3160,14 @@ form::after {
     /*width: 222px;*/
     z-index: 1;
 }
-
-
+.s-arrow-down {
+    position: relative;
+    top: -2px;
+}
+.brand-bg .facebook {
+    cursor: pointer;
+    cursor: hand;
+}
 
 
 
@@ -3724,14 +3754,33 @@ form::after {
         margin: 1% 0 1% 0%;
     }
 }
-@media (max-width:480px){
+@media (max-width:480px) {
+    /* add mark */
+    .cssmenu ul li ul.user-cont-menu {
+        right: 28%;
+    }
+    .cssmenu .user-cont-menu li {
+        text-align: left;
+    }
+    .wrapper-dropdown-5, .wrapper-dropdown, .wrapper-dropdown-action {
+        margin-left: 35%;
+    }
+    .search {
+        width: 465px;
+    }
+    .image-style-one {
+        width: auto;
+    }
+
+
+
     #products .pagination li a {
         width:89px;
     }
     .header-bottom-right {
         width: 100%;
-        float: none;
-        margin-top: 10px;
+        float: left;
+        margin-top: 20px;
     }
     .to input[type="text"] {
         width: 43.2%;
@@ -3753,7 +3802,7 @@ form::after {
         float: none;
     }
     .search {
-        margin: 5px 10px 0 0;
+        margin: 20px 0 0;
     }
     ul.last {
         margin: 12px 0px 0 10px;
@@ -3771,7 +3820,7 @@ form::after {
         font-size: 1em;
     }
     .search input[type="text"] {
-        width: 110px;
+        width: 425px;
     }
     h2.m_1 {
         font-size: 1em;
@@ -3838,7 +3887,7 @@ form::after {
     }
     .rsidebar {
         float: none;
-        margin: 2.7% 0 1% 0;
+        margin: 2.7% 0 5% 27%;
     }
     .border {
         margin-bottom: 10%;
@@ -3920,13 +3969,30 @@ form::after {
     }
 }
 @media (max-width:320px){
+
+    /* add mark */
+    .cssmenu ul li ul.user-cont-menu {
+        right: 16%;
+    }
+    .cssmenu .user-cont-menu li {
+        text-align: left;
+    }
+    .search {
+        width: 310px;
+    }
+    .image-style-one {
+        width: auto;
+    }
+
+
+
     #products .pagination li a {
         width:89px;
     }
     .header-bottom-right {
         width: 100%;
-        float: none;
-        margin-top: 10px;
+        float: left;
+        margin-top: 20px;
     }
     .to input[type="text"] {
         width: 40.2%;
@@ -3948,7 +4014,7 @@ form::after {
         float: none;
     }
     .search {
-        margin: 5px 10px 0 0;
+        margin: 20px 0 0 0;
     }
     ul.last {
         margin: 12px 0px 0 10px;
@@ -3966,13 +4032,13 @@ form::after {
         font-size: 1em;
     }
     .search input[type="text"] {
-        width:55px;
+        width: 270px;
     }
     h2.m_1 {
         font-size: 1em;
     }
     ul.f-list span.f-text {
-        font-size:11px;
+        font-size: 11px;
         margin-top: 29px;
     }
     .span_1_of_4 {
@@ -4033,7 +4099,8 @@ form::after {
     }
     .rsidebar {
         float: none;
-        margin: 2.7% 0 1% 0;
+        /*margin: 2.7% 0 1% 0;*/
+        margin: 2.7% 0 7% 16%;
     }
     .border {
         margin-bottom: 10%;
