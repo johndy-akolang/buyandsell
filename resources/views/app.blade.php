@@ -9,8 +9,8 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <meta name="title" content="Koll.com.ph - Philippines buy and sell website" /> 
-    <!-- <meta name="description" content="#1 Buy and Sell Website, Philippines - Sell your 2nd hand items on KOLL.com.ph, buy and sell website. Post free online ads of your used car, mobile phone, furniture, and more."> -->
-    <meta name="keywords" content="#1 Buy and Sell Website, Philippines, 2nd Hand for sale, Vehicles, Fashion, Pets, Jobs, Electronics, Real Estate, Sports, Toys, Others, For Sale Items, Low Price, Discount" />
+    <!-- <meta name="description" content="New Buy and Sell Website, Philippines - Sell your 2nd hand items on KOLL.com.ph, buy and sell website. Post free online ads of your used car, mobile phone, furniture, and more."> -->
+    <meta name="keywords" content="New Buy and Sell Website, Philippines, 2nd Hand for sale, Vehicles, Fashion, Pets, Jobs, Electronics, Real Estate, Sports, Toys, Others, For Sale Items, Low Price, Discount" />
 
     {{-- title --}}
     <title>@yield('title')</title>
@@ -18,8 +18,8 @@
     <meta property="og:image" content="@yield('og-image', 'http://koll.com.ph/images/logo-koll.png')" />
     <meta property="og:image:width" content="500" />
     <meta property="og:image:height" content="500" />
-    <meta property="og:description" content="@yield('og-description', '#1 Buy and Sell Website, Philippines - Sell your 2nd hand items on KOLL.com.ph, buy and sell website. Post free online ads of your used car, mobile phone, furniture, and more.')" />
-    <!-- <meta property="og:url" content="@yield('og-url', '{{ Request::url() }}')" /> -->
+    <meta property="og:description" content="@yield('og-description', 'New Buy and Sell Website, Philippines - Sell your 2nd hand items on KOLL.com.ph, buy and sell website. Post free online ads of your used car, mobile phone, furniture, and more.')" />
+    <meta property="og:url" content="@yield('og-url', '{{ Request::url() }}')" />
     <meta property="og:site_name" content="KOLL.com.ph" />
 
     {{-- css --}}
