@@ -4,6 +4,10 @@
     {{ $items->slug }} for sale philippines - KOLL.com.ph
 @stop
 
+<!-- @section('meta')
+    @include('partials.meta')
+@stop -->
+
 @section('content')
 
 <div class="view">
@@ -63,6 +67,8 @@
                         <!-- social media share -->
                         <div class="brand-bg">
 
+                            <a href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),'facebook-share-dialog','width=626,height=436');return false;">Share on Facebook</a>
+                            
                             <!-- facebook share -->
                             <a class="facebook" href="#">
                                 <i class="fa fa-facebook circle-3"></i>

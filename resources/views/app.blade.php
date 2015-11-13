@@ -14,6 +14,10 @@
 
     {{-- title --}}
     <title>@yield('title')</title>
+    <meta property="og:title" content="@yield('og-title', 'KOLL.com.ph')">
+    <meta property="og:image" content="@yield('og-image', 'http://koll.com.ph/images/logo-koll.png')">
+    <meta property="og:url" content="@yield('og-url', '{{ Request::url() }}')">
+    <meta property="og:site_name" content="KOLL.com.ph">
 
     {{-- css --}}
     @include('partials.css')
@@ -44,9 +48,6 @@
         </ul>
     </div>
     @endif
-
-  
-
 
     {{-- content --}}
     @yield('content')
