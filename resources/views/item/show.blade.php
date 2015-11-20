@@ -64,11 +64,12 @@
                         <div class="brand-bg">
                             
                             <!-- facebook share -->
-                            <a class="facebook" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + location.href, 'sharer', 'width=626,height=436');">
+                            <!-- <a class="facebook" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),'facebook-share-dialog','width=626,height=436');return false;">
                                 <i class="fa fa-facebook circle-3"></i>
                                 <span class="c-307">Share on Facebook</span>
-                            </a>
-
+                            </a> -->
+                            <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-564e8dba65341b7f" async="async"></script>
+                            <div class="addthis_sharing_toolbox"></div>
                             <!-- twitter share -->
                             <!-- <a class="twitter" href="#">
                                 <i class="fa fa-twitter circle-3"></i>
