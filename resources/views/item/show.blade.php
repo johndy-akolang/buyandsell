@@ -4,6 +4,12 @@
     {{ $items->slug }} for sale philippines - KOLL.com.ph
 @stop
 
+@section('meta')
+
+    @include('partials.meta')
+
+@stop 
+
 @section('content')
 
 <div class="view">
