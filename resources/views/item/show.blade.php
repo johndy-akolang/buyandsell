@@ -32,7 +32,7 @@
                         <ul id="etalage">
                             <li>
                                 <a href="#">
-                                    <img id="adsitem" class="etalage_thumb_image img-responsive" src="{{ asset($items->images) }}" />
+                                    <img class="etalage_thumb_image img-responsive" src="{{ asset($items->images) }}" />
                                     <!-- <img class="etalage_source_image" src="{{ asset($items->images) }}" class="img-responsive" width="300" /> -->
                                     <!--
                                     <img class="etalage_thumb_image" src="{{ asset('/images/s-img.jpg') }}" class="img-responsive" />

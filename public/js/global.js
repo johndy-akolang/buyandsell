@@ -141,9 +141,9 @@ $(document).ready(function() {
     });
 
     /* images resize */
-    target=document.getElementById('adsitem');
+    /*target=document.getElementById('adsitem');
     target.style.width=((350*screen.width)/1280)+'px';
-    target.style.height=((800*screen.height)/1800)+'px';
+    target.style.height=((800*screen.height)/1800)+'px';*/
 
 
 });
