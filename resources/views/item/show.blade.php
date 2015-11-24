@@ -10,7 +10,7 @@
 {{-- Opengraph metas --}}
 <meta property="og:title" content="{{ $items->title }}" />
 <meta property="og:description" content="{{ $items->description }}" />
-<meta property="og:image" content="{{ $items->images, 600, 315) }}" />
+<meta property="og:image" content="{{ $items->images, 600, 315 }}" />
 <meta property="og:type" content="website" />
 {{-- / Opengraph metas --}} 
 @endsection
