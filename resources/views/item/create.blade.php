@@ -25,7 +25,7 @@
 
                         {{-- title form label --}}
                         <div class="sellitem-title-cont floatLeft">
-                            <div class="sellitem-label floatLeft talignright">
+                            <div class="sellitem-label floatLeft">
                                 <label>What are you selling?
                                     <span class="cff0">*</span>
                                 </label>
@@ -55,7 +55,7 @@
 
                         {{-- price form label --}}
                         <div class="sellitem-title-cont floatLeft">
-                            <div class="sellitem-label floatLeft talignright">
+                            <div class="sellitem-label floatLeft">
                                 <label>Price
                                     <span class="cff0">*</span>
                                 </label>
@@ -68,7 +68,7 @@
                             {!! Form::text('price', '',
                                 array('required',
                                     'id' => 'price', 'name' => 'price',
-                                    'class' => 'form-control width200px')) !!}
+                                    'class' => 'form-control price-input')) !!}
 
                         </div>
 
@@ -79,7 +79,7 @@
 
                         {{-- title form label --}}
                         <div class="sellitem-title-cont floatLeft">
-                            <div class="sellitem-label floatLeft talignright">
+                            <div class="sellitem-label floatLeft">
                                 <label>Condition
                                     <span class="cff0">*</span>
                                 </label>
@@ -103,7 +103,7 @@
 
                         {{-- title form label --}}
                         <div class="sellitem-title-cont floatLeft">
-                            <div class="sellitem-label floatLeft talignright">
+                            <div class="sellitem-label floatLeft">
                                 <label>Choose a Category
                                     <span class="cff0">*</span>
                                 </label>
@@ -127,7 +127,7 @@
 
                         {{-- title form label --}}
                         <div class="sellitem-title-cont floatLeft">
-                            <div class="sellitem-label floatLeft talignright">
+                            <div class="sellitem-label floatLeft">
                                 <label>Description
                                     <span class="cff0">*</span>
                                 </label>
@@ -157,7 +157,7 @@
 
                         {{-- title form label --}}
                         <div class="sellitem-title-cont floatLeft">
-                            <div class="sellitem-label floatLeft talignright">
+                            <div class="sellitem-label floatLeft">
                                 <label>Upload photos</label>
                             </div>
                         </div>
@@ -173,7 +173,7 @@
 
                         {{-- title form label --}}
                         <div class="sellitem-title-cont floatLeft">
-                            <div class="sellitem-label floatLeft talignright">
+                            <div class="sellitem-label floatLeft">
                                 <label>Province
                                     <span class="cff0">*</span>
                                 </label>
@@ -197,7 +197,7 @@
 
                         {{-- title form label --}}
                         <div class="sellitem-title-cont floatLeft">
-                            <div class="sellitem-label floatLeft talignright">
+                            <div class="sellitem-label floatLeft">
                                 <label>City
                                     <span class="cff0">*</span>
                                 </label>
@@ -221,7 +221,7 @@
 
                         {{-- title form label --}}
                         <div class="sellitem-title-cont floatLeft">
-                            <div class="sellitem-label floatLeft talignright">
+                            <div class="sellitem-label floatLeft">
                                 <label>Business Mobile number
                                     <span class="cff0">*</span>
                                 </label>

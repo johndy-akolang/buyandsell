@@ -1173,7 +1173,7 @@ ul.kids li a:hover{
 .mens{
     border-top:1px solid #ddd;
 }
-.view, .sellitem {
+.view, .sellitem, .account {
     border-top: 1px solid #ddd;
     padding: 0 0 35px 0;
 }
@@ -2096,6 +2096,9 @@ form::after {
     margin-top: 20px;
     width: 76.1%;
 }
+.title-cont-input .price-input {
+    width: 200px !important;
+}
 .pad10 {
     padding: 10px;
 }
@@ -2152,6 +2155,7 @@ form::after {
 }
 
 .sellitem-label label {
+    text-align: right;
     padding-top: 8px;
     width: 190px;
 }
@@ -3755,6 +3759,7 @@ form::after {
     }
 }
 @media (max-width:480px) {
+    
     /* add mark */
     .cssmenu ul li ul.user-cont-menu {
         right: 28%;
@@ -3971,232 +3976,113 @@ form::after {
 @media (max-width:320px){
 
     /* add mark */
-    .cssmenu ul li ul.user-cont-menu {
-        right: 16%;
+    /* account user view */
+    .shrtct {float: left;position: relative;top: 30px;width: auto;}
+    .usrinfo {float: left;font-size: 12px;left: 0;position: relative;top: 2px;}
+    .usrimg {float: left;position: relative;}
+    .idx_crd {margin: 0;width: 100%;}
+
+    /* create ads */
+    textarea.form-control {width: inherit;}
+    .title-cont-input .price-input {width: 100% !important;}
+    .title-cont-input {margin: 0;padding: 0;width: 100%;}
+    .sellitem-label {width: 100%;}
+    .sellitem-title-cont {padding: 0;}
+    .sellitem-label label {text-align: start;}
+
+    /* view ads */
+    .positioning {width: 97%;}
+    .rsingle .list-unstyled li img {max-width: 277px;}
+    .span_1_of_3 {width: 100% !important;}
+    h3.m_3 {font-size: 2em;}
+    p.m_5 {font-size: 1.4em;}
+    p.m_5 {float: left;}
+    .brand-bg {float: right;margin: 0;}
+
+    /* signup/register page */
+    .register_account .wrap {
+        width: 97% !important;
     }
-    .cssmenu .user-cont-menu li {
-        text-align: left;
-    }
-    .search {
-        width: 310px;
-    }
-    .image-style-one {
-        width: auto;
-    }
+    .register_account .reg-label {border: medium none;font-size: 14px;margin-top: 25px;padding: 0 10px;width: auto;}
+    .logo-cont span {font-size: 9px;}
+
+    /* signin/login page */
+    .sd-rcc .sd-rts {padding: 0 0 8px 0;}
+    .sd-rcc {width: auto !important;}
+    .login-title .social-login img {margin-top: 10px;}
+    .login-title .social-login {text-align: center;}
+    .login .remember {margin: 0;}
+    .login .wrap {width: 97%;}
+    .gf-t, .logo-cont {text-align: center;width: auto;}
+
+    /* home page */
+    .social-media li {float: none;}
+    .company_address p {line-height: 1;}
+    .col_1_of_f_2 {text-align: center;}
+    .col_1_of_f_2:first-child {text-align: center;}
+    .wrapper-dropdown-5, .wrapper-dropdown, .wrapper-dropdown-action {margin-left: 17px;}
+    .cssmenu ul li ul.user-cont-menu {right: 16%;}
+    .cssmenu .user-cont-menu li {text-align: left;}
+    .search {width: 310px;}
+    .image-style-one {width: auto;}
 
 
-
-    #products .pagination li a {
-        width:89px;
-    }
-    .header-bottom-right {
-        width: 100%;
-        float: left;
-        margin-top: 20px;
-    }
-    .to input[type="text"] {
-        width: 40.2%;
-    }
-    .megamenu>li>a {
-        padding: 8px 5px;
-    }
-    .logo {
-        margin-right:0;
-        float:none;
-        text-align: center;
-    }
-    .menu {
-        float: none;
-        margin-top: 6px;
-    }
-    .header-bottom-left {
-        width: 100%;
-        float: none;
-    }
-    .search {
-        margin: 20px 0 0 0;
-    }
-    ul.last {
-        margin: 12px 0px 0 10px;
-    }
-    h2.head {
-        font-size:1.2em;
-    }
-    .btn a {
-        left: 12px;
-        padding: 6px 8px;
-        top: -75px;
-        font-size: 0.85em;
-    }
-    p.title a {
-        font-size: 1em;
-    }
-    .search input[type="text"] {
-        width: 270px;
-    }
-    h2.m_1 {
-        font-size: 1em;
-    }
-    ul.f-list span.f-text {
-        font-size: 11px;
-        margin-top: 29px;
-    }
-    .span_1_of_4 {
-        width:100%;
-    }
-    .col_1_of_4 {
-        float:none;
-        margin: 1% 0 1% 0%;
-    }
-    .icon1 ul {
-        top: 64px;
-    }
-    span.rollover {
-        height: 109px;
-        width: 128px;
-    }
-    .text input[type="text"], .text textarea {
-        width:90.7%;
-    }
-    .cssmenu ul li a {
-        margin: 8px 0;
-    }
-    .cssmenu {
-        margin-top:0px;
-        float:none;
-        text-align: center;
-    }
-    .cart-left {
-        width: 70.5%;
-    }
-    span.reducedfrom {
-        margin-right: 2%;
-    }
-    .header-top-left {
-        width: 100%;
-        float: none;
-    }
-    .box {
-        float: left;
-        width:47.5%;
-        margin-right: 10.6%;
-    }
-    .box1 {
-        float: left;
-        width: 20.5%;
-    }
-    .tag-list {
-        margin-left:0%;
-    }
-    .span_2_of_3, .sell-item-cont {
-        width: 100%;
-    }
-    .cont {
-        float: none;
-    }
-    .span_1_of_left {
-        width:70%;
-    }
-    .rsidebar {
-        float: none;
-        /*margin: 2.7% 0 1% 0;*/
-        margin: 2.7% 0 7% 16%;
-    }
-    .border {
-        margin-bottom: 10%;
-    }
-    .span_1_of_2 {
-        width: 100%;
-    }
-    .col_1_of_2 {
-        float:none;
-        margin:0;
-    }
-    .copy {
-        float: none;
-        margin-bottom:10px;
-    }
-    .f-list2 {
-        float: none;
-    }
-    .footer-bottom {
-        text-align: center;
-    }
-    .rsingle {
-        float: none;
-        margin: 0% 0 1% 0%;
-    }
-    .span_1_of_single {
-        width: 100%;
-    }
-    .mens-toolbar .sort {
-        width: 26.5%;
-    }
-    .mens-toolbar .pager {
-        width: 41.5%;
-    }
-    .span_1_of_about {
-        width: 100%;
-    }
-    .labout {
-        float: none;
-        margin: 1% 0 1% 0;
-    }
-    .span_2_of_about {
-        width: 100%;
-    }
-    .span_1_of_login {
-        width: 100%;
-    }
-    .col_1_of_login {
-        float: none;
-        margin: 1% 0 1% 0%;
-    }
-    .span_1_of_3 {
-        width:100%;
-    }
-    .col_1_of_3 {
-        float: none;
-        margin: 1% 0 1% 0%;
-    }
-    .images_3_of_2 {
-        width: 100%;
-        float: none;
-        margin-right: 0;
-    }
-    .span_3_of_2 {
-        width: 100%;
-    }
-    .desc1 {
-        float: none;
-    }
-    .f-list2 li {
-        margin: 0 4px;
-    }
-    .icon1 ul {
-        right: -92px;
-        width: 230px;
-    }
-    ul.f-list img {
-        margin-right: 0;
-    }
-    .span_1_of_about-box {
-        width: 100%;
-    }
-    .col_1_of_about-box {
-        float:none;
-        margin: 1% 0 1% 0%;
-    }
-    .dropdown {
-        width: 90px;
-    }
-    h3.m_3 {
-        font-size: 1em;
-    }
-    p.m_5 {
-        font-size: 1.4em;
-    }
-    .box {
-        width: 55.5%;
-    }
+    #products .pagination li a {width:89px;}
+    .header-bottom-right {width: 100%;float: left;margin-top: 20px;}
+    .to input[type="text"] {width: 40.2%;}
+    .megamenu>li>a {padding: 8px 5px;}
+    .logo {margin-right:0;float:none;text-align: center;}
+    .menu {float: none;margin-top: 6px;}
+    .header-bottom-left {width: 100%;float: none;}
+    .search {margin: 20px 0 0 0;}
+    ul.last {margin: 12px 0px 0 10px;}
+    h2.head {font-size:1.2em;}
+    .btn a {left: 12px;padding: 6px 8px;top: -75px;font-size: 0.85em;}
+    p.title a {font-size: 1em;}
+    .search input[type="text"] {width: 270px;}
+    h2.m_1 {font-size: 1em;}
+    ul.f-list span.f-text {font-size: 11px;margin-top: 29px;}
+    .span_1_of_4 {width:100%;}
+    .col_1_of_4 {float:none;margin: 1% 0 1% 0%;}
+    .icon1 ul {top: 64px;}
+    span.rollover {height: 109px;width: 128px;}
+    .text input[type="text"], .text textarea {width:90.7%;}
+    .cssmenu ul li a {margin: 8px 0;}
+    .cssmenu {margin-top:0px;float:none;text-align: center;}
+    .cart-left {width: 70.5%;}
+    span.reducedfrom {margin-right: 2%;}
+    .header-top-left {width: 100%;float: none;}
+    .box {float: left;width:47.5%;margin-right: 10.6%;}
+    .box1 {float: left;width: 20.5%;}
+    .tag-list {margin-left:0%;}
+    .span_2_of_3, .sell-item-cont {width: 100%;}
+    .cont {float: none;}
+    .span_1_of_left {width:70%;}
+    .rsidebar {float: none;/*margin: 2.7% 0 1% 0;*/margin: 2.7% 0 7% 16%;}
+    .border {margin-bottom: 10%;}
+    .span_1_of_2 {width: 100%;}
+    .col_1_of_2 {float:none;margin:0;}
+    .copy {float: none;margin-bottom:10px;}
+    .f-list2 {float: none;}
+    .footer-bottom {text-align: center;}
+    .rsingle {float: none;margin: 0% 0 1% 0%;}
+    .span_1_of_single {width: 100%;}
+    .mens-toolbar .sort { width: 26.5%;}
+    .mens-toolbar .pager {width: 41.5%;}
+    .span_1_of_about {width: 100%;}
+    .labout {float: margin: 1% 0 1% 0;}
+    .span_2_of_about {width: 100%;}
+    .span_1_of_login {width: 100%;}
+    .col_1_of_login {float: none;margin: 1% 0 1% 0%;}
+    .col_1_of_3 {float: none;margin: 1% 0 1% 0%;}
+    .images_3_of_2 {width: 100%;float: none;margin-right: 0;}
+    .span_3_of_2 {width: 100%;}
+    .desc1 {float: none;}
+    .f-list2 li {margin: 0 4px;}
+    .icon1 ul {right: -92px;width: 230px;}
+    ul.f-list img {margin-right: 0;}
+    .span_1_of_about-box {width: 100%;}
+    .col_1_of_about-box {float:none;margin: 1% 0 1% 0%;}
+    .dropdown {width: 90px;}
+    .box {width: 55.5%;}
 }
