@@ -4,11 +4,16 @@
     {{ $items->slug }} for sale philippines - KOLL.com.ph
 @stop
 
-@section('meta')
+@section('header_assets')
+<meta name="description" content="{{ $items->title }}">
 
-    @include('partials.meta')
-
-@stop 
+{{-- Opengraph metas --}}
+<meta property="og:title" content="{{ $items->title }}" />
+<meta property="og:description" content="{{ $items->description }}" />
+<meta property="og:image" content="{{ $items->images, 600, 315) }}" />
+<meta property="og:type" content="website" />
+{{-- / Opengraph metas --}} 
+@endsection
 
 @section('content')
 
