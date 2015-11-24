@@ -17,24 +17,7 @@
                         {{-- twitter --}}
                         <div class="col_1_of_f_2 span_1_of_f_2">
                             <h3 class="clr555">Facebook</h3>
-                            <div class="recent-tweet">
-                                <div class="recent-tweet-icon">
-                                    <span> </span>
-                                </div>
-                                <div class="recent-tweet-info">
-                                    <p class="clr555">Ds which don't look even slightly believable. If you are <a href="#">going to use nibh euismod</a> tincidunt ut laoreet adipisicing</p>
-                                </div>
-                                <div class="clear"> </div>
-                            </div>
-                            <div class="recent-tweet">
-                                <div class="recent-tweet-icon">
-                                    <span> </span>
-                                </div>
-                                <div class="recent-tweet-info">
-                                    <p class="clr555">Ds which don't look even slightly believable. If you are <a href="#">going to use nibh euismod</a> tincidunt ut laoreet adipisicing</p>
-                                </div>
-                                <div class="clear"> </div>
-                            </div>
+                            <div class="fb-page" data-href="https://www.facebook.com/Kollcomph-1489672604662276/" data-width="389" data-height="300" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="true"></div>
                         </div>
 
                         <div class="clear"></div>
@@ -51,14 +34,6 @@
                             <p>
                                 We find you a fas and efficient way of selling and buying goods, products and services online through classified ads.
                             </p>
-                            <!-- <ul class="f-list1">
-                                <li><a href="#" class="clr555">Duis autem vel eum iriure </a></li>
-                                <li><a href="#" class="clr555">anteposuerit litterarum formas </a></li>
-                                <li><a href="#" class="clr555">Tduis dolore te feugait nulla</a></li>
-                                <li><a href="#" class="clr555">Duis autem vel eum iriure </a></li>
-                                <li><a href="#" class="clr555">anteposuerit litterarum formas </a></li>
-                                <li><a href="#" class="clr555">Tduis dolore te feugait nulla</a></li>
-                            </ul> -->
                         </div>
 
                         {{-- Contac us --}}
