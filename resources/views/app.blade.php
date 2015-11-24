@@ -17,6 +17,8 @@
 
     <meta property="og:title" content="@yield('og-title', 'KOLL.com.ph')" />
     <meta property="og:image" content="@yield('og-image', 'http://koll.com.ph/images/logo-koll.png')" />
+    <meta property="og:image" content="@yield('og-image', 'http://koll.com.ph/images/logo-koll.png')" />
+    <meta property="og:image" content="@yield('og-image', 'http://koll.com.ph/images/logo-koll.png')" />
     <meta property="og:image:width" content="500" />
     <meta property="og:image:height" content="500" />
     <meta property="og:description" content="@yield('og-description', 'New Buy and Sell Website, Philippines - Sell your 2nd hand items on KOLL.com.ph, buy and sell website. Post free online ads of your used car, mobile phone, furniture, and more.')" />
