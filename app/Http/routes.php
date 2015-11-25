@@ -43,7 +43,7 @@ Route::group(['middleware' => ['auth']], function()
 Route::get('/item/{slug}',['as' => 'item', 'uses' => 'ItemController@show'])->where('slug', '[A-Za-z0-9-_]+');
 
 // user profile
-Route::get('user/{id}', 'AccountController@profile')->where('id', '[0-9]');
+Route::get('/account/user/{id}', 'AccountController@profile')->where('id', '[0-9]');
 
 // search item
 Route::get('search', 'ItemController@getSearch');
