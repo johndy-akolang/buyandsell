@@ -3173,7 +3173,25 @@ form::after {
     cursor: pointer;
     cursor: hand;
 }
-
+.search .navbar-form {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+.search .input-group {
+    width: 100%;
+}
+.search .q {
+    width: 100%;
+}
+.search-btn {
+    position: relative;
+    display: none;
+}
+.search button {
+    background: #fff;
+    border: none;
+}
 
 
 

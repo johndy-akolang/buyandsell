@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Requests\ItemRequest;
 use App\Http\Controllers\Controller;
-//use Illuminate\Support\Facades\DB;
 use App\Item;
 use Validator;
 use App\City;
@@ -16,10 +15,7 @@ use App\Province;
 use App\User;
 use Redirect;
 use Illuminate\Pagination\Paginator;
-use DB;
-/* add */
-//use App\Repositories\ItemRepository;
-//use Illuminate\Support\Facades\Input;
+
 
 class ItemController extends Controller
 {
@@ -127,17 +123,8 @@ class ItemController extends Controller
     public function show($slug)
     {
 
-        /*$item = Item::find($id);
-        return view('item.show')->with('item', $item);*/
-
-        //$cities = Item::with('city')->get();
         $featured = Item::paginate(3);
         $items = Item::where('slug', $slug)->first();
-        //$cities = City::all(['id', 'citylist']);
-        //$cities = DB::table('city')->get();
-        
-
-        //var_dump($cities);
         
 
         if ($items) 
@@ -154,9 +141,6 @@ class ItemController extends Controller
         }
         //$featured = Item::paginate(8);
         return view('item.show')->withItems($items)->withComments($comments)->with(compact('featured'));
-
-        //var_dump($items->slug());
-
 
     }
 
@@ -177,10 +161,10 @@ class ItemController extends Controller
 
         if($items && ($request->user()->id == $items->guest_id || $request->user()->is_seller())) {  
 
-            $city = \DB::table('city')->lists('citylist', 'id');
-            $province = \DB::table('province')->lists('provincelist', 'id');
-            $condition = \DB::table('condition')->lists('conditionitem', 'id');
-            $category = \DB::table('category')->lists('categorylist', 'id');
+            $city = City::lists('citylist', 'citylist');
+            $province = Province::lists('provincelist', 'provincelist');
+            $condition = Condition::lists('conditionitem', 'conditionitem');
+            $category = Category::lists('categorylist', 'categorylist');
             //$condition = ['' => ''] + Condition::lists('conditionitem', 'id')->all();
             //$condition = array('' => 'Select') + Condition::lists('conditionitem', 'id')->toArray(); 
 
@@ -268,24 +252,71 @@ class ItemController extends Controller
     public function featured()
     {
 
-        
         return view('item.show', compact('featured'));
 
     }
 
-    public function search(Request $request)
+    public function getSearch(Request $request)
     {
+        //Validation class maybe ? TODO
+        if(!$request->has('q')) {
+            return redirect('home')
+                ->withErrors('You must make a search from the bar first');
+        }
+        
+        //Let's escape first
+        $parameters = e($request->get('q'));
 
-        /*$search = $request->input('search');
-        $items = $this->blog_gestion->search($this->nbrPages, $search);
-        $links = $items->setPath('')->appends(compact('search'))->render();
-        $info = trans('partials.header') . '<strong>' . $search . '</strong>';
+        $parameters = explode(',', $parameters);
+        //Values may be like "param1", "param2" after exploding, so we also need to trim them
+        array_walk($parameters, 'trim');
 
-        return view('home', compact('items', 'links', 'info'));*/
+        $items = Item::with('guest')
 
-        $title = $request->input('title');
-        return view('home')->with('item', Item::where('title', 'like', '%' . $title . '%')->paginate(7));
+        //Let's search the title first
+        ->where(function($q) use ($parameters) {
 
+            $j = 0;
+            foreach ($parameters as $parameter) {
+                
+                if($j == 0) {
+                    $q->where('title', 'LIKE', '%'.$parameter.'%');
+                } else {
+                    $q->orWhere('title', 'LIKE', '%'.$parameter.'%');
+                }
+
+                $j++;
+            }
+        })
+
+        //Lastly, let's search in the user name
+        ->orWhere(function($q) use ($parameters) {
+
+            $q->whereHas('guest', function($q2) use ($parameters) {
+
+                $j = 0;
+                foreach ($parameters as $parameter) {
+                    
+                    if($j == 0) {
+                        $q2->where('first_name', 'LIKE', '%'.$parameter.'%');
+                    } else {
+                        $q2->orwhere('first_name', 'LIKE', '%'.$parameter.'%');
+                    }
+
+                    $j++;
+                }
+            });
+        })
+
+
+        ->orderBy('id', 'desc')
+        //$featured = Item::paginate(3);
+        ->paginate(12);
+
+
+        return view('home')
+            ->withTitle('Search results for: '.implode(', ', $parameters))
+            ->withItems($items);
 
     }
 

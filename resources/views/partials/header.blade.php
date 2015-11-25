@@ -4,9 +4,9 @@
 
         {{-- list menu  top header --}}
         <div class="cssmenu">
-            <ul class="no-js">
+            <ul>
                 @if (Auth::user())
-                    <li>
+                    <li class="no-js">
                         <a class="clicker" >
                             <i class="fa fa-user"></i>
                             {{ Auth::user()->first_name }}
@@ -52,7 +52,7 @@
 <div class="header-bottom">
     <div class="wrap">
 
-        <div class="header-bottom-left">
+        <div class="header-bottom-left clearfix">
 
             {{-- logo website --}}
             <a class="floatLeft" href="/"><img class="logo-koll" src="{{ asset('/images/logo-koll-beta.png') }}"></a>
@@ -115,7 +115,7 @@
             {{-- form search --}}
             <div class="search">
 
-                {!! Form::open(['url' => 'partials/header']) !!}
+                <!-- {!! Form::open(['url' => 'partials/header']) !!}
 
                     {{-- input search --}}
                     {!! Form::text('title', null,
@@ -123,15 +123,26 @@
 
                         
 
-                    <!-- {{-- search submit --}}
+                    {{-- search submit --}}
                     {!! Form::submit('Search',
-                                     array('name' => 'submit')) !!} -->
+                                     array('name' => 'submit')) !!}
 
                     <div id="response"></div>
 
-                {!! Form::close() !!}
+                {!! Form::close() !!} -->
+
+                <form class="navbar-form navbar-left" role="search" action="/search">
+                    <div class="input-group">
+                        {{-- Double curly parantheses auto escape the provided string, so it's safe to use Request::get('q') below directly --}}
+                        <input type="text" class="q form-control" placeholder="Search" name="q" value="{{ Request::get('q', '') }}">
+                        <div class="search-btn">
+                            <button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
+                        </div>
+                    </div>
+                </form>
 
             </div>
+
 
         </div>
 
