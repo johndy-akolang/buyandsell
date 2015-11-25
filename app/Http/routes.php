@@ -46,7 +46,7 @@ Route::get('/item/{slug}',['as' => 'item', 'uses' => 'ItemController@show'])->wh
 Route::get('user/{id}', 'AccountController@profile')->where('id', '[0-9]');
 
 // search item
-Route::post('partials/header', 'ItemController@search');
+Route::get('search', 'ItemController@getSearch');
 
 
 Route::get('account/{id}', 'AccountController@user')->where('id', '[0-9]+');
