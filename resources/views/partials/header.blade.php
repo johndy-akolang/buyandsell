@@ -3,6 +3,25 @@
     <div class="wrap">
 
         {{-- list menu  top header --}}
+        <div class="socialite floatLeft">
+            <ul>
+                <li>
+                    <a href="#">
+                        <i class="fa fa-facebook-square"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa fa-twitter"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa fa-google-plus"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
         <div class="cssmenu">
             <ul>
                 @if (Auth::user())

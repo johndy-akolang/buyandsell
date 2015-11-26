@@ -78,19 +78,22 @@ body{
 }
 .dropit .dropit-open .dropit-submenu { display: block; }
 
-
+.socialite {
+    color: #555;
+    font-size: 14px;
+}
 .cssmenu {
     float: right;
     color: #555;
     font-size: 14px;
 }
-.cssmenu ul {
+.cssmenu ul, .socialite ul {
     margin-bottom: 0;
 }
-.cssmenu ul li {
+.cssmenu ul li, .socialite ul li {
     display: inline-block;
 }
-.cssmenu ul li a {
+.cssmenu ul li a, .socialite ul li a {
     color: #555;
     cursor: pointer;
     display: block;
@@ -2902,7 +2905,13 @@ form::after {
 .modal-dialog {
     opacity: 1;
 }
-
+.wrap .manage-a {
+    margin-bottom: 0;
+}
+.sub-tit {
+    color: #9c9c9c;
+    font-size: 12px;
+} 
 /* login success */
 .pdt15 {
     margin-top: 25px;
