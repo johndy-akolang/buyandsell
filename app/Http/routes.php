@@ -29,6 +29,12 @@ Route::group(['middleware' => ['auth']], function()
 	// save new item
 	Route::post('item', 'ItemController@store');
 
+	// edit item form
+	Route::get('item/edit/{slug}','ItemController@edit');
+
+	// update post 
+	Route::post('item', 'ItemController@update');
+
 	Route::get('myallitems', 'AccountController@user_posts_all');
 
 	// add comment

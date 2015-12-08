@@ -11,6 +11,10 @@
 
         <div class="wrap mb-30">
 
+            <!-- title manage ads -->
+            <h3 class="manage-a">My Account</h3>
+            <span class="sub-tit floatLeft width100">You can manage your Ads here</span>
+
             {{-- left side manage list item --}}
             <div class="cont span_2_of_3">
                 <div class="manage-item-list">
@@ -58,9 +62,9 @@
                 									</div>
                 									<div class="row">
                 										<div class="col-xs-12 col-sm-12 col-md-12 info-dta pad-top-bottom-10">
-                											<a class="c-307 mb-10 cursor" data-toggle="modal" data-target="#myModal">Update</a>
+                											<a href="{{ url('item/edit/'.$item->slug) }}" class="c-307 mb-10 cursor">Update</a>
                 											<a class="c-307 mb-10 ml-10" href="#">Mark sold</a>
-                											<a class="c-307 mb-10 ml-10 cursor" data-toggle="modal" data-target="#repost-tem">Re-post</a>
+                											<a class="c-307 mb-10 ml-10 cursor">Re-post</a>
                 										</div>
                 									</div>
                 									<div class="row">
@@ -132,15 +136,6 @@
                     <div class="clear"></div>
                 </div>
             </div>    
-
-            <!-- modal view edit item template -->
-            @include('item.edit')
-
-            <!-- modal view repost item template --> 
-            @include('item.repostitem')
-
-            <!-- modal view boost ads template -->
-            @include('item.boostads')
 
         </div>
 

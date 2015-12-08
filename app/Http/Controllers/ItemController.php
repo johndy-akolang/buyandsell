@@ -20,13 +20,6 @@ use Illuminate\Pagination\Paginator;
 class ItemController extends Controller
 {
 
-    /*protected $images;
-
-    public function __construct(ItemRepository $itemRepository)
-    {
-        $this->images = $itemRepository;
-    }*/
-
     /**
      * Display a listing of the resource.
      *
@@ -155,24 +148,18 @@ class ItemController extends Controller
     {
 
         /*$item = Item::find($id);
-        return view('item.edit')->with('item', $item);*/
 
-        $items = Item::where('slug', $slug)->first();
+        return view('item.edit')->with(compact('item'));*/
+        $item = Item::where('slug', $slug)->first();
+        if($item && ($request->user()->id == $item->guest_id || $request->user()->is_seller()))
 
-        if($items && ($request->user()->id == $items->guest_id || $request->user()->is_seller())) {  
+            $city = \DB::table('city')->lists('citylist', 'citylist');
+            $province = \DB::table('province')->lists('provincelist', 'provincelist');
+            $condition = \DB::table('condition')->lists('conditionitem', 'conditionitem');
+            $category = \DB::table('category')->lists('categorylist', 'categorylist');
 
-            $city = City::lists('citylist', 'citylist');
-            $province = Province::lists('provincelist', 'provincelist');
-            $condition = Condition::lists('conditionitem', 'conditionitem');
-            $category = Category::lists('categorylist', 'categorylist');
-            //$condition = ['' => ''] + Condition::lists('conditionitem', 'id')->all();
-            //$condition = array('' => 'Select') + Condition::lists('conditionitem', 'id')->toArray(); 
+            return view('item.edit')->with('item', $item)->with('city', $city)->with('province', $province)->with('condition', $condition)->with('category', $category);
 
-            //return view('item.edit')->with('items', $items);
-            return view('item.create')->with('city', $city)->with('province', $province)->with('condition', $condition)->with('category', $category);
-        } else {
-            return redirect('item.edit')->withErrors('restricted');
-        }
     }
 
 
@@ -184,47 +171,60 @@ class ItemController extends Controller
      */
 	public function update(Request $request)
     {
+        
 
         $item_id = $request->input('item_id');
         $item = Item::find($item_id);
-
-        if ($item && ($item->guest_id) == $request->user()->id || $request->user()->is_seller()) {
+        if($item && ($item->guest_id == $request->user()->id || $request->user()->is_seller()))
+        {
             $title = $request->input('title');
             $slug = str_slug($title);
-            $duplicate = Item::where('slug', $slug)->first();
-            if ($duplicate) {
-                if ($duplicate->id != $item_id) {
-                    return redirect('edit/'.$item->slug)->withErrors('Title already exists.')->withInput();
-                } else {
+            $duplicate = Item::where('slug',$slug)->first();
+            if($duplicate)
+            {
+                if($duplicate->id != $item_id)
+                {
+                    return redirect('edit/'.$post->slug)->withErrors('Title already exists.')->withInput();
+                }
+                else 
+                {
                     $item->slug = $slug;
                 }
             }
-
+            
+            $item->title = $title;
+            $item->description = $request->input('description');
+            $item->price = $request->input('price');
+            $item->condition = $request->input('condition');
+            $item->category = $request->input('category');
+            $item->description = $request->input('description');
+            $item->province = $request->input('province');
+            $item->city = $request->input('city');
+            $item->mobile = $request->input('mobile');
+            $item->slug = str_slug($item->title);
+            $item->guest_id = $request->user()->id;
+            
+            if($request->has('save'))
+            {
+                $item->active = 0;
+                $message = 'Post saved successfully';
+                $landing = 'edit/'.$item->slug;
+            }           
+            else {
+                $item->active = 1;
+                $message = 'Post updated successfully';
+                $landing = $item->slug;
+            }
+            $item->save();
+            return redirect($landing)->withMessage($message);
         }
-
-        $item->title = $title;
-        $item->price = $request->input('price');
-        $item->condition = $request->input('condition');
-        $item->category = $request->input('category');
-        $item->description = $request->input('description');
-        $item->province = $request->input('province');
-        $item->city = $request->input('city');
-        $item->mobile = $request->input('mobile');
-
-        if ($request->has('save')) {
-            $item->active = 0;
-            $message = 'Item saved successfully';
-            $landing = 'edit/'.$item->slug;
-        } else {
-            $item->active = 1;
-            $message = 'Post updated successfully';
-            $landing = $item->slug;
+        else
+        {
+            return redirect('/')->withErrors('You have not sufficient permissions');
         }
-
-       $item->save();
-       return redirect($landing)->withMessage($message);
 
     } 
+
 
 
     /**
