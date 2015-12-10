@@ -55,7 +55,8 @@ body{
     border: none;
 }
 .header-top {
-    border-bottom: 1px solid #ddd;
+    background: #4fc34f;
+    /*border-bottom: 1px solid #ddd;*/
 }
 
 /* dropit */
@@ -79,7 +80,7 @@ body{
 .dropit .dropit-open .dropit-submenu { display: block; }
 
 .socialite {
-    color: #555;
+    /*color: #555;*/
     font-size: 14px;
 }
 .cssmenu {
@@ -94,7 +95,8 @@ body{
     display: inline-block;
 }
 .cssmenu ul li a, .socialite ul li a {
-    color: #555;
+    /*color: #555;*/
+    color: #fff;
     cursor: pointer;
     display: block;
     margin: 5px 10px;

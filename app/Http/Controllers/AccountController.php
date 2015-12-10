@@ -33,11 +33,11 @@ class AccountController extends Controller
      * @param int $id
      * @return view
      */
-    public function user_post($id)
+    public function user_posts($id)
     {
         //
         $item = Item::where('author_id', $id)->where('active', 1)->orderBy('created_at', 'desc')->paginate(10);
-        $title = Users::find($id)->first_name;
+        $title = User::find($id)->first_name;
         return view('home')->withItem($item)->withTitle($title);
     }
 

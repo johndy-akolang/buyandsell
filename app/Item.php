@@ -34,10 +34,4 @@ class Item extends Model
 		return $this->belongsTo('App\User', 'guest_id');
 	}
 	
-
-	// user has city
-    public function city()
-    {
-        return $this->hasMany('App\City');
-    }
 }

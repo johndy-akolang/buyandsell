@@ -14,7 +14,7 @@ use App\Condition;
 use App\Province;
 use App\User;
 use Redirect;
-use Illuminate\Pagination\Paginator;
+//use Illuminate\Pagination\Paginator;
 
 
 class ItemController extends Controller
@@ -28,7 +28,7 @@ class ItemController extends Controller
     public function index()
     {
 
-        $items = Item::where('active', 1)->orderBy('created_at', 'desc')->paginate(9);
+        $items = Item::where('active', 1)->orderBy('created_at', 'desc')->paginate(12);
         return view('item.index')->withItems($items);
 
     }
@@ -101,6 +101,16 @@ class ItemController extends Controller
         }
 
         $item->save();
+
+        /* email after create item */
+        \Mail::send('emails.emailitem',
+            array(
+                'title' => $request->get('title')
+                ), function($emessage) {
+                $emessage->from('admin@koll.com.ph');
+                $emessage->to('admin@koll.com.ph', 'Admin')->subject('About your advertisement');
+            });
+
 
         return redirect('item')->withMessage($message);
         

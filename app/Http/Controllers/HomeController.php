@@ -21,6 +21,7 @@ class HomeController extends Controller
      */
     public function index()
     {
+
         /*$items = Item::paginate(10);
         return view('home')->with('items', $items);*/
 

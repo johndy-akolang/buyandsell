@@ -119,6 +119,20 @@
                             <h2>Leave a comment</h2>
                             @if(Auth::guest())
                                 <p>Sign in to comment</p>
+                                <!-- <div class="commenter-container panel-body">
+
+                                    <form method="post" action="">
+                                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                        <div class="form-group">
+                                            <input required="required" placeholder="Your name here" name="guestcom" class="form-control" />
+                                        </div>
+                                        <div class="form-group">
+                                            <textarea required="required" placeholder="Enter comment here" name="body" class="form-control"></textarea>
+                                        </div>
+                                        <input type="submit" name='post_comment' class="btn btn-success" value = "Post"/>
+                                    </form>
+
+                                </div> -->
                             @else
                                 <div class="commenter-container panel-body">
 

@@ -57,12 +57,10 @@
                     {{-- shorcut sell your item --}}
                     <div class="shrtct">
                         <span class="store each">
-                            <a title="Sell your item" href="/item/sellitem" class="mr-5">
+                             <a title="Sell your item" href="/item/create" class="mr-5">
                                 <i class="fa fa-buysellads"></i>
+                                Sell your item
                             </a>
-                            <span>
-                                <a title="Sell your item" href="/item/create">Sell your item</a>
-                            </span>
                         </span>
                     </div>
 
