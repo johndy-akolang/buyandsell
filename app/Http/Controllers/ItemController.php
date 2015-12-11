@@ -53,7 +53,7 @@ class ItemController extends Controller
 
         } else {
 
-            return redirect('item.create')->withErrors('restricted');
+            return redirect('item.create')->withErrors('You have not sufficient permissions for writing item');
         }
 		
     }
@@ -67,7 +67,7 @@ class ItemController extends Controller
     public function store(ItemRequest $request)
     {
 
-        $item = new Item;
+        $item = new Item();
 
         $file = $request->file('images');
         $destination_path = 'images/uploads/';
@@ -101,16 +101,6 @@ class ItemController extends Controller
         }
 
         $item->save();
-
-        /* email after create item */
-        \Mail::send('emails.emailitem',
-            array(
-                'title' => $request->get('title')
-                ), function($emessage) {
-                $emessage->from('admin@koll.com.ph');
-                $emessage->to('admin@koll.com.ph', 'Admin')->subject('About your advertisement');
-            });
-
 
         return redirect('item')->withMessage($message);
         
@@ -157,11 +147,8 @@ class ItemController extends Controller
     public function edit(Request $request, $slug)
     {
 
-        /*$item = Item::find($id);
-
-        return view('item.edit')->with(compact('item'));*/
         $item = Item::where('slug', $slug)->first();
-        if($item && ($request->user()->id == $item->guest_id || $request->user()->is_seller()))
+        if($item && ($request->user()->id == $item->guest_id || $request->user()->is_seller())) 
 
             $city = \DB::table('city')->lists('citylist', 'citylist');
             $province = \DB::table('province')->lists('provincelist', 'provincelist');
@@ -169,7 +156,7 @@ class ItemController extends Controller
             $category = \DB::table('category')->lists('categorylist', 'categorylist');
 
             return view('item.edit')->with('item', $item)->with('city', $city)->with('province', $province)->with('condition', $condition)->with('category', $category);
-
+            return redirect('/')->withErrors('you have not sufficient permissions');
     }
 
 
@@ -182,8 +169,8 @@ class ItemController extends Controller
 	public function update(Request $request)
     {
         
-
-        $item_id = $request->input('item_id');
+        
+        /*$item_id = $request->input('item_id');
         $item = Item::find($item_id);
         if($item && ($item->guest_id == $request->user()->id || $request->user()->is_seller()))
         {
@@ -201,6 +188,12 @@ class ItemController extends Controller
                     $item->slug = $slug;
                 }
             }
+
+            $file = $request->file('images');
+            $destination_path = 'images/uploads/';
+            //$filename = str_random(6).'_'.$file->getClientOriginalName();
+            $file->move($destination_path, $filename);
+            $item->images = $destination_path . $filename;
             
             $item->title = $title;
             $item->description = $request->input('description');
@@ -223,16 +216,16 @@ class ItemController extends Controller
             else {
                 $item->active = 1;
                 $message = 'Post updated successfully';
-                $landing = $item->slug;
+                $landing = 'item/'.$item->slug;
             }
             $item->save();
             return redirect($landing)->withMessage($message);
         }
         else
         {
-            return redirect('/')->withErrors('You have not sufficient permissions');
-        }
-
+            return redirect('/')->withErrors('restricted');
+        }*/
+    
     } 
 
 

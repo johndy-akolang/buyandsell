@@ -33,7 +33,7 @@ Route::group(['middleware' => ['auth']], function()
 	Route::get('item/edit/{slug}','ItemController@edit');
 
 	// update post 
-	Route::post('item', 'ItemController@update');
+	//Route::post('item', 'ItemController@update');
 
 	Route::get('myallitems', 'AccountController@user_posts_all');
 
