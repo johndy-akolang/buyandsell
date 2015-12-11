@@ -13,7 +13,7 @@
             <h3>Update Item</h3>
             <div class="cont sell-item-cont bor-rad5 border1ccc pad10">
 
-                <form method="post" action='{{ url("/item") }}'>
+                <form method="post" action='{{ url("item/update") }}'>
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <input type="hidden" name="item_id" value="{{ $item->id }}{{ old('item_id') }}">
                     

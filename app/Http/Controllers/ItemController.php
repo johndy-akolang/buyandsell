@@ -169,32 +169,25 @@ class ItemController extends Controller
 	public function update(Request $request)
     {
         
-        
-        /*$item_id = $request->input('item_id');
+        $item_id = $request->input('item_id');
         $item = Item::find($item_id);
-        if($item && ($item->guest_id == $request->user()->id || $request->user()->is_seller()))
+
+        if ($item && ($item->guest_id == $request->user()->id || $request->user()->is_seller()))
         {
             $title = $request->input('title');
             $slug = str_slug($title);
-            $duplicate = Item::where('slug',$slug)->first();
-            if($duplicate)
+            $duplicate = Item::where('slug', $slug)->first();
+
+            if ($duplicate)
             {
-                if($duplicate->id != $item_id)
+                if ($duplicate->id != $item_id)
                 {
-                    return redirect('edit/'.$post->slug)->withErrors('Title already exists.')->withInput();
-                }
-                else 
-                {
+                    return redirect('edit/'.$item->slug)->withErrors('Title already exists.')->withInput();
+                } else {
                     $item->slug = $slug;
                 }
             }
 
-            $file = $request->file('images');
-            $destination_path = 'images/uploads/';
-            //$filename = str_random(6).'_'.$file->getClientOriginalName();
-            $file->move($destination_path, $filename);
-            $item->images = $destination_path . $filename;
-            
             $item->title = $title;
             $item->description = $request->input('description');
             $item->price = $request->input('price');
@@ -204,28 +197,25 @@ class ItemController extends Controller
             $item->province = $request->input('province');
             $item->city = $request->input('city');
             $item->mobile = $request->input('mobile');
-            $item->slug = str_slug($item->title);
-            $item->guest_id = $request->user()->id;
-            
-            if($request->has('save'))
+
+            if ($request->has('save'))
             {
                 $item->active = 0;
-                $message = 'Post saved successfully';
+                $message = 'Item saved successfully';
                 $landing = 'edit/'.$item->slug;
-            }           
-            else {
+            } else {
                 $item->active = 1;
-                $message = 'Post updated successfully';
+                $message = 'Item updated successfully';
                 $landing = 'item/'.$item->slug;
             }
+
             $item->save();
             return redirect($landing)->withMessage($message);
-        }
-        else
-        {
+
+        } else {
             return redirect('/')->withErrors('restricted');
-        }*/
-    
+        }
+
     } 
 
 
