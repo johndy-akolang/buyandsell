@@ -1855,6 +1855,9 @@ ul.delivery-list li a:hover{
 .mt-15 {
     margin-top: 15px;
 }
+.mt-20 {
+    margin-top: 20px;
+}
 .mr-5 {
     margin-right: 5px;
 }
@@ -3203,8 +3206,13 @@ form::after {
     background: #fff;
     border: none;
 }
-
-
+.snd-msg-ownr {
+    color: #fff;
+    width: 100%;
+}
+textarea#sndmsgtxt {
+    white-space: nowrap;
+}
 
 
 

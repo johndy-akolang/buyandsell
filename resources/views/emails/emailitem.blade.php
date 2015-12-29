@@ -10,7 +10,7 @@
 	</p>
 	<p style="margin: 10px 0">
 		<!-- You can share it with your friends to sell your item quickly! -->
-		{{ $body }}
+		{{ $sndmsgtxt }}
 	</p>
 
 	<p style="margin: 10px 0">

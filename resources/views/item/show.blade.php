@@ -201,6 +201,64 @@
                         <label class="mb-num mt-10"><span class="deta-left c-999 txt-ind-10"><i class="fa fa-calendar-o"></i>Date Posted:</span><span class="deta-right txt-ind-10">{{ $items->guest->created_at->format('M d, Y') }}</span></label>
                         <label class="mb-num mt-10"><span class="deta-left c-999 txt-ind-10"><i class="fa fa-info-circle"></i>Condition:</span><span class="deta-right txt-ind-10">{{ $items->condition }}</span></label>
                         <label class="mb-num mt-10"><span class="deta-left c-999 txt-ind-10"><i class="fa fa-location-arrow"></i>City:</span><span class="deta-right txt-ind-10">{{ $items->city }}</span></label>
+                        
+                        <!-- send inquiry to owner -->
+                        <a href="#" class="snd-msg-ownr btn input-blue mt-20" data-toggle="modal" data-target="#sndmsgownr">Send Message</a>
+
+                        <!-- modal form -->
+                        <div class="modal fade" id="sndmsgownr" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <!-- Modal Header -->
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">
+                                               <span aria-hidden="true">&times;</span>
+                                               <span class="sr-only">Close</span>
+                                        </button>
+                                        <h4 class="modal-title" id="myModalLabel">
+                                            Send message to {{ $items->guest->first_name }} {{ $items->guest->last_name }}
+                                        </h4>
+                                    </div>
+                                    
+                                    <!-- Modal Body -->
+                                    <div class="modal-body">
+                                        
+                                        <form method="post" action="sendmail">
+                                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+
+                                            <div class="form-group">
+                                                <label for="inquiryInputName">Name</label>
+                                                <input type="text" class="form-control" required="required" id="inquiryInputName" placeholder="Enter Name"/>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="inquiryInputEmail">Email</label>
+                                                <input type="email" class="form-control" required="required" id="inquiryInputEmail" placeholder="Enter email"/>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="sndmsgtxt">Message</label>
+                                                <textarea class="form-control" id="sndmsgtxt" cols="50" rows="10" required="required">
+
+                                                </textarea>
+                                            </div>
+
+                                            <!-- Modal Footer -->
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default"
+                                                        data-dismiss="modal">
+                                                            Close
+                                                </button>
+                                                <button type="submit" class="btn btn-default">Submit</button>
+                                            </div>
+
+                                          <!-- <button type="submit" class="btn btn-default">Submit</button> -->
+                                        </form>
+                                        
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                   <div class="clear"></div>
                 </div>

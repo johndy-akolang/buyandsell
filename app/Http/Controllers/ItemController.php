@@ -14,6 +14,8 @@ use App\Condition;
 use App\Province;
 use App\User;
 use Redirect;
+use Mail;
+use Auth;
 //use Illuminate\Pagination\Paginator;
 
 
@@ -311,6 +313,48 @@ class ItemController extends Controller
             ->withTitle('Search results for: '.implode(', ', $parameters))
             ->withItems($items);
 
+    }
+
+    public function getMail(Request $request)
+    {
+
+        
+        /*\Mail::send('emails.emailitem', array('key' => 'value'), function() {
+            $message->from('admin@gmail.com');
+            $message->to( $user->email, $user->first_name )->subject($item->title);
+        });
+
+        return redirect::back()->with('message', 'Thank you');*/
+        //$items = Item::where('slug')->first();
+
+        \Mail::send('emails.emailitem',
+                    array(
+                        'inquiryInputName' => $request->get('inquiryInputName'),
+                        'inquiryInputEmail' => $request->get('inquiryInputEmail'),
+                        'sndmsgtxt' => $request->get('sndmsgtxt')
+                    ), function($message)
+        {
+            $message->from('admin@gmail.com');
+            $message->to('admin@koll.com.ph')->subject('test only');
+        });
+
+        return redirect::back()->with('message', 'Thank you');
+
+        //return \Redirect::route('item.show')->with('message', 'Thanks for contacting us!');
+
+        //$data = explode('#', $data['id']);
+        /*$email_from = Auth::user()->email;
+        $email_to = $data[4];
+        $subject = 'Send Email Test';
+
+        $data_user = ['inquiryInputName' => $data[1], 'inquiryInputEmail' => $data[2], 'sndmsgtxt' => $data[3] ];
+
+        $sent = Mail::send('emails.emailitem', $data_user, function($mail) use ($email_to, $email_from, $subject) {
+            $mail->from($email_from)
+                 ->to($email_to)
+                 ->subject($subject);
+        });
+*/
     }
 
     

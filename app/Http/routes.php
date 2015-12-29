@@ -54,6 +54,9 @@ Route::get('/account/user/{id}', 'AccountController@profile')->where('id', '[0-9
 // search item
 Route::get('search', 'ItemController@getSearch');
 
+// send email message for inquiry item
+Route::post('item/sendmail', 'ItemController@getMail');
+
 
 Route::get('account/{id}', 'AccountController@user')->where('id', '[0-9]+');
 
