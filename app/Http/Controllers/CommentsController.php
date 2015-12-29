@@ -48,10 +48,10 @@ class CommentsController extends Controller
         $slug = $request->input('slug');
         Comments::create($input);
 
-        Mail::send('emails.emailitem', $input, function($message) {
+        /*Mail::send('emails.emailitem', $input, function($message) {
             $message->to(Auth::user()->email);
             $message->subject('test email');
-        });
+        });*/
 
         return redirect::back()->with('message', 'Comment Published');
     }
