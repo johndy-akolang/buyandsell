@@ -28,7 +28,7 @@ return [
     |
     */
 
-    'host' => env('MAIL_HOST', 'smtp.mailgun.org'),
+    'host' => env('MAIL_HOST', 'smtp.mailgun.com'),
     //'host' => env('MAIL_HOST', 'smtp.gmail.com'),
 
     /*
@@ -55,7 +55,7 @@ return [
     |
     */
 
-    'from' => ['address' => 'infantado_m@yahoo.com', 'name' => 'Mark test emails'],
+    'from' => ['address' => 'do-not-reply@koll.com.ph', 'name' => 'KOLL.com.ph'],
 
     /*
     |--------------------------------------------------------------------------
@@ -81,7 +81,7 @@ return [
     |
     */
 
-    'username' => env('infantado.markdonnie@gmail.com'),
+    'username' => env('MAIL_USERNAME','applife.kolph@gmail.com'),
 
     /*
     |--------------------------------------------------------------------------
@@ -94,7 +94,7 @@ return [
     |
     */
 
-    'password' => env('mamaak22'),
+    'password' => env('MAIL_PASSWORD', '1qazse4321'),
 
     /*
     |--------------------------------------------------------------------------
