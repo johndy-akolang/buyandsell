@@ -6,10 +6,11 @@
 	<h3>Hello,</h3>
 
 	<p style="margin: 10px 0">
-		Your Ads " {{ $title }} " are now posted on KOLL.com.ph.
+		Your Ads  are now posted on KOLL.com.ph.
 	</p>
 	<p style="margin: 10px 0">
-		You can share it with your friends to sell your item quickly!
+		<!-- You can share it with your friends to sell your item quickly! -->
+		{{ $body }}
 	</p>
 
 	<p style="margin: 10px 0">

@@ -9,6 +9,8 @@ use App\Comments;
 use Redirect;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Mail;
+use Auth;
 
 class CommentsController extends Controller
 {
@@ -45,6 +47,11 @@ class CommentsController extends Controller
         $input['body'] = $request->input('body');
         $slug = $request->input('slug');
         Comments::create($input);
+
+        Mail::send('emails.emailitem', $input, function($message) {
+            $message->to(Auth::user()->email);
+            $message->subject('test email');
+        });
 
         return redirect::back()->with('message', 'Comment Published');
     }
