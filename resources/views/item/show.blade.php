@@ -223,7 +223,7 @@
                                     <!-- Modal Body -->
                                     <div class="modal-body">
                                         <!-- action="sendmail" -->
-                                        <form method="post" action="#">
+                                        <form method="post" action="sendmail">
                                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                                             <div class="form-group">
