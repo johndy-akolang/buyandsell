@@ -1,7 +1,7 @@
 @extends('app')
 
 @section('title')
-    KOLL.com.ph - Philippines Buy and Sell website
+    KOLL.com.ph | Philippines Buy and Sell website
 @stop
 
 @section('content')
@@ -15,16 +15,6 @@
             <div class="cont span_2_of_3">
 
                 <div class="top-box img-box-4 text-center">
-
-                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                    <!-- front ads -->
-                    <ins class="adsbygoogle"
-                         style="display:inline-block;width:728px;height:90px"
-                         data-ad-client="ca-pub-5118993513757687"
-                         data-ad-slot="7256660654"></ins>
-                    <script>
-                    (adsbygoogle = window.adsbygoogle || []).push({});
-                    </script>
 					
 					@foreach ($items as $item)
 

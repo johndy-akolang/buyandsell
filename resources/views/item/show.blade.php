@@ -263,16 +263,6 @@
                   <div class="clear"></div>
                 </div>
 
-                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                <!-- view item side -->
-                <ins class="adsbygoogle mt-rsingle-25"
-                     style="display:inline-block;width:287px;height:487px"
-                     data-ad-client="ca-pub-5118993513757687"
-                     data-ad-slot="3046787057"></ins>
-                <script>
-                (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
-
                 @foreach (array_chunk($featured->all(), 4) as $featuredSection)
                     <!-- featured ads -->
                     <div class="rsingle mt-rsingle-25">
