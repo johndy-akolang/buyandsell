@@ -3214,6 +3214,19 @@ textarea#sndmsgtxt {
     white-space: nowrap;
 }
 
+/* privacy */
+.privacy-content {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 15px auto 30px;
+    padding: 10px;
+    width: 77.1%;
+}
+.privacy-content ul {
+    list-style: outside none disc;
+    margin-left: 40px;
+}
+
 
 
 /*--responsive design--*/

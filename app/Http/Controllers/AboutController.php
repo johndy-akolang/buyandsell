@@ -84,4 +84,13 @@ class AboutController extends Controller
     {
         //
     }
+
+    /*
+     * Privacy Policy for koll.com.ph
+     *
+    */
+    public function privacy()
+    {
+        return view('about.privacy');
+    }
 }

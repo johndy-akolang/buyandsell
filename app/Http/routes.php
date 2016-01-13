@@ -61,6 +61,7 @@ Route::post('item/sendmail', 'ItemController@getMail');
 Route::get('account/{id}', 'AccountController@user')->where('id', '[0-9]+');
 
 Route::get('about', 'AboutController@index');
+Route::get('about/privacy', 'AboutController@privacy');
 
 // route to show the login form
 Route::get('login', 'LoginController@showLogin');
