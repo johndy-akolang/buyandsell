@@ -74,7 +74,7 @@
             <div class="f-list2">
                 <ul>
                     <li class="active"><a href="#" class="clr555">About Us</a></li> |
-                    <li><a href="about/privacy" class="clr555">Privacy Policy</a></li> |
+                    <li><a href="{{ asset('about/privacy') }}" class="clr555">Privacy Policy</a></li> |
                     <li><a href="#" class="clr555">Terms & Conditions</a></li> |
                     <li><a href="#" class="clr555">Contact Us</a></li>
                 </ul>
