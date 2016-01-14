@@ -46,12 +46,30 @@ class CommentsController extends Controller
         $input['on_post'] = $request->input('on_post');
         $input['body'] = $request->input('body');
         $slug = $request->input('slug');
-        Comments::create($input);
 
-        /*Mail::send('emails.emailitem', $input, function($message) {
-            $message->to(Auth::user()->email);
-            $message->subject('test email');
-        });*/
+        // models
+        $newComment = Comments::create($input);
+        $item = Item::where('slug', $slug)->first();
+        $itemOwner = $item->guest;
+        $loggedInUser = Auth::user(); // user logged in
+
+        // email from, to and subject
+        $from = $loggedInUser->email;
+        $to = $itemOwner->email;
+        $subject = $item->title;
+
+        // email template variables
+        $emailData = [
+          'user' => sprintf('%s %s', $itemOwner->first_name, $itemOwner->last_name),
+          'body' => $newComment->body,
+          'url' => sprintf('%s/%s', 'http://www.koll.com.ph/item', $slug),
+        ];
+
+        Mail::send('emails.emailitem', $emailData, function($message) use ($from, $to, $subject) {
+            $message->from($from);
+            $message->to($to);
+            $message->subject($subject);
+        });
 
         return redirect::back()->with('message', 'Comment Published');
     }

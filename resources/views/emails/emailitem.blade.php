@@ -3,14 +3,13 @@
 		<img src="{{ asset('/images/logo-koll.png') }}" />
 	</div>
 
-	<h3>Hello,</h3>
+	<h3>Hello, {{ $user }}</h3>
 
 	<p style="margin: 10px 0">
-		Your Ads  are now posted on KOLL.com.ph.
+		{{ $body }}
 	</p>
 	<p style="margin: 10px 0">
-		<!-- You can share it with your friends to sell your item quickly! -->
-		{{ $sndmsgtxt }}
+		Click <a href="{{ $url }}">here</a> to respond.
 	</p>
 
 	<p style="margin: 10px 0">
