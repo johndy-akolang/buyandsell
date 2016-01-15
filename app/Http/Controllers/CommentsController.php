@@ -63,9 +63,12 @@ class CommentsController extends Controller
           'user' => sprintf('%s %s', $itemOwner->first_name, $itemOwner->last_name),
           'body' => $newComment->body,
           'url' => sprintf('%s/%s', 'http://www.koll.com.ph/item', $slug),
+          'from' => sprintf('%s %s', $loggedInUser->first_name, $loggedInUser->last_name),
+          'subject' => $item->title,
         ];
 
-        Mail::send('emails.emailitem', $emailData, function($message) use ($from, $to, $subject) {
+        // mailing notifications
+        Mail::send('emails.commented', $emailData, function($message) use ($from, $to, $subject) {
             $message->from($from);
             $message->to($to);
             $message->subject($subject);
