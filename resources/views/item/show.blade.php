@@ -225,29 +225,30 @@
                                         <!-- action="sendmail" -->
                                         <form method="post" action="sendmail">
                                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                            <input type="hidden" name="slug" value="{{ $items->slug }}">
 
                                             <div class="form-group">
-                                                <label for="inquiryInputName">Name</label>
-                                                <input type="text" class="form-control" required="required" id="inquiryInputName" placeholder="Enter Name"/>
+                                                <label for="name">Name</label>
+                                                <input type="text" class="form-control" required="required" id="name" name="name" placeholder="Enter Name"/>
                                             </div>
                                             <div class="form-group">
-                                                <label for="inquiryInputEmail">Email</label>
-                                                <input type="email" class="form-control" required="required" id="inquiryInputEmail" placeholder="Enter email"/>
+                                                <label for="email">Email</label>
+                                                <input type="email" class="form-control" required="required" id="email" name="email" placeholder="Enter email"/>
                                             </div>
                                             <div class="form-group">
-                                                <label for="sndmsgtxt">Message</label>
-                                                <textarea class="form-control" id="sndmsgtxt" cols="50" rows="10" required="required">
+                                                <label for="message">Message</label>
+                                                <textarea class="form-control" id="message" name="message" cols="50" rows="10" required="required">
 
                                                 </textarea>
                                             </div>
 
                                             <!-- Modal Footer -->
                                             <div class="modal-footer">
-                                                <button type="button" class="btn btn-default"
+                                                <!-- <button type="button" class="btn btn-default"
                                                         data-dismiss="modal">
                                                             Close
-                                                </button>
-                                                <button type="submit" class="btn btn-default">Submit</button>
+                                                </button> -->
+                                                <button type="submit" class="input-blue btn btn-default">Submit</button>
                                             </div>
 
                                           <!-- <button type="submit" class="btn btn-default">Submit</button> -->

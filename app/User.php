@@ -69,5 +69,10 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
         return false;
     }
 
+    /*public function getMail()
+    {
+        $this->belongsTo('App/User', 'guest_id');
+    }
+*/
 
 }

@@ -16,7 +16,7 @@ class City extends Model
 
     public function item()
     {
-    	return $this->belongsTo('App\Item');
+    	return $this->hasMany('App\Item');
     }
 
 }

@@ -5,10 +5,10 @@
 
 	<span style="color: #555;font-size: 16px;">Hello, {{ $user }}</span>
 
-	<p style="font-size: 16px;margin: 40px 0;color: #555;"><b>{{ $from }}</b> commented on <a href="{{ $url }}" style="color: #15c;">{{ $subject }}</a></p>
+	<p style="font-size: 16px;margin: 40px 0;color: #555;"><b>Guest</b> send you private message on <a href="{{ $url }}" style="color: #15c;">{{ $subject }}</a></p>
 
 	<p style="margin: 20px 0 0 30px;font-size: 18px;color: #b6b6b6;">
-		" <i>{{ $body }}</i> "
+		" <i>{{ $sndmsgtxt }}</i> "
 	</p>
 
 	<p style="font-size: 16px;margin: 35px 0;color: #555;">

@@ -1914,6 +1914,7 @@ ul.delivery-list li a:hover{
     background: #3075c0 !important;
 }
 .input-blue:hover {
+    color: #fff !important;
     background: #468bd6 !important;
 }
 .wrap::before,
@@ -3209,6 +3210,10 @@ form::after {
 .snd-msg-ownr {
     color: #fff;
     width: 100%;
+}
+.modal-footer button {
+    color: #fff;
+    border: none;
 }
 textarea#sndmsgtxt {
     white-space: nowrap;

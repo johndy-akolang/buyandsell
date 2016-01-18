@@ -13,6 +13,7 @@ use App\Category;
 use App\Condition;
 use App\Province;
 use App\User;
+use App\Privatemessage;
 use Redirect;
 use Mail;
 use Auth;
@@ -30,7 +31,7 @@ class ItemController extends Controller
     public function index()
     {
 
-        $items = Item::where('active', 1)->orderBy('created_at', 'desc')->paginate(12);
+        $items = Item::where('active', 1)->orderBy('created_at', 'desc')->paginate(9);
         return view('item.index')->withItems($items);
 
     }
@@ -66,8 +67,9 @@ class ItemController extends Controller
      *
      * @return Response
      */
-    public function store(ItemRequest $request)
-    {
+    public function store(ItemRequest $request, $email)
+    {       
+        $user = User::where('email', $email)->first();
 
         $item = new Item();
 
@@ -101,6 +103,11 @@ class ItemController extends Controller
             $message = 'Your ads published successfully';
 
         }
+
+        /*Mail('emails.emailitem', function($message) use ($user) {
+
+            $message->to(User::get('email'))->subject($item->title);
+        });*/
 
         $item->save();
 
@@ -318,43 +325,36 @@ class ItemController extends Controller
     public function getMail(Request $request)
     {
 
-        
-        /*\Mail::send('emails.emailitem', array('key' => 'value'), function() {
-            $message->from('admin@gmail.com');
-            $message->to( $user->email, $user->first_name )->subject($item->title);
-        });
+        $input['name'] = $request->get('name');
+        $input['email'] = $request->get('email');
+        $input['message'] = $request->get('message');
+        $slug = $request->input('slug');
 
-        return redirect::back()->with('message', 'Thank you');*/
-        //$items = Item::where('slug')->first();
+        // models
+        $newMessage = Privatemessage::create($input);
+        $item = Item::where('slug', $slug)->first();
+        $itemOwner = $item->guest;
 
-        \Mail::send('emails.emailitem',
-                    array(
-                        'inquiryInputName' => $request->get('inquiryInputName'),
-                        'inquiryInputEmail' => $request->get('inquiryInputEmail'),
-                        'sndmsgtxt' => $request->get('sndmsgtxt')
-                    ), function($message)
-        {
-            $message->from('admin@gmail.com');
-            $message->to('admin@koll.com.ph')->subject('test only');
+        // email from, to and subject
+        $to = $itemOwner->email;
+        $subject = $item->title;
+
+        // email templates 
+        $emailData = [
+            'user' => sprintf('%s %s', $itemOwner->first_name, $itemOwner->last_name),
+            'sndmsgtxt' => $newMessage->message,
+            'url' => sprintf('%s/%s', 'http://www.koll.com.ph/item', $slug),
+            'subject' => $item->title,
+        ];
+
+        // email template
+        Mail::send('emails.emailitem', $emailData, function($message) use ($to, $subject) {
+            $message->to($to);
+            $message->subject($subject);
         });
 
         return redirect::back()->with('message', 'Thank you');
 
-        //return \Redirect::route('item.show')->with('message', 'Thanks for contacting us!');
-
-        //$data = explode('#', $data['id']);
-        /*$email_from = Auth::user()->email;
-        $email_to = $data[4];
-        $subject = 'Send Email Test';
-
-        $data_user = ['inquiryInputName' => $data[1], 'inquiryInputEmail' => $data[2], 'sndmsgtxt' => $data[3] ];
-
-        $sent = Mail::send('emails.emailitem', $data_user, function($mail) use ($email_to, $email_from, $subject) {
-            $mail->from($email_from)
-                 ->to($email_to)
-                 ->subject($subject);
-        });
-*/
     }
 
     
