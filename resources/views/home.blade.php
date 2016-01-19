@@ -16,15 +16,15 @@
 
                 <div class="top-box img-box-4 text-center">
 
-                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                    <!-- Top-Front -->
+                    <!-- /*<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    Top-Front 
                     <ins class="adsbygoogle"
                          style="display:inline-block;width:728px;height:90px"
                          data-ad-client="ca-pub-9497860225980777"
                          data-ad-slot="5751732445"></ins>
                     <script>
                     (adsbygoogle = window.adsbygoogle || []).push({});
-                    </script>
+                    </script>*/ -->
 					
 					@foreach ($items as $item)
 
@@ -96,11 +96,20 @@
                 {{-- newsletter container --}}
                 <div class="top-border"></div>
                 <div class="sidebar-bottom">
+                    <!-- /*<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                     right home 
+                    <ins class="adsbygoogle"
+                         style="display:block"
+                         data-ad-client="ca-pub-5118993513757687"
+                         data-ad-slot="1886817855"
+                         data-ad-format="auto"></ins>
+                    <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>*/ -->
                     <h2 class="m_1">
                         Newsletters <br>
                         Sign up
                     </h2>
-                    <!-- <p class="m_text">Lorem ipsum dolor sit amet, consectetuer</p> -->
                     <div class="subscribe">
 
                         {{-- newsletter form --}}

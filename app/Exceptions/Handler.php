@@ -6,6 +6,9 @@ use Exception;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 
+/* add */
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+
 class Handler extends ExceptionHandler
 {
     /**
@@ -39,6 +42,13 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $e)
     {
+        if ($e instanceof NotFoundHttpException) {
+
+            return response()->view('errors.503', [], 503);
+
+        }
+
+
         return parent::render($request, $e);
     }
 }
