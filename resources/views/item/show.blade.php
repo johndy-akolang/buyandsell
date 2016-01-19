@@ -280,9 +280,9 @@
                                 <h4>
                                     <a hef="#">{!! $featuredItem->title !!}</a>
                                 </h4>
-                                <div class="price">
+                                <!-- <div class="price">
                                     <strong>Price : {!! $featuredItem->price !!}</strong>
-                                </div>
+                                </div> -->
                                 <div class="clearfix"></div>
                             </li>
                             @endforeach

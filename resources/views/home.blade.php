@@ -54,11 +54,11 @@
 									<div class="row">
 										<div class="col-xs-12 col-sm-12 col-md-12 info-dta">Posted on : {{ $item->created_at->format('M d, Y') }}</div>
 									</div>
-                                    <!-- <div class="row">
+                                    <div class="row">
                                         <div class="col-xs-12 col-sm-12 col-md-12 info-dta">
-                                            <a class="c-307 mb-10">{{ $item->city }}</a>
+                                            <a class="c-307 mb-10">Location: {{ $item->city }}</a>
                                         </div>
-                                    </div> -->
+                                    </div>
 									<div class="clearfix"></div>
 								</div>
 

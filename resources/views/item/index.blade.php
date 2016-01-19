@@ -21,10 +21,7 @@
                     <div class="img-box-4 text-center clearfix">
 					
 						<!-- view list -->
-                        @if (!$items->count())
-
-                            No ads yet. <a href="#" class="button btn input-blue width100px">Sign Up</a>
-                        @else
+                        
 
                             @foreach ($items as $item)
                                 @if(!Auth::guest() && ($item->guest_id == Auth::user()->id || Auth::user()->is_seller()))
@@ -80,7 +77,7 @@
                             @endforeach
                             <div class="clear"></div>
                             {!! $items->render() !!}  
-                        @endif   
+                        
 						<!-- end  -->
 
                     </div>
@@ -89,7 +86,7 @@
 
             {{-- right side featured ads --}}
             {{-- featured ads --}}
-            <div class="span_1_of_3 floatRight wdth20per">
+            <!-- <div class="span_1_of_3 floatRight wdth20per">
                 <div class="rsingle mt-rsingle-25 ">
                     <h5 class="m_1">Featured Ads</h5>
 
@@ -135,7 +132,7 @@
 
                     <div class="clear"></div>
                 </div>
-            </div>    
+            </div>  -->   
 
         </div>
 
