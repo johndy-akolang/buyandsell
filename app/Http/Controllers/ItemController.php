@@ -67,9 +67,9 @@ class ItemController extends Controller
      *
      * @return Response
      */
-    public function store(ItemRequest $request, $email)
+    public function store(ItemRequest $request)
     {       
-        $user = User::where('email', $email)->first();
+        //$user = User::where('email', $email)->first();
 
         $item = new Item();
 
@@ -104,10 +104,27 @@ class ItemController extends Controller
 
         }
 
-        /*Mail('emails.emailitem', function($message) use ($user) {
+        // models
+        $itemPostTitle = $item->title; // title item new post
+        $itemPostSlug = $item->slug; //title item new post slug
+        $loggedInUser = Auth::user(); // user logged in
 
-            $message->to(User::get('email'))->subject($item->title);
-        });*/
+        // email from, to and subject
+        $to = $loggedInUser->email;
+        $subject = $item->title;
+
+        // email template variables
+        $emailData = [
+          'user' => sprintf('%s %s', $loggedInUser->first_name, $loggedInUser->last_name),
+          'url' => sprintf('%s/%s', 'http://www.koll.com.ph/item', $itemPostSlug),
+          'subject' => $itemPostTitle,
+        ];
+
+        // mailing notifications
+        Mail::send('emails.item', $emailData, function($message) use ($to, $subject) {
+            $message->to($to);
+            $message->subject($subject);
+        });
 
         $item->save();
 
