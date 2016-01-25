@@ -5,6 +5,7 @@ Please be explicit and consistent with the following:
 - Use four (4) spaces (not tab) for indention
 - [Annotate your functions, variables, classes (if necessary)](#code-annotation)
 - Place code for defining FK at the bottom part of 'up' function
+- Use **singular** instead of **plural** when naming a table, column, file, etcetera. For more details, refer to this [link](http://stackoverflow.com/a/5841297)
 - More to come...
 
 ### Naming of Table, Table Column, FKs, etcetera <a name="naming-convention"></a>
