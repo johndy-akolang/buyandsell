@@ -16,6 +16,9 @@ class Comments extends Model
 		/**
 		 * Attributes that are mass assignable
 		 * @var array $fillable
+		 *
+		 * TODO: 'on_post' should be 'item_id'
+		 * TODO: 'from_user' should be 'user_id'
 		 */
 		protected $fillable = [
 			'on_post', // item_id

@@ -2,7 +2,8 @@
 
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
-use App\Condition;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Schema;
 
 class CreateConditionTable extends Migration
 {
@@ -13,6 +14,7 @@ class CreateConditionTable extends Migration
      */
     public function up()
     {
+        // TODO: rename 'conditionitem' to 'name'
         Schema::create('condition', function (Blueprint $table) {
             $table->increments('id');
             $table->string('conditionitem');
@@ -27,6 +29,8 @@ class CreateConditionTable extends Migration
      */
     public function down()
     {
+        DB::statement('SET FOREIGN_KEY_CHECKS = 0');
         Schema::drop('condition');
+        DB::statement('SET FOREIGN_KEY_CHECKS = 1');
     }
 }

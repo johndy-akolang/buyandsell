@@ -15,6 +15,8 @@ class Category extends Model
     /**
      * Attributes that are mass assignable
      * @var array $fillable
+     *
+     * TODO: rename 'categorylist' to 'name'
      */
     protected $fillable = [
         'categorylist'

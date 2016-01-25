@@ -2,6 +2,8 @@
 
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Schema;
 
 class CreateUsersTable extends Migration
 {
@@ -12,6 +14,7 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
+        // TODO: hardcoded roles is bad
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
             $table->string('first_name');
@@ -32,6 +35,8 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
+        DB::statement('SET FOREIGN_KEY_CHECKS = 0');
         Schema::drop('users');
+        DB::statement('SET FOREIGN_KEY_CHECKS = 1');
     }
 }

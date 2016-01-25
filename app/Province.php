@@ -6,12 +6,20 @@ use Illuminate\Database\Eloquent\Model;
 
 class Province extends Model
 {
-    protected $table = ['province'];
+    /**
+     * Table used by the model
+     * @var string $table
+     */
+    protected $table = 'province';
 
+    /**
+     * Attributes that are mass assignable
+     * @var array $fillable
+     *
+     * TODO: rename 'provincelist' to 'name'
+     */
     protected $fillable = [
-        'provincelist'
+        'provincelist',
     ];
 
-
 }
-

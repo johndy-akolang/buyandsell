@@ -6,15 +6,21 @@ use Illuminate\Database\Eloquent\Model;
 
 class Privatemessage extends Model
 {
+    /**
+     * Table used by the model
+     * @var string $table
+     */
     protected $table = 'privatemessage';
 
-	protected $fillable = [
-
-		'name', 
-		'email', 
-		'message'
-		
-	];
+    /**
+     * Attributes that are mass assignable
+     * @var array $fillable
+     */
+	  protected $fillable = [
+    		'name',
+    		'email',
+    		'message',
+	  ];
 
 	/*//returns submit of any private message
 	public function item()
