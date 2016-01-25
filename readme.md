@@ -2,6 +2,7 @@
 Please be explicit and consistent with the following:
 
 - [Naming of Table, Table Column, FKs, etcetera](#naming-convention)
+- Use CamelCase for naming of files (Eg. UserComment, UserItem)
 - Use four (4) spaces (not tab) for indention
 - [Annotate your functions, variables, classes (if necessary)](#code-annotation)
 - Place code for defining FK at the bottom part of 'up' function
