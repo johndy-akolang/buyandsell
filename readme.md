@@ -1,13 +1,13 @@
-### Notes ###
+### Notes
 Please be explicit and consistent with the following:
 
-- Naming of Table, Table Column, FKs, etcetera...
+- [Naming of Table, Table Column, FKs, etcetera](#naming-of-table-table-column-fks-etcetera)
 - Use four (4) spaces (not tab) for indention
-- Annotate your functions, variables, classes (if necessary)
-- Add comments for clarity (if necessary)
+- [Annotate your functions, variables, classes (if necessary)](#code-annotation)
+- Place code for defining FK at the bottom part of 'up' function
 - More to come...
 
-> Example of naming tables, columns and FKs
+##### Naming of Table, Table Column, FKs, etcetera
 
 > In this case we'll use User, Item and Comment models. Remember, this is only an example.
 
@@ -38,6 +38,24 @@ For Comment table
 | user_id (FK)  | int (10)      | N/A   |
 | item_id (FK)  | int (10)      | N/A   |
 | content (FK)  | varchar (255) | N/A   |
+
+##### Annotate your functions, variables, classes (if necessary)
+```php
+/**
+ * Example of code annotation (in this case, function)
+ * @var string $bar
+ * @var array $baz
+ * @return bool
+ * @throws Exception
+ */
+public function foo($bar, array $baz) {
+  try {
+    return true;
+  } catch (Exception $e) {
+    throw new Exception();
+  }
+}
+```
 
 ### How to install assets ###
 1. Run 'npm install'.
