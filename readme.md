@@ -1,13 +1,13 @@
-### Notes
+## Notes
 Please be explicit and consistent with the following:
 
-- [Naming of Table, Table Column, FKs, etcetera](#naming-of-table-table-column-fks-etcetera)
+- [Naming of Table, Table Column, FKs, etcetera](#naming-convention)
 - Use four (4) spaces (not tab) for indention
 - [Annotate your functions, variables, classes (if necessary)](#code-annotation)
 - Place code for defining FK at the bottom part of 'up' function
 - More to come...
 
-##### Naming of Table, Table Column, FKs, etcetera
+### Naming of Table, Table Column, FKs, etcetera <a id="naming-convention"></a>
 
 > In this case we'll use User, Item and Comment models. Remember, this is only an example.
 
@@ -39,7 +39,7 @@ For Comment table
 | item_id (FK)  | int (10)      | N/A   |
 | content (FK)  | varchar (255) | N/A   |
 
-##### Annotate your functions, variables, classes (if necessary)
+### Annotate your functions, variables, classes (if necessary) <a id="code-annotation"></a>
 ```php
 /**
  * Example of code annotation (in this case, function)
