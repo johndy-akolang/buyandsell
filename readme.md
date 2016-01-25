@@ -1,7 +1,7 @@
 ### Notes ###
-Please be clear and consistent with the following:
+Please be explicit and consistent with the following:
 
-- Explicit naming of Table, Table Column, FKs, etcetera...
+- Naming of Table, Table Column, FKs, etcetera...
 - Use four (4) spaces (not tab) for indention
 - Annotate your functions, variables, classes (if necessary)
 - Add comments for clarity (if necessary)
@@ -13,7 +13,7 @@ Please be clear and consistent with the following:
 
 > Since a User has many Item and Item may have many Comments, we will setup the relationship in this manner.
 
-> Given the example below, we've created three tables (user, item, comment) and to define the relationship between  _user_ and _item_ tables, we added 'user_id' in item table as foreign key, 'user_id', same goes for _comment_ table, we also added 'user_id' and 'item_id' as foreign keys. If you notice the naming convention we did in this example, we used the _tableName_\_id for foreign keys which is more clear and and easy to identify which table is associated with which column.
+> Given the example below, we've created three tables (user, item, comment) and to define the relationship between  _user_ and _item_ tables, we added 'user_id' in item table as foreign key, same goes for _comment_ table, we also added 'user_id' and 'item_id' as foreign keys. If you notice the naming convention we did in this example, we used the _tableName_\_id for foreign keys which is more clear and and easy to identify which table is associated with which column.
 
 For User table
 
