@@ -1,11 +1,11 @@
 ### Notes ###
 Please be clear and consistent with the following:
-<ul>
-  <li>Explicit naming of Table, Table Column, FKs, etcetera...
-  <li>Use four (4) spaces (not tab) for indention
-  <li>Annotate your functions, variables, classes (if necessary)
-  <li>Add comments for clarity (if necessary)
-  <li>More to come...
+
+- Explicit naming of Table, Table Column, FKs, etcetera...
+- Use four (4) spaces (not tab) for indention
+- Annotate your functions, variables, classes (if necessary)
+- Add comments for clarity (if necessary)
+- More to come...
 
 > Example of naming tables, columns and FKs
 
