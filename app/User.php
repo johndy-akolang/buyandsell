@@ -36,6 +36,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     // user has many item
     public function item()
     {
+        // TODO: rename 'guest_id' to 'user_id'
         return $this->hasMany('App\Item', 'guest_id');
     }
 
@@ -43,6 +44,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     // user has may comments
     public function comments()
     {
+        // TODO: rename 'from_user' to 'user_id'
         return $this->hasMany('App\Comments', 'from_user');
     }
 
@@ -65,7 +67,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
         if ($role == 'seller')
         {
             return true;
-        }   
+        }
         return false;
     }
 

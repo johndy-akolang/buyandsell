@@ -2,6 +2,8 @@
 
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Schema;
 
 class CreateCityTable extends Migration
 {
@@ -12,6 +14,7 @@ class CreateCityTable extends Migration
      */
     public function up()
     {
+        // TODO: rename 'citylist' to 'name'
         Schema::create('city', function (Blueprint $table) {
             $table->increments('id');
             $table->string('citylist');
