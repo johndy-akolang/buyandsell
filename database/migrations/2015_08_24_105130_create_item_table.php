@@ -19,14 +19,14 @@ class CreateItemTable extends Migration
                     ->references('id')->on('users')
                     ->onDelete('cascade');        
 			$table->string('title');
-			$table->string('price');
+			$table->integer('price', 12);
 			$table->string('condition');
 			$table->string('category');
 			$table->text('description');
-			$table->string('images');
+			$table->string('images', 400);
 			$table->string('province');
 			$table->string('city');
-			$table->string('mobile');
+			$table->integer('mobile', 11);
             $table->string('slug')->unique();
             $table->boolean('active');
             $table->timestamps();
