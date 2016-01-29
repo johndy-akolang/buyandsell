@@ -10,10 +10,16 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-/* when user login */
+Route::controllers([
+	'auth' => 'Auth\AuthController',
+	'password' => 'Auth\PasswordController',
+]);
+
 Route::get('/', ['as' => 'home', 'uses' => 'HomeController@index']);
+Route::get('home', ['as' => 'home', 'uses' => 'HomeController@index']);
 Route::get('item', ['as' => 'home', 'uses' => 'ItemController@index']);
 
+/* when user login */
 Route::group(['middleware' => ['auth']], function() 
 {
 	Route::get('item', 'ItemController@index');
@@ -36,7 +42,6 @@ Route::group(['middleware' => ['auth']], function()
 	Route::post('comments/add', 'CommentsController@store');
 
 });
-
 
 
 // item display single post

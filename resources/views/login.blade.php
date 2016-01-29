@@ -96,7 +96,7 @@
                                 {{-- remeber passowrd --}}
                                 <div class="remember">
                                     <p id="login-form-remember">
-                                        <label for="modlgn_remember"><a href="#">Forget Your Password ? </a></label>
+                                        <label for="modlgn_remember"><a href="{{ url('/password/email') }}">Forgot Your Password ? </a></label>
                                     </p>
                                     <input type="submit" name="Submit" class="btn button" value="Login"><div class="clear"></div>
                                 </div>
