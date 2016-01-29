@@ -1,4 +1,16 @@
+## Build assets
+1. Install NodeJS
+2. Install **gulp** by running `npm install gulp -g`
+3. Go to your project root folder
+4. Run `npm install`
+5. Update the *'env'* property in task/config.json based on your environment. (local or prod)
+6. Run `gulp` for local environment and `gulp --production` for production (make sure you are still in project's root folder)
+
 ## Notes
+* Run `gulp` to copy vendor files into your public/\*/vendor folder.
+* Run `gulp --production` to concatenate and minify all vendor and app assets.
+
+## Best Practices
 Please be explicit and consistent with the following:
 
 - [Naming of Table, Table Column, FKs, etcetera](#naming-convention)
@@ -59,11 +71,9 @@ public function foo($bar, array $baz) {
 }
 ```
 
-### How to install assets ###
-1. Run 'npm install'.
-2. Type 'gulp copy-vendor' to add all vendor files into their respective directories.
-3. Done!
+### Troubleshoot
+- Javascript/CSS/Font file not found during build process.
+> Open task/config.json and check if the paths in js and/or css files property points to correct path.
 
-### FAQs ###
-- Why Font-awesome is not working?
-> Open font-awesome.min.css and update each '@font-face src url' to point to correct path.
+- Unable to install laravel-elixir.
+> Install Visual Studio 20(x) from microsoft.
