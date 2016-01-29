@@ -359,6 +359,19 @@ h2.m_1 {
 .span_1_of_2 {
     width:49.2%;
 }
+.copy {
+    float: left;
+}
+.copy p{
+    color: #c7c7c7;
+    font-size: 14px;
+}
+.copy p a{
+    color: #555;
+}
+.copy p a:hover{
+    color: #87D8EB;
+}
 /*--footer-middle--*/
 .footer-middle {
     border-top: 1px solid #ccc;
@@ -2119,6 +2132,7 @@ textarea#sndmsgtxt {
     .col_1_of_2 {float:none;margin:0;}
     .span_1_of_login {width: 100%;}
     .col_1_of_login {float: left;margin: 1% 0 1% 0%;}
+    .copy {float: none;margin-bottom:10px;}
 }
 @media (max-width:640px) {
     .header-bottom-right {width: 100%;float: none;margin-top: 10px;}
@@ -2138,6 +2152,7 @@ textarea#sndmsgtxt {
     .rsingle {float: none;margin: 0% 0 1% 0%;}
     .span_1_of_login {width: 100%;}
     .col_1_of_login {float: none;margin: 1% 0 1% 0%;}
+    .copy {float: none;margin-bottom:10px;}
 }
 @media (max-width:480px) {
     
@@ -2206,6 +2221,7 @@ textarea#sndmsgtxt {
     .span_3_of_2 {width: 100%;}
     .span_1_of_f_2 {width: 100%;}
     .col_1_of_f_2 {float:none;margin: 1% 0 1% 0;}
+    .copy {float: none;margin-bottom:10px;}
 }
 @media (max-width:320px){
 
@@ -2289,4 +2305,5 @@ textarea#sndmsgtxt {
     .images_3_of_2 {width: 100%;float: none;margin-right: 0;}
     .span_3_of_2 {width: 100%;}
     .desc1 {float: none;}
+    .copy {float: none;margin-bottom:10px;}
 }
