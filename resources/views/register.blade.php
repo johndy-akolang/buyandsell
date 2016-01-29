@@ -38,7 +38,7 @@
         </div>
 
         {{-- register label --}}
-        <div class="reg-label mb-20">
+        <div class="reg-label">
             <label>Create your personal account or start business account</label>
         </div>
 
@@ -47,22 +47,19 @@
             {{-- resgiter title --}}
             <h4 class="title">Create an Account</h4>
 
-                @if (count($errors) > 0)
-                    <div class="alert alert-danger">
-                        <strong>whoops!</strong> There were some problems with your input.<br><br/>
-                        <ul>
-                            @foreach ($errors->all() as $error)
+            @if (count($errors) > 0)
+                <div class="alert alert-danger">
+                    <strong>whoops!</strong> There were some problems with your input.<br><br/>
+                    <ul>
+                        @foreach ($errors->all() as $error)
 
-                                <li>{{ $error }}</li>
+                            <li>{{ $error }}</li>
 
-                            @endforeach
-                        </ul>
+                        @endforeach
+                    </ul>
 
-                    </div>
-                @endif
-
-
-
+                </div>
+            @endif
 
             <div class="col_1_of_2 span_1_of_2 ml-0">
 
@@ -184,7 +181,7 @@
                 <tbody>
                     <tr  valign="top">
                         <td class="gf-legal">
-                            Copyright 2015-2016 Applife Technology Corp. All Rights Reserved.
+                            Copyright 2016 Applife Technology Corp. All Rights Reserved.
                             <a href="#">User Agreement</a>
                             ,
                             <a href="#">Privacy</a>

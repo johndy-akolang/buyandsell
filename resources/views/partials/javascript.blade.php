@@ -7,7 +7,9 @@
 <script src="{{ asset('/js/vendor/modernizr.custom.js') }}" type="text/javascript"></script>
 <script src="{{ asset('/js/vendor/jquery.pageparser-0.1.2.min.js') }}" type="text/javascript"></script>
 <script src="{{ asset('/js/vendor/dropzone.js') }}" type="text/javascript"></script>
+<script src="{{ asset('/js/vendor/jquery-maskmoney.js') }}" type="text/javascript"></script>
 
 {{-- javascript --}}
 <script src="{{ asset('/js/cbp-horizontal-menu.min.js') }}" type="text/javascript"></script>
+<script src="{{ asset('/js/class.js') }}" type="text/javascript"></script>
 <script src="{{ asset('/js/global.js') }}" type="text/javascript"></script>

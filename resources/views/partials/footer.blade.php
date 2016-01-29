@@ -17,7 +17,7 @@
                         {{-- twitter --}}
                         <div class="col_1_of_f_2 span_1_of_f_2">
                             <h3 class="clr555">Facebook</h3>
-                            <div class="foot-fb fb-page" data-href="https://www.facebook.com/Kollcomph-1489672604662276/" data-width="389" data-height="300" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="true"></div>
+                            <div class="fb-page" data-href="https://www.facebook.com/Kollcomph-1489672604662276/" data-tabs="timeline" data-width="276" data-height="300" data-small-header="true" data-adapt-container-width="false" data-hide-cover="true" data-show-facepile="false"></div>
                         </div>
 
                         <div class="clear"></div>
@@ -25,7 +25,7 @@
                 </div>
 
                 {{-- col 2 --}}
-                <div class="col_1_of_f_1 span_1_of_f_1">
+                <div class="col_1_of_f_1 span_1_of_f_1 ml-15">
                     <div class="section group example">
 
                         {{-- information --}}

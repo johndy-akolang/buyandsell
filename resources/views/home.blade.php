@@ -15,17 +15,7 @@
             <div class="cont span_2_of_3">
 
                 <div class="top-box img-box-4 text-center">
-
-                    <!-- /*<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                    Top-Front 
-                    <ins class="adsbygoogle"
-                         style="display:inline-block;width:728px;height:90px"
-                         data-ad-client="ca-pub-9497860225980777"
-                         data-ad-slot="5751732445"></ins>
-                    <script>
-                    (adsbygoogle = window.adsbygoogle || []).push({});
-                    </script>*/ -->
-					
+                   
 					@foreach ($items as $item)
 
 						<div class="col-md-4 col-sm-6 mb-15">
@@ -47,7 +37,7 @@
 									<h4 class="item-title" style="height: 29px;">
 										<a href="{{ url('/item/'.$item->slug) }}" class="title-cut">{{ $item->title }}</a>
 									</h4>
-									<div class="bor bg-red"></div>
+									<!-- <div class="bor bg-red"></div> -->
 									<div class="row">
 										<div class="col-xs-12 col-sm-12 col-md-12 info-dta info-price">Php {{ $item->price }}</div>
 									</div>
@@ -76,7 +66,7 @@
             <div class="rsidebar span_1_of_left">
 
                 {{-- nivo slider --}}
-                <div class="top-border"></div>
+                <!-- <div class="top-border"></div> -->
                 <div class="border">
                     <div class="slider-wrapper theme-default">
                         <div id="slider" class="nivoSlider">
@@ -94,18 +84,9 @@
                 </div>
 
                 {{-- newsletter container --}}
-                <div class="top-border"></div>
-                <div class="sidebar-bottom">
-                    <!-- /*<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                     right home 
-                    <ins class="adsbygoogle"
-                         style="display:block"
-                         data-ad-client="ca-pub-5118993513757687"
-                         data-ad-slot="1886817855"
-                         data-ad-format="auto"></ins>
-                    <script>
-                    (adsbygoogle = window.adsbygoogle || []).push({});
-                    </script>*/ -->
+                <!-- <div class="top-border"></div> -->
+                <!-- <div class="sidebar-bottom">
+
                     <h2 class="m_1">
                         Newsletters <br>
                         Sign up
@@ -125,7 +106,7 @@
                         {!! Form::close() !!}
 
                     </div>
-                </div>
+                </div> -->
 
             </div>
 

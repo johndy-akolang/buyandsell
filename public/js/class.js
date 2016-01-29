@@ -1,17 +1,20 @@
 $(document).ready(function() {
 
-	//signin
+	//click button to signin
 	$('#signin-blue').click(function() {
 
 		$(window.location).attr('href', '/login');
 
 	});
 
-	//signup
+	//click button to signup
 	$('#signup-blue').click(function() {
 	
 		$(window.location).attr('href', '/register');
 
 	});
+
+	//auto correct number / price input
+	$("#price").maskMoney();
 
 });

@@ -10,17 +10,12 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-
-/*Route::controllers([
-    'auth' => 'Auth\AuthController',
-    'password' => 'Auth\PasswordController',
-]);*/
+/* when user login */
 Route::get('/', ['as' => 'home', 'uses' => 'HomeController@index']);
 Route::get('item', ['as' => 'home', 'uses' => 'ItemController@index']);
 
 Route::group(['middleware' => ['auth']], function() 
 {
-	//Route::resource('item', 'ItemController');
 	Route::get('item', 'ItemController@index');
 
 	// show form create item user
@@ -39,7 +34,6 @@ Route::group(['middleware' => ['auth']], function()
 
 	// add comment
 	Route::post('comments/add', 'CommentsController@store');
-	/*Route::resource('comment', 'CommentsController');*/
 
 });
 
@@ -58,8 +52,8 @@ Route::get('search', 'ItemController@getSearch');
 Route::post('item/sendmail', 'ItemController@getMail');
 
 
-Route::get('account/{id}', 'AccountController@user')->where('id', '[0-9]+');
-
+/*Route::get('account/{id}', 'AccountController@user')->where('id', '[0-9]+');*/
+/* koll about */
 Route::get('about', 'AboutController@index');
 Route::get('about/privacy', 'AboutController@privacy');
 
@@ -73,18 +67,19 @@ Route::get('logout', 'LoginController@doLogout');
 // if login success this template
 Route::get('loginsuccess', 'LoginController@loginsuccess');
 
+/* register user */
 Route::get('register', 'RegisterController@register');
 Route::post('register', 'RegisterController@postRegister');
 
 
 /*Route::resource('item', 'ItemController');*/
 
-
-
+/* this message is temporally disabled */
 Route::get('message/inbox', 'MessageController@inbox');
 Route::get('message/viewmessage', 'MessageController@viewmessage');
 Route::get('message/sent', 'MessageController@sent');
 
+/* legal terms disabled*/
 Route::get('legal/terms', 'LegalController@terms');
 Route::get('legal/privacy', 'LegalController@privacy');
 

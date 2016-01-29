@@ -51,7 +51,7 @@
                         {{-- price form input --}}
                         <div class="title-cont-input floatLeft">
 
-                            <input type="text" name="price" class="form-control" value="@if(!old('price')){{$item->price}}@endif{{ old('price') }}"/>
+                            <input type="text" id="price" name="price" class="form-control" value="@if(!old('price')){{$item->price}}@endif{{ old('price') }}"/>
 
                         </div>
 
