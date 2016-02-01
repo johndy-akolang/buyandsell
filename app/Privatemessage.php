@@ -22,10 +22,4 @@ class Privatemessage extends Model
     		'message',
 	  ];
 
-	/*//returns submit of any private message
-	public function item()
-	{
-		return $this->belongsTo('App\Item', 'message');
-	}
-*/
 }

@@ -39,8 +39,6 @@ class LoginController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-
-
     public function showLogin()
     {
         // show the form
@@ -54,7 +52,6 @@ class LoginController extends Controller
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-
     public function doLogin(Request $request)
     {
         $this->validate($request, [
@@ -80,7 +77,6 @@ class LoginController extends Controller
      *
      * @return string
      */
-
     public function getCredentials(Request $request)
     {
         return $request->only('email', 'password');
@@ -97,7 +93,6 @@ class LoginController extends Controller
      * @return \Illuminate\Http\Response
      *
      */
-
     public function doLogout()
     {
         Auth::logout(); // logout user
@@ -115,7 +110,6 @@ class LoginController extends Controller
      *
      * @return string
      */
-
     public function loginPath()
     {
         return property_exists($this, 'loginPath') ? $this->loginPath : '/login';

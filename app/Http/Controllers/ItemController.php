@@ -24,7 +24,7 @@ class ItemController extends Controller
 {
 
     /**
-     * Display a listing of the resource.
+     * Display a listing of the resource items or ads.
      *
      * @return Response
      */
@@ -71,15 +71,18 @@ class ItemController extends Controller
     {       
         //$user = User::where('email', $email)->first();
 
+        // new item create
         $item = new Item();
 
+        // upload images and stored filed
         $file = $request->file('images');
         $destination_path = 'images/uploads/';
         $filename = str_random(6).'_'.$file->getClientOriginalName();
         $file->move($destination_path, $filename);
-
         $item->images = $destination_path . $filename;
         //item = $this->images->upload($item);
+
+        // details item or ads
         $item->title = $request->input('title');
         $item->price = $request->input('price');
         $item->condition = $request->input('condition');
@@ -141,11 +144,11 @@ class ItemController extends Controller
     */
     public function show($slug)
     {
-
+        // paginate featured ads at right side
         $featured = Item::paginate(3);
-        $items = Item::where('slug', $slug)->first();
-        
 
+        // item show with slug or title
+        $items = Item::where('slug', $slug)->first();
         if ($items) 
         {
 
@@ -176,6 +179,7 @@ class ItemController extends Controller
         $item = Item::where('slug', $slug)->first();
         if($item && ($request->user()->id == $item->guest_id || $request->user()->is_seller())) 
 
+            // select forms
             $city = \DB::table('city')->lists('citylist', 'citylist');
             $province = \DB::table('province')->lists('provincelist', 'provincelist');
             $condition = \DB::table('condition')->lists('conditionitem', 'conditionitem');
@@ -254,7 +258,7 @@ class ItemController extends Controller
      */
     public function destroy(Request $request, $id)
     {
-
+        /*
         $item = Item::find($id);
         
         if ($item && ($item->guest_id == $request->user()->id || $request->user()->is_seller())) {
@@ -264,10 +268,14 @@ class ItemController extends Controller
             $data['errors'] = 'Invalid Operation. You have not sufficient permissions';
         }
 
-        return redirect('/')->with($data);
+        return redirect('/')->with($data);*/
 
     }
 
+    /**
+     * Show featured ads ramdomly by category.
+     * 
+     */    
     public function featured()
     {
 
@@ -275,6 +283,11 @@ class ItemController extends Controller
 
     }
 
+
+    /**
+     * Search specific item
+     *
+     */
     public function getSearch(Request $request)
     {
         //Validation class maybe ? TODO
@@ -339,6 +352,10 @@ class ItemController extends Controller
 
     }
 
+    /**
+     * GUest send private message to seller. Non-user only.
+     * 
+     */
     public function getMail(Request $request)
     {
 

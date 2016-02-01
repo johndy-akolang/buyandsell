@@ -19,11 +19,19 @@ class LegalController extends Controller
         //
     }
 
+    /*
+    * View terms and condition of koll.com.ph
+    * 
+    */
     public function terms()
     {
         return view('legal.terms');
     }
 
+    /*
+    * View privacy policy of koll.com.ph
+    * 
+    */
     public function privacy()
     {
         return view('legal.privacy');
