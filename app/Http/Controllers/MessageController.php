@@ -19,6 +19,10 @@ class MessageController extends Controller
         //
     }
 
+    /*
+    * View message inbox
+    * 
+    */
     public function inbox()
     {
         return view('message.inbox');
