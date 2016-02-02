@@ -1,10 +1,15 @@
+<!-- wrapper -->
 <div class="" style="margin: 0 auto;width: 755px;padding: 15px;background: #f3f1f3;" >
+	
+	<!-- logo -->
 	<div class="" style="height: 70px;width: 100%;">
 		<img src="http://koll.com.ph/images/logo-koll.png" />
 	</div>
 
+	<!-- user greetings and name -->
 	<span style="color: #555;font-size: 16px;">Hello, {{ $user }}</span>
 
+	<!-- title of ads user create -->
 	<p style="font-size: 16px;margin: 40px 0;color: #555;">Your ad <b><a href="{{ $url }}" style="color: #15c;">{{ $subject }}</a></b> is now posted on KOLL.com.ph</p>
 
 	<p style="font-size: 14px;margin: 40px 0;color: #555;">
