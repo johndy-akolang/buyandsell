@@ -668,6 +668,9 @@ p.terms {
     -webkit-user-select: none;
     -moz-user-select: none;
     user-select: none;
+
+    /* add */
+    min-width: 115px;
 }
 .dropdown.open {
     z-index: 2;
@@ -726,6 +729,9 @@ p.terms {
     color: #555;
     line-height: 32px;
     position: relative;
+
+    /* add */
+    float: right;
 }
 .dropdown-toggle:hover {
     color: #555;
@@ -773,8 +779,9 @@ p.m_5 a:hover{
 }
 p.m_text {
     color: #777;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.8em;
+    white-space: pre-line;
 }
 .toogle {
     margin-top: 4%;
@@ -1380,7 +1387,7 @@ form::after {
 .pagination {
     font-weight: 300;
 }
-.pagination > li > a, .pagination > li > span {
+/*.pagination > li > a, .pagination > li > span {
     background-color: transparent !important;
     border: 1px solid #dddddd !important;
     color: #555 !important;
@@ -1390,7 +1397,7 @@ form::after {
     padding: 5px 12px;
     position: relative;
     text-decoration: none;
-}
+}*/
 .pagination > li:first-child > a, .pagination > li:first-child > span {
     border-bottom-left-radius: 3px;
     border-top-left-radius: 3px;
