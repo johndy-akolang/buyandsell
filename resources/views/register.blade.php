@@ -30,7 +30,7 @@
         <!-- logo -->
         <div class="logo-cont mb-20">
 
-            <a href="/"><img src="{{ asset('/images/logo-koll-beta.png') }}"></a>
+            <a href="/" title="Koll.com.ph"><img src="{{ asset('/images/logo-koll-beta.png') }}" alt="Koll.com.ph" title="Koll.com.ph"></a>
 
             <!-- sub title -->
             <span>Get started with KOLL.com.ph</span>

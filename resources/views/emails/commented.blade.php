@@ -3,7 +3,7 @@
 
 	<!-- logo -->
 	<div class="" style="height: 70px;width: 100%;">
-		<img src="http://koll.com.ph/images/logo-koll.png" />
+		<img src="http://koll.com.ph/images/logo-koll.png" alt="Koll.com.ph" title="Koll.com.ph" />
 	</div>
 
 	<!-- user greetings and name -->

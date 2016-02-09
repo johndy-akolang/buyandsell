@@ -28,7 +28,7 @@
 
         <!-- logo -->
         <div class="logo-cont">
-            <a href="/"><img src="{{ asset('/images/logo-koll-beta.png') }}"></a>
+            <a href="/" title="Koll.com.ph"><img src="{{ asset('/images/logo-koll-beta.png') }}" alt="Koll.com.ph" title="Koll.com.ph"></a>
         </div>
 
         <div class="wrap">

@@ -3,7 +3,7 @@
     <div class="wrap">
 
         {{-- logo website --}}
-        <a class="res-logo floatLeft" href="/"><img class="logo-koll" src="{{ asset('/images/logo-koll-beta.png') }}"></a>
+        <a class="res-logo floatLeft" href="/" title="Koll.com.ph"><img class="logo-koll" src="{{ asset('/images/logo-koll-beta.png') }}" alt="Koll.com.ph" title="Koll.com.ph"></a>
         
         <div class="cssmenu">
             @if (Auth::user())

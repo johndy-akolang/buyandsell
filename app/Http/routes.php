@@ -88,4 +88,15 @@ Route::get('message/sent', 'MessageController@sent');
 Route::get('legal/terms', 'LegalController@terms');
 Route::get('legal/privacy', 'LegalController@privacy');
 
-
+/* sitemap */
+Route::get('/sitemap', function() {
+	$file = public_path(). "/koll_sitemap.xml";
+	//check if the file exists
+	if (file_exists($file)) {
+		//read the file into a string
+		$content = file_get_contents($file);
+		// create a laravel response using the content string, an http response code of 200(OK),
+		// and an array of html headers including the pdf contet type
+		return Response::make($content, 200, array('content-type'=>'application/xml'));
+	}
+});
