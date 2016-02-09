@@ -99,9 +99,9 @@
 
                 <!-- newsletter container -->
                 <!-- <div class="top-border"></div> -->
-                <!-- <div class="sidebar-bottom">
+                <div class="sidebar-bottom">
 
-                    <h2 class="m_1">
+                    <!-- <h2 class="m_1">
                         Newsletters <br>
                         Sign up
                     </h2>
@@ -119,8 +119,19 @@
 
                         {!! Form::close() !!}
 
-                    </div>
-                </div> -->
+                    </div> -->
+
+                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    <!-- right home -->
+                    <ins class="adsbygoogle"
+                         style="display:block"
+                         data-ad-client="ca-pub-5118993513757687"
+                         data-ad-slot="1886817855"
+                         data-ad-format="auto"></ins>
+                    <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                </div>
 
             </div>
 
