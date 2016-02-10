@@ -1,7 +1,7 @@
 @extends('app')
 
 @section('title')
-    Sell your item now
+    Sell your item now | Koll.com.ph New and Free Classified Ads and Buy and Sell Website Philippines
 @stop
 
 @section('content')

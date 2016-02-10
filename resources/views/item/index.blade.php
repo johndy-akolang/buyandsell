@@ -1,7 +1,7 @@
 @extends('app')
 
 @section('title')
-    Manage item list
+    Manage item list | Koll.com.ph New and Free Classified Ads and Buy and Sell Website Philippines
 @stop
 
 @section('content')

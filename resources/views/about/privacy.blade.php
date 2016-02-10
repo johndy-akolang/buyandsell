@@ -1,7 +1,7 @@
 @extends('app')
 
 @section('title')
-	KOLL.com.ph | Privacy Policy
+	Privacy Policy | Koll.com.ph New and Free Classified Ads and Buy and Sell Website Philippines
 @stop
 
 @section('content')

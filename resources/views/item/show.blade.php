@@ -1,7 +1,7 @@
 @extends('app')
 
 @section('title')
-    {{ $items->slug }} for sale philippines - KOLL.com.ph
+    {{ $items->slug }} | Koll.com.ph New and Free Classified Ads and Buy and Sell Website Philippines
 @stop
 
 @section('header_assets')
@@ -32,7 +32,7 @@
                         <ul id="etalage">
                             <li>
                                 <a href="#">
-                                    <img class="etalage_thumb_image img-responsive" src="{{ asset($items->images) }}" />
+                                    <img class="etalage_thumb_image img-responsive" alt="{{ $items->title }}" src="{{ asset($items->images) }}" />
                                 </a>
                             </li>
 

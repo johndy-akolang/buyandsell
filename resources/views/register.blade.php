@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- title -->
-    <title>Get started with KOLL.com.ph</title>
+    <title>Get started with KOLL.com.ph | Koll.com.ph New and Free Classified Ads and Buy and Sell Website Philippines</title>
 
     <!-- css style -->
     <link href="{{ asset('/css/global.css') }}" rel="stylesheet">

@@ -1,7 +1,7 @@
 @extends('app')
 
 @section('title')
-    Update Item  {{ $item->slug }}
+    Update Item  {{ $item->slug }} | Koll.com.ph New and Free Classified Ads and Buy and Sell Website Philippines
 @stop
 
 @section('content')

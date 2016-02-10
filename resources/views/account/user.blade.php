@@ -1,7 +1,7 @@
 @extends('app')
 
 @section('title')
-    My Account
+    My Account | Koll.com.ph
 @stop
 
 @section('content')

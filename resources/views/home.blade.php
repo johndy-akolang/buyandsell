@@ -1,7 +1,7 @@
 @extends('app')
 
 @section('title')
-    KOLL.com.ph | Philippines Buy and Sell website
+    KOLL.com.ph | New and Free Classified Ads and Buy and Sell Website Philippines
 @stop
 
 @section('content')
@@ -25,7 +25,7 @@
 								<!-- item image display -->
 								<div class="image-style-one">
 									<a href="{{ url('/item/'.$item->slug) }}">
-										<img class="img-reponsive" src="{{ asset($item->images) }}" alt="">
+										<img class="img-reponsive" src="{{ asset($item->images) }}" alt="{{ $item->title }}" />
 									</a>
 								</div>
 
