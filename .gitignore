@@ -96,3 +96,5 @@ crashlytics-build.properties
 
 ### App ###
 public/images/uploads
+public/js/vendor
+public/css/vendor
