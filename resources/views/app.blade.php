@@ -8,13 +8,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <meta name="title" content="Koll.com.ph | Philippines Online Buy and Sell Website" /> 
+    <meta name="title" content="Koll.com.ph | Philippines Online Buy and Sell Website" />
     <meta name="description" content="New Buy and Sell Website, Philippines | Sell your 2nd hand items on KOLL.com.ph, buy and sell website. Post free online ads of your used car, mobile phone, furniture, and more.">
     <meta name="keywords" content="New Buy and Sell Website, Philippines, 2nd Hand for sale, Vehicles, Fashion, Pets, Jobs, Electronics, Real Estate, Sports, Toys, Others, For Sale Items, Low Price, Discount" />
 
     {{-- title --}}
     <title>@yield('title')</title>
-    
+
     @yield('header_assets')
 
     {{-- css --}}
@@ -54,7 +54,7 @@
     @include('partials.footer')
 
     {{-- js --}}
-    @include('partials.javascript')
+    @include('partials.js')
     <div id="fb-root"></div>
     <script>(function(d, s, id) {
       var js, fjs = d.getElementsByTagName(s)[0];
@@ -90,60 +90,3 @@
 </body>
 <!-- Mark Donnie Infantado -->
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
