@@ -26,16 +26,16 @@ class CreateItemTable extends Migration
             $table->integer('guest_id')->unsigned()->default(0); // user_id
             $table->foreign('guest_id') // user_id
                     ->references('id')->on('users')
-                    ->onDelete('cascade');        
+                    ->onDelete('cascade');
 			$table->string('title');
-			$table->integer('price', 12);
+			$table->integer('price');
 			$table->string('condition');
 			$table->string('category');
 			$table->text('description');
 			$table->string('images', 400);
 			$table->string('province');
 			$table->string('city');
-			$table->integer('mobile', 11);
+			$table->integer('mobile');
             $table->string('slug')->unique();
             $table->boolean('active');
             $table->timestamps();
