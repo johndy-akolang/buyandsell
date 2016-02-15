@@ -343,8 +343,17 @@ p.title {
 .border {
     border: 1px solid #ccc;
     border-radius: 5px;
-    padding: 15px;
+    /*padding: 15px;*/
     margin-bottom: 15%;
+}
+.border .slider-wrapper {
+    padding: 15px;
+}
+.border p.ads-here-front {
+    color: #333;
+    margin: 0 3px 0 0;
+    text-decoration: underline;
+    text-align: right;
 }
 .sidebar-bottom {
     border-radius: 5px;

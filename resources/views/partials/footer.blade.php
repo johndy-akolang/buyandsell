@@ -12,6 +12,9 @@
                         {{-- facebook --}}
                         <div class="col_1_of_f_2 span_1_of_f_2">
                             <h3 class="clr555">Koll.com.ph</h3>
+                            <p>
+                                Koll comes from a Pinoy street word "Call" or "Okay! Deal!" meaning a person agreed an offer or deal from another person.
+                            </p>
                         </div>
 
                         {{-- twitter --}}

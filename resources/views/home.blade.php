@@ -93,8 +93,10 @@
                             <a href="http://www.micafe.ph/">
                                 <img src="{{ asset('/images/koll-micafe-advertise.png') }}" alt="Micafe">
                             </a>
+
                         </div>
                     </div>
+                    <a href=""><p class="ads-here-front">advertise here <i class="fa fa-angle-double-right"></i></p></a>
                 </div>
 
                 <!-- newsletter container -->
