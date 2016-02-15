@@ -12,9 +12,9 @@
           "./node_modules/dropzone/dist/dropzone.js",
           "./node_modules/jquery-maskmoney/dist/jquery.maskMoney.js",
           "./public/js/vendor/jquery.nivo.slider.js",
-          "./public/js/vendor/jquery.etalage.js",
+          "./public/js/vendor/jquery.etalage.min.js",
           "./public/js/vendor/modernizr.custom.js",
-          "./public/js/vendor/jquery.pageparser-0.1.2.js"
+          "./public/js/vendor/jquery.pageparser-0.1.2.min.js"
         ],
         "prod": [
           "./node_modules/jquery/dist/jquery.min.js",
