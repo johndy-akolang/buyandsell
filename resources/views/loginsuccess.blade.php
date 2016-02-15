@@ -12,9 +12,10 @@
         <div class="wrap">
             <div class="loginsuccess-cont">
 
-                {{-- top header --}}
+                <!-- top header -->
                 <div class="pdt15">
 
+                    <!-- title message -->
                     <h1 class="customh1">
                         <div class="sm-co sm-su">
                             <i class="gspr icsu"></i>
@@ -25,14 +26,16 @@
                 </div>
 
 
-                {{-- body --}}
+                <!-- body -->
                 <div class="cntr">
 
+                    <!-- user email -->
                     <div class="pdt20">
-                        You'll be able to sign in to KOLL.com.ph with
+                        You'll be able to login to KOLL.com.ph with
                         <b>{{ Auth::user() ->email }}</b>
                     </div>
 
+                    <!-- admin message to user -->
                     <ul class="infc">
 
                         <li>Congratulations! You're now member of KOLL.com.ph. yu can sell your items with FREE!!</li>
@@ -46,7 +49,7 @@
 
                     </ul>
 
-                    {{-- button continue --}}
+                    <!-- button continue -->
                     <a id="sbtBtn" class="btn btn-prim input-blue c-fff" target="" href="/">Continue</a>
 
                 </div>

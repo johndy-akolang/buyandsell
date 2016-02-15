@@ -1,7 +1,7 @@
 @extends('app')
 
 @section('title')
-    {{ $items->slug }} for sale philippines - KOLL.com.ph
+    {{ $items->slug }} | Koll.com.ph New and Free Classified Ads and Buy and Sell Website Philippines
 @stop
 
 @section('header_assets')
@@ -25,22 +25,18 @@
             <ul class="breadcrumb breadcrumb__t"></ul>
 
             <div class="cont span_2_of_3">
+
                 @if($items)
-                    <!-- {{ $items->title }} -->
                     <!-- thumb images left -->
                     <div class="grid images_3_of_2">
                         <ul id="etalage">
                             <li>
                                 <a href="#">
-                                    <img class="etalage_thumb_image img-responsive" src="{{ asset($items->images) }}" />
-                                    <!-- <img class="etalage_source_image" src="{{ asset($items->images) }}" class="img-responsive" width="300" /> -->
-                                    <!--
-                                    <img class="etalage_thumb_image" src="{{ asset('/images/s-img.jpg') }}" class="img-responsive" />
-                                    <img class="etalage_source_image" src="{{ asset('/images/s1.jpg') }}" class="img-responsive" />
-                                    -->
+                                    <img class="etalage_thumb_image img-responsive" alt="{{ $items->title }}" src="{{ asset($items->images) }}" />
                                 </a>
                             </li>
 
+                            <!-- small thumbnails -->
                             <!-- <li>
                                 <img class="etalage_thumb_image" src="{{ asset('/images/s-img1.jpg') }}" class="img-responsive" />
                                 <img class="etalage_source_image" src="{{ asset('/images/s2.jpg') }}" class="img-responsive" />
@@ -119,23 +115,10 @@
                             <h2>Leave a comment</h2>
                             @if(Auth::guest())
                                 <p>Sign in to comment</p>
-                                <!-- <div class="commenter-container panel-body">
-
-                                    <form method="post" action="">
-                                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                        <div class="form-group">
-                                            <input required="required" placeholder="Your name here" name="guestcom" class="form-control" />
-                                        </div>
-                                        <div class="form-group">
-                                            <textarea required="required" placeholder="Enter comment here" name="body" class="form-control"></textarea>
-                                        </div>
-                                        <input type="submit" name='post_comment' class="btn btn-success" value = "Post"/>
-                                    </form>
-
-                                </div> -->
                             @else
-                                <div class="commenter-container panel-body">
 
+                                <!-- form comment -->
+                                <div class="commenter-container panel-body">
                                     <form method="post" action="/comments/add">
                                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                         <input type="hidden" name="on_post" value="{{ $items->id }}">
@@ -145,24 +128,24 @@
                                         </div>
                                         <input type="submit" name='post_comment' class="btn btn-success" value = "Post"/>
                                     </form>
-
                                 </div>
+
                             @endif
 
                         </div>
 
+                        <!-- display comment here -->
                         <div class="" style="">
 
                             @if($comments)
-                                <!-- display comment here -->
-                                
-                                    <div class="comments">
-                                        <div class="panel panel-default comment border-clr-none">
-                                            @foreach($comments as $comment)
+                                <div class="comments">
+                                    <div class="panel panel-default comment border-clr-none">
+
+                                        <!-- show comment display -->
+                                        @foreach($comments as $comment)
                                             <div class="panel-heading comment-header border-clr-none">
 
                                                 <!-- button to see list comment -->
-
                                                 <h4 class="comment-user">
                                                     <span class="comment-username">{{ $comment->guest->first_name }}</span>
                                                     <small class="comment-date">{{ $comment->created_at->format('M d, Y \a\t h:i a') }}</small>
@@ -171,30 +154,29 @@
                                                 {{ $comment->body }}
 
                                             </div>
-                                            @endforeach
-                                        </div>
+                                        @endforeach
                                     </div>
-                                
+                                </div>
                             @endif
 
                         </div>
-
                     </div>
 
                 @endif
 
-            </div>     
+            </div>    
 
+            <!-- right side for seller information , featured ads and sponsored links -->
             <div class="span_1_of_3 floatRight wdth20per">
 
-                <!-- right side for seller information , featured ads and sponsored links -->
                 <!-- owner of item seller info -->
                 <div class="rsingle">
                     <h5 class="m_1">Seller Information</h5>
 
-                    <!-- seller name -->
+                    <!-- seller complete name -->
                     <strong><a href="{{ url('/account/user/'.$items->guest_id) }}">{{ $items->guest->first_name }} {{ $items->guest->last_name }}</a></strong>
 
+                    <!-- details information seller -->
                     <div class="details-seller floatLeft">
                         <label class="mb-num mt-10"><span class="deta-left c-999 txt-ind-10"><i class="fa fa-mobile"></i>Mobile:</span><span class="deta-right txt-ind-10">{{ $items->guest->mobile }}</span></label>
                         <label class="mb-num mt-10"><span class="deta-left c-999 txt-ind-10"><i class="fa fa-mobile"></i>Business No.:</span><span class="deta-right txt-ind-10">{{ $items->mobile }}</span></label>
@@ -202,13 +184,14 @@
                         <label class="mb-num mt-10"><span class="deta-left c-999 txt-ind-10"><i class="fa fa-info-circle"></i>Condition:</span><span class="deta-right txt-ind-10">{{ $items->condition }}</span></label>
                         <label class="mb-num mt-10"><span class="deta-left c-999 txt-ind-10"><i class="fa fa-location-arrow"></i>City:</span><span class="deta-right txt-ind-10">{{ $items->city }}</span></label>
                         
-                        <!-- send inquiry to owner -->
-                        <a href="#" class="snd-msg-ownr btn input-blue mt-20" data-toggle="modal" data-target="#sndmsgownr">Send Message</a>
+                        <!-- send inquiry to owner private -->
+                        <a href="#" class="snd-msg-ownr btn input-green mt-20" data-toggle="modal" data-target="#sndmsgownr">Send Message</a>
 
                         <!-- modal form -->
                         <div class="modal fade" id="sndmsgownr" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
+
                                     <!-- Modal Header -->
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal">
@@ -222,6 +205,8 @@
                                     
                                     <!-- Modal Body -->
                                     <div class="modal-body">
+
+                                        <!-- form for private message -->
                                         <!-- action="sendmail" -->
                                         <form method="post" action="sendmail">
                                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -244,69 +229,58 @@
 
                                             <!-- Modal Footer -->
                                             <div class="modal-footer">
-                                                <!-- <button type="button" class="btn btn-default"
-                                                        data-dismiss="modal">
-                                                            Close
-                                                </button> -->
-                                                <button type="submit" class="input-blue btn btn-default">Submit</button>
+                                                <button type="submit" class="input-green btn btn-default">Submit</button>
                                             </div>
-
-                                          <!-- <button type="submit" class="btn btn-default">Submit</button> -->
                                         </form>
                                         
-                                    </div>
-                                    
+                                    </div> 
                                 </div>
                             </div>
                         </div>
-
                     </div>
                   <div class="clear"></div>
                 </div>
 
-                @foreach (array_chunk($featured->all(), 4) as $featuredSection)
-                    <!-- featured ads -->
-                    <div class="rsingle mt-rsingle-25">
-                        <h5 class="m_1">Featured Ads</h5>
-
-                        <ul class="list-unstyled floatLeft">
+                <!-- featured loop -->
+                <!-- featured ads -->
+                <div class="rsingle mt-rsingle-25">
+                    <h5 class="m_1">Featured Ads</h5>
+                    <ul class="list-unstyled floatLeft">
+                        @foreach (array_chunk($featured->all(), 4) as $featuredSection)
                             @foreach ($featuredSection as $featuredItem)
                             <li class="col-xs-12 col-sm-6 col-md-12 col-lg-12">
-                                <div class="featured-item">
+                                <!-- <div class="featured-item">
                                     <a href="#">
                                         <img class="img-reponsive img-thumbnail pad-none" alt="" src="{{ asset($featuredItem->images) }}">
                                     </a>
-                                </div>
-                                <h4>
-                                    <a hef="#">{!! $featuredItem->title !!}</a>
-                                </h4>
-                                <!-- <div class="price">
-                                    <strong>Price : {!! $featuredItem->price !!}</strong>
                                 </div> -->
+                                <a href="{{ url('/item/'.$featuredItem->slug) }}">
+                                    <h4>
+                                        {!! $featuredItem->title !!}
+                                    </h4>
+                                    <p class="description-cut">
+                                        {!! $featuredItem->description !!}
+                                    </p>
+                                </a>
                                 <div class="clearfix"></div>
                             </li>
                             @endforeach
-                        </ul>
-
-                        <div class="clear"></div>
-                    </div>
-                @endforeach
+                        @endforeach
+                    </ul>
+                    <div class="clear"></div>
+                </div>
+               
 
                 <!-- sponsored ads links -->
-                <div class="rsingle mt-rsingle-25 ">
+                <!-- <div class="rsingle mt-rsingle-25 ">
                     <h5 class="m_1">Sponsored Links</h5>
 
                   <div class="clear"></div>
-                </div>
+                </div> -->
 
                 <div class="clear"></div>
-
             </div>
-
         </div>
-
-        
-
     </div>
 </div>
 

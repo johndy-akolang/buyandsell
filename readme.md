@@ -6,16 +6,18 @@
 5. Update the *'env'* property in task/config.json based on your environment. (local or prod)
 6. Run `gulp` for local environment and `gulp --production` for production (make sure you are still in project's root folder)
 
-## Notes
+## Important Notes
 * Run `gulp` to copy vendor files into your public/\*/vendor folder.
 * Run `gulp --production` to concatenate and minify all vendor and app assets.
+* Use [npm](http://www.npmjs.com) to install js and/or css library (if possible).
 
 ## Best Practices
 Please be explicit and consistent with the following:
 
 - [Naming of Table, Table Column, FKs, etcetera](#naming-convention)
 - Use CamelCase for naming of files (Eg. UserComment, UserItem)
-- Use four (4) spaces (not tab) for indention
+- Use four (4) spaces (not tab) for indention of html and php
+- Use four (2) spaces (not tab) for indention of js and css
 - [Annotate your functions, variables, classes (if necessary)](#code-annotation)
 - Place code for defining FK at the bottom part of 'up' function
 - Use **singular** instead of **plural** when naming a table, column, file, etcetera. For more details, refer to this [link](http://stackoverflow.com/a/5841297)

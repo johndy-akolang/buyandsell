@@ -22,10 +22,4 @@ class Category extends Model
         'categorylist'
     ];
 
-
-    /*public function item()
-    {
-    	return $this->hasMany('App\Item');
-    }*/
-
 }

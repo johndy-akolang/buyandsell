@@ -30,12 +30,17 @@ class RegisterController extends Controller
         $this->middleware('guest', ['except' => 'logout']);
     }
 
-
+    /*
+    * show the application register form
+    */
     public function register()
     {
         return View::make('register');
     }
 
+    /*
+    * Handle a register request to the application
+    */
     public function postRegister(Request $request)
     {
         $validator = $request->all();
@@ -51,7 +56,6 @@ class RegisterController extends Controller
      * @param array $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
-
     protected function validator(array $data)
     {
         return Validator::make($data, [
@@ -72,7 +76,6 @@ class RegisterController extends Controller
      * @return User
      *
      */
-
     protected function create(array $data)
     {
 

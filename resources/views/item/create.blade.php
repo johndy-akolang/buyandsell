@@ -1,7 +1,7 @@
 @extends('app')
 
 @section('title')
-    Sell you item now
+    Sell your item now | Koll.com.ph New and Free Classified Ads and Buy and Sell Website Philippines
 @stop
 
 @section('content')
@@ -10,20 +10,19 @@
     <div class="main">
 
         <div class="wrap">
-		
             <div class="cont sell-item-cont bor-rad5 border1ccc pad10">
 
-                {{-- form sell item --}}
+                <!-- form sell item -->
                 {!! Form::open(['url' => 'item', 'method' => 'POST', 'files' => true]) !!}
 
-                    {{-- sell item title --}}
+                    <!-- sell item title -->
                     <div class="sellitem-title">
                         <h4 class="title">Sell item now</h4>
                     </div>
 
                     <fieldset class="clearfix">
 
-                        {{-- title form label --}}
+                        <!-- title form label -->
                         <div class="sellitem-title-cont floatLeft">
                             <div class="sellitem-label floatLeft">
                                 <label>What are you selling?
@@ -32,7 +31,7 @@
                             </div>
                         </div>
 
-                        {{-- title form input --}}
+                        <!-- title form input -->
                         <div class="title-cont-input floatLeft">
 
                             {!! Form::text('title', '',
@@ -46,14 +45,12 @@
                                     characters left
                                 </small>
                             </p>
-
                         </div>
-
                     </fieldset>
 
                     <fieldset class="clearfix mt-15 mb-15">
 
-                        {{-- price form label --}}
+                        <!-- price form label -->
                         <div class="sellitem-title-cont floatLeft">
                             <div class="sellitem-label floatLeft">
                                 <label>Price
@@ -62,7 +59,7 @@
                             </div>
                         </div>
 
-                        {{-- price form input --}}
+                        <!-- price form input -->
                         <div class="title-cont-input floatLeft">
 
                             {!! Form::text('price', '',
@@ -74,10 +71,10 @@
 
                     </fieldset>
 
-                    {{-- select condition --}}
+                    <!-- select condition container -->
                     <fieldset class="clearfix">
 
-                        {{-- title form label --}}
+                        <!-- select condition form label -->
                         <div class="sellitem-title-cont floatLeft">
                             <div class="sellitem-label floatLeft">
                                 <label>Condition
@@ -86,7 +83,7 @@
                             </div>
                         </div>
 
-                        {{-- title form input --}}
+                        <!-- select condition form input -->
                         <div class="title-cont-input floatLeft">
 
                             {!! Form::select('condition',
@@ -95,13 +92,12 @@
                                 ['class' => 'form-control']) !!}
 
                         </div>
-
                     </fieldset>
 
-                    {{-- selecty category --}}
+                    <!-- selecty category container -->
                     <fieldset class="clearfix mt-15 border-b mb-15 pad-b-10">
 
-                        {{-- title form label --}}
+                        <!-- select category form label -->
                         <div class="sellitem-title-cont floatLeft">
                             <div class="sellitem-label floatLeft">
                                 <label>Choose a Category
@@ -110,10 +106,9 @@
                             </div>
                         </div>
 
-                        {{-- title form input --}}
+                        <!-- select category form input-->
                         <div class="title-cont-input floatLeft">
 
-                            {{-- select category --}}
                             {!! Form::select('category',
                                 (['0' => 'Select'] + $category),
                                 null,
@@ -122,10 +117,10 @@
                         </div>
                     </fieldset>
 
-                    {{-- item form description --}}
+                    <!-- item form description container -->
                     <fieldset class="clearfix">
 
-                        {{-- title form label --}}
+                        <!-- item description form label -->
                         <div class="sellitem-title-cont floatLeft">
                             <div class="sellitem-label floatLeft">
                                 <label>Description
@@ -134,7 +129,7 @@
                             </div>
                         </div>
 
-                        {{-- text area description --}}
+                        <!-- text area description -->
                         <div class="title-cont-input floatLeft">
 
                             {!! Form::textarea('description', '',
@@ -149,29 +144,30 @@
                                 </small>
                             </p>
                         </div>
-
                     </fieldset>
 
-                    {{-- item fomr upload photos --}}
+                    <!-- item fomr upload photos container -->
                     <fieldset class="clearfix border-b mb-15 pad-b-10">
 
-                        {{-- title form label --}}
+                        <!-- primary images item form label -->
                         <div class="sellitem-title-cont floatLeft">
                             <div class="sellitem-label floatLeft">
                                 <label>Upload photos</label>
                             </div>
                         </div>
 
+                        <!-- upload item primary images -->
                         <div class="title-cont-input floatLeft">
-                            {!! Form::file('images', null) !!}
-                        </div>
 
+                            {!! Form::file('images', null) !!}
+
+                        </div>
                     </fieldset>
 
-                    {{-- select province --}}
+                    <!-- select province container -->
                     <fieldset class="clearfix">
 
-                        {{-- title form label --}}
+                        <!-- select province form label -->
                         <div class="sellitem-title-cont floatLeft">
                             <div class="sellitem-label floatLeft">
                                 <label>Province
@@ -180,7 +176,7 @@
                             </div>
                         </div>
 
-                        {{-- title form input --}}
+                        <!-- select province form input -->
                         <div class="title-cont-input floatLeft">
 
                             {!! Form::select('province',
@@ -189,13 +185,12 @@
                                 ['class' => 'form-control']) !!}
 
                         </div>
-
                     </fieldset>
 
-                    {{-- select city --}}
+                    <!-- select city container -->
                     <fieldset class="clearfix">
 
-                        {{-- title form label --}}
+                        <!-- select city form label -->
                         <div class="sellitem-title-cont floatLeft">
                             <div class="sellitem-label floatLeft">
                                 <label>City
@@ -204,7 +199,7 @@
                             </div>
                         </div>
 
-                        {{-- title form input --}}
+                        <!-- select city form input -->
                         <div class="title-cont-input floatLeft">
 
                             {!! Form::select('city',
@@ -213,13 +208,12 @@
                                 ['class' => 'form-control']) !!}
 
                         </div>
-
                     </fieldset>
 
-                    {{-- mobile number --}}
+                    <!-- mobile number -->
                     <fieldset class="clearfix border-b mb-15 pad-b-10">
 
-                        {{-- title form label --}}
+                        <!-- mobile form label -->
                         <div class="sellitem-title-cont floatLeft">
                             <div class="sellitem-label floatLeft">
                                 <label>Business Mobile number
@@ -228,7 +222,7 @@
                             </div>
                         </div>
 
-                        {{-- title form input --}}
+                        <!-- mobile form input -->
                         <div class="title-cont-input floatLeft">
 
                             {!! Form::text('mobile', null,
@@ -237,29 +231,23 @@
                                     'class' => 'form-control mb-15')) !!}
 
                         </div>
-
                     </fieldset>
 
-                    {{-- item submit button form --}}
+                    <!-- item submit button form -->
                     <fieldset class="clearfix">
-
                         <div class="btn_form floatLeft">
 
                             {{-- submit button for ads --}}
 
-                            {!! Form::submit('Submit Ads', array('class' => 'btn button input-blue floatRight c-fff')) !!}
+                            {!! Form::submit('Submit Ads', array('class' => 'btn button input-green floatRight c-fff')) !!}
 
                         </div>
-
                     </fieldset>
                 {!! Form::close() !!}
 
             </div>
-
         </div>
     </div>
-
 </div>
-
 
 @endsection

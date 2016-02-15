@@ -22,10 +22,4 @@ class City extends Model
         'citylist'
     ];
 
-
-    public function item()
-    {
-    	return $this->hasMany('App\Item');
-    }
-
 }

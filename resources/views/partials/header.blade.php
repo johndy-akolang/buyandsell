@@ -2,65 +2,43 @@
 <div class="header-top">
     <div class="wrap">
 
-        {{-- list menu  top header --}}
-        <div class="socialite floatLeft">
-            <ul>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-facebook-square"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-twitter"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-google-plus"></i>
-                    </a>
-                </li>
-            </ul>
-        </div>
+        {{-- logo website --}}
+        <a class="res-logo floatLeft" href="/" title="Koll.com.ph"><img class="logo-koll" src="{{ asset('/images/logo-koll-beta.png') }}" alt="Koll.com.ph" title="Koll.com.ph"></a>
+        
         <div class="cssmenu">
+            @if (Auth::user())
             <ul>
-                @if (Auth::user())
-                    <li class="no-js">
-                        <a class="clicker" >
-                            <i class="fa fa-user"></i>
-                            {{ Auth::user()->first_name }}
-                            <i class="s-arrow-down ml-10 fa fa-sort-desc"></i>
-                        </a>
-                        <ul class="user-cont-menu">
-                            <!-- <li><a href="#" class="user-menu"><i class="fa fa-inbox"></i>Inbox</a></li> -->
-                            <li><a href="/item/" class="user-menu"><i class="fa fa-suitcase"></i>Manage Ads</a></li>
-                            <li><a href="{{ url('/account/user/'.Auth::id()) }}" class="user-menu"><i class="fa fa-gear"></i>Account</a></li>
-                            <li><a href="#" class="user-menu"><i class="fa fa-money"></i>0 Credit</a></li>
-                        </ul>
-                    </li>
-                    |
-                    <li>
-                        <a href="{{ action('LoginController@doLogout') }}">
-                            <i class="fa fa-sign-out"></i>
-                            Logout
-                        </a>
-                    </li>
-                @else
-                    <li>
-                        <a href="{{ url('login') }}">
-                            <i class="fa fa-sign-in"></i>
-                            Sign in
-                        </a>
-                    </li>
-                    |
-                    <li>
-                        <a href="{{ url('register') }}">
-                            <i class="fa fa-file-o"></i>
-                            Sign up
-                        </a>
-                    </li>
-                @endif
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="fa fa-user"></i>
+                        {{ Auth::user()->first_name }}
+                        <i class="s-arrow-down ml-10 fa fa-sort-desc"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <!-- <li><a href="#" class="user-menu"><i class="fa fa-inbox"></i>Inbox</a></li> -->
+                        <li><a href="/item/" class="user-menu"><i class="fa fa-suitcase"></i>Manage Ads</a></li>
+                        <li><a href="{{ url('/account/user/'.Auth::id()) }}" class="user-menu"><i class="fa fa-gear"></i>Account</a></li>
+                        <!-- <li><a href="#" class="user-menu"><i class="fa fa-money"></i>0 Credit</a></li> -->
+                        <li><a href="{{ action('LoginController@doLogout') }}" class="user-menu"><i class="fa fa-sign-out"></i>Logout</a></li>
+                    </ul>
+                </li>
             </ul>
+            @else
+            <ul class="member-actions floatLeft">    
+                <li>
+                    <a class="login" href="{{ url('login') }}">
+                        <!-- <i class="fa fa-sign-in"></i> -->
+                        Log in
+                    </a>
+                </li>
+                <li>
+                    <a class="btn-white btn-small" href="{{ url('register') }}">
+                        <!-- <i class="fa fa-file-o"></i> -->
+                        Sign up
+                    </a>
+                </li>
+            </ul>
+            @endif
         </div>
 
         <div class="clear"></div>
@@ -73,10 +51,29 @@
 
         <div class="header-bottom-left clearfix">
 
-            {{-- logo website --}}
-            <a class="floatLeft" href="/"><img class="logo-koll" src="{{ asset('/images/logo-koll-beta.png') }}"></a>
+            {{-- list menu  top header --}}
+            <!-- <div class="socialite floatLeft">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-facebook-square"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-google-plus"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
 
-            {{-- select category --}}
+            <div class="advanced-cont floatLeft">Advanced</div> -->
+            <!-- 
             <div id="dd" class="wrapper-dropdown-5 floatLeft" tabindex="1">Select by Category
                 <ul class="dropdown-select-category">
                     <li>
@@ -128,34 +125,30 @@
                         </a>
                     </li>
                 </ul>
-            </div>
+            </div> -->
 
 
             {{-- form search --}}
             <div class="search">
 
-                <!-- {!! Form::open(['url' => 'partials/header']) !!}
-
-                    {{-- input search --}}
-                    {!! Form::text('title', null,
-                        array('class' => 'textbox form-control')) !!}
-
-                        
-
-                    {{-- search submit --}}
-                    {!! Form::submit('Search',
-                                     array('name' => 'submit')) !!}
-
-                    <div id="response"></div>
-
-                {!! Form::close() !!} -->
-
-                <form class="navbar-form navbar-left" role="search" action="/search">
+                <!-- <form class="navbar-form navbar-left" role="search" action="/search">
                     <div class="input-group">
                         {{-- Double curly parantheses auto escape the provided string, so it's safe to use Request::get('q') below directly --}}
                         <input type="text" class="q form-control" placeholder="Search" name="q" value="{{ Request::get('q', '') }}">
                         <div class="search-btn">
                             <button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
+                        </div>
+                    </div>
+                </form> -->
+
+                <form class="navbar-form" role="search" action="/search">
+                    <div class="form-group" style="display:inline;">
+                        <div class="input-group">
+                            {{-- Double curly parantheses auto escape the provided string, so it's safe to use Request::get('q') below directly --}}
+                            <input type="text" class="q form-control" placeholder="Search" name="q" value="{{ Request::get('q', '') }}">
+                            <span class="input-group-addon">
+                                <span class="fa fa-search"></span>
+                            </span>
                         </div>
                     </div>
                 </form>
@@ -170,7 +163,7 @@
 
             {{-- button for post your ads here --}}
             {!! Form::submit('Sell your ads here',
-                    array('class' => 'button input-blue width251', 'name' => 'postyourads', 'class' => 'btn input-blue', 'id' => 'sellads')) !!}
+                    array('class' => 'button input-blue width251', 'name' => 'postyourads', 'class' => 'btn input-green', 'id' => 'sellads')) !!}
 
 
         </div>

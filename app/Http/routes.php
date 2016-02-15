@@ -10,17 +10,18 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+Route::controllers([
+	'auth' => 'Auth\AuthController',
+	'password' => 'Auth\PasswordController',
+]);
 
-/*Route::controllers([
-    'auth' => 'Auth\AuthController',
-    'password' => 'Auth\PasswordController',
-]);*/
 Route::get('/', ['as' => 'home', 'uses' => 'HomeController@index']);
+Route::get('home', ['as' => 'home', 'uses' => 'HomeController@index']);
 Route::get('item', ['as' => 'home', 'uses' => 'ItemController@index']);
 
+/* when user login */
 Route::group(['middleware' => ['auth']], function() 
 {
-	//Route::resource('item', 'ItemController');
 	Route::get('item', 'ItemController@index');
 
 	// show form create item user
@@ -39,10 +40,8 @@ Route::group(['middleware' => ['auth']], function()
 
 	// add comment
 	Route::post('comments/add', 'CommentsController@store');
-	/*Route::resource('comment', 'CommentsController');*/
 
 });
-
 
 
 // item display single post
@@ -58,8 +57,8 @@ Route::get('search', 'ItemController@getSearch');
 Route::post('item/sendmail', 'ItemController@getMail');
 
 
-Route::get('account/{id}', 'AccountController@user')->where('id', '[0-9]+');
-
+/*Route::get('account/{id}', 'AccountController@user')->where('id', '[0-9]+');*/
+/* koll about */
 Route::get('about', 'AboutController@index');
 Route::get('about/privacy', 'AboutController@privacy');
 
@@ -73,19 +72,31 @@ Route::get('logout', 'LoginController@doLogout');
 // if login success this template
 Route::get('loginsuccess', 'LoginController@loginsuccess');
 
+/* register user */
 Route::get('register', 'RegisterController@register');
 Route::post('register', 'RegisterController@postRegister');
 
 
 /*Route::resource('item', 'ItemController');*/
 
-
-
+/* this message is temporally disabled */
 Route::get('message/inbox', 'MessageController@inbox');
 Route::get('message/viewmessage', 'MessageController@viewmessage');
 Route::get('message/sent', 'MessageController@sent');
 
+/* legal terms disabled*/
 Route::get('legal/terms', 'LegalController@terms');
 Route::get('legal/privacy', 'LegalController@privacy');
 
-
+/* sitemap */
+Route::get('/sitemap', function() {
+	$file = public_path(). "/koll_sitemap.xml";
+	//check if the file exists
+	if (file_exists($file)) {
+		//read the file into a string
+		$content = file_get_contents($file);
+		// create a laravel response using the content string, an http response code of 200(OK),
+		// and an array of html headers including the pdf contet type
+		return Response::make($content, 200, array('content-type'=>'application/xml'));
+	}
+});

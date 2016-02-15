@@ -10,6 +10,7 @@
           "./node_modules/jquery/dist/jquery.js",
           "./node_modules/bootstrap/dist/js/bootstrap.js",
           "./node_modules/dropzone/dist/dropzone.js",
+          "./node_modules/jquery-maskmoney/dist/jquery.maskMoney.js",
           "./public/js/vendor/jquery.nivo.slider.js",
           "./public/js/vendor/jquery.etalage.js",
           "./public/js/vendor/modernizr.custom.js",
@@ -19,6 +20,7 @@
           "./node_modules/jquery/dist/jquery.min.js",
           "./node_modules/bootstrap/dist/js/bootstrap.min.js",
           "./node_modules/dropzone/dist/min/dropzone.min.js",
+          "./node_modules/jquery-maskmoney/dist/jquery.maskMoney.min.js",
           "./public/js/vendor/jquery.nivo.slider.min.js",
           "./public/js/vendor/jquery.etalage.min.js",
           "./public/js/vendor/modernizr.custom.min.js",
@@ -30,6 +32,7 @@
       "path": "./public/js/",
       "files": [
         "./public/js/cbp-horizontal-menu.min.js",
+        "./public/js/class.js",
         "./public/js/global.js"
       ]
     }
