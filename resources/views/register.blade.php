@@ -150,7 +150,7 @@
 
                     <!-- Button for Login -->
                     {!! Form::submit('Log in',
-                        array('class' => 'btn button input-blue width100px', 'name' => 'Login', 'id' => 'signin-blue')) !!}
+                        array('class' => 'btn button input-green width100px', 'name' => 'Login', 'id' => 'signin-blue')) !!}
 
                 </div>
             </div>

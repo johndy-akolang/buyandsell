@@ -63,14 +63,14 @@
                 									<div class="row">
                 										<div class="col-xs-12 col-sm-12 col-md-12 info-dta pad-top-bottom-10">
                 											<a href="{{ url('item/edit/'.$item->slug) }}" class="c-307 mb-10 cursor">Update</a>
-                											<a class="c-307 mb-10 ml-10" href="#">Mark sold</a>
-                											<a class="c-307 mb-10 ml-10 cursor">Re-post</a>
+                											<!-- <a class="c-307 mb-10 ml-10" href="#">Mark sold</a>
+                											<a class="c-307 mb-10 ml-10 cursor">Re-post</a> -->
                 										</div>
                 									</div>
 
                                                     <!-- boost item button for sponsored priorities -->
                 									<div class="row">
-                										<button class="btn input-blue c-fff" type="submit" data-toggle="modal" data-target="#boostads">Boost Ads</button>
+                										<button class="btn input-green c-fff" type="submit" data-toggle="modal" data-target="#boostads">Boost Ads</button>
                 									</div>
                 									<div class="clearfix"></div>
                 								</div>

@@ -145,7 +145,7 @@ class ItemController extends Controller
     public function show($slug)
     {
         // paginate featured ads at right side
-        $featured = Item::paginate(3);
+        $featured = Item::paginate(8);
 
         // item show with slug or title
         $items = Item::where('slug', $slug)->first();

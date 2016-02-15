@@ -239,7 +239,7 @@
 
                             {{-- submit button for ads --}}
 
-                            {!! Form::submit('Submit Ads', array('class' => 'btn button input-blue floatRight c-fff')) !!}
+                            {!! Form::submit('Submit Ads', array('class' => 'btn button input-green floatRight c-fff')) !!}
 
                         </div>
                     </fieldset>

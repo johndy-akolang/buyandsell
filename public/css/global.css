@@ -100,6 +100,13 @@ img {max-width:100%;}
     color: #fff !important;
     background: #468bd6 !important;
 }
+.input-green {
+    background: #3db13d !important;
+}
+.input-green:hover {
+    color: #fff !important;
+    background: #48bc48 !important;
+}
 .cursor {
     cursor: pointer;
 }
@@ -251,8 +258,10 @@ a.login {
     padding: 8px 40px;
 }
 .btn-white {
-    border: 2px solid #555;
+    /*border: 2px solid #555;*/
+    background: #3db13d;
     border-radius: 40px;
+    color: #fff !important;
     display: inline-block;
 }
 .logo-koll {
@@ -612,7 +621,8 @@ fieldset.input input[type="submit"]:hover {
 }
 /* dynamic input css - add mark */
 p.terms a {
-    color: #0654ba;
+    /*color: #0654ba;*/
+    color: #3075c0;
 }
 p.terms {
     float: left;
@@ -1655,7 +1665,7 @@ form::after {
     transition: background-color 0.2s ease-in-out 0s;
 }
 .rsingle .list-unstyled li {
-    margin-bottom: 10px;
+    /*margin-bottom: 10px;*/
 }
 .rsingle .list-unstyled li img {
     float: left;
@@ -1664,18 +1674,27 @@ form::after {
 .rsingle .list-unstyled li h4 {
     font-size: 14px;
     float: left;
-    line-height: 24px;
+    /*line-height: 24px;*/
+    margin-bottom: 0;
+    margin-top: 0;
+    width: 100%;
 }
-.rsingle .list-unstyled li h4 a {
+/*.rsingle .list-unstyled li h4 a {
     color: #555;
+}*/
+.rsingle .list-unstyled li h4 {
+    color: #3075c0;
+}
+.rsingle .list-unstyled li p {
+    color: #979797;
 }
 .rsingle .list-unstyled li .price {
-    color: #999;
+    color: #333;
     float: left;
     display: block;
 }
 .rsingle .list-unstyled li .price {
-    color: #555;
+    color: #333;
     padding: 12px 0 0 0;
 }
 .rsingle .list-unstyled strong {

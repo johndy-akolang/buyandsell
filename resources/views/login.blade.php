@@ -127,7 +127,7 @@
 
                     <!-- sign up button -->
                     {!! Form::submit('Sign Up',
-                            array('name' => 'signup', 'class' => 'button btn input-blue width100px', 'id' => 'signup-blue')) !!}
+                            array('name' => 'signup', 'class' => 'button btn input-green width100px', 'id' => 'signup-blue')) !!}
 
                 </div>
             </div>

@@ -185,7 +185,7 @@
                         <label class="mb-num mt-10"><span class="deta-left c-999 txt-ind-10"><i class="fa fa-location-arrow"></i>City:</span><span class="deta-right txt-ind-10">{{ $items->city }}</span></label>
                         
                         <!-- send inquiry to owner private -->
-                        <a href="#" class="snd-msg-ownr btn input-blue mt-20" data-toggle="modal" data-target="#sndmsgownr">Send Message</a>
+                        <a href="#" class="snd-msg-ownr btn input-green mt-20" data-toggle="modal" data-target="#sndmsgownr">Send Message</a>
 
                         <!-- modal form -->
                         <div class="modal fade" id="sndmsgownr" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -229,7 +229,7 @@
 
                                             <!-- Modal Footer -->
                                             <div class="modal-footer">
-                                                <button type="submit" class="input-blue btn btn-default">Submit</button>
+                                                <button type="submit" class="input-green btn btn-default">Submit</button>
                                             </div>
                                         </form>
                                         
@@ -242,37 +242,41 @@
                 </div>
 
                 <!-- featured loop -->
-                @foreach (array_chunk($featured->all(), 4) as $featuredSection)
-                    <!-- featured ads -->
-                    <div class="rsingle mt-rsingle-25">
-                        <h5 class="m_1">Featured Ads</h5>
-
-                        <ul class="list-unstyled floatLeft">
+                <!-- featured ads -->
+                <div class="rsingle mt-rsingle-25">
+                    <h5 class="m_1">Featured Ads</h5>
+                    <ul class="list-unstyled floatLeft">
+                        @foreach (array_chunk($featured->all(), 4) as $featuredSection)
                             @foreach ($featuredSection as $featuredItem)
                             <li class="col-xs-12 col-sm-6 col-md-12 col-lg-12">
-                                <div class="featured-item">
+                                <!-- <div class="featured-item">
                                     <a href="#">
                                         <img class="img-reponsive img-thumbnail pad-none" alt="" src="{{ asset($featuredItem->images) }}">
                                     </a>
-                                </div>
-                                <h4>
-                                    <a hef="#">{!! $featuredItem->title !!}</a>
-                                </h4>
+                                </div> -->
+                                <a href="{{ url('/item/'.$featuredItem->slug) }}">
+                                    <h4>
+                                        {!! $featuredItem->title !!}
+                                    </h4>
+                                    <p class="description-cut">
+                                        {!! $featuredItem->description !!}
+                                    </p>
+                                </a>
                                 <div class="clearfix"></div>
                             </li>
                             @endforeach
-                        </ul>
-
-                        <div class="clear"></div>
-                    </div>
-                @endforeach
+                        @endforeach
+                    </ul>
+                    <div class="clear"></div>
+                </div>
+               
 
                 <!-- sponsored ads links -->
-                <div class="rsingle mt-rsingle-25 ">
+                <!-- <div class="rsingle mt-rsingle-25 ">
                     <h5 class="m_1">Sponsored Links</h5>
 
                   <div class="clear"></div>
-                </div>
+                </div> -->
 
                 <div class="clear"></div>
             </div>

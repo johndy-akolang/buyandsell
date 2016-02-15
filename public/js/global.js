@@ -140,6 +140,14 @@ $(document).ready(function() {
         }
     });
 
+    /* limit characters featured ads description */
+    $(".description-cut").each(function() {
+        if ($(this).text().length > 50) {
+            $(this).text($(this).text().substr(0, 100));
+            $(this).append('...');
+        }
+    });
+
     /* images resize */
     /*target=document.getElementById('adsitem');
     target.style.width=((350*screen.width)/1280)+'px';

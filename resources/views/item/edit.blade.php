@@ -204,7 +204,7 @@
                     <fieldset class="clearfix">
                         <div class="btn_form floatRight">
 
-                            {!! Form::submit('Update Item', ['class' => 'btn btn-primary input-blue floatRight']) !!}
+                            {!! Form::submit('Update Item', ['class' => 'btn btn-primary input-green floatRight']) !!}
 
                         </div>
                     </fieldset>
