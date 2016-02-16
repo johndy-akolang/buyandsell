@@ -1,5 +1,5 @@
 {
-  "env": "local",
+  "env": "prod",
 
   "_description": "Add your js files here.",
   "js": {
@@ -21,9 +21,9 @@
           "./node_modules/bootstrap/dist/js/bootstrap.min.js",
           "./node_modules/dropzone/dist/min/dropzone.min.js",
           "./node_modules/jquery-maskmoney/dist/jquery.maskMoney.min.js",
-          "./public/js/vendor/jquery.nivo.slider.min.js",
+          "./public/js/vendor/jquery.nivo.slider.js",
           "./public/js/vendor/jquery.etalage.min.js",
-          "./public/js/vendor/modernizr.custom.min.js",
+          "./public/js/vendor/modernizr.custom.js",
           "./public/js/vendor/jquery.pageparser-0.1.2.min.js"
         ]
       }
@@ -55,9 +55,9 @@
           "./node_modules/bootstrap/dist/css/bootstrap.min.css",
           "./node_modules/dropzone/dist/min/dropzone.min.css",
           "./node_modules/font-awesome/css/font-awesome.min.css",
-          "./public/css/vendor/nivo-slider.min.css",
-          "./public/css/vendor/nivo-slider.default.min.css",
-          "./public/css/vendor/etalage.min.css"
+          "./public/css/vendor/nivo-slider.css",
+          "./public/css/vendor/nivo-slider.default.css",
+          "./public/css/vendor/etalage.css"
         ]
       }
     },
