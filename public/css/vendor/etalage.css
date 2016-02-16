@@ -120,30 +120,30 @@
 div.etalage_description{ position:absolute; bottom:0; left:0; z-index:999 }
 div.etalage_description.rtl{ direction:rtl; text-align:right }
 @media only screen and (max-width: 1024px) {
-
-ul#etalage {
-  width: 319px!important;
-}
-.etalage_zoom_area div{
-	width:540px !important;
-	height:530px !important;
+	ul#etalage {
+	  width: 319px!important;
+	}
+	.etalage_zoom_area div{
+		width:540px !important;
+		height:530px !important;
+	}
 }
 @media only screen and (max-width: 768px) {
- .etalage_zoom_area div{
-	width:360px !important;
-	display:none;
- }
- ul#etalage {
-  width: 278px!important;
-}
+	.etalage_zoom_area div{
+		width:360px !important;
+		display:none;
+	}
+	ul#etalage {
+		width: 278px!important;
+	}
 }
 @media only screen and (max-width: 480px) {
- .etalage_zoom_area div{
-	display:none;
- }
+	.etalage_zoom_area div{
+		display:none;
+	}
 }
- @media only screen and (max-width: 320px) {
- #etalage .etalage_thumb{
- 	width:90% !important;
- }
+@media only screen and (max-width: 320px) {
+	#etalage .etalage_thumb{
+		width:90% !important;
+	}
 }
