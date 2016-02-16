@@ -15,7 +15,7 @@ class Item extends Model
      * Attributes that are mass assignable
      * @var array $fillable
      *
-     * TODO: add 'user_id'
+     * TODO: rename 'guest_id' to 'user_id'
      * TODO: 'condition' should be 'condition_id'
      * TODO: 'category' should be 'category_id'
      * TODO: 'images' should be 'primary_image'
@@ -25,7 +25,7 @@ class Item extends Model
      */
     protected $fillable = [
     		'title',
-    		//'user_id',
+    		'guest_id',
     		'price',
     		'condition',
     		'category',
@@ -36,16 +36,23 @@ class Item extends Model
     		'mobile',
     ];
 
+    /**
+     * Eloquent relationship for Comment
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
   	public function comments()
   	{
         // TODO: 'on_post' should be 'item_id'
-    		return $this->hasMany('App\Comments', 'on_post');
+    		return $this->hasMany(Comments::class, 'on_post');
   	}
 
-  	// returns  the instance of the user who is author of that post
+  	/**
+  	 * Eloquent relationship for User
+  	 * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+  	 */
   	public function guest()
   	{
         // TODO: 'guest_id' should be 'user_id'
-    		return $this->belongsTo('App\User', 'guest_id');
+    		return $this->belongsTo(User::class, 'guest_id');
   	}
 }

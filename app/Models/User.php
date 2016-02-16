@@ -32,22 +32,28 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      */
     protected $hidden = ['password', 'remember_token'];
 
-    // user has many item
-    public function item()
+    /**
+     * Eloquent relationship for Item
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function items()
     {
         // TODO: rename 'guest_id' to 'user_id'
-        return $this->hasMany('App\Item', 'guest_id');
+        return $this->hasMany(Item::class, 'guest_id');
     }
 
-
-    // user has may comments
+    /**
+     * Eloquent relationship for Comment
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
     public function comments()
     {
         // TODO: rename 'from_user' to 'user_id'
-        return $this->hasMany('App\Comments', 'from_user');
+        return $this->hasMany(Comment::class, 'from_user');
     }
 
 
+    // TODO: Move these to Policy
     public function can_post()
     {
         $role = $this->role;
