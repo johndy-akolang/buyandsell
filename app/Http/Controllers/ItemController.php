@@ -11,7 +11,11 @@ use App\Models\Condition;
 use App\Models\Privatemessage;
 use App\Models\Province;
 use App\Models\User;
+use App\Repositories\CategoryRepository;
+use App\Repositories\CityRepository;
+use App\Repositories\ConditionRepository;
 use App\Repositories\ItemRepository;
+use App\Repositories\ProvinceRepository;
 use Auth;
 use Mail;
 use Redirect;
@@ -23,18 +27,22 @@ class ItemController extends Controller
 {
 
     /**
-     * ItemRepository
-     * @var ItemRepository
-     */
-    protected $model;
-
-    /**
      * Class constructor
      * @param ItemRepository $item
      */
-    public function __construct(ItemRepository $item)
+    public function __construct(
+        CategoryRepository $category,
+        CityRepository $city,
+        ConditionRepository $condition,
+        ItemRepository $item,
+        ProvinceRepository $province
+    )
     {
-        $this->model = $item;
+        $this->categoryRepo = $category;
+        $this->cityRepo = $city;
+        $this->conditionRepo = $condition;
+        $this->itemRepo = $item;
+        $this->provinceRepo = $province;
     }
 
     /**
@@ -44,33 +52,34 @@ class ItemController extends Controller
      */
     public function index()
     {
-        $items = $this->model->getActiveItems();
+        $items = $this->itemRepo->getActiveItems();
 
         return view('item.index')->with(compact('items'));
     }
 
     /**
      * Show the form for creating a new resource.
-     *
-     * @return Response
+     * @return \Illuminate\View\View|\Illuminate\Http\RedirectResponse
      */
     public function create(Request $request)
     {
         //if user can post i.e. user is seller or guest
-        if ($request->user()->can_post())
-        {
-            $city = \DB::table('city')->lists('citylist', 'citylist');
-            $province = \DB::table('province')->lists('provincelist', 'provincelist');
-            $condition = \DB::table('condition')->lists('conditionitem', 'conditionitem');
-            $category = \DB::table('category')->lists('categorylist', 'categorylist');
+        if ($request->user()->can_post()) {
+            $cities = $this->cityRepo->getAllCities();
+            $provinces = $this->provinceRepo->getAllProvinces();
+            $conditions = $this->conditionRepo->getAllConditions();
+            $categories = $this->categoryRepo->getAllCategories();
 
-            return view('item.create')->with('city', $city)->with('province', $province)->with('condition', $condition)->with('category', $category);
+            return view('item.create')
+                ->with(compact('cities'))
+                ->with(compact('provinces'))
+                ->with(compact('conditions'))
+                ->with(compact('categories'));
 
         } else {
-
-            return redirect('item.create')->withErrors('You have not sufficient permissions for writing item');
+            return redirect('item.create')
+                ->withErrors('You have not sufficient permissions for writing item');
         }
-
     }
 
 

@@ -85,9 +85,8 @@
 
                         <!-- select condition form input -->
                         <div class="title-cont-input floatLeft">
-
                             {!! Form::select('condition',
-                                (['0' => 'Select'] + $condition),
+                                ['0' => 'Select'] + $conditions,
                                 null,
                                 ['class' => 'form-control']) !!}
 
@@ -110,7 +109,7 @@
                         <div class="title-cont-input floatLeft">
 
                             {!! Form::select('category',
-                                (['0' => 'Select'] + $category),
+                                (['0' => 'Select'] + $categories),
                                 null,
                                 ['class' => 'form-control']) !!}
 
@@ -180,7 +179,7 @@
                         <div class="title-cont-input floatLeft">
 
                             {!! Form::select('province',
-                                (['0' => 'Select'] + $province),
+                                (['0' => 'Select'] + $provinces),
                                 null,
                                 ['class' => 'form-control']) !!}
 
@@ -203,7 +202,7 @@
                         <div class="title-cont-input floatLeft">
 
                             {!! Form::select('city',
-                                (['0' => 'Select'] + $city),
+                                (['0' => 'Select'] + $cities),
                                 null,
                                 ['class' => 'form-control']) !!}
 
