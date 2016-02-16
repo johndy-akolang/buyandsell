@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -7,9 +6,9 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
-use App\Item;
+use App\Models\Item;
 use Validator;
-use App\User;
+use App\Models\User;
 
 
 class HomeController extends Controller

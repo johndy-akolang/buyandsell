@@ -1,22 +1,21 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use App\Http\Requests;
 use App\Http\Requests\ItemRequest;
-use App\Http\Controllers\Controller;
-use App\Item;
-use Validator;
-use App\City;
-use App\Category;
-use App\Condition;
-use App\Province;
-use App\User;
-use App\Privatemessage;
-use Redirect;
-use Mail;
+use App\Models\Category;
+use App\Models\City;
+use App\Models\Condition;
+use App\Models\Privatemessage;
+use App\Models\Province;
+use App\Models\User;
+use App\Repositories\ItemRepository;
 use Auth;
+use Mail;
+use Redirect;
+use Validator;
 //use Illuminate\Pagination\Paginator;
 
 
@@ -24,18 +23,31 @@ class ItemController extends Controller
 {
 
     /**
+     * ItemRepository
+     * @var ItemRepository
+     */
+    protected $model;
+
+    /**
+     * Class constructor
+     * @param ItemRepository $item
+     */
+    public function __construct(ItemRepository $item)
+    {
+        $this->model = $item;
+    }
+
+    /**
      * Display a listing of the resource items or ads.
      *
-     * @return Response
+     * @return \Illuminate\View\View
      */
     public function index()
     {
+        $items = $this->model->getActiveItems();
 
-        $items = Item::where('active', 1)->orderBy('created_at', 'desc')->paginate(9);
-        return view('item.index')->withItems($items);
-
+        return view('item.index')->with(compact('items'));
     }
-
 
     /**
      * Show the form for creating a new resource.
@@ -58,7 +70,7 @@ class ItemController extends Controller
 
             return redirect('item.create')->withErrors('You have not sufficient permissions for writing item');
         }
-		
+
     }
 
 
@@ -68,11 +80,11 @@ class ItemController extends Controller
      * @return Response
      */
     public function store(ItemRequest $request)
-    {       
+    {
         //$user = User::where('email', $email)->first();
 
         // new item create
-        $item = new Item();
+        $item = new \App\Models\Item();
 
         // upload images and stored filed
         $file = $request->file('images');
@@ -132,12 +144,12 @@ class ItemController extends Controller
         $item->save();
 
         return redirect('item')->withMessage($message);
-        
+
     }
 
 
     /*
-    *  Display the specified resource.
+    * Display the specified resource.
     *
     * @param int $id
     * @return Response
@@ -149,21 +161,17 @@ class ItemController extends Controller
 
         // item show with slug or title
         $items = Item::where('slug', $slug)->first();
-        if ($items) 
-        {
-
-            if ($items->active == false)
+        if ($items) {
+            if ($items->active == false) {
                 return redirect('/')->withErrors('requested page not found');
-            $comments = $items->comments;
-        
+                $comments = $items->comments;
+            }
         } else {
-
             return redirect('/')->withErrors('requested page not found');
-
         }
+
         //$featured = Item::paginate(8);
         return view('item.show')->withItems($items)->withComments($comments)->with(compact('featured'));
-
     }
 
 
@@ -177,7 +185,7 @@ class ItemController extends Controller
     {
 
         $item = Item::where('slug', $slug)->first();
-        if($item && ($request->user()->id == $item->guest_id || $request->user()->is_seller())) 
+        if($item && ($request->user()->id == $item->guest_id || $request->user()->is_seller()))
 
             // select forms
             $city = \DB::table('city')->lists('citylist', 'citylist');
@@ -198,7 +206,7 @@ class ItemController extends Controller
      */
 	public function update(Request $request)
     {
-        
+
         $item_id = $request->input('item_id');
         $item = Item::find($item_id);
 
@@ -246,7 +254,7 @@ class ItemController extends Controller
             return redirect('/')->withErrors('restricted');
         }
 
-    } 
+    }
 
 
 
@@ -260,7 +268,7 @@ class ItemController extends Controller
     {
         /*
         $item = Item::find($id);
-        
+
         if ($item && ($item->guest_id == $request->user()->id || $request->user()->is_seller())) {
             $item->delete();
             $data['message'] = 'Item deleted Successfully';
@@ -274,8 +282,8 @@ class ItemController extends Controller
 
     /**
      * Show featured ads ramdomly by category.
-     * 
-     */    
+     *
+     */
     public function featured()
     {
 
@@ -295,7 +303,7 @@ class ItemController extends Controller
             return redirect('home')
                 ->withErrors('You must make a search from the bar first');
         }
-        
+
         //Let's escape first
         $parameters = e($request->get('q'));
 
@@ -310,7 +318,7 @@ class ItemController extends Controller
 
             $j = 0;
             foreach ($parameters as $parameter) {
-                
+
                 if($j == 0) {
                     $q->where('title', 'LIKE', '%'.$parameter.'%');
                 } else {
@@ -328,7 +336,7 @@ class ItemController extends Controller
 
                 $j = 0;
                 foreach ($parameters as $parameter) {
-                    
+
                     if($j == 0) {
                         $q2->where('first_name', 'LIKE', '%'.$parameter.'%');
                     } else {
@@ -354,7 +362,7 @@ class ItemController extends Controller
 
     /**
      * GUest send private message to seller. Non-user only.
-     * 
+     *
      */
     public function getMail(Request $request)
     {
@@ -373,7 +381,7 @@ class ItemController extends Controller
         $to = $itemOwner->email;
         $subject = $item->title;
 
-        // email templates 
+        // email templates
         $emailData = [
             'user' => sprintf('%s %s', $itemOwner->first_name, $itemOwner->last_name),
             'sndmsgtxt' => $newMessage->message,
@@ -391,5 +399,5 @@ class ItemController extends Controller
 
     }
 
-    
+
 }

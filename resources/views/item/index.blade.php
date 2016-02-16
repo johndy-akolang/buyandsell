@@ -19,73 +19,73 @@
             <div class="cont span_2_of_3">
                 <div class="manage-item-list">
                     <div class="img-box-4 text-center clearfix">
-					
-						<!-- manage view list item -->
-                            @foreach ($items as $item)
-                                @if(!Auth::guest() && ($item->guest_id == Auth::user()->id || Auth::user()->is_seller()))
-                                    @if($item->active == '1')
-                						<div class="col-md-4 col-sm-6 mb-15">
-                							<div class="img-box-4-item">
 
-                								<!-- image display -->
-                								<div class="image-style-one">
-                									<a href="{{ url('item/'.$item->slug.'') }}">
-                										<img class="img-reponsive" src="{{ asset($item->images) }}" alt="">
-                									</a>
-                								</div>
+	                      <!-- manage view list item -->
+                        @foreach ($items as $item)
+                            @if(!Auth::guest() && ($item->guest_id == Auth::user()->id || Auth::user()->is_seller()))
+                                @if($item->active == 1)
+                        						<div class="col-md-4 col-sm-6 mb-15">
+                                        <div class="img-box-4-item">
 
-                								<!-- mange seller ads contente -->
-                								<div class="img-box-4-content">
+                                            <!-- image display -->
+                                            <div class="image-style-one">
+                                                <a href="{{ url('item/'.$item->slug.'') }}">
+                                                    <img class="img-reponsive" src="{{ asset($item->images) }}" alt="">
+                                                </a>
+                                            </div>
 
-                                                    <!-- title item -->
-                									<h4 class="item-title" style="height: 29px;">
-                										<a href="{{ url('item/'.$item->slug.'') }}" class="title-cut">{{ $item->title }}</a>
-                									</h4>
+                                            <!-- mange seller ads contente -->
+                                            <div class="img-box-4-content">
 
-                                                    <!-- item price -->
-                									<div class="row">
-                										<div class="col-xs-12 col-sm-12 col-md-12 info-dta info-price">Php {{ $item->price }}</div>
-                									</div>
+                                                <!-- title item -->
+                                                <h4 class="item-title" style="height: 29px;">
+                                                    <a href="{{ url('item/'.$item->slug.'') }}" class="title-cut">{{ $item->title }}</a>
+                                                </h4>
 
-                                                    <!-- item city or located -->
-                									<div class="row">
-                										<div class="col-xs-12 col-sm-12 col-md-12 info-dta">
-                											<a class="c-307 mb-10" href="#">{{ $item->city }}</a>
-                										</div>
-                									</div>
+                                                <!-- item price -->
+                                                <div class="row">
+                                                    <div class="col-xs-12 col-sm-12 col-md-12 info-dta info-price">Php {{ $item->price }}</div>
+                                                </div>
 
-                                                    <!-- display date posted item -->
-                									<div class="row">
-                										<div class="col-xs-12 col-sm-12 col-md-12 info-dta">Posted on : {{ $item->created_at->format('M d, Y') }}</div>
-                									</div>
+                                                <!-- item city or located -->
+                                                <div class="row">
+                                                    <div class="col-xs-12 col-sm-12 col-md-12 info-dta">
+                                                        <a class="c-307 mb-10" href="#">{{ $item->city }}</a>
+                                                    </div>
+                                                </div>
 
-                                                    <!-- manage button item for update, repost or mark as sold -->
-                									<div class="row">
-                										<div class="col-xs-12 col-sm-12 col-md-12 info-dta pad-top-bottom-10">
-                											<a href="{{ url('item/edit/'.$item->slug) }}" class="c-307 mb-10 cursor">Update</a>
-                											<!-- <a class="c-307 mb-10 ml-10" href="#">Mark sold</a>
-                											<a class="c-307 mb-10 ml-10 cursor">Re-post</a> -->
-                										</div>
-                									</div>
+                                                <!-- display date posted item -->
+                                                <div class="row">
+                                                    <div class="col-xs-12 col-sm-12 col-md-12 info-dta">Posted on : {{ $item->created_at->format('M d, Y') }}</div>
+                                                </div>
 
-                                                    <!-- boost item button for sponsored priorities -->
-                									<div class="row">
-                										<button class="btn input-green c-fff" type="submit" data-toggle="modal" data-target="#boostads">Boost Ads</button>
-                									</div>
-                									<div class="clearfix"></div>
-                								</div>
+                                                <!-- manage button item for update, repost or mark as sold -->
+                                                <div class="row">
+                                                    <div class="col-xs-12 col-sm-12 col-md-12 info-dta pad-top-bottom-10">
+                                                        <a href="{{ url('item/edit/'.$item->slug) }}" class="c-307 mb-10 cursor">Update</a>
+                                                        <!-- <a class="c-307 mb-10 ml-10" href="#">Mark sold</a>
+                                                        <a class="c-307 mb-10 ml-10 cursor">Re-post</a> -->
+                                                    </div>
+                                                </div>
 
-                							</div>
-                						</div>
-                                    @endif
+                                                <!-- boost item button for sponsored priorities -->
+                                                <div class="row">
+                                                    <button class="btn input-green c-fff" type="submit" data-toggle="modal" data-target="#boostads">Boost Ads</button>
+                                                </div>
+                                                <div class="clearfix"></div>
+                                            </div>
+
+                                        </div>
+                                    </div>
                                 @endif
-                            @endforeach
-                            <div class="clear"></div>
+                            @endif
+                        @endforeach
+                        <div class="clear"></div>
 
-                            <!-- render item pagination -->
-                            {!! $items->render() !!}  
-                        
-						<!-- end  -->
+                        <!-- render item pagination -->
+                        {!! $items->render() !!}
+
+						            <!-- end  -->
 
                     </div>
                 </div>
@@ -139,7 +139,7 @@
 
                     <div class="clear"></div>
                 </div>
-            </div>  -->   
+            </div>  -->
 
         </div>
     </div>
