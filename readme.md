@@ -16,8 +16,8 @@ Please be explicit and consistent with the following:
 
 - [Naming of Table, Table Column, FKs, etcetera](#naming-convention)
 - Use CamelCase for naming of files (Eg. UserComment, UserItem)
-- Use four (4) spaces (not tab) for indention of html and php
-- Use four (2) spaces (not tab) for indention of js and css
+- Use four (4) SPACES (NOT TAB) for indention of html and php
+- Use four (2) SPACES (NOT TAB) for indention of js and css
 - [Annotate your functions, variables, classes (if necessary)](#code-annotation)
 - Place code for defining FK at the bottom part of 'up' function
 - Use **singular** instead of **plural** when naming a table, column, file, etcetera. For more details, refer to this [link](http://stackoverflow.com/a/5841297)
