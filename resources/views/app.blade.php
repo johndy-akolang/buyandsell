@@ -2,20 +2,20 @@
 <html>
 <head>
 
-    <!-- meta tags -->
+    {{-- meta tags --}}
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="language" content="en" />
     <meta http-equiv="X-UA-Compatible" content="IE-edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="csrf-token" content="{{ csrf_token() }}" />
 
-    <meta name="title" content="Koll.com.ph | New and Free Classified Ads and Buy and Sell Website Philippines" /> 
+    <meta name="title" content="Koll.com.ph | New and Free Classified Ads and Buy and Sell Website Philippines" />
     <meta name="description" content="New and Free Classified Ads and Buy and Sell Website Philippines | Sell your 2nd hand items on KOLL.com.ph, buy and sell website. Post free online ads of your used car, classified ads, mobile phone, furniture, and more.">
     <meta name="keywords" content="New and Free Classified Ads and Buy and Sell Website Philippines, classified ads, 2nd Hand for sale, Vehicles, Fashion, Pets, Jobs, Electronics, Real Estate, Sports, Toys, Others, For Sale Items, Low Price, Discount" />
 
-    <!-- title -->
+    {{-- title --}}
     <title>@yield('title')</title>
-    
+
     @yield('header_assets')
 
     <!-- css -->
@@ -68,7 +68,7 @@
     </div>
     @endif
 
-    <!-- show error or failed display --> 
+    <!-- show error or failed display -->
     @if ($errors->any())
     <div class='flash alert-danger positioning'>
         <ul class="panel-body">
@@ -87,8 +87,8 @@
     <!-- footer -->
     @include('partials.footer')
 
-    <!-- js -->
-    @include('partials.javascript')
+    {{-- js --}}
+    @include('partials.js')
 
     <!-- facebook api for like box -->
     <div id="fb-root"></div>
@@ -127,60 +127,3 @@
 </body>
 <!-- Mark Donnie Infantado -->
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

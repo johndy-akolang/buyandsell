@@ -984,7 +984,7 @@ form::after {
     margin: 0;
     width: 140px;
 }
-.wrapper-dropdown-5:after, .wrapper-dropdown:after, .wrapper-dropdown-action:after { 
+.wrapper-dropdown-5:after, .wrapper-dropdown:after, .wrapper-dropdown-action:after {
     width: 0;
     height: 0;
     position: absolute;
@@ -1789,7 +1789,7 @@ form::after {
 .sub-tit {
     color: #9c9c9c;
     font-size: 12px;
-} 
+}
 /* login success */
 .pdt15 {
     margin-top: 25px;
@@ -2156,7 +2156,7 @@ textarea#sndmsgtxt {
     .header-bottom-left {width: 100%;float: none;}
     .search {margin: 0;width: 100%;}
     .cssmenu ul li a {margin: 5px;}
-    .cssmenu {margin-top:float: right;text-align: center;}
+    .cssmenu {/*margin-top:*/float: right;text-align: center;}
     .span_2_of_3, .sell-item-cont {width: 100%;}
     .cont {float: none;}
     .span_1_of_left {width:45%;}
@@ -2189,7 +2189,7 @@ textarea#sndmsgtxt {
     .copy {float: none;margin-bottom:10px;}
 }
 @media (max-width:480px) {
-    
+
     /* add mark */
     /* account user */
     .shrtct {width: 25%;}
@@ -2339,5 +2339,12 @@ textarea#sndmsgtxt {
     .images_3_of_2 {width: 100%;float: none;margin-right: 0;}
     .span_3_of_2 {width: 100%;}
     .desc1 {float: none;}
+    .f-list2 li {margin: 0 4px;}
+    .icon1 ul {right: -92px;width: 230px;}
+    ul.f-list img {margin-right: 0;}
+    .span_1_of_about-box {width: 100%;}
+    .col_1_of_about-box {float:none;margin: 1% 0 1% 0%;}
+    .dropdown {width: 90px;}
+    .box {width: 55.5%;}
     .copy {float: none;margin-bottom:10px;}
 }
