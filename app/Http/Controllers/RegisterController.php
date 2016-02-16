@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\AuthTraits\RedirectsUsers;
-use App\User;
+use App\Models\User;
 use Validator;
 use View;
 
