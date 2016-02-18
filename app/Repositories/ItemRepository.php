@@ -18,6 +18,21 @@ class ItemRepository extends Item
             ->paginate($perPage);
     }
 
+    public function getItemWithComments($slug, $isActive = true)
+    {
+        $item = $this->where('slug', $slug);
+
+        if ($isActive === true) {
+            $item->where('active', 1);
+        }
+
+        return $item->with('user')
+            ->with('comments')
+            ->with('comments.user')
+            ->first()
+            ->toArray();
+    }
+
     public function createItem($userId, array $data)
     {
         /*

@@ -160,27 +160,27 @@ class ItemController extends Controller
     /*
     * Display the specified resource.
     *
-    * @param int $id
-    * @return Response
+    * @param string $slug
+    * @return \Illuminate\View\View|\Illuminate\Http\RedirectResponse
     */
     public function show($slug)
     {
-        // paginate featured ads at right side
-        $featured = Item::paginate(8);
+        // get item by slug
+        $item = $this->itemRepo->getItemWithComments($slug, true);
 
-        // item show with slug or title
-        $items = Item::where('slug', $slug)->first();
-        if ($items) {
-            if ($items->active == false) {
-                return redirect('/')->withErrors('requested page not found');
-                $comments = $items->comments;
-            }
+        if ($item) {
+          // paginate featured ads at right side
+          $featured = \App\Models\Item::paginate(8);
+
+          return view('item.show')
+              ->with(compact('item'))
+              ->with(compact('featured'));
         } else {
-            return redirect('/')->withErrors('requested page not found');
+          return redirect('/')
+              // TODO: Move the error message to 'lang'
+              ->withErrors('requested page not found');
+          // $comments = $items->comments; // this code won't execute
         }
-
-        //$featured = Item::paginate(8);
-        return view('item.show')->withItems($items)->withComments($comments)->with(compact('featured'));
     }
 
 

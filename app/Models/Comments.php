@@ -25,10 +25,14 @@ class Comments extends Model
 			'body',
 		];
 
-		//user who has commented
-		public function guest()
+
+    /**
+     * Eloquent relationship for User
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+		public function user()
 		{
-			return $this->belongsTo('App\User', 'from_user');
+			   return $this->belongsTo(User::class, 'from_user');
 		}
 
 		//returns post of any comment
