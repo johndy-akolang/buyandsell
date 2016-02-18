@@ -1,6 +1,6 @@
 @if (env('APP_ENV') == 'local')
     {{-- css vendor --}}
-    <link href="{{ asset('/css/vendor/font-awesome.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('/css/vendor/font-awesome.css') }}" rel="stylesheet">
     <!-- <link href="{{ asset('/css/vendor/nivo-slider.css') }}" rel="stylesheet">
     <link href="{{ asset('/css/vendor/nivo-slider.default.css') }}" rel="stylesheet">
     <link href="{{ asset('/css/vendor/etalage.css') }}" rel="stylesheet">

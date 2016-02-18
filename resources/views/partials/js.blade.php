@@ -1,7 +1,7 @@
 @if (env('APP_ENV') == 'local')
   {{-- javascript vendor --}}
-  <script src="{{ asset('/js/vendor/jquery.min.js') }}" type="text/javascript"></script>
-  <script src="{{ asset('/js/vendor/bootstrap.min.js') }}" type="text/javascript"></script>
+  <script src="{{ asset('/js/vendor/jquery.js') }}" type="text/javascript"></script>
+  <script src="{{ asset('/js/vendor/bootstrap.js') }}" type="text/javascript"></script>
   <script src="{{ asset('/js/vendor/jquery.nivo.slider.js') }}" type="text/javascript"></script>
   <script src="{{ asset('/js/vendor/jquery.etalage.min.js') }}" type="text/javascript"></script>
   <script src="{{ asset('/js/vendor/modernizr.custom.js') }}" type="text/javascript"></script>
