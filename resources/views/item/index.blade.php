@@ -29,7 +29,7 @@
 
                                             <!-- image display -->
                                             <div class="image-style-one">
-                                                <a href="{{ url('item/'.$item->slug.'') }}">
+                                                <a href="{{ url('item/'.$item->slug) }}">
                                                     <img class="img-reponsive" src="{{ asset($item->images) }}" alt="">
                                                 </a>
                                             </div>
@@ -39,7 +39,7 @@
 
                                                 <!-- title item -->
                                                 <h4 class="item-title" style="height: 29px;">
-                                                    <a href="{{ url('item/'.$item->slug.'') }}" class="title-cut">{{ $item->title }}</a>
+                                                    <a href="{{ url('item/'.$item->slug) }}" class="title-cut">{{ $item->title }}</a>
                                                 </h4>
 
                                                 <!-- item price -->
@@ -56,7 +56,7 @@
 
                                                 <!-- display date posted item -->
                                                 <div class="row">
-                                                    <div class="col-xs-12 col-sm-12 col-md-12 info-dta">Posted on : {{ $item->created_at->format('M d, Y') }}</div>
+                                                    <div class="col-xs-12 col-sm-12 col-md-12 info-dta">Posted on : {{ $item->created_at }}</div>
                                                 </div>
 
                                                 <!-- manage button item for update, repost or mark as sold -->
