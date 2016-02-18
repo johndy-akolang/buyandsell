@@ -64,6 +64,7 @@ class CommentsController extends Controller
               'subject' => $subject,
             ];
 
+            // TODO: Queue the sending of email
             // mailing notifications
             Mail::send('emails.commented', $emailData, function($message) use ($from, $to, $subject) {
                 $message->from($from);
