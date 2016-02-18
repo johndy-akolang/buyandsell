@@ -177,7 +177,7 @@
 
                                                 <!-- button to see list comment -->
                                                 <h4 class="comment-user">
-                                                    <span class="comment-username">{{ $comment['guest']['first_name'] }}</span>
+                                                    <span class="comment-username">{{ $comment['user']['first_name'] }}</span>
                                                     <small class="comment-date">{{ $comment['created_at'] }}</small>
                                                 </h4>
 

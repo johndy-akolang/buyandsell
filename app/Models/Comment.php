@@ -1,9 +1,10 @@
 <?php
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
-class Comments extends Model
+class Comment extends Model
 {
 
 		/**
@@ -25,6 +26,16 @@ class Comments extends Model
 			'body',
 		];
 
+    /**
+     * Eloquent accessor for created_at attribute
+     * @param  string $value
+     * @return string
+     */
+    public function getCreatedAtAttribute($value)
+    {
+        $carbon = new Carbon($value);
+        return $carbon->diffForHumans();
+    }
 
     /**
      * Eloquent relationship for User

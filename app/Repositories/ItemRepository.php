@@ -18,6 +18,14 @@ class ItemRepository extends Item
             ->paginate($perPage);
     }
 
+    public function getItem($slug)
+    {
+        return $this->where('slug', $slug)
+            ->with('user')
+            ->first()
+            ->toArray();
+    }
+
     public function getItemWithComments($slug, $isActive = true)
     {
         $item = $this->where('slug', $slug);

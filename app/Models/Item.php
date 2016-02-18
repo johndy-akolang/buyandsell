@@ -66,7 +66,7 @@ class Item extends Model
   	public function comments()
   	{
         // TODO: 'on_post' should be 'item_id'
-    		return $this->hasMany(Comments::class, 'on_post');
+    		return $this->hasMany(Comment::class, 'on_post');
   	}
 
   	/**

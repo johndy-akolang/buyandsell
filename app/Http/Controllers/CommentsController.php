@@ -1,37 +1,30 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
-use App\Item;
-use App\Comments;
-use Redirect;
+use App\Repositories\ItemRepository;
+use App\Repositories\CommentRepository;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use Mail;
 use Auth;
+use Mail;
+use Redirect;
 
 class CommentsController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return Response
-     */
-    public function index()
-    {
-        //
-    }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return Response
+     * Class constructor
+     * @param CommentRepository $comment
+     * @param ItemRepository    $item
      */
-    public function create()
+    public function __construct(
+        CommentRepository $comment,
+        ItemRepository $item
+    )
     {
-        //
+        $this->commentRepo = $comment;
+        $this->itemRepo = $item;
     }
 
     /**
@@ -41,84 +34,44 @@ class CommentsController extends Controller
      */
     public function store(Request $request)
     {
-        //on_post, from_user, body
-        $input['from_user'] = $request->user()->id;
-        $input['on_post'] = $request->input('on_post');
-        $input['body'] = $request->input('body');
-        $slug = $request->input('slug');
-
-        // models
-        $newComment = Comments::create($input);
-        $item = Item::where('slug', $slug)->first();
-        $itemOwner = $item->guest;
         $loggedInUser = Auth::user(); // user logged in
+        $comment['from_user'] = $request->user()->id;
+        $comment['on_post'] = $request->input('on_post');
+        $comment['body'] = $request->input('body');
+        $itemSlug = $request->input('slug');
 
-        // email from, to and subject
-        $from = $loggedInUser->email;
-        $to = $itemOwner->email;
-        $subject = $item->title;
+        // save new comment
+        $newComment = $this->commentRepo->saveItemComment($comment);
 
-        // email template variables
-        $emailData = [
-          'user' => sprintf('%s %s', $itemOwner->first_name, $itemOwner->last_name),
-          'body' => $newComment->body,
-          'url' => sprintf('%s/%s', 'http://www.koll.com.ph/item', $slug),
-          'from' => sprintf('%s %s', $loggedInUser->first_name, $loggedInUser->last_name),
-          'subject' => $item->title,
-        ];
+        if ($newComment) {
 
-        // mailing notifications
-        Mail::send('emails.commented', $emailData, function($message) use ($from, $to, $subject) {
-            $message->from($from);
-            $message->to($to);
-            $message->subject($subject);
-        });
+            // get item by slug
+            $item = $this->itemRepo->getItem($itemSlug);
+            $itemOwner = $item['user'];
+            $itemOwnerName = sprintf('%s %s', $itemOwner['first_name'], $itemOwner['last_name']);
+
+            // email basic headers
+            $from = $loggedInUser->email;
+            $to = $itemOwner['email'];
+            $subject = $item['title'];
+
+            // email template variables
+            $emailData = [
+              'user' => $itemOwnerName,
+              'body' => $newComment->body,
+              'url' => sprintf('%s/%s', 'http://www.koll.com.ph/item', $itemSlug),
+              'from' => sprintf('%s %s', $loggedInUser->first_name, $loggedInUser->last_name),
+              'subject' => $subject,
+            ];
+
+            // mailing notifications
+            Mail::send('emails.commented', $emailData, function($message) use ($from, $to, $subject) {
+                $message->from($from);
+                $message->to($to);
+                $message->subject($subject);
+            });
+        }
 
         return redirect::back()->with('message', 'Comment Published');
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  Request  $request
-     * @param  int  $id
-     * @return Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function destroy($id)
-    {
-        //
     }
 }
