@@ -8,14 +8,14 @@
 
 <div class="main clearfix">
     <div class="wrap">
-        
+
         <div class="section group clearfix">
 
             <!-- item display list left -->
             <div class="cont span_2_of_3">
 
                 <div class="top-box img-box-4 text-center">
-                   
+
                    <!-- show user item post all -->
 					@foreach ($items as $item)
 
@@ -39,7 +39,7 @@
 									<h4 class="item-title" style="height: 29px;">
 										<a href="{{ url('/item/'.$item->slug) }}" class="title-cut">{{ $item->title }}</a>
 									</h4>
-                                    
+
                                     <!-- display price -->
 									<div class="row">
 										<div class="col-xs-12 col-sm-12 col-md-12 info-dta info-price">Php {{ $item->price }}</div>
@@ -47,7 +47,7 @@
 
                                     <!-- display date posted item -->
 									<div class="row">
-										<div class="col-xs-12 col-sm-12 col-md-12 info-dta">Posted on : {{ $item->created_at->format('M d, Y') }}</div>
+										<div class="col-xs-12 col-sm-12 col-md-12 info-dta">Posted on : {{ $item->created_at }}</div>
 									</div>
 
                                     <!-- display location located -->
@@ -145,13 +145,3 @@
 
 
 @endsection
-
-
-
-
-
-
-
-
-
-

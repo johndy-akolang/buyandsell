@@ -6,21 +6,30 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
-use App\Models\Item;
+use App\Repositories\ItemRepository;
 use Validator;
 use App\Models\User;
 
 
 class HomeController extends Controller
 {
+
     /**
-     * Display a listing of the resource.
-     *
-     * @return Response
+     * Class constructor
+     * @param ItemRepository $item
+     */
+    public function __construct(ItemRepository $item)
+    {
+        $this->itemRepo = $item;
+    }
+
+    /**
+     * Display a listing of the paginated resource.
+     * @return \Illuminate\View\View
      */
     public function index()
     {
-
+        // TODO: Can we delete these?
         /*$items = Item::paginate(10);
         return view('home')->with('items', $items);*/
 
@@ -29,7 +38,7 @@ class HomeController extends Controller
         /*$datas = User::all();*/
 
         // show item by date latest.
-        $items = Item::where('active', 1)->orderBy('created_at', 'desc')->paginate(12);
+        $items =  $this->itemRepo->getActiveItems(12);
         return view('home')->withItems($items);
 
     }
