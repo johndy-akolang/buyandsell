@@ -18,10 +18,15 @@ class ItemRepository extends Item
             ->paginate($perPage);
     }
 
-    public function getItem($slug)
+    public function getItem($identifier)
     {
-        return $this->where('slug', $slug)
-            ->with('user')
+        if (preg_match('/[0-9]+/', $identifier)) {
+            $item = $this->where('id', $identifier);
+        } else {
+            $item = $this->where('slug', $identifier);
+        }
+
+        return $item->with('user')
             ->first()
             ->toArray();
     }
@@ -39,6 +44,25 @@ class ItemRepository extends Item
             ->with('comments.user')
             ->first()
             ->toArray();
+    }
+
+    public function updateItem($itemId, $data)
+    {
+        $item = [
+            'title' => $data['title'],
+            'price' => $data['price'],
+            'condition' => $data['condition'],
+            'category' => $data['category'],
+            'description' => $data['description'],
+            'province' => $data['province'],
+            'city' => $data['city'],
+            'mobile' => $data['mobile'],
+            'slug' => $data['slug'],
+            'active' => $data['active'],
+        ];
+
+        return $this->where('id', $itemId)
+            ->update($item);
     }
 
     public function createItem($userId, array $data)

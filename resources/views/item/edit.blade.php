@@ -1,7 +1,7 @@
 @extends('app')
 
 @section('title')
-    Update Item  {{ $item->slug }} | Koll.com.ph New and Free Classified Ads and Buy and Sell Website Philippines
+    Update Item  {{ $item['slug'] }} | Koll.com.ph New and Free Classified Ads and Buy and Sell Website Philippines
 @stop
 
 @section('content')
@@ -16,10 +16,10 @@
             <div class="cont sell-item-cont bor-rad5 border1ccc pad10">
 
                 <!-- form update item -->
-                <form method="post" action='{{ url("item/update") }}'>
+                <form method="post" action='{{ route('user-items-edit', ['slug' => $item['slug']]) }}'>
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                    <input type="hidden" name="item_id" value="{{ $item->id }}{{ old('item_id') }}">
-                    
+                    <input type="hidden" name="item_id" value="{{ $item['id'] }}{{ old('item_id') }}">
+
                     <fieldset class="clearfix">
 
                         <!-- title form label -->
@@ -31,7 +31,7 @@
 
                         <!-- title form input -->
                         <div class="title-cont-input floatLeft">
-                            <input type="text" name = "title" class="form-control" value="@if(!old('title')){{$item->title}}@endif{{ old('title') }}"/>
+                            <input type="text" name = "title" class="form-control" value="@if(!old('title')){{$item['title']}}@endif{{ old('title') }}"/>
                         </div>
                     </fieldset>
 
@@ -46,7 +46,7 @@
 
                         <!-- price form input -->
                         <div class="title-cont-input floatLeft">
-                            <input type="text" id="price" name="price" class="form-control" value="@if(!old('price')){{$item->price}}@endif{{ old('price') }}"/>
+                            <input type="text" id="price" name="price" class="form-control" value="@if(!old('price')){{$item['price']}}@endif{{ old('price') }}"/>
                         </div>
                     </fieldset>
 
@@ -64,7 +64,7 @@
                         <div class="title-cont-input floatLeft">
 
                             {!! Form::select('condition',
-                                (['0' => 'Select'] + $condition),
+                                (['0' => 'Select'] + $conditions),
                                 null,
                                 ['class' => 'form-control']) !!}
 
@@ -86,7 +86,7 @@
                         <div class="title-cont-input floatLeft">
 
                             {!! Form::select('category',
-                                (['0' => 'Select'] + $category),
+                                (['0' => 'Select'] + $categories),
                                 null,
                                 ['class' => 'form-control']) !!}
 
@@ -108,7 +108,7 @@
 
                             <textarea id="description-item" name="description" class="form-control" rows="10" cols="10">
                                 @if(!old('description'))
-                                {!! $item->description !!}
+                                {!! $item['description'] !!}
                                 @endif
                                 {!! old('description') !!}
                             </textarea>
@@ -137,7 +137,7 @@
                             {!! Form::file('images', null) !!}
 
                             <div class="mt-15">
-                                <img src="{{ asset($item->images) }}" height="150" /> 
+                                <img src="{{ asset($item['images']) }}" height="150" />
                             </div>
                         </div>
                     </fieldset>
@@ -156,7 +156,7 @@
                         <div class="title-cont-input floatLeft">
 
                             {!! Form::select('province',
-                                (['0' => 'Select'] + $province),
+                                (['0' => 'Select'] + $provinces),
                                 null,
                                 ['class' => 'form-control']) !!}
 
@@ -177,7 +177,7 @@
                         <div class="title-cont-input floatLeft">
 
                             {!! Form::select('city',
-                                (['0' => 'Select'] + $city),
+                                (['0' => 'Select'] + $cities),
                                 null,
                                 ['class' => 'form-control']) !!}
 
@@ -196,7 +196,7 @@
 
                         <!-- title form input -->
                         <div class="title-cont-input floatLeft">
-                            <input type="text" name="mobile" class="form-control" value="@if(!old('mobile')){{$item->mobile}}@endif{{ old('mobile') }}"/>
+                            <input type="text" name="mobile" class="form-control" value="@if(!old('mobile')){{$item['mobile']}}@endif{{ old('mobile') }}"/>
                         </div>
                     </fieldset>
 
@@ -208,8 +208,8 @@
 
                         </div>
                     </fieldset>
-                </form>    
-                
+                </form>
+
             </div>
         </div>
     </div>

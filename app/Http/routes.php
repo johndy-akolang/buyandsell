@@ -1,57 +1,47 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Application Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register all of the routes for an application.
-| It's a breeze. Simply tell Laravel the URIs it should respond to
-| and give it the controller to call when that URI is requested.
-|
-*/
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
 
+// route to process the form
+Route::post('login', ['as' => 'user-login', 'uses' => 'LoginController@doLogin']);
+
+// register user
+Route::get('register', ['as' => 'user-register', 'uses' => 'RegisterController@register']);
+Route::post('register', 'RegisterController@postRegister');
+
+// home route
 Route::get('/', ['as' => 'home', 'uses' => 'HomeController@index']);
-Route::get('home', ['as' => 'home', 'uses' => 'HomeController@index']);
-Route::get('item', ['as' => 'home', 'uses' => 'ItemController@index']);
+Route::get('/home', ['as' => 'home', 'uses' => 'HomeController@index']);
 
-/* when user login */
-Route::group(['middleware' => ['auth']], function() 
-{
-	Route::get('item', 'ItemController@index');
+// item routes
+Route::get('/search', ['as' => 'search', 'uses' => 'ItemController@getSearch']);    // search item
+Route::get('/item/{slug}',['as' => 'view-item', 'uses' => 'ItemController@show']);  // show specific item
 
-	// show form create item user
-	Route::get('item/create', 'ItemController@create');
+// requires logged-in user
+Route::group(['middleware' => ['auth']], function() {
+  Route::get('/login-success', ['as' => 'login-success', 'uses' => 'LoginController@loginsuccess']);         // log-in sucess
+  Route::get('/logout', ['as' => 'user-logout', 'uses' => 'LoginController@doLogout']);                      // route to logout
 
-	// save new item
-	Route::post('item', 'ItemController@store');
+  // item routes
+	Route::get('/account/items', ['as' => 'user-items', 'uses' => 'ItemController@index']);                    // list of user ads
+  Route::post('/account/items', ['as' => 'user-items', 'uses' => 'ItemController@store']);                   // save new item
+	Route::get('/account/items/create', ['as' => 'user-items-create', 'uses' => 'ItemController@create']);     // show create form
+	Route::get('/account/items/{slug}/edit', ['as' => 'user-items-edit', 'uses' => 'ItemController@edit']);    // show edit item form
+	Route::post('/account/items/{slug}/edit', ['as' => 'user-items-edit', 'uses' => 'ItemController@update']); // update post
 
-	// edit item form
-	Route::get('item/edit/{slug}','ItemController@edit');
+	// item-comment route
+	Route::post('/comments/add', 'CommentsController@store');      // save item comment
 
-	// update post 
-	Route::post('item/update', 'ItemController@update');
-
-	Route::get('myallitems', 'AccountController@user_posts_all');
-
-	// add comment
-	Route::post('comments/add', 'CommentsController@store');
-
+  // Route::get('myallitems', 'AccountController@user_posts_all');
 });
 
-
-// item display single post
-Route::get('/item/{slug}',['as' => 'item', 'uses' => 'ItemController@show'])->where('slug', '[A-Za-z0-9-_]+');
-
 // user profile
-Route::get('/account/user/{id}', 'AccountController@profile')->where('id', '[0-9]');
+Route::get('/account/user/{id}', 'AccountController@profile');
 
-// search item
-Route::get('search', 'ItemController@getSearch');
+
 
 // send email message for inquiry item
 Route::post('item/sendmail', 'ItemController@getMail');
@@ -64,29 +54,18 @@ Route::get('about/privacy', 'AboutController@privacy');
 
 // route to show the login form
 Route::get('login', 'LoginController@showLogin');
-// route to process the form
-Route::post('login', 'LoginController@doLogin');
-// route to logout
-Route::get('logout', 'LoginController@doLogout');
-
-// if login success this template
-Route::get('loginsuccess', 'LoginController@loginsuccess');
-
-/* register user */
-Route::get('register', 'RegisterController@register');
-Route::post('register', 'RegisterController@postRegister');
 
 
 /*Route::resource('item', 'ItemController');*/
 
 /* this message is temporally disabled */
-Route::get('message/inbox', 'MessageController@inbox');
-Route::get('message/viewmessage', 'MessageController@viewmessage');
-Route::get('message/sent', 'MessageController@sent');
+// Route::get('message/inbox', 'MessageController@inbox');
+// Route::get('message/viewmessage', 'MessageController@viewmessage');
+// Route::get('message/sent', 'MessageController@sent');
 
 /* legal terms disabled*/
-Route::get('legal/terms', 'LegalController@terms');
-Route::get('legal/privacy', 'LegalController@privacy');
+// Route::get('legal/terms', 'LegalController@terms');
+// Route::get('legal/privacy', 'LegalController@privacy');
 
 /* sitemap */
 Route::get('/sitemap', function() {
