@@ -28,7 +28,7 @@
 
                                         <!-- image display -->
                                         <div class="image-style-one">
-                                            <a href="{{ url('item/'.$item->slug) }}">
+                                            <a href="{{ route('view-item', ['slug' => $item->slug]) }}">
                                                 <img class="img-reponsive" src="{{ asset($item->images) }}" alt="">
                                             </a>
                                         </div>
@@ -38,7 +38,7 @@
 
                                             <!-- title item -->
                                             <h4 class="item-title" style="height: 29px;">
-                                                <a href="{{ url('item/'.$item->slug) }}" class="title-cut">{{ $item->title }}</a>
+                                                <a href="{{ route('view-item', ['slug' => $item->slug]) }}" class="title-cut">{{ $item->title }}</a>
                                             </h4>
 
                                             <!-- item price -->
@@ -61,7 +61,7 @@
                                             <!-- manage button item for update, repost or mark as sold -->
                                             <div class="row">
                                                 <div class="col-xs-12 col-sm-12 col-md-12 info-dta pad-top-bottom-10">
-                                                    <a href="{{ url('item/edit/'.$item->slug) }}" class="c-307 mb-10 cursor">Update</a>
+                                                    <a href="{{ route('user-items-edit', ['slug' => $item->slug]) }}" class="c-307 mb-10 cursor">Update</a>
                                                     <!-- <a class="c-307 mb-10 ml-10" href="#">Mark sold</a>
                                                     <a class="c-307 mb-10 ml-10 cursor">Re-post</a> -->
                                                 </div>

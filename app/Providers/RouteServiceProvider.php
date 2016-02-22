@@ -24,7 +24,8 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function boot(Router $router)
     {
-        //
+        // constraint for {slug}
+        $router->pattern('slug', '[A-Za-z0-9\-]+');
 
         parent::boot($router);
     }

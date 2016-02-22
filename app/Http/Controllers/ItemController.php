@@ -187,24 +187,40 @@ class ItemController extends Controller
 
     /**
      * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return Response
+     * @param  Request $request
+     * @param  string  $slug
+     * @return \Illuminate\View\View|\Illuminate\Http\RedirectResponse
      */
     public function edit(Request $request, $slug)
     {
+        // get item by slug
+        $item = $this->itemRepo->getItem($slug);
 
-        $item = Item::where('slug', $slug)->first();
-        if($item && ($request->user()->id == $item->guest_id || $request->user()->is_seller()))
+        // check if the user is authorize to update the item
+        // TODO: Use Policy https://laravel.com/docs/5.1/authorization#policies
+        if (
+            $item
+            && $request->user()->id == $item['guest_id']
+            || $request->user()->is_seller()
+          ) {
 
             // select forms
-            $city = \DB::table('city')->lists('citylist', 'citylist');
-            $province = \DB::table('province')->lists('provincelist', 'provincelist');
-            $condition = \DB::table('condition')->lists('conditionitem', 'conditionitem');
-            $category = \DB::table('category')->lists('categorylist', 'categorylist');
+            $cities = $this->cityRepo->getAllCities();
+            $provinces = $this->provinceRepo->getAllProvinces();
+            $conditions = $this->conditionRepo->getAllConditions();
+            $categories = $this->categoryRepo->getAllCategories();
 
-            return view('item.edit')->with('item', $item)->with('city', $city)->with('province', $province)->with('condition', $condition)->with('category', $category);
-            return redirect('/')->withErrors('you have not sufficient permissions');
+            return view('item.edit')
+                ->with(compact('item'))
+                ->with(compact('cities'))
+                ->with(compact('provinces'))
+                ->with(compact('conditions'))
+                ->with(compact('categories'));
+        }
+
+        return redirect('/')
+            // TODO: Access the response message via Lang
+            ->withErrors('you have not sufficient permissions');
     }
 
 
@@ -214,56 +230,49 @@ class ItemController extends Controller
      * @param  int  $id
      * @return Response
      */
-	public function update(Request $request)
+    public function update(Request $request)
     {
+        // get item_id parameter
+        $itemId = $request->input('item_id');
+        $item = $this->itemRepo->getItem($itemId);
+        $formData = $request->all();
 
-        $item_id = $request->input('item_id');
-        $item = Item::find($item_id);
+        // check if the user is authorize to update the item
+        // TODO: Use Policy https://laravel.com/docs/5.1/authorization#policies
+        if (
+            $item
+            && $item['user']['id'] == $request->user()->id
+            || $request->user()->is_seller()
+          ) {
+            $formData['slug'] = str_slug($request->input('title'));
+            $duplicate = $this->itemRepo->getItem($formData['slug']);
 
-        if ($item && ($item->guest_id == $request->user()->id || $request->user()->is_seller()))
-        {
-            $title = $request->input('title');
-            $slug = str_slug($title);
-            $duplicate = Item::where('slug', $slug)->first();
-
-            if ($duplicate)
-            {
-                if ($duplicate->id != $item_id)
-                {
-                    return redirect('edit/'.$item->slug)->withErrors('Title already exists.')->withInput();
-                } else {
-                    $item->slug = $slug;
-                }
+            // check for duplicate title
+            if (
+                $duplicate
+                && $duplicate['id'] != $itemId
+              ) {
+                return redirect('edit/' . $formData['slug'])
+                    ->withErrors('Title already exists.')
+                    ->withInput();
             }
 
-            $item->title = $title;
-            $item->description = $request->input('description');
-            $item->price = $request->input('price');
-            $item->condition = $request->input('condition');
-            $item->category = $request->input('category');
-            $item->description = $request->input('description');
-            $item->province = $request->input('province');
-            $item->city = $request->input('city');
-            $item->mobile = $request->input('mobile');
-
-            if ($request->has('save'))
-            {
-                $item->active = 0;
+            if ($request->has('save')) {
+                $formData['active'] = 0;
                 $message = 'Item saved successfully';
-                $landing = 'edit/'.$item->slug;
+                $landing = 'edit/' . $formData['slug'];
             } else {
-                $item->active = 1;
+                $formData['active'] = 1;
                 $message = 'Item updated successfully';
-                $landing = 'item/'.$item->slug;
+                $landing = 'item/' . $formData['slug'];
             }
 
-            $item->save();
-            return redirect($landing)->withMessage($message);
+            $this->itemRepo->updateItem($itemId, $formData);
 
+            return redirect($landing)->withMessage($message);
         } else {
             return redirect('/')->withErrors('restricted');
         }
-
     }
 
 
@@ -383,7 +392,7 @@ class ItemController extends Controller
         $slug = $request->input('slug');
 
         // models
-        $newMessage = Privatemessage::create($input);
+        $newMessage = \App\Models\Privatemessage::create($input);
         $item = Item::where('slug', $slug)->first();
         $itemOwner = $item->guest;
 

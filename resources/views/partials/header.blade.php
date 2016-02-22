@@ -3,8 +3,8 @@
     <div class="wrap">
 
         {{-- logo website --}}
-        <a class="res-logo floatLeft" href="/" title="Koll.com.ph"><img class="logo-koll" src="{{ asset('/images/logo-koll-beta.png') }}" alt="Koll.com.ph" title="Koll.com.ph"></a>
-        
+        <a class="res-logo floatLeft" href="{{ route('home') }}" title="Koll.com.ph"><img class="logo-koll" src="{{ asset('/images/logo-koll-beta.png') }}" alt="Koll.com.ph" title="Koll.com.ph"></a>
+
         <div class="cssmenu">
             @if (Auth::user())
             <ul>
@@ -16,23 +16,23 @@
                     </a>
                     <ul class="dropdown-menu">
                         <!-- <li><a href="#" class="user-menu"><i class="fa fa-inbox"></i>Inbox</a></li> -->
-                        <li><a href="/item/" class="user-menu"><i class="fa fa-suitcase"></i>Manage Ads</a></li>
+                        <li><a href="{{ route('user-items') }}" class="user-menu"><i class="fa fa-suitcase"></i>Manage Ads</a></li>
                         <li><a href="{{ url('/account/user/'.Auth::id()) }}" class="user-menu"><i class="fa fa-gear"></i>Account</a></li>
                         <!-- <li><a href="#" class="user-menu"><i class="fa fa-money"></i>0 Credit</a></li> -->
-                        <li><a href="{{ action('LoginController@doLogout') }}" class="user-menu"><i class="fa fa-sign-out"></i>Logout</a></li>
+                        <li><a href="{{ route('user-logout') }}" class="user-menu"><i class="fa fa-sign-out"></i>Logout</a></li>
                     </ul>
                 </li>
             </ul>
             @else
-            <ul class="member-actions floatLeft">    
+            <ul class="member-actions floatLeft">
                 <li>
-                    <a class="login" href="{{ url('login') }}">
+                    <a class="login" href="{{ route('user-login') }}">
                         <!-- <i class="fa fa-sign-in"></i> -->
                         Log in
                     </a>
                 </li>
                 <li>
-                    <a class="btn-white btn-small" href="{{ url('register') }}">
+                    <a class="btn-white btn-small" href="{{ route('user-register') }}">
                         <!-- <i class="fa fa-file-o"></i> -->
                         Sign up
                     </a>
@@ -73,7 +73,7 @@
             </div>
 
             <div class="advanced-cont floatLeft">Advanced</div> -->
-            <!-- 
+            <!--
             <div id="dd" class="wrapper-dropdown-5 floatLeft" tabindex="1">Select by Category
                 <ul class="dropdown-select-category">
                     <li>
@@ -141,11 +141,11 @@
                     </div>
                 </form> -->
 
-                <form class="navbar-form" role="search" action="/search">
+                <form class="navbar-form" role="search" action="{{ route('search') }}">
                     <div class="form-group" style="display:inline;">
                         <div class="input-group">
-                            {{-- Double curly parantheses auto escape the provided string, so it's safe to use Request::get('q') below directly --}}
-                            <input type="text" class="q form-control" placeholder="Search" name="q" value="{{ Request::get('q', '') }}">
+                            {{-- Double curly parantheses auto escape the provided string, so it's safe to use old('q') below directly --}}
+                            <input type="text" class="q form-control" placeholder="Search" name="q" value="{{ old('q') }}">
                             <span class="input-group-addon">
                                 <span class="fa fa-search"></span>
                             </span>
@@ -169,62 +169,3 @@
         </div>
     </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
