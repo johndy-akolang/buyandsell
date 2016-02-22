@@ -1,5 +1,5 @@
 {
-  "env": "local",
+  "env": "prod",
 
   "_description": "Add your js files here.",
   "js": {

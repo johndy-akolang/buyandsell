@@ -59,7 +59,7 @@
                 @if($item)
                     <!-- thumb images left -->
                     <div class="grid images_3_of_2">
-                        <ul id="etalage">
+                        <ul>
                             <li>
                                 <a href="#">
                                     <img class="etalage_thumb_image img-responsive" alt="{{ $item['title'] }}" src="{{ asset($item['images']) }}" />
