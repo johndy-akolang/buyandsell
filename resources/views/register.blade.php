@@ -149,8 +149,10 @@
                     </div>
 
                     <!-- Button for Login -->
-                    {!! Form::submit('Log in',
-                        array('class' => 'btn button input-green width100px', 'name' => 'Login', 'id' => 'signin-blue')) !!}
+                    <!-- {!! Form::submit('Log in',
+                        array('class' => 'btn button input-green width100px', 'name' => 'Login', 'id' => 'signin-blue')) !!} -->
+
+                    <a href="{{ asset('login') }}" class="btn-login btn button input-green width100px">Log in</a>
 
                 </div>
             </div>
