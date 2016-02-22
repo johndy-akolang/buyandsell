@@ -10,10 +10,22 @@
   <loc>http://koll.com.ph/</loc>
 </url>
 <url>
+  <loc>http://koll.com.ph/home</loc>
+</url>
+<url>
   <loc>http://koll.com.ph/login</loc>
 </url>
 <url>
   <loc>http://koll.com.ph/register</loc>
+</url>
+<url>
+  <loc>http://koll.com.ph/item/tickets</loc>
+</url>
+<url>
+  <loc>http://koll.com.ph/item/tagaytay-house-for-rent</loc>
+</url>
+<url>
+  <loc>http://koll.com.ph/item/ice-cream-franchise-business</loc>
 </url>
 <url>
   <loc>http://koll.com.ph/item/menu-led-light-box</loc>
@@ -43,15 +55,6 @@
   <loc>http://koll.com.ph/item/soft-serve-ice-cream-premix</loc>
 </url>
 <url>
-  <loc>http://koll.com.ph/item/coffee-vending-machine-package</loc>
-</url>
-<url>
-  <loc>http://koll.com.ph/item/steam-generator-for-spa-business</loc>
-</url>
-<url>
-  <loc>http://koll.com.ph/item/couple-sauna-room</loc>
-</url>
-<url>
   <loc>http://koll.com.ph/?page=2</loc>
 </url>
 <url>
@@ -65,6 +68,18 @@
 </url>
 <url>
   <loc>http://koll.com.ph/about/privacy</loc>
+</url>
+<url>
+  <loc>http://koll.com.ph/home?page=2</loc>
+</url>
+<url>
+  <loc>http://koll.com.ph/home?page=3</loc>
+</url>
+<url>
+  <loc>http://koll.com.ph/home?page=4</loc>
+</url>
+<url>
+  <loc>http://koll.com.ph/home?page=5</loc>
 </url>
 <url>
   <loc>http://koll.com.ph/password/email</loc>
@@ -94,6 +109,15 @@
   <loc>http://koll.com.ph/item/miguelitos-ice-cream-and-burger-trailer</loc>
 </url>
 <url>
+  <loc>http://koll.com.ph/item/coffee-vending-machine-package</loc>
+</url>
+<url>
+  <loc>http://koll.com.ph/item/steam-generator-for-spa-business</loc>
+</url>
+<url>
+  <loc>http://koll.com.ph/item/couple-sauna-room</loc>
+</url>
+<url>
   <loc>http://koll.com.ph/item/2nd-hand-car-for-refinancing</loc>
 </url>
 <url>
@@ -121,6 +145,9 @@
   <loc>http://koll.com.ph/item/mini-stereo-bluetooth-headset</loc>
 </url>
 <url>
+  <loc>http://koll.com.ph/?page=1</loc>
+</url>
+<url>
   <loc>http://koll.com.ph/item/micafe-per-kilo-for-vendo-machine</loc>
 </url>
 <url>
@@ -128,9 +155,6 @@
 </url>
 <url>
   <loc>http://koll.com.ph/item/mini-donut-miguelitos</loc>
-</url>
-<url>
-  <loc>http://koll.com.ph/?page=1</loc>
 </url>
 <url>
   <loc>http://koll.com.ph/item/hotcake-premixes-miguelitos</loc>
@@ -191,5 +215,8 @@
 </url>
 <url>
   <loc>http://koll.com.ph/item/miguelitos-fried-ice-cream</loc>
+</url>
+<url>
+  <loc>http://koll.com.ph/home?page=1</loc>
 </url>
 </urlset>
