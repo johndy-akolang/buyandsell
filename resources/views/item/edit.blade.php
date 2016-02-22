@@ -65,7 +65,7 @@
 
                             {!! Form::select('condition',
                                 (['0' => 'Select'] + $condition),
-                                null,
+                                $item['condition'],
                                 ['class' => 'form-control']) !!}
 
                         </div>
@@ -87,7 +87,7 @@
 
                             {!! Form::select('category',
                                 (['0' => 'Select'] + $category),
-                                null,
+                                $item['category'],
                                 ['class' => 'form-control']) !!}
 
                         </div>
@@ -157,7 +157,7 @@
 
                             {!! Form::select('province',
                                 (['0' => 'Select'] + $province),
-                                null,
+                                $item['province'],
                                 ['class' => 'form-control']) !!}
 
                         </div>
@@ -178,7 +178,7 @@
 
                             {!! Form::select('city',
                                 (['0' => 'Select'] + $city),
-                                null,
+                                $item['city'],
                                 ['class' => 'form-control']) !!}
 
                         </div>

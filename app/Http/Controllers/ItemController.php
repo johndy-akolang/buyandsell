@@ -11,6 +11,7 @@ use App\Models\Condition;
 use App\Models\Privatemessage;
 use App\Models\Province;
 use App\Models\User;
+use App\Models\Item;
 use App\Repositories\CategoryRepository;
 use App\Repositories\CityRepository;
 use App\Repositories\ConditionRepository;
