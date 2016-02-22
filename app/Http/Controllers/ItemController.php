@@ -65,7 +65,7 @@ class ItemController extends Controller
     public function create(Request $request)
     {
         //if user can post i.e. user is seller or guest
-        if ($request->user()->can_post()) {
+        // if ($request->user()->can_post()) {
             $cities = $this->cityRepo->getAllCities();
             $provinces = $this->provinceRepo->getAllProvinces();
             $conditions = $this->conditionRepo->getAllConditions();
@@ -77,10 +77,10 @@ class ItemController extends Controller
                 ->with(compact('conditions'))
                 ->with(compact('categories'));
 
-        } else {
-            return redirect('item.create')
-                ->withErrors('You have not sufficient permissions for writing item');
-        }
+        // } else {
+        //     return redirect('item.create')
+        //         ->withErrors('You have not sufficient permissions for writing item');
+        // }
     }
 
 
@@ -125,7 +125,7 @@ class ItemController extends Controller
         } else {
 
             $item->active = 1;
-            $message = 'Your ads published successfully';
+            $message = 'Your advertisement has been published successfully!';
 
         }
 
@@ -153,7 +153,9 @@ class ItemController extends Controller
 
         $item->save();
 
-        return redirect('item')->withMessage($message);
+        return redirect()
+            ->route('user-items-create')
+            ->withMessage($message);
 
     }
 

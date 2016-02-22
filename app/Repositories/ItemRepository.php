@@ -42,8 +42,7 @@ class ItemRepository extends Item
         return $item->with('user')
             ->with('comments')
             ->with('comments.user')
-            ->first()
-            ->toArray();
+            ->first();
     }
 
     public function updateItem($itemId, $data)

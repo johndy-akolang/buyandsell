@@ -13,7 +13,7 @@
             <div class="cont sell-item-cont bor-rad5 border1ccc pad10">
 
                 <!-- form sell item -->
-                {!! Form::open(['url' => 'item', 'method' => 'POST', 'files' => true]) !!}
+                {!! Form::open(['url' => route('user-items-create'), 'method' => 'POST', 'files' => true]) !!}
 
                     <!-- sell item title -->
                     <div class="sellitem-title">

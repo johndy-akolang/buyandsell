@@ -161,9 +161,13 @@
         {{-- container for posr your ads --}}
         <div class="header-bottom-right your-ads-here">
 
+          <a class="btn input-green button input-blue width251" href="{{ route('user-items-create') }}">
+              <!-- <i class="fa fa-file-o"></i> -->
+              Sell your ads here
+          </a>
             {{-- button for post your ads here --}}
-            {!! Form::submit('Sell your ads here',
-                    array('class' => 'button input-blue width251', 'name' => 'postyourads', 'class' => 'btn input-green', 'id' => 'sellads')) !!}
+            {{--{!! Form::submit('Sell your ads here',
+                    array('class' => 'button input-blue width251', 'name' => 'postyourads', 'class' => 'btn input-green', 'id' => 'sellads')) !!}--}}
 
 
         </div>

@@ -107,9 +107,9 @@ $(document).ready(function() {
     });
 
     /* click sellads button */
-    $('#sellads').click(function() {
-        $(window.location).attr('href', '/item/create');
-    });
+    // $('#sellads').click(function() {
+    //     $(window.location).attr('href', '/account/items/create');
+    // });
 
     /* click reply */
     $("#email-opened-reply").on('click', function() {
