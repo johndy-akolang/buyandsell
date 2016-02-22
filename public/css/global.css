@@ -204,6 +204,9 @@ body {
     -o-transition: all .2s linear;
     -ms-transition: all .2s linear;
 }
+.col_1_of_2 .btn-login, .col_1_of_login .btn-signup {
+    color: #fff;
+}
 .register_account .wrap {
     padding: 15px;
 }
@@ -581,7 +584,7 @@ h2.m_1 {
     display: block;
     float: left;
     margin: 1% 0 1% 6.6%;
-    background: #f7f7f7;
+    /*background: #f7f7f7;*/
 }
 .span_1_of_login p {
     color:#777;
@@ -2103,14 +2106,14 @@ textarea#sndmsgtxt {
 /*--responsive design--*/
 @media (max-width:1366px){
     /* add mark */
-    .search {width: 602px;}
+    /*.search {width: 602px;}*/
     .image-style-one {width: auto;}
     .login .wrap, .register_account .wrap, .reg-label {width: 62%;}
     .wrap {width:90%;}
 }
 @media (max-width:1280px){
     /* add mark */
-    .search {width: 564px;}
+    /*.search {width: 564px;}*/
     .header-bottom-right {width: 20.5%;}
     .details-seller {padding: 0;}
     .rsingle .list-unstyled li img {max-width: 200px;}
@@ -2120,7 +2123,7 @@ textarea#sndmsgtxt {
 @media (max-width:1024px){
     /* add mark */
     .header-bottom-left {width: 75.5%;}
-    .search {width: 371px;}
+    /*.search {width: 371px;}*/
     .item-title {line-height: 1;}
     .rsingle .list-unstyled li img {max-width: 154px;}
     .featured-item {height: 105px;}

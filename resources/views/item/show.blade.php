@@ -52,9 +52,9 @@
         <div class="wrap">
 
             <!--  link direction top  -->
-            <ul class="breadcrumb breadcrumb__t"></ul>
+            <!-- <ul class="breadcrumb breadcrumb__t"></ul> -->
 
-            <div class="cont span_2_of_3">
+            <div class="cont span_2_of_3 mt-20">
 
                 @if($item)
                     <!-- thumb images left -->
@@ -197,14 +197,15 @@
             </div>
 
             <!-- right side for seller information , featured ads and sponsored links -->
-            <div class="span_1_of_3 floatRight wdth20per">
+            <div class="span_1_of_3 floatRight wdth20per mt-20">
 
                 <!-- owner of item seller info -->
                 <div class="rsingle">
                     <h5 class="m_1">Seller Information</h5>
 
                     <!-- seller complete name -->
-                    <strong><a href="{{ url('/account/user/'.$item['guest_id']) }}">{{ $item['user']['first_name'] }} {{ $item['user']['last_name'] }}</a></strong>
+                    <!-- href="{{ url('/account/user/'.$item['guest_id']) }}" -->
+                    <strong><a>{{ $item['user']['first_name'] }} {{ $item['user']['last_name'] }}</a></strong>
 
                     <!-- details information seller -->
                     <div class="details-seller floatLeft">

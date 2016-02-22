@@ -126,8 +126,10 @@
                     </div>
 
                     <!-- sign up button -->
-                    {!! Form::submit('Sign Up',
-                            array('name' => 'signup', 'class' => 'button btn input-green width100px', 'id' => 'signup-blue')) !!}
+                    <!-- {!! Form::submit('Sign Up',
+                            array('name' => 'signup', 'class' => 'button btn input-green width100px', 'id' => 'signup-blue')) !!} -->
+
+                    <a href="{{ asset('register') }}" class="btn-signup button btn input-green width100px">Sign up</a>
 
                 </div>
             </div>
