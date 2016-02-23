@@ -161,7 +161,7 @@
         {{-- container for posr your ads --}}
         <div class="header-bottom-right your-ads-here">
 
-          <a class="btn input-green button input-blue width251" href="{{ route('user-items-create') }}">
+          <a class="c-fff btn input-green button input-blue width251" href="{{ route('user-items-create') }}">
               <!-- <i class="fa fa-file-o"></i> -->
               Sell your ads here
           </a>
