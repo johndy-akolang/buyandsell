@@ -35,6 +35,11 @@ Route::group(['middleware' => ['auth']], function() {
 	// item-comment route
 	Route::post('/comments/add', 'CommentsController@store');      // save item comment
 
+	// user routes
+	Route::get('account/edit/{id}', 'AccountController@edit');
+	Route::post('account/edit/{id}', 'AccountController@update');
+	//Route::resource('account', 'AccountController');
+
   // Route::get('myallitems', 'AccountController@user_posts_all');
 });
 

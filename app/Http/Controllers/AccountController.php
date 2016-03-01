@@ -9,9 +9,19 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Models\Item;
 use Auth;
+use View;
+use Validator;
+use Input;
+use Redirect;
 
 class AccountController extends Controller
 {
+    function __construct(User $user) {
+        $this->user = $user;
+    }
+
+
+
     /**
      * Display a listing of the resource.
      *
@@ -71,11 +81,11 @@ class AccountController extends Controller
         } else {
             $data['guest'] = null;
         }
-        $data['comments_count'] = $data['user'] -> comments -> count();
+       /* $data['comments_count'] = $data['user'] -> comments -> count();
         $data['posts_count'] = $data['user'] -> item -> count();
         $data['posts_active_count'] = $data['user'] -> item -> where('active', '1') -> count();
         $data['latest_posts'] = $data['user'] -> item -> where('active', '1') -> take(5);
-        $data['latest_comments'] = $data['user'] -> comments -> take(5);
+        $data['latest_comments'] = $data['user'] -> comments -> take(5);*/
         return view('account.user', $data);
 
     }
@@ -120,7 +130,14 @@ class AccountController extends Controller
      */
     public function edit($id)
     {
-        //
+
+        if (Auth::user()->id != $id) {
+            return Redirect::route('account.edit',['id' => Auth::user()->id]);
+        } else {
+            $user = $this->user->find($id);
+            return View::make('account.edit', ['user' => $user]);
+        }
+
     }
 
     /**
@@ -129,9 +146,44 @@ class AccountController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function update($id)
+    public function update(Request $request, $id)
     {
-        //
+
+        $rules = array(
+            'useraddress' => 'min:20',
+            //'profilepic'    =>  'mimes:jpeg,jpg,png|max:1000',
+        );
+
+        $validator = Validator::make(Input::all(), $rules);
+
+        if($validator->passes()) {
+            $user = $this->user->find($id);
+            $user->first_name = Input::get('first_name');
+            $user->last_name = Input::get('last_name');
+            $user->email = Input::get('email');
+            $user->mobile = Input::get('mobile');
+            $user->useraddress = Input::get('useraddress');
+            $user->companyname = Input::get('companyname');
+            $user->companyaddress = Input::get('companyaddress');
+            $user->companynumber = Input::get('companynumber');
+
+            $file = $request->file('profilepic');
+            // dd($file);
+            $destination_path = 'images/avatar/';
+            $filename = str_random(6).'_'.$file->getClientOriginalName();
+            $file->move($destination_path, $filename);
+            // $item->images = $destination_path . $filename;
+            $user->profilepic = $destination_path . $filename;
+            $user->save();
+
+            return Redirect::route('account.edit', ['id' => $id])
+                                    ->with('message', 'Save Changes');
+
+        } else {
+            return Redirect::back()->withInput()
+                                   ->withErrors($validator);
+        }
+
     }
 
     /**

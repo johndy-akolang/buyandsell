@@ -1,7 +1,7 @@
 @extends('app')
 
 @section('title')
-    My Account | Koll.com.ph
+    My Account | Koll.com.ph New and Free Classified Ads and Buy and Sell Website Philippines
 @stop
 
 @section('content')
@@ -25,7 +25,7 @@
                     <div class="usrimg">
                         <div class="icon">
                             <span class="cll">
-                                <img class="prof_img img" src="{{ asset('/images/avatar.png') }}">
+                                <img class="prof_img img" src="{{ asset(Auth::user()->profilepic) }}">
                             </span>
                         </div>
                     </div>
@@ -42,15 +42,9 @@
                             <span>0 Credits</span>
                         </div>
 
-
                         <div class="mbg mt-10">
-                            <span>Total Classified ads item</span>
-                            <span>{{ $posts_count }}</span>
-                            @if ($posts_active_count)
-                                <a href="{{ url('/user/'.$user->id.'/posts') }}">Show all</a>
-                            @endif
+                            <a href="{{ url('/account/edit/'.Auth::user()->id.'') }}" class="c-fff btn input-green button">Edit Profile</a>
                         </div>
-
 
                     </div>
 
@@ -81,8 +75,6 @@
                         <div class="profile-account-user floatLeft">
                             <span id="name" class="datainfo">{{ Auth::user()->first_name }} {{ Auth::user()->last_name }}</span>
                         </div>
-                        <a href="#" class="editlink floatRight edit-a"><i class="fa fa-edit"></i>Edit info</a>
-                        {{--<a class="savebtn">Save</a>--}}
                     </div>
 
                     {{-- profile email --}}
@@ -94,8 +86,6 @@
                         <div class="profile-account-user floatLeft">
                             <span id="email" class="datainfo">{{ Auth::user()->email }}</span>
                         </div>
-                        <a href="#" class="editlink floatRight edit-a"><i class="fa fa-edit"></i>Edit info</a>
-                        {{--<a class="savebtn">Save</a>--}}
                     </div>
 
                     {{-- profile address --}}
@@ -105,10 +95,8 @@
                         </div>
 
                         <div class="profile-account-user floatLeft">
-                            <span id="address" class="datainfo"></span>
+                            <span id="address" class="datainfo">{{ Auth::user()->useraddress }}</span>
                         </div>
-                        <a href="#" class="editlink floatRight edit-a"><i class="fa fa-edit"></i>Edit info</a>
-                        {{--<a class="savebtn">Save</a>--}}
                     </div>
 
                     {{-- profile mobile number --}}
@@ -120,8 +108,6 @@
                         <div class="profile-account-user floatLeft">
                             <span id="mobile" class="datainfo">{{ Auth::user()->mobile }}</span>
                         </div>
-                        <a href="#" class="editlink floatRight edit-a"><i class="fa fa-edit"></i>Edit info</a>
-                        {{--<a class="savebtn">Save</a>--}}
                     </div>
 
                     {{-- profile company name --}}
@@ -131,10 +117,8 @@
                         </div>
 
                         <div class="profile-account-user floatLeft">
-                            <span id="company" class="datainfo"></span>
+                            <span id="company" class="datainfo">{{ Auth::user()->companyname }}</span>
                         </div>
-                        <a href="#" class="editlink floatRight edit-a"><i class="fa fa-edit"></i>Edit info</a>
-                        {{--<a class="savebtn">Save</a>--}}
                     </div>
 
                     {{-- profile company address --}}
@@ -144,10 +128,8 @@
                         </div>
 
                         <div class="profile-account-user floatLeft">
-                            <span id="company" class="datainfo"></span>
+                            <span id="company" class="datainfo">{{ Auth::user()->companyaddress }}</span>
                         </div>
-                        <a href="#" class="editlink floatRight edit-a"><i class="fa fa-edit"></i>Edit info</a>
-                        {{--<a class="savebtn">Save</a>--}}
                     </div>
 
                     {{-- profile company number --}}
@@ -157,10 +139,8 @@
                         </div>
 
                         <div class="profile-account-user floatLeft">
-                            <span id="company" class="datainfo"></span>
+                            <span id="company" class="datainfo">{{ Auth::user()->companynumber }}</span>
                         </div>
-                        <a href="#" class="editlink floatRight edit-a"><i class="fa fa-edit"></i>Edit info</a>
-                        {{--<a class="savebtn">Save</a>--}}
                     </div>
 
                     {{-- profile date registered --}}
@@ -172,8 +152,6 @@
                         <div class="profile-account-user floatLeft">
                             <span id="registered" class="datainfo">{{ Auth::user()->created_at }}</span>
                         </div>
-                        <a href="#" class="editlink floatRight edit-a"><i class="fa fa-edit"></i>Edit info</a>
-                        {{--<a class="savebtn">Save</a>--}}
                     </div>
 
                 </div>
