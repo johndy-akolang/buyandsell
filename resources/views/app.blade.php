@@ -8,6 +8,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE-edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="csrf-token" content="{{ csrf_token() }}" />
+    <!-- google site verification -->
+    <meta name="google-site-verification" content="oqxG76acbHUj_2Zm044BDiV1-QplsMp-mNLBUcrDZeY" />
 
     <meta name="title" content="Koll.com.ph | New and Free Classified Ads and Buy and Sell Website Philippines" />
     <meta name="description" content="New and Free Classified Ads and Buy and Sell Website Philippines | Sell your 2nd hand items on KOLL.com.ph, buy and sell website. Post free online ads of your used car, classified ads, mobile phone, furniture, and more.">
