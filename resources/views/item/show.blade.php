@@ -41,7 +41,7 @@
 <meta property="og:title" content="{{ $item['title'] }}" />
 <meta property="og:description" content="{{ $item['description'] }}" />
 <meta property="og:image" content="{{ $item['images'], 600, 315 }}" />
-<meta property="og:type" content="website" />
+<meta property="og:type" content="product" />
 {{-- / Opengraph metas --}}
 @endsection
 
