@@ -3,7 +3,7 @@
     <div class="wrap">
 
         {{-- logo website --}}
-        <a class="res-logo floatLeft" href="{{ route('home') }}" title="Koll.com.ph"><img class="logo-koll" src="{{ asset('/images/logo-koll-beta.png') }}" alt="Koll.com.ph" title="Koll.com.ph"></a>
+        <a class="res-logo floatLeft" href="{{ route('home') }}" title="Koll.com.ph"><img class="logo-koll" src="{{ asset('/images/logo-koll.png') }}" alt="Koll.com.ph" title="Koll.com.ph"></a>
 
         <div class="cssmenu">
             @if (Auth::user())
@@ -128,24 +128,14 @@
             </div> -->
 
 
-            {{-- form search --}}
-            <div class="search">
-
-                <!-- <form class="navbar-form navbar-left" role="search" action="/search">
-                    <div class="input-group">
-                        {{-- Double curly parantheses auto escape the provided string, so it's safe to use Request::get('q') below directly --}}
-                        <input type="text" class="q form-control" placeholder="Search" name="q" value="{{ Request::get('q', '') }}">
-                        <div class="search-btn">
-                            <button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
-                        </div>
-                    </div>
-                </form> -->
+            <!-- form search -->
+            <div class="search"
 
                 <form class="navbar-form" role="search" action="{{ route('search') }}">
                     <div class="form-group" style="display:inline;">
                         <div class="input-group">
                             {{-- Double curly parantheses auto escape the provided string, so it's safe to use old('q') below directly --}}
-                            <input type="text" class="q form-control" placeholder="Search" name="q" value="{{ old('q') }}">
+                            <input type="text" class="q form-control" placeholder="Looking for..." name="q" value="{{ old('q') }}">
                             <span class="input-group-addon">
                                 <span class="fa fa-search"></span>
                             </span>
