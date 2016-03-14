@@ -11,8 +11,14 @@
     <!-- google site verification -->
     <meta name="google-site-verification" content="oqxG76acbHUj_2Zm044BDiV1-QplsMp-mNLBUcrDZeY" />
 
-    <meta name="title" content="Koll.com.ph | New and Free Classified Ads and Buy and Sell Website Philippines" />
-    <meta name="description" content="New and Free Classified Ads and Buy and Sell Website Philippines | Sell your 2nd hand items on KOLL.com.ph, buy and sell website. Post free online ads of your used car, classified ads, mobile phone, furniture, and more.">
+    <meta name="title" content="Koll.com.ph - Buy and Sell Philippines Free Classified Ads" />
+    <meta name="description" content="Buy and sell cheap brand new and second hand Car, motorcycle, mobile phones, Real Estate, pets and more. Post Free Classified ads Online at koll.com.ph Philippines.">
+    <meta property="og:title" content="Koll.com.ph - Buy and Sell Philippines Free Classified Ads | Home"/>
+    <meta property="og:description" content="Buy and sell cheap brand new and second hand Car, motorcycle, mobile phones, Real Estate, pets and more. Post Free Classified ads Online at koll.com.ph Philippines"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:image" content="http://www.koll.com.ph/images/icon-koll.png"/>
+    <meta property="og:url" content="http://www.koll.com.ph/"/>
+    <meta property="og:site_name" content="koll.com.ph"/>
     <meta name="keywords" content="New and Free Classified Ads and Buy and Sell Website Philippines, classified ads, 2nd Hand for sale, Vehicles, Fashion, Pets, Jobs, Electronics, Real Estate, Sports, Toys, Others, For Sale Items, Low Price, Discount" />
 
     {{-- title --}}
