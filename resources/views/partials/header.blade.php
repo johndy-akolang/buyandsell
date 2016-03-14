@@ -8,9 +8,11 @@
         <div class="cssmenu">
             @if (Auth::user())
             <ul>
+                <li><a href="{{ asset('about') }}" class="k-about dropdown-toggle">About</a></li>
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown">
                         <i class="fa fa-user"></i>
+                        <!-- <img class="prof_img img" src="{{ asset(Auth::user()->profilepic) }}"> -->
                         {{ Auth::user()->first_name }}
                         <i class="s-arrow-down ml-10 fa fa-sort-desc"></i>
                     </a>
@@ -25,6 +27,7 @@
             </ul>
             @else
             <ul class="member-actions floatLeft">
+                <li><a href="{{ asset('about') }}" class="k-about">About</a></li>
                 <li>
                     <a class="login" href="{{ route('user-login') }}">
                         <!-- <i class="fa fa-sign-in"></i> -->

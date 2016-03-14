@@ -2088,8 +2088,53 @@ textarea#sndmsgtxt {
     list-style: outside none disc;
     margin-left: 40px;
 }
-
-
+/* about */
+.k-about {
+    margin-right: 20px;
+}
+h2.head {
+    color: #3db13d;
+    font-size: 35px;
+    margin: 35px 0;
+}
+.work-section-head p {
+    color: #394b50;
+    font-size: 24px;
+    font-weight: 500;
+    padding: 30px 0 10px;
+}
+.work-section-grid {
+    margin-top: 8em;
+    position: relative;
+}
+.work-section-grid i {
+    color: #3075c0;
+    font-size: 70px;
+}
+.work-section-grid h4 {
+    color: #555;
+    font-size: 25px;
+    margin-bottom: 15px;
+    margin-top: 50px;
+    text-transform: capitalize;
+}
+.work-section-grid p {
+    color: #7b7b7b;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.8em;
+    margin-bottom: 100px;
+}
+span.arrow1 {
+    position: absolute;
+    right: -64px;
+    top: -35px;
+}
+span.arrow2 {
+    position: absolute;
+    right: -64px;
+    top: 75px;
+}
 
 /*--responsive design--*/
 @media (max-width:1366px){
@@ -2253,6 +2298,11 @@ textarea#sndmsgtxt {
     .col_1_of_f_2 {float:none;margin: 1% 0 1% 0;}
     .copy {float: none;margin-bottom:10px;}
     .foo-grids {text-align: center;}
+    /* about */
+    .work-section-head p {font-size: 15px;padding: 0;}
+    .work-section-grid {float: left;margin-top: 5em;width: 50%;}
+    .work-section-grid h4 {font-size: 18px;margin-bottom: 10px;margin-top: 15px;}
+    span.arrow2 {display: none;}
 }
 @media (max-width:320px){
 
@@ -2260,6 +2310,8 @@ textarea#sndmsgtxt {
     /* header */
     .wrap {text-align: center;}
     .res-logo {float: none !important;}
+    .k-about {padding-right: 20px;}
+    .cssmenu ul li, .socialite ul li {width: auto;}
 
     /* account user view */
     .shrtct {float: left;position: relative;top: 30px;width: auto;}
@@ -2347,4 +2399,11 @@ textarea#sndmsgtxt {
 
     /* footer */
     .foo-grids {text-align: center;}
+
+    /* about */
+    .work-section {padding: 0 0 60px 0;}
+    .work-section-head p {font-size: 15px;padding: 0;}
+    .work-section-grid {float: left;margin-top: 5em;width: 50%;}
+    .work-section-grid h4 {font-size: 18px;margin-bottom: 10px;margin-top: 15px;}
+    span.arrow2 {display: none;}
 }
