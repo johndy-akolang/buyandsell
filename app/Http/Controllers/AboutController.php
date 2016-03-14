@@ -93,4 +93,14 @@ class AboutController extends Controller
     {
         return view('about.privacy');
     }
+
+     /*
+     * Terms and Condition for koll.com.ph
+     *
+    */
+    public function terms()
+    {
+        return view('about.terms');
+    }
+
 }

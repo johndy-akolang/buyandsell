@@ -51,7 +51,7 @@
 
 					<br/>
 
-					<h4><b>What information do we collect?</b></h4>
+					<h3>What information do we collect?</h3>
 
 					<p>
 						We We collect information from you when you register on our site or fill out a form. 
@@ -65,7 +65,7 @@
 
 					<br/>
 
-					<h4><b>What do we use your information for?</b></h4>
+					<h3>What do we use your information for?</h3>
 
 					<p>
 						Any of the information we collect from you may be used in one of the following ways:
@@ -91,7 +91,7 @@
 
 					<br/>
 
-					<h4><b>How do we protect your information?</b></h4>
+					<h3>How do we protect your information?</h3>
 
 					<p>
 						We implement a variety of security measures to maintain the safety of your personal information when you enter, submit, or access your personal information. 
@@ -107,7 +107,7 @@
 
 					<br/>
 
-					<h4><b>What are Cookies and do we use them?</b></h4>
+					<h3>What are Cookies and do we use them?</h3>
 
 					<p>
 						Cookies are small files that a site or its service provider transfers to your computers hard drive through your Web browser (if you allow) that enables the sites or service providers systems to recognize your browser and capture and remember certain information.
@@ -119,7 +119,7 @@
 
 					<br/>
 
-					<h4><b>Do we disclose any information to outside parties?</b></h4>
+					<h3>Do we disclose any information to outside parties?</h3>
 
 					<p>
 						We do not sell, trade, or otherwise transfer to outside parties your personally identifiable information. This does not include trusted third parties who assist us in operating our website, conducting our business, or servicing you, so long as those parties agree to keep this information confidential. We may also release your information when we believe release is appropriate to comply with the law, enforce our site policies, or protect ours or others rights, property, or safety. However, non-personally identifiable visitor information may be provided to other parties for marketing, advertising, or other uses.
@@ -127,7 +127,7 @@
 
 					<br/>
 
-					<h4><b>Third Party Links</b></h4>
+					<h3>Third Party Links</h3>
 
 					<p>
 						Occasionally, at our discretion, we may include or offer third party products or services on our website. These third party sites have separate and independent privacy policies. We therefore have no responsibility or liability for the content and activities of these linked sites. Nonetheless, we seek to protect the integrity of our site and welcome any feedback about these sites.
@@ -135,7 +135,7 @@
 
 					<br/>
 
-					<h4><b>Children’s Online Privacy Protection Act Compliance</b></h4>
+					<h3>Children’s Online Privacy Protection Act Compliance</h3>
 
 					<p>
 						We are in compliance with the requirements of COPPA (Childrens Online Privacy Protection Act), we do not collect any information from anyone under 13 years of age. Our website, products and services are all directed to people who are at least 13 years old or older.
@@ -152,15 +152,5 @@
 			</div>
 		</div>
 	</div>
-
-
-
-
-
-
-
-
-
-
 
 @endsection

@@ -56,6 +56,7 @@ Route::post('item/sendmail', 'ItemController@getMail');
 /* koll about */
 Route::get('about', 'AboutController@index');
 Route::get('about/privacy', 'AboutController@privacy');
+Route::get('about/terms', 'AboutController@terms');
 
 // route to show the login form
 Route::get('login', 'LoginController@showLogin');
