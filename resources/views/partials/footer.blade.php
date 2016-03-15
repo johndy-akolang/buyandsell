@@ -42,7 +42,7 @@
                         </ul>   
                         <ul class="location">
                             <li><span class="glyphicon glyphicon-envelope"></span></li>
-                            <li><a href="mailto:info@example.com">applife@koll.com.ph</a></li>
+                            <li><a href="#">applife@koll.com.ph</a></li>
                             <div class="clearfix"></div>
                         </ul>                       
                     </address>
@@ -73,15 +73,13 @@
         <div class="container">
             <div class="footer-social-icons">
                 <ul>
-                    <li><a class="facebook" href="#"><span>Facebook</span></a></li>
+                    <li><a class="facebook" href="https://www.facebook.com/Kollcomph-1489672604662276/?fref=ts" alt="koll.com.ph"><span>Facebook</span></a></li>
                     <li><a class="twitter" href="#"><span>Twitter</span></a></li>
-                    <li><a class="flickr" href="#"><span>Flickr</span></a></li>
                     <li><a class="googleplus" href="#"><span>Google+</span></a></li>
-                    <li><a class="dribbble" href="#"><span>Dribbble</span></a></li>
                 </ul>
             </div>
             <div class="copyrights">
-                <p> © 2015 Koll.com.ph. All Rights Reserved | Design by  <a href="#" class="c-307">AppLife Technology Corp.</a></p>
+                <p> © 2015 Koll.com.ph. All Rights Reserved | Design by  <a href="http://www.applife.com.ph" class="c-307" alt="Applife Technology Corp">AppLife Technology Corp.</a></p>
             </div>
             <div class="clearfix"></div>
         </div>

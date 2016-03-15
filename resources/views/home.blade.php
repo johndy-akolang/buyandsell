@@ -79,9 +79,19 @@
                     <div class="slider-wrapper theme-default">
                         <div id="slider" class="nivoSlider">
 
+                            <!-- advertise miguelitos franshise -->
+                            <a href="http://www.miguelitoscorp.com">
+                                <img src="{{ asset('/images/koll-com-ph-advertise-miguelitos-franchise-front.png') }}" alt="Miguelitos Franchise">
+                            </a>
+
                             <!-- advertise altavista -->
                             <a href="http://www.miguelitos-hotels.com/main/altavista-de-boracay.php">
                                 <img src="{{ asset('/images/koll-room-for-rent-casa-de-miguelitos-altavista.png') }}" alt="Casa de Miguelitos">
+                            </a>
+
+                            <!-- advertise sunflower -->
+                            <a href="http://sunflower.ph/joblist.php">
+                                <img src="{{ asset('/images/koll-com-ph-advertise-sunflower-front.png') }}" alt="Sunflower Management Agency">
                             </a>
 
                             <!-- advertise salon and spa -->
