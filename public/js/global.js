@@ -3,9 +3,16 @@ $(document).ready(function() {
     /* home page nivo slider */
     $(window).load(function() {
         $('#slider').nivoSlider();
+        
     });
-
-
+$(window).load(function(){
+	$('#ads-vticker').vTicker({ 
+		speed: 500,
+		pause: 3000,
+		animation: 'fade',
+		mousePause: false,
+		showItems: 2
+	});
     /* view items thumb */
     // temporarily disable etalage
     // $('#etalage').etalage({

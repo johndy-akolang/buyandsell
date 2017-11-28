@@ -186,6 +186,7 @@ body {
     font-family: 'Segoe UI', sans-serif;
     background:#fff;
 }
+
 .wrap {
     width: 80%;
     margin: 0 auto;
@@ -302,7 +303,7 @@ a.login {
     font-size: 16px;
     width: 95%;
     padding: 5px 10px;
-    -webkit-apperance: none;
+    -webkit-appearance: none;
     -webkit-transition: all 0.5s ease-out;
     -moz-transition: all 0.5s ease-out;
     -ms-transition: all 0.5s ease-out;
@@ -1090,7 +1091,7 @@ form::after {
     background: #fff none repeat scroll 0 0;
     border: 1px solid rgba(34, 36, 38, 0.15);
     border-radius: 5px;
-    color: #777;
+    color: ;
     margin-top: 10px;
     padding: 10px;
     width: 497px;
@@ -2377,7 +2378,7 @@ span.arrow2 {
     .span_2_of_3, .sell-item-cont {width: 100%;}
     .cont {float: none;}
     .span_1_of_left {width:70%;}
-    .rsidebar {float: none;margin: 2.7% 0 7% 16%;}
+    .rsidebar {float: none;margin: 2.7% 0% 7% 16%;}
     .border {margin-bottom: 10%;}
     .span_1_of_2 {width: 100%;}
     .col_1_of_2 {float:none;margin:0;}
@@ -2397,7 +2398,36 @@ span.arrow2 {
     .dropdown {width: 90px;}
     .box {width: 55.5%;}
     .copy {float: none;margin-bottom:10px;}
+    #ad-container{border: 1px solid #0099CC;border-radius: 9px;float: right;margin-top: -735px;margin-right: 53px;width: 225px;}
+    #ad-header{background-color: #0099CC;border-top-left-radius: 8px;border-top-right-radius: 8px;color: #fff;text-align: center;text-decoration: none;text-shadow: 0px;}
+    #ad-mic,
+    #ad-micafe,
+    #ad-micahelasalonandspa,
+    #ad-metrobenta,
+    #ad-space{margin-bottom: 10px;}
+    #ad-img{margin: 0px auto;width: 200px;}
+    #ad-website,
+    #ad-desc,
+    #ad-space{text-align: center;}
+   
+    #vertical-ticker{
+	height:400px;
+	overflow:hidden;
+	margin:0; padding:0;
+	-webkit-box-shadow:0 1px 3px rgba(0,0,0, .4);
+}
 
+	#vertical-ticker li{
+		padding:35px 20px;
+		display:block;
+		background:#efefef;
+		color:#333;
+		border-bottom:1px solid #ddd;
+		text-align:center;
+		font-size:25px;
+		font-weight:bold;
+		font-family: Helvetica Neue, times, serif;
+	}
     /* footer */
     .foo-grids {text-align: center;}
 

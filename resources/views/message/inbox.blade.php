@@ -130,8 +130,8 @@
                                                     <i class="fa fa-star"></i>
                                                 </span>
                                             </td>
-                                            <td class="name hidden-xs">Mark Infantado</td>
-                                            <td class="subject">Hi, Welcome to google Mail</td>
+                                            <td class="name hidden-xs">Jhondy</td>
+                                            <td class="subject">Hi, Welcome to Koll</td>
                                             <td class="hidden-xs">
                                                 <i class="fa fa-paperclip"></i>
                                             </td>
@@ -150,12 +150,12 @@
                                                     <i class="fa fa-star"></i>
                                                 </span>
                                             </td>
-                                            <td class="name hidden-xs">Rodney Santos</td>
-                                            <td class="subject">New Python question for this week!</td>
+                                            <td class="name hidden-xs">Roman Cruz</td>
+                                            <td class="subject">A Good Day!</td>
                                             <td class="hidden-xs">
                                                 <i class="fa fa-paperclip"></i>
                                             </td>
-                                            <td class="date">Aug 15</td>
+                                            <td class="date">Jul 4</td>
                                         </tr>
 
                                         <tr>

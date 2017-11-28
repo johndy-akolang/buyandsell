@@ -21,9 +21,10 @@
                     <div class="img-box-4 text-center clearfix">
 
 	                      <!-- manage view list item -->
-                        @foreach ($items as $item)
-                            @if(!Auth::guest() && ($item->guest_id == Auth::user()->id || Auth::user()->is_seller()))
-                    						<div class="col-md-4 col-sm-6 mb-15">
+                         
+                        @foreach ($items as $item )
+                          @if(!Auth::guest() && $item->user_id == Auth::user()->id)) == Auth::user()->seller())
+                    		<div class="col-md-4 col-sm-6 mb-15">
                                     <div class="img-box-4-item">
 
                                         <!-- image display -->
@@ -78,10 +79,11 @@
                                 </div>
                             @endif
                         @endforeach
+                        
                         <div class="clear"></div>
 
                         <!-- render item pagination -->
-                        {!! $items->render() !!}
+                        {!!$items->render() !!}
 
 						            <!-- end  -->
 

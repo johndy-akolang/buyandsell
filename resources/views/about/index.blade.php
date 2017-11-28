@@ -12,7 +12,7 @@
         <div class="wrap pad-top-bottom-25">
 
             {{-- title --}}
-            <h2 class="head">About Koll.com.ph</h2>
+            <h2 class="head" >About Koll.com.ph</h2>
             <p>
                 Koll.com.ph is the only 100% Filipino-owned operated online marketplace. We provide local business an online storefront where our fellow Pinoys can buy
                 and sell their goods - simple, fast and free. From the lates gadgets, home furniture, books beauty products, clothes, shoes and bags, to real estate,
@@ -29,7 +29,7 @@
         </div>
 
         <div class="work-section pad-top-bottom-25 mb-25">
-            <div class="wrap">
+            <div class="wrap" >
                 <h2 class="head">How It Works</h2>
                     <div class="work-section-head text-center">
                         <p>Fast, easy and free to post an ad and you will find, what you are looking for.</p>

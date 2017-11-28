@@ -28,7 +28,7 @@
 
         <!-- logo -->
         <div class="logo-cont">
-            <a href="/" title="Koll.com.ph"><img src="{{ asset('/images/logo-koll-beta.png') }}" alt="Koll.com.ph" title="Koll.com.ph"></a>
+            <a href="/" title="Koll.com.ph"><img src="{{ asset('/images/logo-koll2.png') }}" alt="Kol.com.ph" title="Kol.com.ph"></a>
         </div>
 
         <div class="wrap">
@@ -129,7 +129,7 @@
                     <!-- {!! Form::submit('Sign Up',
                             array('name' => 'signup', 'class' => 'button btn input-green width100px', 'id' => 'signup-blue')) !!} -->
 
-                    <a href="{{ asset('register') }}" class="btn-signup button btn input-green width100px">Sign up</a>
+                    <a href="{{ asset('register') }}" class="btn-signup button btn input-green width100px" style="background:#00A964 !important;">Sign up</a>
 
                 </div>
             </div>
@@ -162,4 +162,5 @@
     </div>
 
 </body>
+
 </html>

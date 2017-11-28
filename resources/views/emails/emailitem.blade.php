@@ -15,6 +15,10 @@
 	<!-- guest private message -->
 	<p style="margin: 20px 0 0 30px;font-size: 18px;color: #b6b6b6;">
 		" <i>{{ $sndmsgtxt }}</i> "
+		
+		<br/>
+		
+		
 	</p>
 
 	<!-- add for spacing -->

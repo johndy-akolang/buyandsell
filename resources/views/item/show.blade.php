@@ -39,6 +39,7 @@
 
 {{-- Opengraph metas --}}
 <meta property="og:title" content="{{ $item['title'] }}" />
+<meta property="og:url"  content="http://koll.com.ph/item/$item" />
 <meta property="og:description" content="{{ $item['description'] }}" />
 <meta property="og:image" content="{{ $item['images'], 450, 298 }}" />
 <meta property="og:type" content="product" />
@@ -99,13 +100,19 @@
 
                         <!-- social media share -->
                         <div class="brand-bg">
-
+    
                             <!-- facebook share -->
                             <a class="facebook" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),'facebook-share-dialog','width=626,height=436');return false;">
                                 <i class="fa fa-facebook circle-3"></i>
-                                <span class="c-307">Share on Facebook</span>
+                                <span class="c-707">Share on Facebook</span>
                             </a>
-
+                                
+                                <div
+  class="fb-like"
+  data-share="true"
+  data-width="450"
+  data-show-faces="true">
+</div>
                             <!-- <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-564e8dba65341b7f" async="async"></script>
                             <div class="addthis_sharing_toolbox"></div> -->
                             <!-- twitter share -->
@@ -190,6 +197,7 @@
                             @endif
 
                         </div>
+                        
                     </div>
 
                 @endif
@@ -218,7 +226,9 @@
                         <!-- send inquiry to owner private -->
                         <a href="#" class="snd-msg-ownr btn input-green mt-20" data-toggle="modal" data-target="#sndmsgownr">Send Message</a>
 
-                        <!-- modal form -->
+                       
+                    </div>
+                     <!-- modal form -->
                         <div class="modal fade" id="sndmsgownr" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
@@ -240,8 +250,8 @@
                                         <!-- form for private message -->
                                         <!-- action="sendmail" -->
                                         <form method="post" action="sendmail">
-                                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                            <input type="hidden" name="slug" value="{{ $item['slug'] }}">
+                                            <input type="hidden" name="_token" value="{{ csrf_token() }}"/>
+                                            <input type="hidden" name="slug" value="{{ $item['slug'] }}"/>
 
                                             <div class="form-group">
                                                 <label for="name">Name</label>
@@ -265,10 +275,10 @@
                                         </form>
 
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                             </div>       
+                       </div>
+                       </div>
+
                   <div class="clear"></div>
                 </div>
 
@@ -298,7 +308,9 @@
                             @endforeach
                         @endforeach
                     </ul>
+                    </div>
                     <div class="clear"></div>
+                    
                 </div>
 
 
@@ -310,10 +322,10 @@
                 </div> -->
 
                 <div class="clear"></div>
+                
             </div>
-        </div>
-    </div>
-</div>
-
-
+       </div>     
+ </div>
+           
 @endsection
+

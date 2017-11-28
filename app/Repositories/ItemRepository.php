@@ -13,10 +13,22 @@ class ItemRepository extends Item
      */
     public function getActiveItems($perPage = 9)
     {
-        return $this->where('active', 1)
-            ->orderBy('created_at', 'desc')
-            ->paginate($perPage);
+     return $this->where('active', 1)->orderBy('created_at', 'desc')->paginate($perPage);
+        
     }
+    
+    public function getUserItems($perPage=12)
+    {
+        
+      //$item = Item::where('guest_id = user.id')->paginate(15);
+
+      // return $this->where('active', 1)->orderBy('created_at', 'desc')->paginate($perPage);
+      //$item=$this::where('guest_id', 'user.id')->orderBy('created_at', 'desc')->paginate(15);
+      return $this->where('active', 1)->orderBy('created_at', 'desc')->paginate($perPage);
+    }
+        
+    
+
 
     public function getItem($identifier)
     {

@@ -10,7 +10,8 @@
     <meta name="csrf-token" content="{{ csrf_token() }}" />
     <!-- google site verification -->
     <meta name="google-site-verification" content="oqxG76acbHUj_2Zm044BDiV1-QplsMp-mNLBUcrDZeY" />
-
+        
+        
     <meta name="title" content="Koll.com.ph - Buy and Sell Philippines Free Classified Ads" />
     <meta name="description" content="Buy and sell cheap brand new and second hand Car, motorcycle, mobile phones, Real Estate, pets and more. Post Free Classified ads Online at koll.com.ph Philippines.">
     <meta property="og:title" content="Koll.com.ph - Buy and Sell Philippines Free Classified Ads | Home"/>
@@ -52,6 +53,7 @@
     </script>
 
 </head>
+
 <body>
 
     <!-- Google Tag Manager -->
@@ -109,29 +111,33 @@
     }(document, 'script', 'facebook-jssdk'));</script>
 
     <!-- facebook api for share content -->
-    <script>
-      window.fbAsyncInit = function() {
-        FB.init({
-          appId      : '1239890536027330',
-          xfbml      : true,
-          version    : 'v2.5'
-        });
-      };
+   <script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '459655494385432',
+      xfbml      : true,
+      version    : 'v2.9'
+    });
+    FB.AppEvents.logPageView();
+  };
 
-      (function(d, s, id){
-         var js, fjs = d.getElementsByTagName(s)[0];
-         if (d.getElementById(id)) {return;}
-         js = d.createElement(s); js.id = id;
-         js.src = "//connect.facebook.net/en_US/sdk.js";
-         fjs.parentNode.insertBefore(js, fjs);
-       }(document, 'script', 'facebook-jssdk'));
-    </script>
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
    <!--  <div
   class="fb-like"
   data-share="true"
   data-width="450"
   data-show-faces="true">
 </div> -->
+
 </body>
+
 <!-- Mark Donnie Infantado -->
 </html>

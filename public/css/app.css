@@ -5434,6 +5434,7 @@ button.close {
   right: 0;
   left: 0;
   background-color: #000000;
+  
 }
 .modal-backdrop.fade {
   opacity: 0;

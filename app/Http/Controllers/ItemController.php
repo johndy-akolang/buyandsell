@@ -17,6 +17,8 @@ use App\Repositories\CityRepository;
 use App\Repositories\ConditionRepository;
 use App\Repositories\ItemRepository;
 use App\Repositories\ProvinceRepository;
+use Illuminate\Pagination\LengthAwarePaginator;
+
 use Auth;
 use Mail;
 use Redirect;
@@ -51,10 +53,19 @@ class ItemController extends Controller
      *
      * @return \Illuminate\View\View
      */
+     
     public function index()
     {
         $items = $this->itemRepo->getActiveItems();
-
+        return view('item.index')->with(compact('items'));
+    }
+    
+      public function indexes(Request $items,  $perPage = 15)
+    {
+         $currentPage = LengthAwarePaginator::resolveCurrentPage();
+         $currentPageItems = $items->get(($currentPage - 1) * $perPage, $perPage);
+         $paginate=new LengthAwarePaginator($currentPageItems, count($items), $perPage);
+        $items = $this->itemRepo->getUserItems();
         return view('item.index')->with(compact('items'));
     }
 
@@ -332,7 +343,7 @@ class ItemController extends Controller
         //Values may be like "param1", "param2" after exploding, so we also need to trim them
         array_walk($parameters, 'trim');
 
-        $items = Item::with('guest')
+        $items = Item::with('user')
 
         //Let's search the title first
         ->where(function($q) use ($parameters) {
@@ -353,7 +364,7 @@ class ItemController extends Controller
         //Lastly, let's search in the user name
         ->orWhere(function($q) use ($parameters) {
 
-            $q->whereHas('guest', function($q2) use ($parameters) {
+            $q->whereHas('user', function($q2) use ($parameters) {
 
                 $j = 0;
                 foreach ($parameters as $parameter) {

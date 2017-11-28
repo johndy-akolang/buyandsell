@@ -27,7 +27,7 @@ Route::group(['middleware' => ['auth']], function() {
 
   // item routes
 	Route::get('/account/items', ['as' => 'user-items', 'uses' => 'ItemController@index']);                    // list of user ads
-  Route::post('/account/items/create', ['as' => 'user-items-create', 'uses' => 'ItemController@store']);     // save new item
+  	Route::post('/account/items/create', ['as' => 'user-items-create', 'uses' => 'ItemController@store']);     // save new item
 	Route::get('/account/items/create', ['as' => 'user-items-create', 'uses' => 'ItemController@create']);     // show create form
 	Route::get('/account/items/{slug}/edit', ['as' => 'user-items-edit', 'uses' => 'ItemController@edit']);    // show edit item form
 	Route::post('/account/items/{slug}/edit', ['as' => 'user-items-edit', 'uses' => 'ItemController@update']); // update post
@@ -38,7 +38,7 @@ Route::group(['middleware' => ['auth']], function() {
 	// user routes
 	Route::get('account/edit/{id}', 'AccountController@edit');
 	Route::post('account/edit/{id}', 'AccountController@update');
-	//Route::resource('account', 'AccountController');
+	Route::resource('account', 'AccountController');
 
   // Route::get('myallitems', 'AccountController@user_posts_all');
 });
@@ -65,9 +65,9 @@ Route::get('login', 'LoginController@showLogin');
 /*Route::resource('item', 'ItemController');*/
 
 /* this message is temporally disabled */
-// Route::get('message/inbox', 'MessageController@inbox');
-// Route::get('message/viewmessage', 'MessageController@viewmessage');
-// Route::get('message/sent', 'MessageController@sent');
+ Route::get('message/inbox', 'MessageController@inbox');
+ Route::get('message/viewmessage', 'MessageController@viewmessage');
+ Route::get('message/sent', 'MessageController@sent');
 
 /* legal terms disabled*/
 // Route::get('legal/terms', 'LegalController@terms');

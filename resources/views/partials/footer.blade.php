@@ -1,12 +1,12 @@
-<div class="footer">
+<div class="footer" style="background:green !important;">
 
     {{-- footer middle --}}
-    <div class="footer-middle">
+    <div class="footer-middle" style="background: #00A946 !important;">
         <div class="wrap">
             <div class="foo-grids">
                 <div class="col-md-3 footer-grid">
                     <h4 class="footer-head">Who We Are</h4>
-                    <p>Koll comes from a Pinoy street word "Call" or "Okay! Deal!" meaning a person agreed an offer or deal from another person. </p>
+                    <p>Koll comes from a Pinoy street word "kol" or "Call" and also "Okay! Deal!" meaning a person agreed an offer or deal from another person. </p>
                     <p>We find you a fast and efficient way of selling and buying goods, products and services online through classified ads.</p>
                 </div>
                 <div class="col-md-3 footer-grid">
@@ -86,13 +86,11 @@
     </div>
 
 </div>
+ 
+</div>
+</div>
 
-
-
-
-
-
-
+ 
 
 
 
